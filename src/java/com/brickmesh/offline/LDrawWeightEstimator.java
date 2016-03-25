@@ -128,9 +128,7 @@ public final class LDrawWeightEstimator {
     filename = filename.replaceAll("\\\\", "/");
     for (File dir : includeDirs_) {
       File f = new File(dir, filename);
-      //System.out.println("Trying: " + f.getPath());
       if (f.exists()) {
-        //System.out.println("Using: " + f.getPath());
         return new LineNumberReader(new FileReader(f));
       }
     }
@@ -175,7 +173,6 @@ public final class LDrawWeightEstimator {
         String subFilename = parseToken(tokens, 14, reader, filename);
         Matrix3 subM = new Matrix3(x, y, z, t);
         Matrix3 tM = m.transformMatrix(subM);
-        //System.out.println("tM=" + tM.toString());
         result.addAll(loadTriangles(subFilename, tM,
             invertLines > 0 ? -invertSign : invertSign));
       } else if (tokens[0].equals("3")) {
@@ -210,10 +207,6 @@ public final class LDrawWeightEstimator {
       Vector3 p1 = m.transformVector(t.p1_);
       Vector3 p2 = m.transformVector(t.p2_);
       Vector3 p3 = m.transformVector(t.p3_);
-      //System.out.println("sign = 1");
-      //System.out.println(p1);
-      //System.out.println(p2);
-      //System.out.println(p3);
       double v321 = p3.x_ * p2.y_ * p1.z_;
       double v231 = p2.x_ * p3.y_ * p1.z_;
       double v312 = p3.x_ * p1.y_ * p2.z_;
@@ -221,7 +214,6 @@ public final class LDrawWeightEstimator {
       double v213 = p2.x_ * p1.y_ * p3.z_;
       double v123 = p1.x_ * p2.y_ * p3.z_;
       double vol = (-v321 + v231 + v312 - v132 - v213 + v123) / 6.0;
-      //System.out.println(vol);
       volume += vol;
     }
     return volume;

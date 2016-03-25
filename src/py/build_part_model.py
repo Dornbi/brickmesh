@@ -26,6 +26,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import glob
+import sys
 
 import part_model_proto_pb2
 
@@ -65,7 +66,7 @@ def WritePartModel(part_model, path):
 
 def BuildPartModel(input_path, weight_files, output_path):
   part_model = ReadPartModel(input_path)
-  print len(part_model.part)
+  print >>sys.stderr, 'Parts in model: %d' % len(part_model.part)
   weight_maps = []
   for weight_file in weight_files:
     weight_maps.append(LoadCsvWeights(weight_file))
@@ -78,7 +79,6 @@ def BuildPartModel(input_path, weight_files, output_path):
 
 
 BuildPartModel('src/model/part-model-template.txt',
-#               ['src/model/weights-master.csv'],
                ['src/model/weights-measured.csv',
                 'src/model/weights-ldraw.csv',
                 'src/model/weights-no-ldraw.csv'],

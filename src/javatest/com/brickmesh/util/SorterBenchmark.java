@@ -119,15 +119,4 @@ final class SorterBenchmark extends Benchmark {
     Sorter.Sortable sortable = new Reverse2IntSortable(array, array2);
     Sorter.quicksort(sortable, random);
   }
-  
-  private static void printFirst(int[] a, int n) {
-    StringBuffer buf = new StringBuffer();
-    for (int i = 0; i < n; ++i) {
-      if (i > 0) {
-        buf.append(",");
-      }
-      buf.append(a[i]);
-    }
-    System.out.println(buf);
-  }
 }

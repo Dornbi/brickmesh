@@ -30,7 +30,7 @@ package com.brickmesh.util;
 class Benchmark {
   public static long printRuntimeStats(String phaseName, long startTimeNanos) {
     final long currentTimeNanos = System.nanoTime();
-		System.out.format("--> %s time = %d, Heap size = %dM\n",
+		System.err.format("--> %s time = %d, Heap size = %dM\n",
         phaseName, (currentTimeNanos - startTimeNanos) / 1000,
         Runtime.getRuntime().totalMemory() / 1024 / 1024);
     return currentTimeNanos;

@@ -52,7 +52,7 @@ public class LddTool {
 
     PartLoader.Result result = loader.getResult();
     PartExporter.exportToWantedList(result.parts_, System.out, null);
-    System.out.format("Estimated weight: %.3f gram(s)\n",
+    System.err.format("Estimated weight: %.3f gram(s)\n",
         result.parts_.weightEstimateGrams());
     if (result.unknownColorIds_ != null) {
       for (Map.Entry<String, Integer> entry : result.unknownColorIds_.entrySet()) {

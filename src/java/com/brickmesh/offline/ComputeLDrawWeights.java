@@ -47,6 +47,10 @@ public final class ComputeLDrawWeights {
     ArrayList<String> ids = loadIdsFromCsv(args[0]);
     for (String partId : ids) {
       PartModel.PartGroup group = partModel_.getPartByIdOrNull(partId);
+      if (group == null) {
+        System.err.println("Unknown part: " + partId);
+        return;
+      }
       double w = group.part_.get(0).weightGrams_;
       LDrawWeightEstimator.Result result = estimateWeightOrNull(partId, args[1]);
       if (result == null) {
