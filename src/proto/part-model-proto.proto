@@ -1,0 +1,90 @@
+/*
+Copyright (c) 2016, Peter Dornbach
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name BrickMesh nor the names of its contributors may be used
+      to endorse or promote products derived from this software without
+      specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+syntax="proto2";
+
+package com.brickmesh.proto;
+
+message Color {
+  optional string id = 1;
+  optional string name = 2;
+  repeated string lego_id = 3;
+}
+
+message ColorModel {
+  repeated Color color = 1;
+}
+
+message Part {
+  // Required for each element. The unique id.
+  optional string id = 1;
+  
+  // Required for each leaf element that does not have items
+  // and not a generalization of some other element.
+  optional float weight_grams = 2;
+
+  // The design id used by Lego tools (like LDD).
+  // This should be only used if the lego_id is the id of another
+  // existing part; otherwise alternate_id is preferred.
+  repeated string lego_id = 3;
+
+  // Force the part to be looked up in this color without any warning
+  // to the user. This is useful for parts that only exist in a single
+  // color and are composed of several sub-parts; hence inferring the
+  // single existing color would ambiguous.
+  optional string force_color_id = 10;
+  
+  // Alternate ids for this same exact element.
+  // No other element with this id must exist.
+  repeated string alternate_id = 4;
+
+  // Other existing parts that can be used as a replacement.
+  // This must exist as a separate element.
+  repeated string similar_id = 5;
+  
+  // Id of more generic part that can be used as a substitute.
+  // This must exist as a separate element, albeit it must not have
+  // a weight.
+  optional string generic_id = 6;
+  
+  // Id of more generic part that is the same kind but cannot
+  // be unconditionally used as a substitute.
+  optional string kindof_id = 7;
+  
+  message Item {
+    optional string id = 1;
+    optional string color = 2;
+    optional int32 count = 3 [default = 1];
+  }
+  
+  // Combinations of elements that are similar to this one.
+  repeated Item item = 8;
+}
+
+message PartModel {
+  repeated Part part = 1;
+}

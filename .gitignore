@@ -1,0 +1,8 @@
+.DS_Store
+*.pyc
+*.class
+assets/**
+class/*/**
+gen/*/**
+jar/brickmesh*.jar
+!/**/.empty

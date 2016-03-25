@@ -1,0 +1,9426 @@
+# Copyright (c) 2016, Peter Dornbach
+# All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name BrickMesh nor the names of its contributors may be used
+#       to endorse or promote products derived from this software without
+#       specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Known parts.
+#
+# Contains:
+# - All part ids from the golden set CSV files.
+# - All mappings from ldraw.xml.
+
+part {
+  id: "bb192"
+  alternate_id: "55707a"
+  similar_id: "62885"
+}
+
+part {
+  id: "bb339c01"
+  alternate_id: "61929"
+}
+
+part {
+  id: "bb601"
+  alternate_id: "11145"
+  force_color_id: "11"
+  generic_id: "8529"
+}
+
+part {
+  id: "x8"
+  alternate_id: "6255"
+}
+
+part {
+  id: "x12"
+  alternate_id: "33176"
+}
+
+part {
+  id: "x59"
+  alternate_id: "30224"
+}
+
+part {
+  id: "x85"
+  alternate_id: "71128"
+}
+
+part {
+  id: "x97"
+  alternate_id: "30133"
+}
+
+part {
+  id: "x100"
+  alternate_id: "30084"
+}
+
+part {
+  id: "x104"
+  alternate_id: "6093"
+}
+
+part {
+  id: "x112"
+  alternate_id: "33122"
+}
+
+# String with End Studs
+part {
+  id: "x127"
+}
+part {
+  id: "x127c11"
+  kindof_id: "x127"
+  alternate_id: "14226"
+  alternate_id: "56576"
+  alternate_id: "63143"
+  alternate_id: "76064"
+}
+part {
+  id: "x127c21"
+  kindof_id: "x127"
+  alternate_id: "14210"
+  alternate_id: "63141"
+  alternate_id: "76065"
+}
+part {
+  id: "x127c31"
+  kindof_id: "x127"
+  alternate_id: "14225"
+  alternate_id: "56578"
+  alternate_id: "63142"
+}
+part {
+  id: "x127c41"
+  kindof_id: "x127"
+  alternate_id: "14224"
+  alternate_id: "63140"
+  alternate_id: "75925"
+}
+
+part {
+  id: "x136"
+  alternate_id: "32294"
+}
+
+part {
+  id: "x164"
+  alternate_id: "30370"
+}
+
+part {
+  id: "x187"
+  similar_id: "3648"
+}
+
+part {
+  id: "x222"
+  alternate_id: "2038"
+}
+
+part {
+  id: "x224"
+  alternate_id: "41751"
+}
+
+part {
+  id: "x346"
+  alternate_id: "16646"
+  alternate_id: "41669"
+}
+
+part {
+  id: "x682c01"
+  alternate_id: "76247"
+}
+
+part {
+  id: "x787"
+  alternate_id: "46303"
+}
+
+part {
+  id: "x789"
+  alternate_id: "42409"
+}
+
+part {
+  id: "x872"
+  alternate_id: "32495"
+}
+
+part {
+  id: "x873"
+  alternate_id: "32496"
+}
+
+part {
+  id: "x873c01"
+  alternate_id: "32495c01"
+  alternate_id: "50301"
+  item {
+    id: "x872"
+    color: "3"
+  }
+  item {
+    id: "x873"
+    color: "11"
+  }
+}
+
+part {
+  id: "x90"
+  alternate_id: "70905"
+  alternate_id: "85546"
+}
+
+part {
+  id: "x93"
+  alternate_id: "4328"
+}
+
+part {
+  id: "x1681"
+  alternate_id: "13972"
+  alternate_id: "53992"
+}
+
+part {
+  id: "44"
+  alternate_id: "32126"
+}
+
+part {
+  id: "60c01"
+  alternate_id: "76019"
+  alternate_id: "76244"
+  alternate_id: "76244c01"
+}
+
+
+# 3mm rigid hose family
+part {
+  id: "75"
+}
+part {
+  id: "75c02"
+  kindof_id: "75"
+}
+part {
+  id: "75c03"
+  kindof_id: "75"
+  alternate_id: "58856"
+}
+part {
+  id: "75c04"
+  kindof_id: "75"
+  alternate_id: "60187"
+}
+part {
+  id: "75c05"
+  kindof_id: "75"
+  alternate_id: "47070"
+  alternate_id: "51976"
+}
+part {
+  id: "75c06"
+  kindof_id: "75"
+  alternate_id: "76279"
+}
+part {
+  id: "75c07"
+  kindof_id: "75"
+  alternate_id: "55053"
+  alternate_id: "60166"
+}
+part {
+  id: "75c08"
+  kindof_id: "75"
+  alternate_id: "55646"
+  alternate_id: "55668"
+  alternate_id: "60675"
+}
+part {
+  id: "75c09"
+  kindof_id: "75"
+  alternate_id: "73624"
+}
+part {
+  id: "75c10"
+  kindof_id: "75"
+  alternate_id: "40168"
+  alternate_id: "76302"
+  alternate_id: "76446"
+}
+part {
+  id: "75c11"
+  kindof_id: "75"
+  alternate_id: "63037"
+}
+part {
+  id: "75c12"
+  kindof_id: "75"
+  alternate_id: "60676"
+}
+part {
+  id: "75c13"
+  kindof_id: "75"
+  alternate_id: "76292"
+}
+part {
+  id: "75c14"
+  kindof_id: "75"
+  alternate_id: "50160"
+  alternate_id: "56178"
+}
+part {
+  id: "75c15"
+  kindof_id: "75"
+  alternate_id: "42690"
+  alternate_id: "89645"
+}
+part {
+  id: "75c16"
+  kindof_id: "75"
+  alternate_id: "85532"
+}
+part {
+  id: "75c17"
+  kindof_id: "75"
+  alternate_id: "76270"
+}
+part {
+  id: "75c18"
+  kindof_id: "75"
+  alternate_id: "61356"
+}
+part {
+  id: "75c19"
+  kindof_id: "75"
+  alternate_id: "76257"
+}
+part {
+  id: "75c20"
+  kindof_id: "75"
+  alternate_id: "54238"
+  alternate_id: "60677"
+}
+part {
+  id: "75c21"
+  kindof_id: "75"
+  alternate_id: "76259"
+}
+part {
+  id: "75c22"
+  kindof_id: "75"
+  alternate_id: "48439"
+  alternate_id: "62530"
+}
+part {
+  id: "75c23"
+  kindof_id: "75"
+  alternate_id: "56418"
+  alternate_id: "76254"
+}
+part {
+  id: "75c24"
+  kindof_id: "75"
+  alternate_id: "85526"
+}
+part {
+  id: "75c25"
+  kindof_id: "75"
+  alternate_id: "53475"
+  alternate_id: "64461"
+}
+part {
+  id: "75c26"
+  kindof_id: "75"
+}
+part {
+  id: "75c27"
+  kindof_id: "75"
+}
+part {
+  id: "75c28"
+  kindof_id: "75"
+  alternate_id: "76280"
+}
+part {
+  id: "75c29"
+  kindof_id: "75"
+  alternate_id: "43798"
+  alternate_id: "76389"
+}
+part {
+  id: "75c30"
+  kindof_id: "75"
+  alternate_id: "56203"
+}
+part {
+  id: "75c31"
+  kindof_id: "75"
+}
+part {
+  id: "75c32"
+  kindof_id: "75"
+  alternate_id: "57274"
+}
+part {
+  id: "75c33"
+  kindof_id: "75"
+  alternate_id: "32"
+}
+part {
+  id: "75c34"
+  kindof_id: "75"
+}
+part {
+  id: "75c36"
+  kindof_id: "75"
+  alternate_id: "21986"
+  alternate_id: "60778"
+}
+part {
+  id: "75c40"
+  kindof_id: "75"
+  alternate_id: "46305"
+}
+part {
+  id: "75c44"
+  kindof_id: "75"
+}
+part {
+  id: "75c45"
+  kindof_id: "75"
+}
+part {
+  id: "75c49"
+  kindof_id: "75"
+  alternate_id: "85523"
+}
+part {
+  id: "75c53"
+  kindof_id: "75"
+}
+part {
+  id: "75c63"
+  kindof_id: "75"
+}
+
+# 7mm ribbed hose family
+part {
+  id: "78"
+}
+part {
+  id: "78c02"
+  kindof_id: "78"
+  alternate_id: "22055"
+  alternate_id: "22688"
+  alternate_id: "22899"
+  alternate_id: "23117"
+  alternate_id: "41092"
+  alternate_id: "50157"
+  alternate_id: "55099"
+  alternate_id: "56602"
+  alternate_id: "57713"
+  alternate_id: "72504"
+}
+part {
+  id: "78c03"
+  kindof_id: "78"
+  alternate_id: "21164"
+  alternate_id: "22685"
+  alternate_id: "22687"
+  alternate_id: "23001"
+  alternate_id: "40162"
+  alternate_id: "41081"
+  alternate_id: "52112"
+  alternate_id: "57715"
+  alternate_id: "72706"
+}
+part {
+  id: "78c04"
+  kindof_id: "78"
+  alternate_id: "22054"
+  alternate_id: "22902"
+  alternate_id: "23394"
+  alternate_id: "40164"
+  alternate_id: "55418"
+  alternate_id: "57716"
+  alternate_id: "59905"
+  alternate_id: "71952"
+  alternate_id: "71984"
+}
+part {
+  id: "78c05"
+  kindof_id: "78"
+  alternate_id: "23006"
+  alternate_id: "57717"
+  alternate_id: "72853"
+}
+part {
+  id: "78c06"
+  kindof_id: "78"
+  alternate_id: "71944"
+}
+part {
+  id: "78c07"
+  kindof_id: "78"
+  alternate_id: "22976"
+  alternate_id: "57719"
+  alternate_id: "71985"
+}
+part {
+  id: "78c08"
+  kindof_id: "78"
+  alternate_id: "22516"
+  alternate_id: "23039"
+  alternate_id: "56905"
+  alternate_id: "57720"
+  alternate_id: "71817"
+  alternate_id: "71951"
+}
+part {
+  id: "78c09"
+  kindof_id: "78"
+  alternate_id: "23002"
+  alternate_id: "41079"
+  alternate_id: "52113"
+  alternate_id: "57721"
+  alternate_id: "71917"
+  alternate_id: "71922"
+  alternate_id: "72641"
+}
+part {
+  id: "78c10"
+  kindof_id: "78"
+  alternate_id: "22053"
+  alternate_id: "44068"
+  alternate_id: "57723"
+  alternate_id: "71949"
+}
+part {
+  id: "78c11"
+  kindof_id: "78"
+  alternate_id: "23003"
+  alternate_id: "53292"
+  alternate_id: "55100"
+  alternate_id: "57722"
+  alternate_id: "71986"
+  alternate_id: "72729"
+}
+part {
+  id: "78c12"
+  kindof_id: "78"
+  alternate_id: "42692"
+  alternate_id: "60146"
+  alternate_id: "71819"
+}
+part {
+  id: "78c13"
+  kindof_id: "78"
+  alternate_id: "23395"
+  alternate_id: "43801"
+  alternate_id: "46818"
+  alternate_id: "57711"
+}
+part {
+  id: "78c14"
+  kindof_id: "78"
+  alternate_id: "71923"
+  alternate_id: "72740"
+}
+part {
+  id: "78c15"
+  kindof_id: "78"
+  alternate_id: "22431"
+  alternate_id: "46306"
+  alternate_id: "71946"
+}
+part {
+  id: "78c16"
+  kindof_id: "78"
+  alternate_id: "22900"
+  alternate_id: "56714"
+}
+part {
+  id: "78c17"
+  kindof_id: "78"
+  alternate_id: "60501"
+}
+part {
+  id: "78c18"
+  kindof_id: "78"
+  alternate_id: "23004"
+  alternate_id: "46819"
+  alternate_id: "57712"
+  alternate_id: "72039"
+}
+part {
+  id: "78c19"
+  kindof_id: "78"
+  alternate_id: "43675"
+}
+part {
+  id: "78c20"
+  kindof_id: "78"
+}
+part {
+  id: "78c21"
+  kindof_id: "78"
+}
+part {
+  id: "78c22"
+  kindof_id: "78"
+}
+part {
+  id: "78c23"
+  kindof_id: "78"
+}
+part {
+  id: "78c24"
+  kindof_id: "78"
+  alternate_id: "23397"
+  alternate_id: "46820"
+  alternate_id: "57714"
+}
+part {
+  id: "78c25"
+  kindof_id: "78"
+}
+part {
+  id: "78c26"
+  kindof_id: "78"
+}
+part {
+  id: "78c27"
+  kindof_id: "78"
+}
+part {
+  id: "78c28"
+  kindof_id: "78"
+}
+part {
+  id: "78c29"
+  kindof_id: "78"
+}
+part {
+  id: "78c30"
+  kindof_id: "78"
+  alternate_id: "22678"
+}
+part {
+  id: "78c31"
+  kindof_id: "78"
+}
+part {
+  id: "78c32"
+  kindof_id: "78"
+}
+
+part {
+  id: "90"
+}
+
+part {
+  id: "91"
+}
+
+part {
+  id: "108"
+}
+
+part {
+  id: "109"
+  alternate_id: "2910"
+}
+
+part {
+  id: "110a"
+}
+
+part {
+  id: "110b"
+}
+
+part {
+  id: "122c01"
+}
+
+part {
+  id: "122c02"
+}
+
+part {
+  id: "193a2"
+  alternate_id: "3842a"
+}
+
+part {
+  id: "193b2"
+  alternate_id: "3842b"
+  lego_id: "3842"
+  similar_id: "2446"
+}
+
+part {
+  id: "445"
+}
+
+part {
+  id: "446"
+}
+
+part {
+  id: "471"
+  alternate_id: "30127"
+}
+
+part {
+  id: "476"
+  alternate_id: "6076"
+  similar_id: "30212"
+}
+
+part {
+  id: "553"
+  alternate_id: "30367"
+}
+part {
+  id: "553a"
+  alternate_id: "30367a"
+  generic_id: "553"
+}
+part {
+  id: "553b"
+  alternate_id: "30367b"
+  generic_id: "553"
+  lego_id: "30367"
+}
+part {
+  id: "553c"
+  alternate_id: "30367c"
+  generic_id: "553"
+}
+
+part {
+  id: "590"
+  alternate_id: "70358"
+}
+
+# Technic shock absorber
+part {
+  id: "731c01"
+  item {
+    id: "732"
+  }
+  item {
+    id: "731c02"
+    color: "11"
+  }
+}
+part {
+  id: "731c02"
+}
+part {
+  id: "731c03"
+  kindof_id: "731c02"
+}
+part {
+  id: "731c04"
+  kindof_id: "731c01"
+  alternate_id: "76537"
+  force_color_id: "3"
+  item {
+    id: "732"
+  }
+  item {
+    id: "731c03"
+    color: "11"
+  }
+}
+part {
+  id: "731c05"
+  kindof_id: "731c01"
+}
+part {
+  id: "731c06"
+  alternate_id: "76138"
+  kindof_id: "731c01"
+}
+part {
+  id: "732"
+}
+
+part {
+  id: "751"
+}
+
+part {
+  id: "752"
+}
+
+part {
+  id: "772"
+  similar_id: "3245c"
+}
+
+# Minifig leg assembly
+part {
+  id: "970"
+  alternate_id: "3815"
+}
+part {
+  id: "971"
+  alternate_id: "3816"
+}
+part {
+  id: "972"
+  alternate_id: "3817"
+}
+part {
+  id: "970c00"
+  alternate_id: "73200"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+  }
+  item {
+    id: "972"
+  }
+}
+part {
+  id: "970c01"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "1"
+  }
+  item {
+    id: "972"
+    color: "1"
+  }
+}
+part {
+  id: "970c02"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "2"
+  }
+  item {
+    id: "972"
+    color: "2"
+  }
+}
+part {
+  id: "970c03"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "3"
+  }
+  item {
+    id: "972"
+    color: "3"
+  }
+}
+part {
+  id: "970c04"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "4"
+  }
+  item {
+    id: "972"
+    color: "4"
+  }
+}
+part {
+  id: "970c05"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "5"
+  }
+  item {
+    id: "972"
+    color: "5"
+  }
+}
+part {
+  id: "970c06"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "6"
+  }
+  item {
+    id: "972"
+    color: "6"
+  }
+}
+part {
+  id: "970c07"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "7"
+  }
+  item {
+    id: "972"
+    color: "7"
+  }
+}
+part {
+  id: "970c08"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "8"
+  }
+  item {
+    id: "972"
+    color: "8"
+  }
+}
+part {
+  id: "970c09"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "9"
+  }
+  item {
+    id: "972"
+    color: "9"
+  }
+}
+part {
+  id: "970c10"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "10"
+  }
+  item {
+    id: "972"
+    color: "10"
+  }
+}
+part {
+  id: "970c11"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "11"
+  }
+  item {
+    id: "972"
+    color: "11"
+  }
+}
+part {
+  id: "970c110"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "110"
+  }
+  item {
+    id: "972"
+    color: "110"
+  }
+}
+part {
+  id: "970c115"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "115"
+  }
+  item {
+    id: "972"
+    color: "115"
+  }
+}
+part {
+  id: "970c150"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "150"
+  }
+  item {
+    id: "972"
+    color: "150"
+  }
+}
+part {
+  id: "970c153"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "153"
+  }
+  item {
+    id: "972"
+    color: "153"
+  }
+}
+part {
+  id: "970c155"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "155"
+  }
+  item {
+    id: "972"
+    color: "155"
+  }
+}
+part {
+  id: "970c16"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "16"
+  }
+  item {
+    id: "972"
+    color: "16"
+  }
+}
+part {
+  id: "970c34"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "34"
+  }
+  item {
+    id: "972"
+    color: "34"
+  }
+}
+part {
+  id: "970c36"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "36"
+  }
+  item {
+    id: "972"
+    color: "36"
+  }
+}
+part {
+  id: "970c42"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "42"
+  }
+  item {
+    id: "972"
+    color: "42"
+  }
+}
+part {
+  id: "970c43"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "43"
+  }
+  item {
+    id: "972"
+    color: "43"
+  }
+}
+part {
+  id: "970c47"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "47"
+  }
+  item {
+    id: "972"
+    color: "47"
+  }
+}
+part {
+  id: "970c48"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "48"
+  }
+  item {
+    id: "972"
+    color: "48"
+  }
+}
+part {
+  id: "970c55"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "55"
+  }
+  item {
+    id: "972"
+    color: "55"
+  }
+}
+part {
+  id: "970c59"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "59"
+  }
+  item {
+    id: "972"
+    color: "59"
+  }
+}
+part {
+  id: "970c63"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "63"
+  }
+  item {
+    id: "972"
+    color: "63"
+  }
+}
+part {
+  id: "970c68"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "68"
+  }
+  item {
+    id: "972"
+    color: "68"
+  }
+}
+part {
+  id: "970c69"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "69"
+  }
+  item {
+    id: "972"
+    color: "69"
+  }
+}
+part {
+  id: "970c77"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "77"
+  }
+  item {
+    id: "972"
+    color: "77"
+  }
+}
+part {
+  id: "970c80"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "80"
+  }
+  item {
+    id: "972"
+    color: "80"
+  }
+}
+part {
+  id: "970c85"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "85"
+  }
+  item {
+    id: "972"
+    color: "85"
+  }
+}
+part {
+  id: "970c86"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "86"
+  }
+  item {
+    id: "972"
+    color: "86"
+  }
+}
+part {
+  id: "970c87"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "87"
+  }
+  item {
+    id: "972"
+    color: "87"
+  }
+}
+part {
+  id: "970c88"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "88"
+  }
+  item {
+    id: "972"
+    color: "88"
+  }
+}
+part {
+  id: "970c89"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "89"
+  }
+  item {
+    id: "972"
+    color: "89"
+  }
+}
+part {
+  id: "970c90"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "90"
+  }
+  item {
+    id: "972"
+    color: "90"
+  }
+}
+part {
+  id: "970c98"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "98"
+  }
+  item {
+    id: "972"
+    color: "98"
+  }
+}
+part {
+  id: "970c99"
+  item {
+    id: "970"
+  }
+  item {
+    id: "971"
+    color: "99"
+  }
+  item {
+    id: "972"
+    color: "99"
+  }
+}
+
+# Minifig body
+part {
+  id: "973"
+  alternate_id: "3814"
+  alternate_id: "88476"
+}
+part {
+  id: "973c00"
+  alternate_id: "76382"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+  }
+  item {
+    id: "982"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c01"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "1"
+  }
+  item {
+    id: "982"
+    color: "1"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c02"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "5"
+  }
+  item {
+    id: "982"
+    color: "5"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c03"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "47"
+  }
+  item {
+    id: "982"
+    color: "47"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c04"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "4"
+  }
+  item {
+    id: "982"
+    color: "4"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c05"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "4"
+  }
+  item {
+    id: "982"
+    color: "4"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c06"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "7"
+  }
+  item {
+    id: "982"
+    color: "7"
+  }
+  item {
+    id: "983"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "973c07"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "7"
+  }
+  item {
+    id: "982"
+    color: "7"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c08"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "11"
+  }
+  item {
+    id: "982"
+    color: "11"
+  }
+  item {
+    id: "983"
+    color: "90"
+    count: 2
+  }
+}
+part {
+  id: "973c09"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "1"
+  }
+  item {
+    id: "982"
+    color: "1"
+  }
+  item {
+    id: "983"
+    color: "1"
+    count: 2
+  }
+}
+part {
+  id: "973c10"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "3"
+  }
+  item {
+    id: "982"
+    color: "3"
+  }
+  item {
+    id: "983"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "973c11"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "3"
+  }
+  item {
+    id: "982"
+    color: "3"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c12"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "6"
+  }
+  item {
+    id: "982"
+    color: "6"
+  }
+  item {
+    id: "983"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "973c13"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "8"
+  }
+  item {
+    id: "982"
+    color: "8"
+  }
+  item {
+    id: "983"
+    color: "8"
+    count: 2
+  }
+}
+part {
+  id: "973c14"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "11"
+  }
+  item {
+    id: "982"
+    color: "11"
+  }
+  item {
+    id: "983"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "973c15"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "10"
+  }
+  item {
+    id: "982"
+    color: "10"
+  }
+  item {
+    id: "983"
+    color: "48"
+    count: 2
+  }
+}
+part {
+  id: "973c16"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "9"
+  }
+  item {
+    id: "982"
+    color: "9"
+  }
+  item {
+    id: "983"
+    color: "9"
+    count: 2
+  }
+}
+part {
+  id: "973c17"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "42"
+  }
+  item {
+    id: "982"
+    color: "42"
+  }
+  item {
+    id: "983"
+    color: "42"
+    count: 2
+  }
+}
+part {
+  id: "973c18"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "11"
+  }
+  item {
+    id: "982"
+    color: "11"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c19"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "3"
+  }
+  item {
+    id: "982"
+    color: "3"
+  }
+  item {
+    id: "983"
+    color: "1"
+    count: 2
+  }
+}
+part {
+  id: "973c20"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "6"
+  }
+  item {
+    id: "982"
+    color: "6"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c21"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "7"
+  }
+  item {
+    id: "982"
+    color: "7"
+  }
+  item {
+    id: "983"
+    color: "1"
+    count: 2
+  }
+}
+part {
+  id: "973c22"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "10"
+  }
+  item {
+    id: "982"
+    color: "10"
+  }
+  item {
+    id: "983"
+    color: "9"
+    count: 2
+  }
+}
+part {
+  id: "973c23"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "5"
+  }
+  item {
+    id: "982"
+    color: "5"
+  }
+  item {
+    id: "983"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "973c24"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "7"
+  }
+  item {
+    id: "982"
+    color: "7"
+  }
+  item {
+    id: "983"
+    color: "5"
+    count: 2
+  }
+}
+part {
+  id: "973c25"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "9"
+  }
+  item {
+    id: "982"
+    color: "9"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c27"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "7"
+  }
+  item {
+    id: "982"
+    color: "7"
+  }
+  item {
+    id: "983"
+    color: "10"
+    count: 2
+  }
+}
+part {
+  id: "973c28"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "5"
+  }
+  item {
+    id: "982"
+    color: "5"
+  }
+  item {
+    id: "983"
+    color: "10"
+    count: 2
+  }
+}
+part {
+  id: "973c29"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "10"
+  }
+  item {
+    id: "982"
+    color: "10"
+  }
+  item {
+    id: "983"
+    color: "1"
+    count: 2
+  }
+}
+part {
+  id: "973c30"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "10"
+  }
+  item {
+    id: "982"
+    color: "10"
+  }
+  item {
+    id: "983"
+    color: "10"
+    count: 2
+  }
+}
+part {
+  id: "973c31"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "5"
+  }
+  item {
+    id: "982"
+    color: "5"
+  }
+  item {
+    id: "983"
+    color: "1"
+    count: 2
+  }
+}
+part {
+  id: "973c32"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "88"
+  }
+  item {
+    id: "982"
+    color: "88"
+  }
+  item {
+    id: "983"
+    color: "88"
+    count: 2
+  }
+}
+part {
+  id: "973c33"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "42"
+  }
+  item {
+    id: "982"
+    color: "42"
+  }
+  item {
+    id: "983"
+    color: "86"
+    count: 2
+  }
+}
+part {
+  id: "973c34"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "5"
+  }
+  item {
+    id: "982"
+    color: "5"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c35"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "6"
+  }
+  item {
+    id: "982"
+    color: "6"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c36"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "89"
+  }
+  item {
+    id: "982"
+    color: "89"
+  }
+  item {
+    id: "983"
+    color: "86"
+    count: 2
+  }
+}
+part {
+  id: "973c39"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "5"
+  }
+  item {
+    id: "982"
+    color: "5"
+  }
+  item {
+    id: "983"
+    color: "69"
+    count: 2
+  }
+}
+part {
+  id: "973c40"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "42"
+  }
+  item {
+    id: "982"
+    color: "42"
+  }
+  item {
+    id: "983"
+    color: "63"
+    count: 2
+  }
+}
+part {
+  id: "973c41"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "11"
+  }
+  item {
+    id: "982"
+    color: "11"
+  }
+  item {
+    id: "983"
+    color: "59"
+    count: 2
+  }
+}
+part {
+  id: "973c42"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "11"
+  }
+  item {
+    id: "982"
+    color: "11"
+  }
+  item {
+    id: "983"
+    color: "1"
+    count: 2
+  }
+}
+part {
+  id: "973c43"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "89"
+  }
+  item {
+    id: "982"
+    color: "89"
+  }
+  item {
+    id: "983"
+    color: "90"
+    count: 2
+  }
+}
+part {
+  id: "973c44"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "5"
+  }
+  item {
+    id: "982"
+    color: "5"
+  }
+  item {
+    id: "983"
+    color: "5"
+    count: 2
+  }
+}
+part {
+  id: "973c45"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "11"
+  }
+  item {
+    id: "982"
+    color: "11"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c46"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "55"
+  }
+  item {
+    id: "982"
+    color: "55"
+  }
+  item {
+    id: "983"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "973c47"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "86"
+  }
+  item {
+    id: "982"
+    color: "86"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c49"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "89"
+  }
+  item {
+    id: "982"
+    color: "89"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c50"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "55"
+  }
+  item {
+    id: "982"
+    color: "55"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c51"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "80"
+  }
+  item {
+    id: "982"
+    color: "80"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c52"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "69"
+  }
+  item {
+    id: "982"
+    color: "69"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c53"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "63"
+  }
+  item {
+    id: "982"
+    color: "63"
+  }
+  item {
+    id: "983"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "973c54"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "55"
+  }
+  item {
+    id: "982"
+    color: "55"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c55"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "2"
+  }
+  item {
+    id: "982"
+    color: "2"
+  }
+  item {
+    id: "983"
+    color: "2"
+    count: 2
+  }
+}
+part {
+  id: "973c56"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "3"
+  }
+  item {
+    id: "982"
+    color: "3"
+  }
+  item {
+    id: "983"
+    color: "7"
+    count: 2
+  }
+}
+part {
+  id: "973c57"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "59"
+  }
+  item {
+    id: "982"
+    color: "59"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "973c58"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "155"
+  }
+  item {
+    id: "982"
+    color: "155"
+  }
+  item {
+    id: "983"
+    color: "155"
+    count: 2
+  }
+}
+part {
+  id: "973c60"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "85"
+  }
+  item {
+    id: "982"
+    color: "85"
+  }
+  item {
+    id: "983"
+    color: "88"
+    count: 2
+  }
+}
+part {
+  id: "973c61"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "153"
+  }
+  item {
+    id: "982"
+    color: "153"
+  }
+  item {
+    id: "983"
+    color: "153"
+    count: 2
+  }
+}
+part {
+  id: "973c62"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "69"
+  }
+  item {
+    id: "982"
+    color: "69"
+  }
+  item {
+    id: "983"
+    color: "150"
+    count: 2
+  }
+}
+part {
+  id: "973c63"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "120"
+  }
+  item {
+    id: "982"
+    color: "120"
+  }
+  item {
+    id: "983"
+    color: "120"
+    count: 2
+  }
+}
+part {
+  id: "973c66"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "89"
+  }
+  item {
+    id: "982"
+    color: "89"
+  }
+  item {
+    id: "983"
+    color: "89"
+    count: 2
+  }
+}
+part {
+  id: "973c67"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "2"
+  }
+  item {
+    id: "982"
+    color: "2"
+  }
+  item {
+    id: "983"
+    color: "3"
+    count: 2
+  }
+}
+part {
+  id: "973c71"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "55"
+  }
+  item {
+    id: "982"
+    color: "55"
+  }
+  item {
+    id: "983"
+    color: "2"
+    count: 2
+  }
+}
+part {
+  id: "973c72"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "88"
+  }
+  item {
+    id: "982"
+    color: "88"
+  }
+  item {
+    id: "983"
+    color: "28"
+    count: 2
+  }
+}
+part {
+  id: "973c73"
+  item {
+    id: "973"
+  }
+  item {
+    id: "981"
+    color: "85"
+  }
+  item {
+    id: "982"
+    color: "85"
+  }
+  item {
+    id: "983"
+    color: "85"
+    count: 2
+  }
+}
+part {
+  id: "981"
+  alternate_id: "3819"
+}
+part {
+  id: "982"
+  alternate_id: "3818"
+}
+part {
+  id: "983"
+  alternate_id: "3820"
+}
+
+part {
+  id: "989"
+  alternate_id: "30345"
+  alternate_id: "76385"
+}
+
+part {
+  id: "2039"
+}
+
+part {
+  id: "2335"
+  alternate_id: "60779"
+  alternate_id: "11055"
+}
+
+part {
+  id: "2336"
+}
+
+part {
+  id: "2339"
+  alternate_id: "14395"
+  generic_id: "2339u"
+}
+part {
+  id: "2339u"
+  alternate_id: "76768u"
+}
+
+part {
+  id: "2341"
+  alternate_id: "18759"
+}
+
+part {
+  id: "2343"
+  alternate_id: "6269"
+}
+
+part {
+  id: "2346"
+  similar_id: "56897"
+}
+
+part {
+  id: "2356"
+  alternate_id: "44042"
+}
+
+part {
+  id: "2357"
+}
+
+part {
+  id: "2362"
+}
+part {
+  id: "2362a"
+  alternate_id: "30009a"
+  generic_id: "2362"
+}
+part {
+  id: "2362b"
+  lego_id: "2362"
+  alternate_id: "30009b"
+  generic_id: "2362"
+}
+
+part {
+  id: "2377"
+  similar_id: "60032"
+}
+
+part {
+  id: "2399"
+  similar_id: "50373"
+}
+
+part {
+  id: "2412"
+}
+part {
+  id: "2412a"
+  generic_id: "2412"
+}
+part {
+  id: "2412b"
+  lego_id: "2412"
+  generic_id: "2412"
+  alternate_id: "15561"
+  alternate_id: "30244"
+}
+
+part {
+  id: "2413"
+  similar_id: "14181"
+}
+
+part {
+  id: "2415"
+}
+
+part {
+  id: "2417"
+}
+
+part {
+  id: "2418"
+}
+part {
+  id: "2418a"
+  generic_id: "2418"
+}
+part {
+  id: "2418b"
+  lego_id: "2418"
+  generic_id: "2418"
+}
+
+part {
+  id: "2420"
+}
+
+part {
+  id: "2423"
+}
+
+part {
+  id: "2429"
+}
+part {
+  id: "2430"
+}
+part {
+  id: "2429c01"
+  alternate_id: "73983"
+  item {
+    id: "2429"
+  }
+  item {
+    id: "2430"
+  }
+}
+
+part {
+  id: "2431"
+  alternate_id: "91143"
+}
+
+part {
+  id: "2432"
+}
+
+part {
+  id: "2433"
+}
+
+part {
+  id: "2434"
+}
+
+part {
+  id: "2435"
+}
+
+part {
+  id: "2436"
+  similar_id: "2436b"
+}
+part {
+  id: "2436b"
+  alternate_id: "10201"
+}
+
+part {
+  id: "2437"
+}
+
+part {
+  id: "2439"
+  similar_id: "92926"
+}
+
+part {
+  id: "2444"
+  similar_id: "10247"
+}
+
+part {
+  id: "2445"
+}
+
+part {
+  id: "2446"
+  alternate_id: "30124"
+  alternate_id: "88415"
+}
+
+part {
+  id: "2447"
+}
+
+part {
+  id: "2449"
+}
+
+part {
+  id: "2450"
+}
+
+part {
+  id: "2452"
+}
+
+part {
+  id: "2453"
+  similar_id: "2453b"
+}
+part {
+  id: "2453b"
+}
+
+part {
+  id: "2454"
+  similar_id: "46212"
+}
+
+part {
+  id: "2456"
+  alternate_id: "44237"
+}
+
+part {
+  id: "2458"
+}
+
+part {
+  id: "2460"
+}
+
+part {
+  id: "2462"
+}
+
+part {
+  id: "2463"
+}
+
+part {
+  id: "2464"
+}
+
+part {
+  id: "2465"
+}
+
+part {
+  id: "2476"
+  similar_id: "2476b"
+}
+part {
+  id: "2476b"
+}
+
+part {
+  id: "2489"
+}
+
+part {
+  id: "2493"
+  similar_id: "2493a"
+}
+part {
+  id: "2493a"
+}
+
+part {
+  id: "2494"
+}
+  
+part {
+  id: "2495"
+}
+
+part {
+  id: "2496"
+  alternate_id: "88423"
+}
+
+part {
+  id: "2524"
+}
+
+part {
+  id: "2529"
+  similar_id: "60607"
+}
+
+part {
+  id: "2540"
+}
+
+part {
+  id: "2546"
+}
+
+part {
+  id: "2547"
+  alternate_id: "2547a"
+  alternate_id: "2547b"
+}
+
+part {
+  id: "2548"
+  similar_id: "87587"
+}
+
+part {
+  id: "2555"
+  alternate_id: "12825"
+  similar_id: "15712"
+  similar_id: "93794"
+}
+
+part {
+  id: "2566"
+}
+
+part {
+  id: "2569"
+}
+
+part {
+  id: "2577"
+}
+
+part {
+  id: "2578"
+}
+part {
+  id: "2578a"
+  lego_id: "2578"
+  kindof_id: "2578"
+}
+part {
+  id: "2578b"
+  kindof_id: "2578"
+}
+
+part {
+  id: "2580c01"
+  alternate_id: "74573"
+}
+
+part {
+  id: "2582"
+  alternate_id: "6139"
+}
+
+part {
+  id: "2599"
+  alternate_id: "10190"
+  alternate_id: "59275"
+}
+
+part {
+  id: "2622"
+}
+
+part {
+  id: "2637"
+}
+
+part {
+  id: "2639"
+}
+
+part {
+  id: "2653"
+}
+
+part {
+  id: "2654"
+  alternate_id: "54196"
+  alternate_id: "93791"
+}
+
+part {
+  id: "2694"
+}
+
+part {
+  id: "2695"
+  similar_id: "60208"
+}
+
+part {
+  id: "2696"
+}
+
+part {
+  id: "2711"
+}
+
+part {
+  id: "2730"
+}
+
+part {
+  id: "2736"
+}
+
+part {
+  id: "2739"
+}
+part {
+  id: "2739a"
+  generic_id: "2739"
+}
+part {
+  id: "2739b"
+  generic_id: "2739"
+  alternate_id: "32005"
+}
+
+part {
+  id: "2741"
+}
+
+part {
+  id: "2743"
+}
+
+part {
+  id: "2744"
+}
+
+part {
+  id: "2780"
+  similar_id: "4459"
+}
+
+part {
+  id: "2807"
+}
+
+part {
+  id: "2817"
+}
+
+part {
+  id: "2819"
+}
+
+part {
+  id: "2823"
+}
+
+part {
+  id: "2825"
+  alternate_id: "32006"
+}
+
+part {
+  id: "2850"
+  similar_id: "2850b"
+}
+part {
+  id: "2850b"
+}
+
+part {
+  id: "2851"
+}
+
+part {
+  id: "2852"
+}
+
+part {
+  id: "2853"
+}
+
+part {
+  id: "2854"
+  alternate_id: "10721"
+}
+
+part {
+  id: "2857"
+}
+
+part {
+  id: "2865"
+  alternate_id: "74746"
+}
+
+part {
+  id: "2871"
+  similar_id: "2871b"
+}
+part {
+  id: "2871b"
+  lego_id: "2871"
+}
+
+part {
+  id: "2875"
+}
+
+part {
+  id: "2876"
+}
+
+part {
+  id: "2877"
+}
+
+part {
+  id: "2878c01"
+  alternate_id: "74784"
+}
+
+part {
+  id: "2902"
+}
+
+part {
+  id: "2903"
+}
+
+part {
+  id: "2904"
+}
+
+part {
+  id: "2905"
+  similar_id: "99773"
+}
+
+part {
+  id: "2906"
+}
+
+part {
+  id: "2907"
+}
+
+part {
+  id: "2908"
+}
+
+part {
+  id: "2909"
+}
+part {
+  id: "2909c01"
+}
+part {
+  id: "2909c02"
+  lego_id: "2909"
+  kindof_id: "2909c01"
+  alternate_id: "41475"
+  alternate_id: "75348"
+  item {
+    id: "2909"
+  }
+  item {
+    id: "109"
+  }
+  item {
+    id: "110b"
+  }
+}
+part {
+  id: "2909c03"
+  kindof_id: "2909c01"
+  alternate_id: "74741"
+  item {
+    id: "2909"
+  }
+  item {
+    id: "109"
+  }
+  item {
+    id: "110a"
+  }
+}
+
+part {
+  id: "2920"
+}
+
+part {
+  id: "2921"
+}
+
+part {
+  id: "2922"
+}
+
+part {
+  id: "2926"
+}
+
+part {
+  id: "2927"
+  similar_id: "50254"
+}
+
+part {
+  id: "2958"
+  alternate_id: "2723"
+  alternate_id: "52901"
+}
+
+part {
+  id: "2972"
+}
+
+part {
+  id: "3001"
+}
+
+part {
+  id: "3002"
+}
+
+part {
+  id: "3003"
+  alternate_id: "6223"
+}
+
+part {
+  id: "3004"
+  alternate_id: "93792"
+  similar_id: "3065"
+}
+
+part {
+  id: "3005"
+  alternate_id: "30071"
+}
+
+part {
+  id: "3006"
+  alternate_id: "92538"
+}
+
+part {
+  id: "3007"
+  alternate_id: "93888"
+}
+
+part {
+  id: "3008"
+}
+
+part {
+  id: "3009"
+  similar_id: "3067"
+}
+
+part {
+  id: "3010"
+  similar_id: "3066"
+}
+
+part {
+  id: "3020"
+}
+
+part {
+  id: "3021"
+}
+
+part {
+  id: "3022"
+  alternate_id: "94148"
+}
+
+part {
+  id: "3023"
+  alternate_id: "6225"
+}
+
+part {
+  id: "3024"
+  alternate_id: "30008"
+}
+
+part {
+  id: "3026"
+}
+
+part {
+  id: "3027"
+}
+
+part {
+  id: "3028"
+}
+
+part {
+  id: "3029"
+}
+
+part {
+  id: "3030"
+  similar_id: "3030a"
+}
+part {
+  id: "3030a"
+}
+
+part {
+  id: "3031"
+}
+
+part {
+  id: "3032"
+}
+
+part {
+  id: "3033"
+}
+
+part {
+  id: "3034"
+}
+
+part {
+  id: "3035"
+}
+
+part {
+  id: "3036"
+}
+
+part {
+  id: "3037"
+  similar_id: "3037b"
+}
+part {
+  id: "3037b"
+}
+
+part {
+  id: "3038"
+}
+
+part {
+  id: "3039"
+  alternate_id: "6227"
+}
+
+part {
+  id: "3040"
+  alternate_id: "6270"
+  similar_id: "3040a"
+}
+part {
+  id: "3040a"
+}
+
+part {
+  id: "3041"
+}
+
+part {
+  id: "3042"
+}
+
+part {
+  id: "3043"
+}
+
+part {
+  id: "3044"
+}
+part {
+  id: "3044a"
+  generic_id: "3044"
+}
+part {
+  id: "3044b"
+  generic_id: "3044"
+  lego_id: "3044"
+}
+part {
+  id: "3044c"
+  generic_id: "3044"
+}
+
+part {
+  id: "3045"
+}
+
+part {
+  id: "3046a"
+  similar_id: "3046b"
+  lego_id: "3046"
+}
+part {
+  id: "3046b"
+}
+
+part {
+  id: "3048a"
+  similar_id: "3048b"
+  similar_id: "3048c"
+  similar_id: "15571"
+}
+part {
+  id: "3048b"
+}
+part {
+  id: "3048c"
+  lego_id: "3048"
+}
+
+part {
+  id: "3049"
+}
+part {
+  id: "3049a"
+  generic_id: "3049"
+}
+part {
+  id: "3049b"
+  generic_id: "3049"
+  lego_id: "3049"
+}
+part {
+  id: "3049c"
+  generic_id: "3049"
+}
+
+part {
+  id: "3062"
+}
+part {
+  id: "3062a"
+  kindof_id: "3062"
+}
+part {
+  id: "3062b"
+  alternate_id: "30068"
+  lego_id: "3062"
+  kindof_id: "3062"
+}
+
+part {
+  id: "3063"
+  similar_id: "3063a"
+  similar_id: "85080"
+}
+part {
+  id: "3063a"
+}
+
+part {
+  id: "3065"
+}
+
+part {
+  id: "3066"
+}
+
+part {
+  id: "3067"
+}
+
+part {
+  id: "3068"
+}
+part {
+  id: "3068a"
+  generic_id: "3068"
+}
+part {
+  id: "3068b"
+  lego_id: "3068"
+  alternate_id: "88409"
+  generic_id: "3068"
+}
+
+part {
+  id: "3069"
+}
+part {
+  id: "3069a"
+  generic_id: "3069"
+}
+part {
+  id: "3069b"
+  lego_id: "3069"
+  alternate_id: "30070"
+  alternate_id: "88630"
+  alternate_id: "59489"
+  generic_id: "3069"
+}
+
+part {
+  id: "3070"
+}
+part {
+  id: "3070a"
+  generic_id: "3070"
+}
+part {
+  id: "3070b"
+  lego_id: "3070"
+  alternate_id: "30039"
+  generic_id: "3070"
+}
+
+part {
+  id: "3134"
+  similar_id: "3134a"
+}
+part {
+  id: "3134a"
+}
+
+part {
+  id: "3137c01"
+}
+
+part {
+  id: "3139"
+  similar_id: "59895"
+}
+
+part {
+  id: "3176"
+}
+
+part {
+  id: "3185"
+}
+
+part {
+  id: "3188"
+}
+
+part {
+  id: "3192"
+  lego_id: "3190"
+  similar_id: "60657"
+}
+part {
+  id: "3193"
+  lego_id: "3191"
+  similar_id: "60658"
+}
+
+part {
+  id: "3228"
+}
+part {
+  id: "3228a"
+  generic_id: "3228"
+}
+part {
+  id: "3228b"
+  generic_id: "3228"
+}
+part {
+  id: "3228c"
+  lego_id: "3228"
+  generic_id: "3228"
+}
+
+part {
+  id: "3245b"
+  similar_id: "3245c"
+}
+part {
+  id: "3245c"
+  lego_id: "3245"
+}
+
+part {
+  id: "3297"
+}
+
+part {
+  id: "3298"
+  similar_id: "30474"
+}
+
+part {
+  id: "3299"
+}
+
+part {
+  id: "3300"
+}
+
+part {
+  id: "3307"
+  similar_id: "12939"
+}
+
+part {
+  id: "3308"
+  similar_id: "16577"
+}
+
+part {
+  id: "3403"
+}
+
+part {
+  id: "3403c01"
+  alternate_id: "73603"
+  item {
+    id: "3403"
+  }
+  item {
+    id: "3404"
+  }
+}
+
+part {
+  id: "3404"
+  similar_id: "30658"
+}
+
+part {
+  id: "3455"
+  similar_id: "92950"
+}
+
+part {
+  id: "3456"
+}
+
+part {
+  id: "3460"
+}
+
+part {
+  id: "3464"
+}
+
+part {
+  id: "3475"
+  similar_id: "98302"
+}
+part {
+  id: "3475a"
+  generic_id: "3475"
+}
+part {
+  id: "3475b"
+  lego_id: "3475"
+  generic_id: "3475"
+}
+
+part {
+  id: "3483"
+  similar_id: "61254"
+}
+
+part {
+  id: "3622"
+  alternate_id: "45505"
+}
+
+part {
+  id: "3623"
+}
+
+part {
+  id: "3626"
+}
+part {
+  id: "3626a"
+  alternate_id: "30011a"
+  generic_id: "3626"
+}
+part {
+  id: "3626b"
+  alternate_id: "30011b"
+  generic_id: "3626"
+}
+part {
+  id: "3626c"
+  alternate_id: "30011c"
+  lego_id: "3626"
+  generic_id: "3626"
+}
+
+part {
+  id: "3633"
+}
+
+part {
+  id: "3641"
+  similar_id: "87414"
+}
+
+part {
+  id: "3647"
+  similar_id: "10928"
+}
+
+part {
+  id: "3648"
+}
+
+part {
+  id: "3650"
+}
+part {
+  id: "3650a"
+  generic_id: "3650"
+}
+part {
+  id: "3650b"
+  lego_id: "3650"
+  generic_id: "3650"
+}
+
+part {
+  id: "3659"
+}
+
+part {
+  id: "3660"
+}
+
+part {
+  id: "3665"
+}
+
+part {
+  id: "3666"
+}
+
+part {
+  id: "3673"
+}
+
+part {
+  id: "3675"
+}
+
+part {
+  id: "3676"
+}
+
+part {
+  id: "3678"
+}
+part {
+  id: "3678a"
+  generic_id: "3678"
+}
+part {
+  id: "3678b"
+  lego_id: "3678"
+  generic_id: "3678"
+}
+
+part {
+  id: "3679"
+}
+
+part {
+  id: "3680"
+}
+
+part {
+  id: "3684"
+  alternate_id: "30499"
+  similar_id: "3684b"
+  similar_id: "3684c"
+}
+part {
+  id: "3684b"
+}
+part {
+  id: "3684c"
+}
+
+part {
+  id: "3685"
+}
+
+part {
+  id: "3688"
+}
+
+part {
+  id: "3700"
+}
+
+part {
+  id: "3701"
+}
+
+part {
+  id: "3702"
+}
+
+part {
+  id: "3703"
+}
+
+part {
+  id: "3704"
+  similar_id: "32062"
+}
+
+part {
+  id: "3705"
+}
+
+part {
+  id: "3706"
+}
+
+part {
+  id: "3707"
+}
+
+part {
+  id: "3708"
+}
+
+part {
+  id: "3709"
+  alternate_id: "3709b"
+}
+
+part {
+  id: "3710"
+}
+
+part {
+  id: "3711"
+  alternate_id: "14696"
+}
+
+part {
+  id: "3713"
+  alternate_id: "6590"
+}
+
+part {
+  id: "3731"
+  similar_id: "15456"
+  alternate_id: "3729"
+}
+
+part {
+  id: "3737"
+  similar_id: "3737b"
+}
+part {
+  id: "3737b"
+}
+
+part {
+  id: "3738"
+}
+
+part {
+  id: "3741"
+}
+
+part {
+  id: "3742"
+  alternate_id: "56750"
+}
+part {
+  id: "3742c01"
+  item: {
+    id: "3742"
+    count: 4
+  }
+}
+
+part {
+  id: "3743"
+}
+
+part {
+  id: "3747"
+}
+part {
+  id: "3747a"
+  lego_id: "3747"
+  generic_id: "3747"
+}
+part {
+  id: "3747b"
+  generic_id: "3747"
+}
+
+part {
+  id: "3749"
+  alternate_id: "6562"
+}
+
+part {
+  id: "3754"
+  alternate_id: "44590"
+}
+
+part {
+  id: "3755"
+}
+
+part {
+  id: "3788"
+  similar_id: "60212"
+}
+
+part {
+  id: "3794"
+  similar_id: "15573"
+}
+part {
+  id: "3794a"
+  generic_id: "3794"
+}
+part {
+  id: "3794b"
+  generic_id: "3794"
+}
+
+part {
+  id: "3795"
+}
+
+part {
+  id: "3811"
+}
+
+part {
+  id: "3821"
+}
+
+part {
+  id: "3822"
+}
+
+part {
+  id: "3823"
+}
+
+part {
+  id: "3829c01"
+  lego_id: "3828"
+  lego_id: "3829"
+  alternate_id: "73081"
+}
+
+part {
+  id: "3830"
+}
+part {
+  id: "3831"
+}
+
+part {
+  id: "3832"
+}
+
+part {
+  id: "3833"
+}
+
+part {
+  id: "3835"
+}
+
+part {
+  id: "3836"
+}
+
+part {
+  id: "3837"
+  similar_id: "88431"
+}
+
+part {
+  id: "3838"
+}
+
+part {
+  id: "3839"
+}
+part {
+  id: "3839a"
+  generic_id: "3839"
+}
+part {
+  id: "3839b"
+  lego_id: "3839"
+  generic_id: "3839"
+}
+
+part {
+  id: "3846"
+}
+
+part {
+  id: "3853"
+}
+
+part {
+  id: "3854"
+  similar_id: "60608"
+}
+
+part {
+  id: "3857"
+  alternate_id: "2748"
+}
+
+part {
+  id: "3861"
+}
+
+part {
+  id: "3867"
+  alternate_id: "6098"
+}
+
+part {
+  id: "3873"
+  alternate_id: "15379"
+}
+
+part {
+  id: "3878"
+  alternate_id: "88412"
+}
+
+part {
+  id: "3894"
+}
+
+part {
+  id: "3895"
+}
+
+part {
+  id: "3900"
+}
+
+part {
+  id: "3901"
+}
+
+part {
+  id: "3933"
+}
+
+part {
+  id: "3934"
+}
+
+part {
+  id: "3935"
+}
+
+part {
+  id: "3936"
+}
+
+part {
+  id: "3937"
+}
+
+part {
+  id: "3938"
+}
+
+part {
+  id: "3939"
+  similar_id: "58181"
+}
+
+part {
+  id: "3941"
+  alternate_id: "6116"
+  alternate_id: "6143"
+}
+
+part {
+  id: "3942"
+}
+part {
+  id: "3942a"
+  generic_id: "3942"
+}
+part {
+  id: "3942b"
+  generic_id: "3942"
+}
+part {
+  id: "3942c"
+  lego_id: "3942"
+  alternate_id: "14918"
+  generic_id: "3942"
+}
+
+part {
+  id: "3943"
+}
+part {
+  id: "3943a"
+  generic_id: "3943"
+}
+part {
+  id: "3943b"
+  lego_id: "3943"
+  generic_id: "3943"
+}
+
+part {
+  id: "3956"
+}
+
+part {
+  id: "3957"
+  alternate_id: "30064"
+  similar_id: "3957b"
+}
+part {
+  id: "3957b"
+  alternate_id: "30064b"
+}
+
+part {
+  id: "3958"
+}
+
+part {
+  id: "3960"
+  alternate_id: "30065"
+}
+
+part {
+  id: "3961"
+}
+
+part {
+  id: "3962"
+  similar_id: "19220"
+}
+part {
+  id: "3962a"
+  generic_id: "3962"
+}
+part {
+  id: "3962b"
+  lego_id: "3962"
+  generic_id: "3962"
+}
+
+part {
+  id: "4019"
+  similar_id: "94925"
+}
+
+part {
+  id: "4022"
+}
+
+part {
+  id: "4025"
+  alternate_id: "15604"
+  similar_id: "4092"
+}
+
+part {
+  id: "4032"
+  similar_id: "4032b"
+}
+part {
+  id: "4032b"
+}
+
+part {
+  id: "4033"
+  similar_id: "6556"
+}
+
+part {
+  id: "4034"
+}
+
+part {
+  id: "4035"
+}
+
+part {
+  id: "4036"
+}
+
+part {
+  id: "4070"
+  alternate_id: "30069"
+}
+
+part {
+  id: "4073"
+  alternate_id: "6141"
+  alternate_id: "30057"
+}
+
+part {
+  id: "4079"
+  similar_id: "4079b"
+}
+part {
+  id: "4079b"
+}
+
+part {
+  id: "4081"
+}
+part {
+  id: "4081a"
+  kindof_id: "4081"
+}
+part {
+  id: "4081b"
+  lego_id: "4081"
+  kindof_id: "4081"
+}
+
+part {
+  id: "4083"
+}
+
+part {
+  id: "4084"
+}
+
+part {
+  id: "4085"
+}
+part {
+  id: "4085a"
+  generic_id: "4085"
+}
+part {
+  id: "4085b"
+  generic_id: "4085"
+}
+part {
+  id: "4085c"
+  generic_id: "4085"
+}
+part {
+  id: "4085d"
+  lego_id: "4085"
+  generic_id: "4085"
+  alternate_id: "60897"
+}
+
+part {
+  id: "4092"
+}
+
+part {
+  id: "4093"
+}
+part {
+  id: "4093a"
+  kindof_id: "4093"
+  lego_id: "4093"
+}
+part {
+  id: "4093b"
+  kindof_id: "4093"
+}
+part {
+  id: "4093c"
+  kindof_id: "4093"
+}
+
+part {
+  id: "4150"
+  similar_id: "14769"
+}
+
+part {
+  id: "4151"
+}
+part {
+  id: "4151b"
+  lego_id: "4151"
+}
+
+part {
+  id: "4161"
+}
+
+part {
+  id: "4162"
+}
+
+part {
+  id: "4175"
+}
+
+part {
+  id: "4176"
+  alternate_id: "30607"
+}
+
+part {
+  id: "4181"
+}
+
+part {
+  id: "4182"
+}
+
+part {
+  id: "4183"
+}
+
+part {
+  id: "4185"
+  alternate_id: "2786"
+}
+
+part {
+  id: "4201"
+  alternate_id: "43802"
+}
+
+part {
+  id: "4202"
+  alternate_id: "60033"
+}
+
+part {
+  id: "4204"
+  alternate_id: "44041"
+}
+
+part {
+  id: "4210"
+}
+
+part {
+  id: "4212"
+}
+part {
+  id: "4212a"
+  generic_id: "4212"
+}
+part {
+  id: "4212b"
+  lego_id: "4212"
+  generic_id: "4212"
+}
+
+part {
+  id: "4213"
+}
+
+part {
+  id: "4215"
+  alternate_id: "30077"
+}
+part {
+  id: "4215a"
+  generic_id: "4215"
+  alternate_id: "30077a"
+}
+part {
+  id: "4215b"
+  lego_id: "4215"
+  generic_id: "4215"
+  alternate_id: "30077b"
+  similar_id: "60581"
+}
+
+part {
+  id: "4216"
+}
+
+part {
+  id: "4217"
+}
+
+part {
+  id: "4218"
+  alternate_id: "30061"
+}
+
+part {
+  id: "4219"
+}
+
+part {
+  id: "4228"
+}
+
+part {
+  id: "4265"
+}
+part {
+  id: "4265a"
+  generic_id: "4265"
+}
+part {
+  id: "4265b"
+  generic_id: "4265"
+}
+part {
+  id: "4265c"
+  alternate_id: "32123"
+  generic_id: "4265"
+}
+
+part {
+  id: "4266"
+}
+
+part {
+  id: "4267"
+}
+
+part {
+  id: "4274"
+}
+
+part {
+  id: "4275"
+}
+
+part {
+  id: "4276"
+}
+
+part {
+  id: "4282"
+}
+
+part {
+  id: "4285"
+}
+part {
+  id: "4285a"
+  generic_id: "4285"
+}
+part {
+  id: "4285b"
+  lego_id: "4285"
+  generic_id: "4285"
+}
+
+part {
+  id: "4286"
+  similar_id: "4286b"
+}
+part {
+  id: "4286b"
+}
+
+part {
+  id: "4287"
+}
+
+part {
+  id: "4315"
+}
+
+part {
+  id: "4342"
+}
+
+part {
+  id: "4345"
+  alternate_id: "30060"
+  similar_id: "4345a"
+}
+part {
+  id: "4345a"
+}
+
+part {
+  id: "4346"
+  alternate_id: "30059"
+}
+
+part {
+  id: "4349"
+}
+
+part {
+  id: "4360"
+}
+
+part {
+  id: "4429"
+}
+
+part {
+  id: "4445"
+}
+
+part {
+  id: "4459"
+}
+
+part {
+  id: "4460a"
+  similar_id: "4460b"
+}
+part {
+  id: "4460b"
+  lego_id: "4460"
+}
+
+part {
+  id: "4477"
+}
+
+part {
+  id: "4485"
+  similar_id: "4485b"
+}
+part {
+  id: "4485b"
+  alternate_id: "86035"
+}
+
+part {
+  id: "4488"
+}
+
+part {
+  id: "4490"
+}
+
+part {
+  id: "4495"
+}
+
+part {
+  id: "4509"
+}
+
+part {
+  id: "4510"
+}
+
+part {
+  id: "4515"
+}
+
+part {
+  id: "4519"
+}
+
+part {
+  id: "4522"
+}
+
+part {
+  id: "4530"
+  alternate_id: "96859"
+}
+
+part {
+  id: "4532"
+  alternate_id: "92410"
+}
+
+part {
+  id: "4533"
+  alternate_id: "30125"
+}
+
+part {
+  id: "4536"
+}
+
+part {
+  id: "4588"
+}
+
+part {
+  id: "4589"
+  similar_id: "4589b"
+  alternate_id: "6188"
+}
+part {
+  id: "4589b"
+  alternate_id: "59900"
+  alternate_id: "64288"
+}
+
+part {
+  id: "4590"
+}
+
+# Lever small base
+part {
+  id: "4592"
+  alternate_id: "298"
+}
+part {
+  id: "4592c01"
+  item {
+    id: "4592"
+  }
+  item {
+    id: "4593"
+    color: "3"
+  }
+}
+part {
+  id: "4592c02"
+  lego_id: "4592"
+  alternate_id: "73587"
+  item {
+    id: "4592"
+  }
+  item {
+    id: "4593"
+    color: "11"
+  }
+}
+part {
+  id: "4592c03"
+  lego_id: "4592"
+  item {
+    id: "4592"
+  }
+  item {
+    id: "4593"
+    color: "9"
+  }
+}
+part {
+  id: "4592c04"
+  lego_id: "4592"
+  item {
+    id: "4592"
+  }
+  item {
+    id: "4593"
+    color: "1"
+  }
+}
+part {
+  id: "4592c05"
+  item {
+    id: "4592"
+  }
+  item {
+    id: "4593"
+    color: "86"
+  }
+}
+part {
+  id: "4593"
+}
+
+part {
+  id: "4594"
+}
+
+part {
+  id: "4595"
+}
+
+part {
+  id: "4596"
+}
+
+part {
+  id: "4597"
+}
+
+part {
+  id: "4598"
+}
+
+part {
+  id: "4599"
+  similar_id: "4599b"
+}
+part {
+  id: "4599b"
+}
+
+part {
+  id: "4600"
+}
+
+part {
+  id: "4617"
+  similar_id: "4617a"
+}
+part {
+  id: "4617a"
+}
+
+part {
+  id: "4623"
+  similar_id: "88072"
+}
+
+part {
+  id: "4624"
+}
+
+part {
+  id: "4697"
+}
+part {
+  id: "4697a"
+  generic_id: "4697"
+}
+part {
+  id: "4697b"
+  lego_id: "4697"
+  generic_id: "4697"
+}
+
+part {
+  id: "4716"
+}
+
+part {
+  id: "4719"
+}
+part {
+  id: "4719c01"
+  lego_id: "4719"
+  item {
+    id: "4719"
+  }
+  item {
+    id: "2807"
+    color: "11"
+    count: 2
+  }
+  item {
+    id: "4720"
+    count: 2
+  }
+}
+part {
+  id: "4720"
+}
+
+part {
+  id: "4727"
+}
+
+part {
+  id: "4728"
+  similar_id: "98262"
+}
+
+part {
+  id: "4729"
+}
+
+part {
+  id: "4730"
+  similar_id: "6232"
+}
+
+part {
+  id: "4732"
+}
+
+part {
+  id: "4733"
+}
+
+part {
+  id: "4735"
+}
+
+part {
+  id: "4738"
+}
+part {
+  id: "4738a"
+  generic_id: "4738"
+}
+part {
+  id: "4738b"
+  generic_id: "4738"
+}
+
+part {
+  id: "4739"
+}
+part {
+  id: "4739a"
+  generic_id: "4739"
+}
+part {
+  id: "4739b"
+  generic_id: "4739"
+}
+
+part {
+  id: "4740"
+  alternate_id: "30063"
+  alternate_id: "71874"
+}
+
+part {
+  id: "4742"
+}
+
+part {
+  id: "4744"
+}
+
+part {
+  id: "4773"
+  alternate_id: "4770"
+}
+
+part {
+  id: "4794b"
+  alternate_id: "4794"
+}
+
+part {
+  id: "4844"
+  similar_id: "13349"
+}
+
+part {
+  id: "4854"
+  similar_id: "72454"
+}
+
+part {
+  id: "4855"
+  similar_id: "13349"
+}
+
+part {
+  id: "4856a"
+  similar_id: "4856b"
+  lego_id: "4856"
+}
+part {
+  id: "4856b"
+}
+
+part {
+  id: "4857"
+}
+
+part {
+  id: "4858"
+  similar_id: "93348"
+}
+
+part {
+  id: "4859"
+  similar_id: "48183"
+}
+
+part {
+  id: "4861"
+}
+
+part {
+  id: "4864"
+  similar_id: "87552"
+}
+part {
+  id: "4864a"
+  generic_id: "4864"
+}
+part {
+  id: "4864b"
+  lego_id: "4864"
+  generic_id: "4864"
+}
+
+part {
+  id: "4865"
+  similar_id: "4865b"
+  alternate_id: "30010"
+}
+part {
+  id: "4865b"
+  lego_id: "4865"
+  alternate_id: "15714"
+}
+
+part {
+  id: "4868ac01"
+  item {
+    id: "4868a"
+  }
+  item {
+    id: "4869"
+    color: "9"
+  }
+}
+
+part {
+  id: "4868a"
+}
+
+part {
+  id: "4868bc01"
+  item {
+    id: "4868b"
+  }
+  item {
+    id: "4869"
+    color: "86"
+  }
+}
+
+part {
+  id: "4868b"
+  lego_id: "4868"
+}
+
+part {
+  id: "4869"
+}
+
+part {
+  id: "4870"
+}
+part {
+  id: "4870c01"
+  item {
+    id: "4870"
+  }
+  item {
+    id: "4624"
+    color: "9"
+    count: 2
+  }
+  item {
+    id: "3139"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "4870c02"
+  item {
+    id: "4870"
+  }
+  item {
+    id: "4624"
+    color: "1"
+    count: 2
+  }
+  item {
+    id: "3139"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "4870c03"
+  item {
+    id: "4870"
+  }
+  item {
+    id: "4624"
+    color: "86"
+    count: 2
+  }
+  item {
+    id: "3139"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "4870c04"
+  item {
+    id: "4870"
+  }
+  item {
+    id: "4624"
+    color: "1"
+    count: 2
+  }
+  item {
+    id: "59895"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "4870c05"
+  item {
+    id: "4870"
+  }
+  item {
+    id: "30027b"
+    color: "11"
+    count: 2
+  }
+  item {
+    id: "30028"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "4870c06"
+  item {
+    id: "4870"
+  }
+  item {
+    id: "4624"
+    color: "86"
+    count: 2
+  }
+  item {
+    id: "3641"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "4870c07"
+  item {
+    id: "4870"
+  }
+  item {
+    id: "4624"
+    color: "86"
+    count: 2
+  }
+  item {
+    id: "59895"
+    color: "11"
+    count: 2
+  }
+}
+
+part {
+  id: "4871"
+}
+
+# 4mm pneumatic tube family
+part {
+  id: "5102"
+}
+part {
+  id: "5102c02"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c03"
+  kindof_id: "5102"
+  alternate_id: "21761"
+}
+part {
+  id: "5102c04"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c05"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c06"
+  kindof_id: "5102"
+  alternate_id: "21766"
+}
+part {
+  id: "5102c07"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c08"
+  kindof_id: "5102"
+  alternate_id: "21837"
+}
+part {
+  id: "5102c09"
+  kindof_id: "5102"
+  alternate_id: "21826"
+}
+part {
+  id: "5102c10"
+  kindof_id: "5102"
+  alternate_id: "21767"
+}
+part {
+  id: "5102c11"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c12"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c13"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c14"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c15"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c16"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c17"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c18"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c19"
+  kindof_id: "5102"
+  alternate_id: "21839"
+}
+part {
+  id: "5102c20"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c21"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c22"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c23"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c24"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c25"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c26"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c27"
+  kindof_id: "5102"
+  alternate_id: "21830"
+}
+part {
+  id: "5102c28"
+  kindof_id: "5102"
+  alternate_id: "21825"
+}
+part {
+  id: "5102c29"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c30"
+  kindof_id: "5102"
+  alternate_id: "21833"
+}
+part {
+  id: "5102c31"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c32"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c33"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c34"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c35"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c36"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c37"
+  kindof_id: "5102"
+  alternate_id: "21835"
+}
+part {
+  id: "5102c38"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c39"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c40"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c42"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c48"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c50"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c54"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c60"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c66"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c68"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c76"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c80"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c82"
+  kindof_id: "5102"
+}
+part {
+  id: "5102c89"
+  kindof_id: "5102"
+}
+
+part {
+  id: "6003"
+}
+
+part {
+  id: "6005"
+  alternate_id: "92903"
+}
+
+part {
+  id: "6014"
+}
+part {
+  id: "6014a"
+  generic_id: "6014"
+}
+part {
+  id: "6014b"
+  generic_id: "6014"
+}
+
+part {
+  id: "6015"
+  similar_id: "60700"
+  similar_id: "87697"
+}
+
+part {
+  id: "6019"
+  similar_id: "61252"
+}
+
+part {
+  id: "6020"
+}
+
+part {
+  id: "6021"
+}
+
+part {
+  id: "6023"
+}
+
+part {
+  id: "6024"
+}
+
+part {
+  id: "6025"
+}
+
+part {
+  id: "6026c01"
+  item {
+    id: "6026"
+  }
+  item {
+    id: "6027"
+  }
+  item {
+    id: "6028"
+  }
+}
+
+part {
+  id: "6026"
+}
+
+part {
+  id: "6027"
+}
+
+part {
+  id: "6028"
+}
+
+part {
+  id: "6029a"
+  alternate_id: "87695"
+}
+
+part {
+  id: "6030"
+}
+
+part {
+  id: "6032"
+}
+
+part {
+  id: "6037"
+}
+
+part {
+  id: "6039"
+}
+
+part {
+  id: "6041"
+}
+
+part {
+  id: "6044"
+}
+
+part {
+  id: "6056"
+}
+
+part {
+  id: "6058"
+}
+
+part {
+  id: "6059"
+  alternate_id: "12818"
+}
+
+part {
+  id: "6060"
+  alternate_id: "15967"
+}
+
+part {
+  id: "6061"
+}
+
+part {
+  id: "6064"
+}
+
+part {
+  id: "6065"
+}
+
+part {
+  id: "6066"
+}
+
+part {
+  id: "6069"
+  similar_id: "48933"
+}
+
+part {
+  id: "6070"
+}
+
+part {
+  id: "6072"
+}
+
+part {
+  id: "6081"
+}
+
+part {
+  id: "6082"
+}
+
+part {
+  id: "6083"
+}
+
+part {
+  id: "6086"
+}
+
+part {
+  id: "6087"
+  similar_id: "76766"
+}
+
+part {
+  id: "6091"
+}
+
+part {
+  id: "6107"
+}
+
+part {
+  id: "6108"
+  similar_id: "14707"
+}
+
+part {
+  id: "6111"
+}
+
+part {
+  id: "6112"
+}
+
+part {
+  id: "6134"
+}
+
+part {
+  id: "6153a"
+  similar_id: "6153b"
+}
+part {
+  id: "6153b"
+  lego_id: "6153"
+}
+
+part {
+  id: "6157"
+  similar_id: "11002"
+}
+
+part {
+  id: "6160"
+  similar_id: "57894"
+}
+
+part {
+  id: "6162"
+  similar_id: "47376"
+}
+
+part {
+  id: "6168"
+}
+part {
+  id: "6168c01"
+  alternate_id: "75347"
+}
+
+part {
+  id: "6177"
+}
+
+part {
+  id: "6178"
+}
+
+part {
+  id: "6179"
+}
+
+part {
+  id: "6180"
+}
+
+part {
+  id: "6182"
+}
+
+part {
+  id: "6183"
+}
+
+part {
+  id: "6184"
+}
+
+part {
+  id: "6190"
+}
+
+part {
+  id: "6191"
+  alternate_id: "10314"
+}
+
+part {
+  id: "6205"
+}
+
+part {
+  id: "6192"
+  alternate_id: "30337"
+}
+
+part {
+  id: "6212"
+}
+
+part {
+  id: "6213pb01"
+  lego_id: "6213"
+}
+
+part {
+  id: "6215"
+}
+
+part {
+  id: "6216"
+}
+
+part {
+  id: "6222"
+}
+
+part {
+  id: "6228u"
+}
+part {
+  id: "6228a"
+  generic_id: "6228u"
+}
+part {
+  id: "6228b"
+  generic_id: "6228u"
+  lego_id: "6228"
+}
+part {
+  id: "6228c"
+  generic_id: "6228u"
+}
+
+part {
+  id: "6230"
+}
+
+part {
+  id: "6231"
+}
+
+part {
+  id: "6232"
+}
+
+part {
+  id: "6233"
+}
+
+part {
+  id: "6238"
+}
+
+part {
+  id: "6246a"
+  alternate_id: "55298"
+}
+
+part {
+  id: "6246b"
+  alternate_id: "55295"
+}
+
+part {
+  id: "6246c"
+  alternate_id: "55297"
+}
+
+part {
+  id: "6246d"
+  alternate_id: "55300"
+}
+
+part {
+  id: "6246e"
+  alternate_id: "55299"
+}
+
+part {
+  id: "6246f"
+  alternate_id: "55296"
+}
+
+part {
+  id: "6249"
+}
+
+part {
+  id: "6250"
+}
+
+part {
+  id: "6251"
+}
+
+part {
+  id: "6259"
+  alternate_id: "6218"
+  alternate_id: "20430"
+}
+
+part {
+  id: "6260"
+  similar_id: "60115"
+}
+
+part {
+  id: "6265"
+}
+
+part {
+  id: "6266"
+}
+
+part {
+  id: "6536"
+}
+
+part {
+  id: "6538"
+}
+part {
+  id: "6538a"
+  generic_id: "6538"
+}
+part {
+  id: "6538b"
+  lego_id: "6538"
+  generic_id: "6538"
+}
+part {
+  id: "6538c"
+  generic_id: "6538"
+  alternate_id: "59443"
+}
+
+part {
+  id: "6539"
+}
+
+part {
+  id: "6541"
+}
+
+part {
+  id: "6542"
+  similar_id: "6542b"
+}
+part {
+  id: "6542b"
+}
+
+part {
+  id: "6553"
+}
+
+part {
+  id: "6556"
+}
+
+part {
+  id: "6558"
+}
+
+part {
+  id: "6564"
+}
+
+part {
+  id: "6565"
+}
+
+part {
+  id: "6571"
+}
+
+part {
+  id: "6572"
+}
+
+part {
+  id: "6573"
+}
+
+part {
+  id: "6574"
+}
+
+part {
+  id: "6575"
+}
+
+part {
+  id: "6576"
+}
+
+part {
+  id: "6578"
+  similar_id: "58090"
+}
+
+part {
+  id: "6583"
+}
+
+part {
+  id: "6587"
+  alternate_id: "13670"
+}
+
+part {
+  id: "6589"
+}
+
+part {
+  id: "6628"
+}
+
+part {
+  id: "6629"
+}
+
+part {
+  id: "6631"
+}
+
+part {
+  id: "6632"
+}
+
+part {
+  id: "6636"
+}
+
+part {
+  id: "6641"
+  alternate_id: "19437"
+}
+
+part {
+  id: "6881"
+  similar_id: "10202"
+}
+
+part {
+  id: "8529"
+}
+
+part {
+  id: "9244c01"
+  lego_id: "9244"
+  item {
+    id: "90"
+    count: 2
+  }
+  item {
+    id: "91"
+  }
+}
+
+part {
+  id: "10172"
+}
+
+part {
+  id: "10197"
+}
+
+part {
+  id: "10202"
+}
+
+part {
+  id: "10247"
+}
+
+part {
+  id: "10288"
+}
+
+part {
+  id: "10884"
+  similar_id: "30239"
+}
+
+part {
+  id: "10928"
+}
+
+part {
+  id: "11002"
+}
+
+part {
+  id: "11090"
+}
+
+part {
+  id: "11203"
+}
+
+part {
+  id: "11211"
+}
+
+part {
+  id: "11212"
+}
+
+part {
+  id: "11214"
+}
+
+part {
+  id: "11215"
+}
+
+part {
+  id: "11250"
+}
+
+part {
+  id: "11253"
+  alternate_id: "18747"
+}
+
+part {
+  id: "11290"
+}
+
+part {
+  id: "11301"
+}
+
+part {
+  id: "11402a"
+  alternate_id: "604550"
+  similar_id: "6246a"
+}
+
+part {
+  id: "11402b"
+  alternate_id: "604549"
+}
+
+part {
+  id: "11402c"
+  alternate_id: "604548"
+  similar_id: "6246f"
+}
+
+part {
+  id: "11402d"
+  alternate_id: "604553"
+}
+
+part {
+  id: "11402e"
+  alternate_id: "604615"
+}
+
+part {
+  id: "11402f"
+  alternate_id: "604614"
+}
+
+part {
+  id: "11402g"
+  similar_id: "6246e"
+  alternate_id: "604551"
+}
+
+part {
+  id: "11402h"
+  similar_id: "6246d"
+  alternate_id: "604552"
+}
+
+part {
+  id: "11402i"
+  similar_id: "6246b"
+  alternate_id: "604547"
+}
+
+part {
+  id: "11455"
+}
+
+part {
+  id: "11458"
+}
+
+part {
+  id: "11476"
+}
+
+part {
+  id: "11477"
+}
+
+part {
+  id: "11478"
+}
+
+part {
+  id: "11603pb01"
+  lego_id: "11603"
+  similar_id: "11603pb02"
+}
+part {
+  id: "11603pb02"
+}
+
+part {
+  id: "11833"
+}
+
+part {
+  id: "11946"
+}
+
+part {
+  id: "11947"
+}
+
+part {
+  id: "11949"
+}
+
+part {
+  id: "11950"
+}
+
+part {
+  id: "11954"
+}
+
+part {
+  id: "11955"
+}
+
+part {
+  id: "12888pb01"
+  alternate_id: "12888"
+}
+
+part {
+  id: "12939"
+  alternate_id: "15254"
+}
+
+part {
+  id: "13269"
+}
+
+part {
+  id: "13349"
+}
+
+part {
+  id: "13392pb01"
+  lego_id: "13392"
+  similar_id: "13392pb02"
+}
+
+part {
+  id: "13392pb02"
+}
+
+part {
+  id: "13459"
+}
+
+part {
+  id: "13547"
+}
+
+part {
+  id: "13548"
+}
+
+part {
+  id: "13562"
+  similar_id: "30132"
+}
+
+part {
+  id: "13965"
+}
+
+part {
+  id: "13971"
+  similar_id: "56902"
+}
+
+part {
+  id: "14181"
+}
+
+part {
+  id: "14301"
+  alternate_id: "758"
+}
+
+part {
+  id: "14413"
+}
+
+part {
+  id: "14417"
+}
+
+part {
+  id: "14418"
+}
+
+part {
+  id: "14520"
+  similar_id: "52038"
+}
+
+part {
+  id: "14682"
+}
+
+part {
+  id: "14704"
+}
+
+part {
+  id: "14707"
+  alternate_id: "18838"
+}
+
+part {
+  id: "14716"
+}
+
+part {
+  id: "14719"
+}
+
+part {
+  id: "14720"
+}
+
+part {
+  id: "14769"
+}
+
+part {
+  id: "15038"
+}
+
+part {
+  id: "15068"
+}
+
+part {
+  id: "15071"
+}
+
+part {
+  id: "15100"
+}
+
+part {
+  id: "15208"
+}
+
+part {
+  id: "15209"
+}
+
+part {
+  id: "15279"
+}
+
+part {
+  id: "15395"
+}
+
+part {
+  id: "15397"
+}
+
+part {
+  id: "15413"
+}
+
+part {
+  id: "15444"
+}
+
+part {
+  id: "15456"
+}
+
+part {
+  id: "15458"
+}
+
+part {
+  id: "15459"
+}
+
+part {
+  id: "15460"
+}
+
+part {
+  id: "15470"
+}
+
+part {
+  id: "15462"
+}
+
+part {
+  id: "15533"
+}
+
+part {
+  id: "15535"
+}
+
+part {
+  id: "15571"
+}
+
+part {
+  id: "15573"
+}
+
+part {
+  id: "15623pb001"
+  similar_id: "15623pb002"
+  lego_id: "15623"
+}
+part {
+  id: "15623pb002"
+}
+
+part {
+  id: "15624"
+}
+
+part {
+  id: "15625"
+}
+
+part {
+  id: "15712"
+}
+
+part {
+  id: "15790"
+  similar_id: "30332"
+}
+
+part {
+  id: "16577"
+}
+
+part {
+  id: "15679pb01"
+  alternate_id: "15679"
+}
+
+part {
+  id: "17114"
+  kindof_id: "57908"
+}
+
+part {
+  id: "17485"
+}
+
+part {
+  id: "18651"
+}
+
+part {
+  id: "18654"
+}
+
+part {
+  id: "18677"
+}
+
+part {
+  id: "18866"
+  similar_id: "30218"
+}
+
+part {
+  id: "18938"
+}
+
+part {
+  id: "19220"
+}
+
+part {
+  id: "21459"
+}
+
+part {
+  id: "22667"
+  alternate_id: "71842"
+}
+
+part {
+  id: "23714"
+  alternate_id: "62575"
+}
+
+part {
+  id: "30000"
+}
+
+part {
+  id: "30027"
+  similar_id: "74967"
+}
+part {
+  id: "30027a"
+  generic_id: "30027"
+}
+part {
+  id: "30027b"
+  generic_id: "30027"
+}
+
+part {
+  id: "30028"
+}
+
+part {
+  id: "30031"
+  similar_id: "98397"
+}
+
+part {
+  id: "30033"
+  similar_id: "75937"
+}
+
+part {
+  id: "30044"
+}
+
+part {
+  id: "30045"
+}
+
+part {
+  id: "30046"
+  alternate_id: "37411"
+}
+
+part {
+  id: "30056"
+}
+
+part {
+  id: "30072"
+}
+
+part {
+  id: "30076"
+}
+
+part {
+  id: "30085"
+  alternate_id: "x98"
+}
+
+part {
+  id: "30090"
+}
+
+part {
+  id: "30093"
+}
+
+part {
+  id: "30099"
+}
+
+part {
+  id: "30103"
+}
+
+part {
+  id: "30104"
+  alternate_id: "60169"
+}
+
+part {
+  id: "30115"
+}
+
+part {
+  id: "30117"
+  alternate_id: "30320"
+}
+
+part {
+  id: "30132"
+}
+
+part {
+  id: "30134"
+}
+
+part {
+  id: "30136"
+}
+
+part {
+  id: "30137"
+}
+
+part {
+  id: "30144"
+  alternate_id: "97492"
+}
+
+part {
+  id: "30145"
+}
+
+part {
+  id: "30149"
+}
+
+part {
+  id: "30151"
+}
+part {
+  id: "30151a"
+  generic_id: "30151"
+}
+part {
+  id: "30151b"
+  generic_id: "30151"
+  lego_id: "30151"
+}
+
+part {
+  id: "30155"
+}
+
+part {
+  id: "30157"
+}
+
+part {
+  id: "30162"
+}
+
+part {
+  id: "30165"
+}
+
+part {
+  id: "30169"
+}
+
+part {
+  id: "30170"
+}
+
+part {
+  id: "30171"
+  alternate_id: "90510"
+}
+
+part {
+  id: "30172"
+}
+
+part {
+  id: "30173"
+  alternate_id: "88420"
+  similar_id: "30173b"
+  similar_id: "21459"
+}
+part {
+  id: "30173b"
+}
+
+part {
+  id: "30176"
+}
+
+part {
+  id: "30179"
+  similar_id: "60596"
+}
+
+part {
+  id: "30180"
+}
+
+part {
+  id: "30181"
+}
+
+part {
+  id: "30182"
+}
+
+part {
+  id: "30183"
+}
+
+part {
+  id: "30193"
+}
+
+part {
+  id: "30201"
+}
+
+part {
+  id: "30212"
+}
+
+part {
+  id: "30218"
+}
+
+part {
+  id: "30222"
+}
+
+part {
+  id: "30225"
+  alternate_id: "51595"
+}
+
+part {
+  id: "30229"
+}
+
+part {
+  id: "30235"
+}
+
+part {
+  id: "30236"
+}
+
+part {
+  id: "30237"
+  similar_id: "30237b"
+  alternate_id: "95820"
+}
+part {
+  id: "30237b"
+  lego_id: "30237"
+}
+
+part {
+  id: "30238"
+}
+
+part {
+  id: "30239"
+}
+
+part {
+  id: "30241"
+  alternate_id: "60475"
+}
+part {
+  id: "30241b"
+  alternate_id: "60475b"
+}
+
+part {
+  id: "30249"
+}
+
+part {
+  id: "30250"
+}
+
+part {
+  id: "30256"
+  similar_id: "98549"
+}
+
+part {
+  id: "30272"
+}
+
+part {
+  id: "30274"
+}
+
+part {
+  id: "30283"
+  similar_id: "60219"
+}
+
+part {
+  id: "30285"
+}
+
+part {
+  id: "30293"
+  alternate_id: "42284"
+  alternate_id: "53933"
+}
+
+part {
+  id: "30294"
+  alternate_id: "42291"
+  alternate_id: "53934"
+}
+
+part {
+  id: "30332"
+}
+
+part {
+  id: "30350"
+}
+part {
+  id: "30350a"
+  generic_id: "30350"
+}
+part {
+  id: "30350b"
+  generic_id: "30350"
+}
+part {
+  id: "30350c"
+  generic_id: "30350"
+}
+
+part {
+  id: "30357"
+}
+
+part {
+  id: "30359"
+}
+part {
+  id: "30359a"
+  generic_id: "30359"
+}
+part {
+  id: "30359b"
+  lego_id: "30359"
+  generic_id: "30359"
+}
+
+part {
+  id: "30360"
+}
+
+
+part {
+  id: "30361"
+}
+part {
+  id: "30361a"
+  generic_id: "30361"
+}
+part {
+  id: "30361b"
+  generic_id: "30361"
+}
+part {
+  id: "30361c"
+  lego_id: "30361"
+  generic_id: "30361"
+}
+
+part {
+  id: "30363"
+}
+
+part {
+  id: "30364"
+}
+
+part {
+  id: "30365"
+}
+
+part {
+  id: "30373"
+}
+
+part {
+  id: "30374"
+  alternate_id: "578"
+  alternate_id: "21462"
+}
+
+part {
+  id: "30377"
+}
+
+part {
+  id: "30381"
+  alternate_id: "96232"
+  alternate_id: "98011"
+}
+
+part {
+  id: "30382"
+}
+
+part {
+  id: "30383"
+}
+
+part {
+  id: "30384"
+  similar_id: "89762"
+}
+
+part {
+  id: "30386"
+}
+
+part {
+  id: "30387"
+}
+
+part {
+  id: "30388"
+}
+
+part {
+  id: "30389"
+}
+part {
+  id: "30389b"
+  lego_id: "30389"
+  similar_id: "30389c"
+}
+part {
+  id: "30389c"
+}
+
+part {
+  id: "30390"
+  alternate_id: "15647"
+}
+
+part {
+  id: "30391"
+  similar_id: "92402"
+}
+
+part {
+  id: "30400"
+}
+
+part {
+  id: "30410"
+  alternate_id: "92756"
+}
+
+part {
+  id: "30413"
+  alternate_id: "15207"
+  alternate_id: "43337"
+}
+
+part {
+  id: "30414"
+}
+
+part {
+  id: "30474"
+}
+
+part {
+  id: "30483"
+}
+
+part {
+  id: "30503"
+}
+
+part {
+  id: "30504"
+}
+
+part {
+  id: "30505"
+}
+
+part {
+  id: "30516"
+}
+
+part {
+  id: "30516cu"
+  item {
+    id: "3404"
+  }
+  item {
+    id: "30516"
+  }
+}
+
+part {
+  id: "30517"
+  similar_id: "57893"
+  similar_id: "58827"
+  similar_id: "95347"  
+}
+
+part {
+  id: "30526"
+}
+
+part {
+  id: "30535"
+}
+
+part {
+  id: "30540"
+}
+
+part {
+  id: "30541"
+}
+
+part {
+  id: "30552"
+}
+
+part {
+  id: "30553"
+}
+
+part {
+  id: "30562"
+  alternate_id: "46361"
+}
+
+part {
+  id: "30565"
+}
+
+part {
+  id: "30592"
+}
+
+part {
+  id: "30602"
+  alternate_id: "47904"
+}
+
+part {
+  id: "30614"
+  alternate_id: "41630"
+}
+
+part {
+  id: "30648"
+}
+
+part {
+  id: "30658"
+}
+
+part {
+  id: "30663"
+  alternate_id: "16091"
+}
+
+part {
+  id: "32000"
+}
+
+part {
+  id: "32001"
+}
+
+part {
+  id: "32002"
+}
+part {
+  id: "32007"
+}
+
+part {
+  id: "32009"
+}
+
+part {
+  id: "32013"
+}
+
+part {
+  id: "32014"
+}
+
+part {
+  id: "32015"
+}
+
+part {
+  id: "32016"
+}
+
+part {
+  id: "32017"
+}
+
+part {
+  id: "32018"
+}
+
+part {
+  id: "32019"
+}
+
+part {
+  id: "32020"
+  similar_id: "86652"
+}
+
+part {
+  id: "32028"
+}
+
+part {
+  id: "32034"
+}
+
+part {
+  id: "32039"
+}
+
+part {
+  id: "32040"
+}
+
+part {
+  id: "32054"
+}
+
+part {
+  id: "32056"
+}
+
+part {
+  id: "32059"
+}
+
+part {
+  id: "32062"
+}
+
+part {
+  id: "32063"
+}
+
+part {
+  id: "32064"
+  similar_id: "32064b"
+  similar_id: "32064c"
+}
+part {
+  id: "32064b"
+}
+part {
+  id: "32064c"
+}
+
+part {
+  id: "32065"
+}
+
+part {
+  id: "32068"
+}
+
+part {
+  id: "32072"
+}
+
+part {
+  id: "32083"
+}
+
+part {
+  id: "32084"
+}
+
+part {
+  id: "32073"
+}
+
+part {
+  id: "32124"
+}
+
+part {
+  id: "32125"
+}
+
+part {
+  id: "32138"
+}
+
+part {
+  id: "32140"
+}
+
+# Technic, Shock Absorber 10L Damped
+part {
+  id: "32181c02"
+  lego_id: "32181"
+  alternate_id: "76320"
+  item {
+    id: "32181"
+  }
+  item {
+    id: "32182"
+  }
+  item {
+    id: "32183c01"
+  }
+  item {
+    id: "108"
+  }
+}
+part {
+  id: "32181"
+}
+part {
+  id: "32182"
+}
+part {
+  id: "32183c01"
+}
+part {
+  id: "32183"
+}
+
+part {
+  id: "32184"
+}
+
+part {
+  id: "32186"
+}
+
+part {
+  id: "32187"
+}
+
+part {
+  id: "32192"
+}
+
+part {
+  id: "32198"
+}
+
+part {
+  id: "32199"
+  alternate_id: "55709"
+}
+
+part {
+  id: "32200"
+}
+
+part {
+  id: "32201"
+}
+
+part {
+  id: "32202"
+}
+
+part {
+  id: "32209"
+  alternate_id: "59426"
+}
+
+part {
+  id: "32235"
+}
+
+part {
+  id: "32249"
+}
+
+part {
+  id: "32250"
+}
+
+part {
+  id: "32251"
+}
+
+part {
+  id: "32269"
+  alternate_id: "18575"
+}
+
+part {
+  id: "32270"
+}
+
+part {
+  id: "32271"
+}
+
+part {
+  id: "32278"
+  alternate_id: "64871"
+}
+
+part {
+  id: "32291"
+}
+
+part {
+  id: "32293"
+}
+
+part {
+  id: "32316"
+}
+
+part {
+  id: "32324"
+}
+
+part {
+  id: "32333"
+}
+
+part {
+  id: "32348"
+}
+
+part {
+  id: "32449"
+}
+
+part {
+  id: "32474"
+  similar_id: "53585"
+}
+
+part {
+  id: "32494"
+}
+
+part {
+  id: "32498"
+}
+
+part {
+  id: "32523"
+}
+
+part {
+  id: "32524"
+}
+
+part {
+  id: "32525"
+  alternate_id: "64290"
+}
+
+part {
+  id: "32526"
+}
+
+part {
+  id: "32529"
+}
+
+part {
+  id: "32530"
+}
+
+part {
+  id: "32534"
+}
+
+part {
+  id: "32535"
+}
+
+part {
+  id: "32555"
+}
+
+part {
+  id: "32556"
+}
+
+part {
+  id: "32557"
+}
+
+part {
+  id: "32580"
+}
+
+part {
+  id: "33057"
+}
+
+part {
+  id: "33121"
+}
+
+part {
+  id: "33243"
+}
+
+part {
+  id: "33286"
+}
+
+part {
+  id: "33291"
+}
+
+part {
+  id: "33299"
+}
+
+part {
+  id: "33320"
+  alternate_id: "x223"
+}
+
+part {
+  id: "40001"
+  alternate_id: "18352"
+}
+
+part {
+  id: "40234"
+}
+
+part {
+  id: "40244"
+}
+
+part {
+  id: "40344"
+  alternate_id: "32531"
+}
+
+part {
+  id: "40345"
+  alternate_id: "32532"
+}
+
+part {
+  id: "40379"
+}
+
+part {
+  id: "40490"
+  alternate_id: "64289"
+}
+
+part {
+  id: "40902"
+}
+
+part {
+  id: "41239"
+  alternate_id: "32277"
+}
+
+part {
+  id: "41530"
+}
+
+part {
+  id: "41531"
+}
+
+part {
+  id: "41532"
+}
+
+part {
+  id: "41533"
+}
+
+part {
+  id: "41535"
+}
+
+part {
+  id: "41539"
+  alternate_id: "42534"
+}
+
+part {
+  id: "41677"
+}
+
+part {
+  id: "41678"
+}
+
+part {
+  id: "41747"
+}
+
+part {
+  id: "41748"
+}
+
+part {
+  id: "41749"
+  alternate_id: "42019"
+}
+
+part {
+  id: "41750"
+  alternate_id: "42020"
+}
+
+part {
+  id: "41764"
+}
+
+part {
+  id: "41765"
+}
+
+part {
+  id: "41766"
+}
+
+part {
+  id: "41767"
+}
+
+part {
+  id: "41768"
+}
+
+part {
+  id: "41769"
+}
+
+part {
+  id: "41770"
+}
+
+part {
+  id: "41881"
+  similar_id: "94531"
+}
+
+part {
+  id: "41855"
+}
+
+part {
+  id: "41880"
+  alternate_id: "64804"
+}
+
+part {
+  id: "41896"
+}
+
+part {
+  id: "41897"
+}
+
+part {
+  id: "42003"
+}
+
+part {
+  id: "42021"
+  alternate_id: "41761"
+}
+
+part {
+  id: "42022"
+  alternate_id: "41762"
+}
+
+part {
+  id: "42023"
+  alternate_id: "41763"
+}
+
+part {
+  id: "42060"
+}
+
+part {
+  id: "42061"
+}
+
+part {
+  id: "42446"
+}
+
+part {
+  id: "42610"
+}
+
+part {
+  id: "43093"
+}
+
+part {
+  id: "43708"
+}
+
+part {
+  id: "43710"
+}
+
+part {
+  id: "43711"
+}
+
+part {
+  id: "43712"
+}
+
+part {
+  id: "43719"
+}
+
+part {
+  id: "43720"
+}
+
+part {
+  id: "43721"
+}
+
+part {
+  id: "43722"
+}
+
+part {
+  id: "43723"
+}
+
+part {
+  id: "43857"
+}
+
+part {
+  id: "43888"
+}
+
+part {
+  id: "43898"
+  alternate_id: "44882"
+}
+
+part {
+  id: "44126"
+}
+
+part {
+  id: "44292"
+}
+
+part {
+  id: "44294"
+}
+
+part {
+  id: "44300"
+}
+
+part {
+  id: "44301"
+}
+
+part {
+  id: "44302"
+}
+
+part {
+  id: "44308"
+}
+
+part {
+  id: "44309"
+}
+
+part {
+  id: "44350"
+}
+
+part {
+  id: "44351"
+}
+
+part {
+  id: "44352"
+}
+part {
+  id: "44353"
+}
+
+part {
+  id: "44375a"
+  similar_id: "44375b"
+}
+part {
+  id: "44375b"
+  lego_id: "44375"
+  alternate_id: "45729"
+}
+
+part {
+  id: "44567"
+}
+
+part {
+  id: "44568"
+}
+part {
+  id: "44569"
+  similar_id: "92092"
+}
+
+part {
+  id: "44570"
+}
+
+part {
+  id: "44572"
+}
+
+part {
+  id: "44661"
+}
+
+part {
+  id: "44675"
+}
+
+part {
+  id: "44676"
+}
+
+part {
+  id: "44728"
+  alternate_id: "92411"
+  alternate_id: "21712"
+}
+
+part {
+  id: "44771"
+}
+
+part {
+  id: "44772"
+}
+
+part {
+  id: "44809"
+}
+
+part {
+  id: "44822"
+  alternate_id: "95120"
+}
+
+part {
+  id: "45301"
+}
+
+part {
+  id: "45410"
+}
+
+part {
+  id: "45411"
+}
+
+part {
+  id: "45590"
+}
+
+part {
+  id: "45677"
+}
+
+part {
+  id: "45705"
+  alternate_id: "59195"
+}
+
+part {
+  id: "45982"
+}
+
+part {
+  id: "46212"
+}
+
+part {
+  id: "46304"
+}
+
+part {
+  id: "47376"
+}
+
+part {
+  id: "47397"
+}
+
+part {
+  id: "47398"
+}
+
+part {
+  id: "47406"
+}
+
+part {
+  id: "47432"
+}
+
+part {
+  id: "47452"
+}
+
+part {
+  id: "47543"
+  alternate_id: "48310"
+}
+
+part {
+  id: "47454"
+}
+
+part {
+  id: "47455"
+}
+
+part {
+  id: "47456"
+}
+
+part {
+  id: "47457"
+}
+
+part {
+  id: "47458"
+}
+
+part {
+  id: "47507"
+}
+
+part {
+  id: "47753"
+}
+
+part {
+  id: "47759"
+}
+
+part {
+  id: "47847"
+  alternate_id: "54782"
+  alternate_id: "57512"
+}
+
+part {
+  id: "47905"
+}
+
+part {
+  id: "47974"
+}
+
+part {
+  id: "47975"
+}
+
+part {
+  id: "48092"
+}
+
+part {
+  id: "48169"
+}
+
+part {
+  id: "48170"
+}
+
+part {
+  id: "48171"
+}
+
+part {
+  id: "48172"
+}
+
+part {
+  id: "48183"
+  alternate_id: "90194"
+}
+
+part {
+  id: "48168"
+  similar_id: "18938"
+}
+
+part {
+  id: "48288"
+  similar_id: "90498"
+}
+
+part {
+  id: "48294"
+}
+
+part {
+  id: "48336"
+}
+
+part {
+  id: "48452"
+}
+part {
+  id: "48452cx1"
+  item {
+    id: "48168"
+    color: "11"
+  }
+  item {
+    id: "48452"
+  }
+}
+
+part {
+  id: "48496"
+}
+
+part {
+  id: "48723"
+}
+
+part {
+  id: "48724"
+}
+
+part {
+  id: "48729"
+  similar_id: "48729b"
+}
+part {
+  id: "48729b"
+}
+
+part {
+  id: "48933"
+}
+
+part {
+  id: "48989"
+}
+part {
+  id: "49668"
+  alternate_id: "49673"
+}
+
+part {
+  id: "50254"
+}
+
+part {
+  id: "50373"
+}
+
+part {
+  id: "50450"
+}
+
+part {
+  id: "50451"
+}
+
+part {
+  id: "50687"
+}
+
+part {
+  id: "50745"
+}
+
+part {
+  id: "50859"
+}
+part {
+  id: "50859a"
+  generic_id: "50859"
+}
+part {
+  id: "50859b"
+  generic_id: "50859"
+}
+
+part {
+  id: "50860"
+}
+
+part {
+  id: "50861"
+}
+
+part {
+  id: "50862"
+}
+
+part {
+  id: "50945"
+  alternate_id: "50951"
+}
+
+part {
+  id: "50946"
+  alternate_id: "10885"
+}
+
+part {
+  id: "50947"
+}
+
+part {
+  id: "50948"
+}
+
+part {
+  id: "50950"
+}
+
+part {
+  id: "50955"
+}
+
+part {
+  id: "50956"
+}
+
+part {
+  id: "50965"
+}
+
+part {
+  id: "51011"
+  alternate_id: "92409"
+  alternate_id: "42611"
+}
+
+part {
+  id: "51739"
+}
+
+part {
+  id: "52031"
+}
+
+part {
+  id: "52035"
+  alternate_id: "89536"
+}
+
+part {
+  id: "52038"
+}
+
+part {
+  id: "52040"
+}
+
+part {
+  id: "52107"
+}
+
+part {
+  id: "52501"
+}
+
+part {
+  id: "53451"
+  alternate_id: "88513"
+}
+
+part {
+  id: "53401"
+}
+
+part {
+  id: "53585"
+}
+
+part {
+  id: "53787"
+  alternate_id: "54715"
+}
+
+part {
+  id: "53793"
+  alternate_id: "55967"
+}
+
+part {
+  id: "54087"
+}
+
+part {
+  id: "54091"
+}
+
+part {
+  id: "54095"
+}
+
+part {
+  id: "54096"
+}
+
+part {
+  id: "54125pb01"
+  similar_id: "54125pb02"
+}
+part {
+  id: "54125pb02"
+  lego_id: "54125"
+}
+
+part {
+  id: "54200"
+  alternate_id: "50746"
+}
+
+part {
+  id: "54383"
+}
+
+part {
+  id: "54384"
+}
+
+part {
+  id: "55013"
+}
+
+part {
+  id: "55236"
+}
+
+part {
+  id: "55423c01"
+  alternate_id: "57999"
+  alternate_id: "55423"
+}
+
+part {
+  id: "55615"
+}
+
+part {
+  id: "55804"
+  generic_id: "8529" 
+}
+
+part {
+  id: "55805"
+  generic_id: "8529" 
+}
+
+part {
+  id: "55806"
+  generic_id: "8529" 
+}
+
+part {
+  id: "55976"
+}
+
+part {
+  id: "55978"
+}
+
+part {
+  id: "55981"
+  alternate_id: "20896"
+}
+
+part {
+  id: "55982"
+}
+
+part {
+  id: "56145"
+}
+
+part {
+  id: "56891"
+}
+
+part {
+  id: "56897"
+}
+
+part {
+  id: "56898"
+}
+
+part {
+  id: "56902"
+}
+
+part {
+  id: "56904"
+}
+
+part {
+  id: "56908"
+}
+
+part {
+  id: "57515"
+}
+
+part {
+  id: "57518"
+  alternate_id: "88323"
+}
+
+part {
+  id: "57519"
+}
+
+part {
+  id: "57520"
+}
+
+part {
+  id: "57539"
+  alternate_id: "14925"
+}
+
+part {
+  id: "57585"
+}
+
+part {
+  id: "57783"
+}
+
+part {
+  id: "57893"
+}
+
+part {
+  id: "57894"
+}
+
+part {
+  id: "57895"
+  alternate_id: "60803"
+}
+
+part {
+  id: "57908"
+}
+
+part {
+  id: "57909"
+}
+
+part {
+  id: "57910"
+  similar_id: "62712"
+  similar_id: "92013"
+}
+
+part {
+  id: "58090"
+}
+
+part {
+  id: "58118"
+}
+
+part {
+  id: "58120c01"
+  alternate_id: "58120"
+  force_color_id: "86"
+}
+
+part {
+  id: "58121c01"
+  alternate_id: "58121"
+  force_color_id: "86"
+}
+
+part {
+  id: "58122c01"
+  alternate_id: "58122"
+  force_color_id: "86"
+}
+
+part {
+  id: "58123bc01"
+  similar_id: "58123c01"
+}
+
+part {
+  id: "58123c01"
+  alternate_id: "58123"
+  force_color_id: "86"
+}
+
+part {
+  id: "58176"
+}
+
+part {
+  id: "58181"
+}
+
+part {
+  id: "58380"
+  similar_id: "446"
+}
+
+part {
+  id: "58381"
+  similar_id: "445"
+}
+
+part {
+  id: "58827"
+}
+
+part {
+  id: "58846"
+}
+
+part {
+  id: "59233pb01"
+  similar_id: "59233pb02"
+  similar_id: "59233pb02"
+  lego_id: "59233"
+}
+part {
+  id: "59233pb02"
+}
+part {
+  id: "59233pb03"
+}
+
+part {
+  id: "59349"
+  alternate_id: "59350"
+}
+
+part {
+  id: "59363"
+}
+
+part {
+  id: "59494"
+}
+
+part {
+  id: "59510"
+}
+part {
+  id: "59510c01"
+  alternate_id: "58119"
+  force_color_id: "86"
+  item {
+    id: "59510"
+  }
+  item {
+    id: "59494"
+    color: "85"
+    count: 2
+  }
+}
+
+part {
+  id: "59895"
+}
+
+part {
+  id: "60032"
+}
+
+part {
+  id: "60115"
+}
+
+part {
+  id: "60208"
+}
+
+part {
+  id: "60212"
+}
+
+part {
+  id: "60219"
+}
+
+part {
+  id: "60470"
+  similar_id: "60470b"
+}
+part {
+  id: "60470b"
+}
+
+part {
+  id: "60471"
+}
+
+part {
+  id: "60474"
+}
+
+part {
+  id: "60476"
+}
+
+part {
+  id: "60477"
+}
+
+part {
+  id: "60478"
+}
+
+part {
+  id: "60479"
+}
+
+part {
+  id: "60481"
+}
+
+part {
+  id: "60483"
+  alternate_id: "74695"
+}
+
+part {
+  id: "60484"
+}
+
+part {
+  id: "60485"
+}
+
+part {
+  id: "60581"
+  alternate_id: "87543"
+}
+
+part {
+  id: "60583"
+  alternate_id: "60801"
+}
+
+part {
+  id: "60592"
+}
+
+part {
+  id: "60593"
+}
+
+part {
+  id: "60594"
+}
+
+part {
+  id: "60596"
+}
+
+part {
+  id: "60601"
+  alternate_id: "86209"
+}
+
+part {
+  id: "60602"
+}
+
+part {
+  id: "60603"
+  alternate_id: "86210"
+}
+
+part {
+  id: "60607"
+}
+
+part {
+  id: "60608"
+}
+
+part {
+  id: "60616"
+}
+
+part {
+  id: "60621"
+}
+
+part {
+  id: "60623"
+}
+
+part {
+  id: "60656"
+}
+
+part {
+  id: "60657"
+}
+
+part {
+  id: "60658"
+}
+
+part {
+  id: "60700"
+}
+
+part {
+  id: "60797c01"
+}
+part {
+  id: "60797c02"
+  alternate_id: "60797"
+  force_color_id: "11"
+}
+part {
+  id: "60797c03"
+}
+
+part {
+  id: "60849"
+  alternate_id: "58367"
+  alternate_id: "64769"
+}
+
+part {
+  id: "61053"
+  alternate_id: "89650"
+}
+
+part {
+  id: "61068"
+  similar_id: "88930"
+}
+
+part {
+  id: "61184"
+  alternate_id: "x1855"
+}
+
+part {
+  id: "61252"
+}
+
+part {
+  id: "61254"
+  similar_id: "61254b"
+}
+part {
+  id: "61254b"
+}
+
+part {
+  id: "61409"
+}
+
+part {
+  id: "61480"
+}
+
+part {
+  id: "61481"
+}
+
+part {
+  id: "61482"
+  alternate_id: "97927"
+}
+
+part {
+  id: "61487"
+}
+
+part {
+  id: "61678"
+  alternate_id: "11153"
+}
+
+part {
+  id: "61780"
+}
+
+part {
+  id: "61904"
+}
+
+part {
+  id: "61927c01"
+  alternate_id: "61927"
+  force_color_id: "86"
+}
+
+part {
+  id: "61930c01"
+  lego_id: "61930"
+}
+
+part {
+  id: "62360"
+}
+
+part {
+  id: "62462"
+  similar_id: "75535"
+}
+
+part {
+  id: "62519"
+}
+part {
+  id: "62520"
+}
+part {
+  id: "62520c01"
+  alternate_id: "61903"
+  item {
+    id: "62519"
+  }
+  item {
+    id: "62520"
+    count: 2
+  }
+}
+
+part {
+  id: "62531"
+}
+
+part {
+  id: "62604pb01"
+  lego_id: "62604"
+}
+
+part {
+  id: "62605pb01"
+  alternate_id: "62603"
+}
+
+part {
+  id: "62605pb01c01"
+  alternate_id: "62606"
+  item {
+    id: "62604pb01"
+  }
+  item {
+    id: "62605pb01"
+  }
+}
+
+part {
+  id: "62696"
+  alternate_id: "88426"
+}
+
+part {
+  id: "62700"
+}
+
+part {
+  id: "62701"
+}
+
+part {
+  id: "62712"
+}
+
+part {
+  id: "62810"
+  alternate_id: "88425"
+}
+
+part {
+  id: "62821"
+}
+part {
+  id: "62821a"
+  generic_id: "62821"
+}
+part {
+  id: "62821b"
+  generic_id: "62821"
+}
+
+part {
+  id: "62885"
+}
+
+part {
+  id: "63864"
+}
+
+part {
+  id: "63868"
+}
+
+part {
+  id: "63869"
+}
+
+part {
+  id: "63965"
+  alternate_id: "18274"
+}
+
+part {
+  id: "64178"
+}
+
+part {
+  id: "64179"
+}
+
+part {
+  id: "64225"
+}
+
+part {
+  id: "64227"
+}
+
+part {
+  id: "64391"
+}
+
+part {
+  id: "64392"
+}
+
+part {
+  id: "64393"
+}
+
+part {
+  id: "64394"
+}
+
+part {
+  id: "64415c01"
+  alternate_id: "64414"
+  alternate_id: "91966c01"
+  lego_id: "64415"
+}
+
+part {
+  id: "64424c01"
+  lego_id: "64422"
+  similar_id: "91968c01"
+}
+
+part {
+  id: "64453"
+}
+
+part {
+  id: "64567"
+  alternate_id: "577"
+  alternate_id: "15556"
+  alternate_id: "23306"
+}
+
+part {
+  id: "64644"
+}
+
+part {
+  id: "64647"
+}
+
+part {
+  id: "64648"
+}
+
+part {
+  id: "64680"
+}
+
+part {
+  id: "64681"
+}
+
+part {
+  id: "64682"
+}
+
+part {
+  id: "64683"
+}
+
+part {
+  id: "64781"
+}
+
+part {
+  id: "64782"
+}
+
+part {
+  id: "64799"
+}
+
+part {
+  id: "71137a"
+}
+
+part {
+  id: "71137b"
+  alternate_id: "40620"
+  similar_id: "14682"
+}
+
+part {
+  id: "71184"
+}
+
+part {
+  id: "72092"
+}
+
+part {
+  id: "72454"
+}
+
+part {
+  id: "73092"
+}
+
+part {
+  id: "73312"
+}
+
+part {
+  id: "73313"
+}
+
+part {
+  id: "73435"
+}
+part {
+  id: "73435c01"
+  kindof_id: "73435"
+  alternate_id: "73194"
+}
+part {
+  id: "73435c02"
+  kindof_id: "73435"
+}
+part {
+  id: "73435c03"
+  kindof_id: "73435"
+}
+part {
+  id: "73435c04"
+  kindof_id: "73435"
+}
+
+part {
+  id: "73436"
+}
+part {
+  id: "73436c01"
+  kindof_id: "73436"
+  alternate_id: "47899"
+}
+part {
+  id: "73436c02"
+  kindof_id: "73436"
+}
+part {
+  id: "73436c03"
+  kindof_id: "73436"
+}
+part {
+  id: "73436c04"
+  kindof_id: "73436"
+}
+
+part {
+  id: "73590c01"
+}
+part {
+  id: "73590c01a"
+  generic_id: "73590c01"
+  item {
+    id: "751"
+  }
+  item {
+    id: "752"
+    count: 2
+  }
+}
+part {
+  id: "73590c01b"
+  generic_id: "73590c01"
+  item {
+    id: "751"
+  }
+  item {
+    id: "752"
+    color: "11"
+    count: 2
+  }
+}
+part {
+  id: "73590c02a"
+  generic_id: "73590c01"
+}
+part {
+  id: "73590c02b"
+  generic_id: "73590c01"
+}
+part {
+  id: "73590c02c"
+  generic_id: "73590c01"
+}
+part {
+  id: "73590c03a"
+  generic_id: "73590c01"
+  alternate_id: "64230"
+  alternate_id: "6211"
+}
+part {
+  id: "73590c03b"
+  generic_id: "73590c01"
+}
+
+part {
+  id: "74967"
+}
+
+part {
+  id: "75535"
+}
+
+part {
+  id: "75937"
+}
+
+part {
+  id: "76766"
+}
+
+part {
+  id: "76768"
+  generic_id: "2339u"
+}
+
+part {
+  id: "84599"
+}
+
+part {
+  id: "85080"
+}
+
+part {
+  id: "85489a"
+  alternate_id: "85558"
+}
+
+part {
+  id: "85489b"
+  alternate_id: "85557"
+}
+
+part {
+  id: "85959pb02"
+  similar_id: "85959pb03"
+  similar_id: "85959pb04"
+}
+part {
+  id: "85959pb03"
+  lego_id: "85959"
+}
+part {
+  id: "85959pb04"
+}
+
+part {
+  id: "85861"
+}
+
+part {
+  id: "85941"
+}
+
+part {
+  id: "85943"
+}
+
+part {
+  id: "85970"
+  alternate_id: "13731"
+}
+
+part {
+  id: "85974"
+}
+
+part {
+  id: "85975"
+}
+
+part {
+  id: "85983"
+}
+
+part {
+  id: "85984"
+}
+
+part {
+  id: "86500"
+}
+
+part {
+  id: "86652"
+}
+
+part {
+  id: "87079"
+}
+
+part {
+  id: "87080"
+}
+
+part {
+  id: "87081"
+}
+
+part {
+  id: "87082"
+}
+
+part {
+  id: "87083"
+}
+
+part {
+  id: "87086"
+}
+
+part {
+  id: "87087"
+}
+
+part {
+  id: "87407"
+}
+
+part {
+  id: "87408"
+}
+
+part {
+  id: "87414"
+}
+
+part {
+  id: "87513"
+}
+part {
+  id: "87513c01"
+  item {
+    id: "87513"
+  }
+  item {
+    id: "87515"
+    color: "85"
+  }
+}
+part {
+  id: "87515"
+}
+
+part {
+  id: "87544"
+  alternate_id: "74968"
+  generic_id: "2362"
+}
+
+part {
+  id: "87552"
+  alternate_id: "94638"
+}
+
+part {
+  id: "87559"
+}
+
+part {
+  id: "87574c01"
+  lego_id: "87574"
+}
+
+part {
+  id: "87580"
+  alternate_id: "23893"
+}
+
+part {
+  id: "87587"
+}
+
+part {
+  id: "87609"
+}
+
+part {
+  id: "87620"
+}
+
+part {
+  id: "87697"
+}
+
+part {
+  id: "87749"
+}
+
+part {
+  id: "87752"
+}
+
+part {
+  id: "87761"
+}
+
+part {
+  id: "87990"
+  alternate_id: "18227"
+}
+
+part {
+  id: "87991"
+  alternate_id: "18226"
+}
+
+part {
+  id: "87994"
+  alternate_id: "17715"
+}
+
+part {
+  id: "88072"
+  alternate_id: "4623b"
+}
+
+part {
+  id: "88292"
+}
+
+part {
+  id: "88393"
+}
+
+part {
+  id: "88431"
+}
+
+part {
+  id: "88516"
+}
+
+part {
+  id: "88517"
+}
+
+part {
+  id: "88646"
+  alternate_id: "17836"
+}
+
+part {
+  id: "88293"
+}
+
+part {
+  id: "88930"
+}
+
+part {
+  id: "89201"
+}
+
+part {
+  id: "89762"
+}
+
+part {
+  id: "90195"
+}
+
+part {
+  id: "90201"
+}
+
+part {
+  id: "90202"
+}
+
+part {
+  id: "90258"
+}
+
+part {
+  id: "90498"
+}
+
+part {
+  id: "90540"
+}
+
+part {
+  id: "91405"
+}
+
+part {
+  id: "91884"
+}
+
+part {
+  id: "91968c01"
+  alternate_id: "64417"
+  alternate_id: "91994"
+  lego_id: "91968"
+}
+
+part {
+  id: "91988"
+}
+
+part {
+  id: "92013"
+}
+
+part {
+  id: "92088"
+}
+
+part {
+  id: "92092"
+}
+
+part {
+  id: "92280"
+}
+
+part {
+  id: "92339"
+}
+
+part {
+  id: "92340"
+}
+
+part {
+  id: "92402"
+}
+
+part {
+  id: "92438"
+}
+
+part {
+  id: "92582"
+}
+
+part {
+  id: "92593"
+}
+
+part {
+  id: "92690"
+}
+
+part {
+  id: "92691"
+}
+
+part {
+  id: "92693c01"
+  alternate_id: "92693"
+  force_color_id: "86"
+}
+
+part {
+  id: "92842"
+}
+
+part {
+  id: "92906"
+  lego_id: "92693"
+}
+
+part {
+  id: "92907"
+}
+
+part {
+  id: "92908"
+}
+
+part {
+  id: "92909"
+}
+
+part {
+  id: "92910"
+}
+
+part {
+  id: "92911"
+}
+
+part {
+  id: "92912"
+}
+
+part {
+  id: "92926"
+}
+
+part {
+  id: "92946"
+  alternate_id: "15672"
+}
+
+part {
+  id: "92947"
+}
+
+part {
+  id: "92950"
+}
+
+part {
+  id: "93060"
+}
+
+part {
+  id: "93061"
+}
+
+part {
+  id: "93080a"
+  alternate_id: "96480"
+}
+
+part {
+  id: "93080b"
+  alternate_id: "96488"
+}
+
+part {
+  id: "93080c"
+  alternate_id: "96484"
+}
+
+part {
+  id: "93080d"
+  alternate_id: "96482"
+}
+
+part {
+  id: "93080e"
+  alternate_id: "96485"
+}
+
+part {
+  id: "93080f"
+  alternate_id: "96489"
+}
+
+part {
+  id: "93080g"
+  alternate_id: "96483"
+}
+
+part {
+  id: "93080h"
+  alternate_id: "96487"
+}
+
+part {
+  id: "93080i"
+  alternate_id: "96481"
+}
+
+part {
+  id: "93080j"
+  alternate_id: "96479"
+}
+
+part {
+  id: "93080k"
+  alternate_id: "96486"
+}
+
+part {
+  id: "93080l"
+  alternate_id: "96490"
+}
+
+part {
+  id: "93080m"
+  alternate_id: "96491"
+}
+
+part {
+  id: "93081a"
+  alternate_id: "95828"
+}
+
+part {
+  id: "93081b"
+  alternate_id: "95827"
+}
+
+part {
+  id: "93081c"
+  alternate_id: "95829"
+}
+
+part {
+  id: "93081d"
+  alternate_id: "95831"
+}
+
+part {
+  id: "93081e"
+  alternate_id: "95832"
+}
+
+part {
+  id: "93095"
+}
+
+part {
+  id: "93273"
+}
+
+part {
+  id: "93274"
+}
+
+part {
+  id: "93348"
+}
+
+part {
+  id: "93555"
+  alternate_id: "18754"
+}
+
+part {
+  id: "93604"
+}
+
+part {
+  id: "93606"
+}
+
+part {
+  id: "93609"
+}
+
+part {
+  id: "93794"
+}
+
+part {
+  id: "94161"
+}
+
+part {
+  id: "94531"
+}
+
+part {
+  id: "94925"
+}
+
+part {
+  id: "95188"
+}
+
+part {
+  id: "95292c01"
+  alternate_id: "15035"
+  alternate_id: "18405"
+  alternate_id: "95292"
+  generic_id: "2909c01"
+}
+
+part {
+  id: "95326"
+}
+
+part {
+  id: "95327pb01"
+  similar_id: "95327pb02"
+}
+
+part {
+  id: "95327pb02"
+  lego_id: "95327"
+}
+
+part {
+  id: "95342"
+  similar_id: "95342pb01"
+}
+
+part {
+  id: "95342pb01"
+  lego_id: "95342"
+}
+
+part {
+  id: "95347"
+}
+
+part {
+  id: "95351pb01"
+  similar_id: "95351pb02"
+}
+
+part {
+  id: "95351pb02"
+  lego_id: "95351"
+}
+
+part {
+  id: "98100"
+}
+
+part {
+  id: "98136"
+}
+
+part {
+  id: "98138"
+}
+
+part {
+  id: "98262"
+}
+
+part {
+  id: "98282"
+}
+
+part {
+  id: "98283"
+}
+
+part {
+  id: "98302"
+}
+
+part {
+  id: "98385"
+  alternate_id: "18228"
+}
+
+part {
+  id: "98386pb01"
+  similar_id: "98386pb02"
+}
+
+part {
+  id: "98386pb02"
+  lego_id: "98386" 
+}
+
+part {
+  id: "98397"
+}
+
+part {
+  id: "98549"
+}
+
+part {
+  id: "98989"
+}
+
+part {
+  id: "99008"
+}
+
+part {
+  id: "99206"
+}
+
+part {
+  id: "99207"
+}
+
+part {
+  id: "99301"
+}
+
+part {
+  id: "99498c01"
+  lego_id: "99498"
+}
+
+part {
+  id: "99499c01"
+  lego_id: "99499"
+}
+
+part {
+  id: "99773"
+}
+
+part {
+  id: "99780"
+}
+
+part {
+  id: "99781"
+}

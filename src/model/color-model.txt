@@ -1,0 +1,650 @@
+# Copyright (c) 2016, Peter Dornbach
+# All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name BrickMesh nor the names of its contributors may be used
+#       to endorse or promote products derived from this software without
+#       specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Known colors.
+
+color {
+  id: "1"
+  name: "White"
+  lego_id: "1"
+}
+
+color {
+  id: "26"
+  name: "Light Salmon"
+  lego_id: "100"
+}
+
+color {
+  id: "25"
+  name: "Salmon"
+  lego_id: "101"
+}
+
+color {
+  id: "42"
+  name: "Medium Blue"
+  lego_id: "102"
+}
+
+color {
+  id: "49"
+  name: "Very Light Gray"
+  lego_id: "103"
+}
+
+color {
+  id: "24"
+  name: "Purple"
+  lego_id: "104"
+}
+
+color {
+  id: "31"
+  name: "Medium Orange"
+  lego_id: "105"
+}
+
+color {
+  id: "4"
+  name: "Orange"
+  lego_id: "106"
+}
+
+color {
+  id: "39"
+  name: "Dark Turquoise"
+  lego_id: "107"
+}
+
+color {
+  id: "72"
+  name: "Maersk Blue"
+  lego_id: "11"
+}
+
+color {
+  id: "13"
+  name: "Trans-Black"
+  lego_id: "111"
+}
+
+color {
+  id: "43"
+  name: "Violet"
+  lego_id: "112"
+}
+
+color {
+  id: "50"
+  name: "Trans-Dark Pink"
+  lego_id: "113"
+}
+
+color {
+  id: "114"
+  name: "Trans-Very Lt Blue"
+  lego_id: "114"
+}
+
+color {
+  id: "76"
+  name: "Medium Lime"
+  lego_id: "115"
+}
+
+color {
+  id: "40"
+  name: "Light Turquoise"
+  lego_id: "116"
+}
+
+color {
+  id: "101"
+  name: "Glitter Trans-Clear"
+  lego_id: "117"
+}
+
+color {
+  id: "34"
+  name: "Lime"
+  lego_id: "119"
+}
+
+color {
+  id: "29"
+  name: "Earth Orange"
+  lego_id: "12"
+}
+
+color {
+  id: "35"
+  name: "Light Lime"
+  lego_id: "120"
+}
+
+color {
+  id: "71"
+  name: "Magenta"
+  lego_id: "124"
+}
+
+color {
+  id: "51"
+  name: "Trans-Purple"
+  lego_id: "126"
+}
+
+color {
+  id: "61"
+  name: "Pearl Light Gold"
+  lego_id: "127"
+}
+
+color {
+  id: "102"
+  name: "Glitter Trans-Purple"
+  lego_id: "129"
+}
+
+color {
+  id: "66"
+  name: "Pearl Light Gray"
+  lego_id: "131"
+}
+
+color {
+  id: "111"
+  name: "Speckle Black-Silver"
+  lego_id: "132"
+}
+
+color {
+  id: "55"
+  name: "Sand Blue"
+  lego_id: "135"
+}
+
+color {
+  id: "54"
+  name: "Sand Purple"
+  lego_id: "136"
+}
+
+color {
+  id: "69"
+  name: "Dark Tan"
+  lego_id: "138"
+}
+
+color {
+  id: "84"
+  name: "Copper"
+  lego_id: "139"
+}
+
+color {
+  id: "63"
+  name: "Dark Blue"
+  lego_id: "140"
+}
+
+color {
+  id: "80"
+  name: "Dark Green"
+  lego_id: "141"
+}
+
+color {
+  id: "74"
+  name: "Trans-Medium Blue"
+  lego_id: "143"
+}
+
+color {
+  id: "78"
+  name: "Metal Blue"
+  lego_id: "145"
+}
+
+color {
+  id: "81"
+  name: "Flat Dark Gold"
+  lego_id: "147"
+}
+
+color {
+  id: "48"
+  name: "Sand Green"
+  lego_id: "151"
+}
+
+color {
+  id: "58"
+  name: "Sand Red"
+  lego_id: "153"
+}
+
+color {
+  id: "59"
+  name: "Dark Red"
+  lego_id: "154"
+}
+
+color {
+  id: "28"
+  name: "Flesh"
+  lego_id: "18"
+}
+
+color {
+  id: "98"
+  name: "Trans-Orange"
+  lego_id: "182"
+}
+
+color {
+  id: "110"
+  name: "Bright Light Orange"
+  lego_id: "191"
+}
+
+color {
+  id: "88"
+  name: "Reddish Brown"
+  lego_id: "192"
+}
+
+color {
+  id: "86"
+  name: "Light Bluish Gray"
+  lego_id: "194"
+}
+
+color {
+  id: "97"
+  name: "BlueViolet"
+  lego_id: "195"
+}
+
+color {
+  id: "109"
+  name: "Dark Blue-Violet"
+  lego_id: "196"
+}
+
+color {
+  id: "93"
+  name: "Light Purple"
+  lego_id: "198"
+}
+
+color {
+  id: "85"
+  name: "Dark Bluish Gray"
+  lego_id: "199"
+}
+
+color {
+  id: "9"
+  name: "Light Gray"
+  lego_id: "2"
+}
+
+color {
+  id: "60"
+  name: "Milky White"
+  lego_id: "20"
+}
+
+color {
+  id: "99"
+  name: "Very Light Bluish Gray"
+  lego_id: "208"
+}
+
+color {
+  id: "5"
+  name: "Red"
+  lego_id: "21"
+}
+
+color {
+  id: "105"
+  name: "Bright Light Blue"
+  lego_id: "212"
+}
+
+color {
+  id: "91"
+  name: "Dark Flesh"
+  lego_id: "217"
+}
+
+color {
+  id: "94"
+  name: "Medium Dark Pink"
+  lego_id: "22"
+}
+
+color {
+  id: "47"
+  name: "Dark Pink"
+  lego_id: "221"
+}
+
+color {
+  id: "104"
+  name: "Bright Pink"
+  lego_id: "222"
+}
+
+color {
+  id: "103"
+  name: "Bright Light Yellow"
+  lego_id: "226"
+}
+
+color {
+  id: "7"
+  name: "Blue"
+  lego_id: "23"
+}
+
+color {
+  id: "87"
+  name: "Sky Blue"
+  lego_id: "232"
+}
+
+color {
+  id: "3"
+  name: "Yellow"
+  lego_id: "24"
+}
+
+color {
+  id: "8"
+  name: "Brown"
+  lego_id: "25"
+}
+
+color {
+  id: "11"
+  name: "Black"
+  lego_id: "26"
+  lego_id: "109"
+}
+
+color {
+  id: "89"
+  name: "Dark Purple"
+  lego_id: "268"
+}
+
+color {
+  id: "10"
+  name: "Dark Gray"
+  lego_id: "27"
+}
+
+color {
+  id: "6"
+  name: "Green"
+  lego_id: "28"
+}
+
+color {
+  id: "90"
+  name: "Light Flesh"
+  lego_id: "283"
+}
+
+color {
+  id: "37"
+  name: "Medium Green"
+  lego_id: "29"
+}
+
+color {
+  id: "118"
+  name: "Glow In Dark Trans"
+  lego_id: "294"
+}
+
+color {
+  id: "115"
+  name: "Pearl Gold"
+  lego_id: "297"
+}
+
+color {
+  id: "95"
+  name: "Flat Silver"
+  lego_id: "179"
+  lego_id: "298"
+}
+
+color {
+  id: "33"
+  name: "Light Yellow"
+  lego_id: "3"
+}
+
+color {
+  id: "22"
+  name: "Chrome Silver"
+  lego_id: "301"
+  lego_id: "309"
+}
+
+color {
+  id: "120"
+  name: "Dark Brown"
+  lego_id: "308"
+}
+
+color {
+  id: "65"
+  name: "Metallic Gold"
+  lego_id: "310"
+}
+
+color {
+  id: "108"
+  name: "Trans Bright Green"
+  lego_id: "311"
+}
+
+color {
+  id: "150"
+  name: "Medium Dark Flesh"
+  lego_id: "312"
+}
+
+color {
+  id: "67"
+  name: "Metallic Silver"
+  lego_id: "315"
+}
+
+color {
+  id: "77"
+  name: "Pearl Dark Gray"
+  lego_id: "316"
+  lego_id: "148"
+}
+
+color {
+  id: "153"
+  name: "Dark Azure"
+  lego_id: "321"
+}
+
+color {
+  id: "156"
+  name: "Medium Azure"
+  lego_id: "322"
+}
+
+color {
+  id: "41"
+  name: "Aqua"
+  lego_id: "323"
+  lego_id: "118"
+}
+
+color {
+  id: "157"
+  name: "Medium Lavender"
+  lego_id: "324"
+}
+
+color {
+  id: "154"
+  name: "Lavender"
+  lego_id: "325"
+}
+
+color {
+  id: "158"
+  name: "Yellowish Green"
+  lego_id: "326"
+}
+
+color {
+  id: "159"
+  name: "Glow In Dark White"
+  lego_id: "329"
+}
+
+color {
+  id: "155"
+  name: "Olive green"
+  lego_id: "330"
+}
+
+color {
+  id: "96"
+  name: "Very Light Orange"
+  lego_id: "36"
+}
+
+color {
+  id: "36"
+  name: "Bright Green"
+  lego_id: "37"
+}
+
+color {
+  id: "68"
+  name: "Dark Orange"
+  lego_id: "38"
+}
+
+color {
+  id: "44"
+  name: "Light Violet"
+  lego_id: "39"
+}
+
+color {
+  id: "12"
+  name: "Trans-Clear"
+  lego_id: "40"
+}
+
+color {
+  id: "17"
+  name: "Trans-Red"
+  lego_id: "41"
+}
+
+color {
+  id: "15"
+  name: "Trans-Light Blue"
+  lego_id: "42"
+}
+
+color {
+  id: "14"
+  name: "Trans-Dark Blue"
+  lego_id: "43"
+}
+
+color {
+  id: "19"
+  name: "Trans-Yellow"
+  lego_id: "44"
+}
+
+color {
+  id: "62"
+  name: "Light Blue"
+  lego_id: "45"
+}
+
+color {
+  id: "18"
+  name: "Trans-Neon Orange"
+  lego_id: "47"
+}
+
+color {
+  id: "20"
+  name: "Trans-Green"
+  lego_id: "48"
+}
+
+color {
+  id: "16"
+  name: "Trans-Neon Green"
+  lego_id: "49"
+}
+
+color {
+  id: "2"
+  name: "Tan"
+  lego_id: "5"
+}
+
+color {
+  id: "46"
+  name: "Glow In Dark Opaque"
+  lego_id: "50"
+}
+
+color {
+  id: "38"
+  name: "Light Green"
+  lego_id: "6"
+}
+
+color {
+  id: "23"
+  name: "Pink"
+  lego_id: "9"
+}
+

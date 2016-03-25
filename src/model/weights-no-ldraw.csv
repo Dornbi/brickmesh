@@ -1,0 +1,159 @@
+# Copyright (c) 2016, Peter Dornbach
+# All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name BrickMesh nor the names of its contributors may be used
+#       to endorse or promote products derived from this software without
+#       specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Weights for parts without LDraw geometry.
+#
+# These are mostly wild guesses based on similar parts or
+# random ideas. They are kept separate from mesured parts.
+
+x12,0.385         # from 32474
+x59,0.444         # from 64648
+x127c11,0.3       # guess
+x127c21,0.5       # guess
+x127c31,0.7       # guess
+x127c41,0.9       # guess
+x682c01,3         # guess
+x1681,8           # guess
+2857,10           # guess
+2922,0.782        # from 2881
+4429,0.364        # from 93549
+5102c02,0.138     # from 165 x
+5102c03,0.207     # from 165 x
+5102c04,0.276     # from 165 x
+5102c05,0.345     # from 165 x
+5102c06,0.414     # from 165 x
+5102c07,0.483     # from 165 x
+5102c08,0.552     # from 165 x
+5102c09,0.621     # from 165 x
+5102c10,0.690     # from 165 x
+5102c11,0.759     # from 165 x
+5102c12,0.828     # from 165 x
+5102c13,0.897     # from 165 x
+5102c14,0.966     # from 165 x
+5102c15,1.035     # from 165 x
+5102c16,1.104     # from 165 x
+5102c17,1.173     # from 165 x
+5102c18,1.242     # from 165 x
+5102c19,1.311     # from 165 x
+5102c20,1.380     # from 165 x
+5102c21,1.449     # from 165 x
+5102c22,1.518     # from 165 x
+5102c23,1.587     # from 165 x
+5102c24,1.656     # from 165 x
+5102c25,1.725     # from 165 x
+5102c26,1.794     # from 165 x
+5102c27,1.863     # from 165 x
+5102c28,1.932     # from 165 x
+5102c29,2.001     # from 165 x
+5102c30,2.070     # from 165 x
+5102c31,2.139     # from 165 x
+5102c32,2.208     # from 165 x
+5102c33,2.277     # from 165 x
+5102c34,2.346     # from 165 x
+5102c35,2.415     # from 165 x
+5102c36,2.484     # from 165 x
+5102c37,2.553     # from 165 x
+5102c38,2.622     # from 165 x
+5102c39,2.691     # from 165 x
+5102c40,2.760     # from 165 x
+5102c42,2.898     # from 165 x
+5102c48,3.312     # from 165 x
+5102c50,3.450     # from 165 x
+5102c54,3.726     # from 165 x
+5102c60,4.140     # from 165 x
+5102c66,4.554     # from 165 x
+5102c68,4.692     # from 165 x
+5102c76,5.244     # from 165 x
+5102c80,5.520     # from 165 x
+5102c82,5.658     # from 165 x
+5102c89,6.141     # from 165 x
+6030,1.263        # from 71015
+6230,0.584        # from 3139
+6250,2.536        # from 48812
+10172,0.365       # from 3899
+11250,0.253       # from 4522
+11301,5           # guess
+11603pb01,0.702   # from 33121
+11603pb02,0.702   # from 33121
+12888pb01,0.790   # from 6251
+13392pb01,5.464   # from 6026
+13392pb02,5.464   # from 6026
+14301,2.382       # from 758c01
+14418,0.549       # from 60478 
+14704,0.615       # from 48336
+15625,5           # guess
+18866,0.630       # from 33122
+23714,0.312       # from 30238
+30085,1.913       # from 2548
+30218,0.630       # from 33122
+41535,0.230       # from 30103
+46304,0.094       # from 30170
+47406,8.719        # from 6085
+47507,9.349       # from 4597
+48294,6           # guess
+50965,1.151       # from 54086
+54096,14.768      # from 42604
+54125pb01,5       # guess
+54125pb02,5       # guess
+57539,1           # guess
+57893,5.611       # from 30517
+57910,2.042       # from 62712
+58118,3.674       # from 60797c02 * 2
+59494,3           # guess
+59510,16.532      # from 54734.dat
+60616,1.920       # from 60623
+60656,3.674       # from 60797c02 * 2
+60797c01,3.629    # from 30178c01
+60797c02,3.629    # from 30178c01
+60797c03,3.629    # from 30178c01
+61053,3.084       # from 47330
+61930c01,7.348    # from 60797c02 * 4
+62604pb01,1.913   # from 2548
+62605pb01,8.008   # from 2547a
+72092,3           # guess
+73313,9.516       # from 73312
+87559,4.690       # from 2577
+87574c01,34.154   # from 2894c01
+87749,7.069       # from 6086
+87990,0.5         # guess (hair)
+92013,2.042       # from 62712
+92088,24.730      # from 6584
+92340,24.730      # from 6584
+92582,0.742       # from 2476
+93060,0.814       # from 6260
+93080b,0.085      # from 95831
+93080h,0.085      # from 95831
+93080m,0.085      # from 95831
+93081a,0.085      # from 95831
+93081b,0.085      # from 95831
+94161,0.147       # from 30045
+95326,0.5         # guess (hair)
+95327pb01,1       # guess
+95327pb02,1       # guess
+95351pb01,2       # guess
+95351pb02,2       # guess
+98385,0.5         # guess
+98386pb01,0.790   # from 6251
+98386pb02,0.790   # from 6251
