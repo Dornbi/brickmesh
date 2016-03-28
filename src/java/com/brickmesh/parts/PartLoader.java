@@ -45,7 +45,7 @@ import com.brickmesh.util.Util;
 
 public final class PartLoader {
   public static final class Options {
-    public static Options createDefault() {
+    public static Options createLimited() {
       Options options = new Options();
       options.maxNumQty_ = 1000;
       options.maxTotalQty_ = 500000;
