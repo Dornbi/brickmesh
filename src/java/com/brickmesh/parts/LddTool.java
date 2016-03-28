@@ -39,7 +39,8 @@ public class LddTool {
       return;
     }
     
-    PartLoader.LxfLoader loader = new PartLoader().createLxfLoader();
+    PartLoader.LxfLoader loader = new PartLoader().createLxfLoader(
+        PartLoader.Options.createUnlimited());
     for (String arg : args) {
       FileInputStream fis = new FileInputStream(arg);
       try {

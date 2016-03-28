@@ -44,10 +44,26 @@ import org.xml.sax.helpers.DefaultHandler;
 import com.brickmesh.util.Util;
 
 public final class PartLoader {
-  public static final int MAX_NUM_QTY = 1000;
-  public static final int MAX_TOTAL_QTY = 500000;
+  public static final class Options {
+    public static Options createDefault() {
+      Options options = new Options();
+      options.maxNumQty_ = 1000;
+      options.maxTotalQty_ = 500000;
+      return options;
+    }
+
+    public static Options createUnlimited() {
+      Options options = new Options();
+      options.maxNumQty_ = Integer.MAX_VALUE;
+      options.maxTotalQty_ = Integer.MAX_VALUE;
+      return options;
+    }
+    
+    public int maxNumQty_;
+    public int maxTotalQty_;
+  }
   
-  public class Result {
+  public static final class Result {
     public RequiredParts parts_;
     public Map<String, Integer> unknownPartIds_;
     public Map<String, Integer> unknownColorIds_;
@@ -68,12 +84,13 @@ public final class PartLoader {
     partModel_ = partModel;
   }
   
-  public LxfLoader createLxfLoader() {
-    return new LxfLoader();
+  public LxfLoader createLxfLoader(Options options) {
+    return new LxfLoader(options);
   }
   
   public class LxfLoader {
-    public LxfLoader() {
+    public LxfLoader(Options options) {
+      options_ = options;
       partCounts_ = new TreeMap<String, Integer>();
     }
     
@@ -195,16 +212,16 @@ public final class PartLoader {
             Integer count = partCounts_.get(partId);
             if (count == null) {
               partCounts_.put(partId, 1);
-              if (partCounts_.size() > MAX_NUM_QTY) {
+              if (partCounts_.size() > options_.maxNumQty_) {
                 throw new LoaderException(String.format(
-                    "Too many different parts in model (limit=%d)", MAX_NUM_QTY));
+                    "Too many different parts in model (limit=%d)", options_.maxNumQty_));
               }
             } else {
               partCounts_.put(partId, count + 1);
             }
-            if (++totalQty_ > MAX_TOTAL_QTY) {
+            if (++totalQty_ > options_.maxTotalQty_) {
               throw new LoaderException(String.format(
-                  "Too many total parts in model (limit=%d)", MAX_TOTAL_QTY));
+                  "Too many total parts in model (limit=%d)", options_.maxTotalQty_));
             }
           }
           
@@ -239,6 +256,7 @@ public final class PartLoader {
       return map;
     }
     
+    private Options options_;
     private boolean formatCorrect_;
     private int totalQty_;
     private TreeMap<String, Integer> partCounts_;

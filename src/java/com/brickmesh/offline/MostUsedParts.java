@@ -70,7 +70,8 @@ public final class MostUsedParts {
   
   private static HashMap<String, Integer> countParts(String[] args, int start) 
       throws IOException, PartLoader.LoaderException {
-    PartLoader.LxfLoader loader = new PartLoader(partModel_).createLxfLoader();
+    PartLoader.LxfLoader loader = new PartLoader(partModel_).createLxfLoader(
+      PartLoader.Options.createUnlimited());
     HashMap<String, Integer> counts = new HashMap<String, Integer>();
     for (int i = start; i < args.length; ++i) {
       FileInputStream fis = new FileInputStream(args[i]);
