@@ -38,7 +38,7 @@ public final class ExtractWeights {
   public static void main(String[] args) throws IOException {
     if (args.length != 1) {
       System.err.println("Not enough args.");
-      System.err.println("Usage: <command> <path-to-part-model>\n");
+      System.err.println("Usage: <command> <part-model-path>\n");
       return;
     }
     

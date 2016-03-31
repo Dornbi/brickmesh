@@ -46,7 +46,7 @@ public final class MostUsedParts {
       throws IOException, PartLoader.LoaderException {
     if (args.length < 2) {
       System.err.println("Not enough args.");
-      System.err.println("Usage: <command> <lxf-filename> [...]\n");
+      System.err.println("Usage: <command> <lxf-file> [<lxf-file> ...]\n");
       return;
     }
     

@@ -36,6 +36,7 @@ public class LddTool {
       throws PartLoader.LoaderException, IOException {
     if (args.length == 0) {
       System.err.println("No args.");
+      System.err.println("Usage: <command> <lxf-path> [<lxf-path> ...]>\n");
       return;
     }
     

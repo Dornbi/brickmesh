@@ -41,8 +41,8 @@ import java.util.ArrayList;
 //
 // Note that the algorithm works "perfectly" only for closed meshes,
 // which is typically not the case for LDraw parts. We use a custom
-// version of the most common error sources, for the rest we just
-// deal with the error.
+// version of the most common error sources like open studs.
+// For the rest we just live with the error.
 public final class LDrawWeightEstimator {
   public static void main(String[] args) throws IOException {
     if (args.length < 2) {
