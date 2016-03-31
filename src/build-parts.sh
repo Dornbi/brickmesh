@@ -36,10 +36,14 @@ jar cf jar/brickmesh.jar -C class/core com
 javac -d class/test \
     -classpath "${PROTO_CLASSPATH}:jar/brickmesh.jar:class/test" \
     -Xlint:unchecked \
+    src/javatest/com/brickmesh/parts/*.java \
     src/javatest/com/brickmesh/util/*.java
 
 # Run unit tests & benchmarks.
 TEST_CLASSPATH="${PROTO_CLASSPATH}:jar/brickmesh.jar:class/test"
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.PartLoaderTest
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.PartModelTest
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.RequiredPartsTest
 java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.util.SorterBenchmark
 java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.util.SorterTest
 

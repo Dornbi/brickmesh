@@ -164,11 +164,15 @@ public class PartModel {
   }
 
   public Color getColorById(String colorId) {
-    Color color = colorIdMap_.get(colorId);
+    Color color = getColorByIdOrNull(colorId);
     if (color == null) {
       throw new AssertionError(String.format("Unknown color %s", colorId));
     }
     return color;
+  }
+
+  public Color getColorByIdOrNull(String colorId) {
+    return colorIdMap_.get(colorId);
   }
 
   public Color getColorByLegoIdOrNull(String legoColorId) {
@@ -187,7 +191,7 @@ public class PartModel {
     return getPartByIdOrNull(partId);
   }
   
-  public Part getPreferredPartById(String partId) {
+  public Part getPreferredPartByIdOrNull(String partId) {
     PartGroup group = partMap_.get(partId);
     for (Part part : group.part_) {
       if (part.id_.equals(partId)) {
@@ -204,12 +208,12 @@ public class PartModel {
     return null;
   }
 
-  public Part getPreferredPartByLegoId(String legoPartId) {
+  public Part getPreferredPartByLegoIdOrNull(String legoPartId) {
     String partId = legoIdMap_.get(legoPartId);
     if (partId == null) {
       partId = legoPartId;
     }
-    return getPreferredPartById(partId);
+    return getPreferredPartByIdOrNull(partId);
   }
   
   private PartModel(Reader colorReader, Reader partReader) {
@@ -558,7 +562,7 @@ public class PartModel {
       String partId = entry.getKey();
 
       // Test that the key occurs in the PartGroup.
-      if (getPreferredPartById(partId) == null) {
+      if (getPreferredPartByIdOrNull(partId) == null) {
         throw new AssertionError("Part not found: " + partId);
       }
       
