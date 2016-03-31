@@ -3861,8 +3861,8 @@ part {
 }
 
 part {
-  id: "3709"
-  alternate_id: "3709b"
+  id: "3709b"
+  lego_id: "3709"
 }
 
 part {
