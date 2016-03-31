@@ -17,30 +17,15 @@ It contains:
   is roughly correct but can be quite off sometimes.
 * A limited number of frequently used parts have been measured on a digital scale.
 
-# Installation
+# Downloading & Running
 
-## Pre-requisites
+You can download pre-built binaries and scripts from the /bin directory.
+In order to run them, you need Java JRE 1.7 or later.
 
-To compile your own version, you need:
-* Java SE version 1.7 or later.
-* Python 2.7 is also used to build the part model.
-* You also need Google Protocol Buffers. The code was tested with 3.0.0beta2.
-  You can install it from:
-  https://github.com/google/protobuf
-* In order to recompute the weight estimates you also need an LDraw part library.
-
-## Compiling the tools
-
-If everything is properly installed, you can try to compile everything:
+Example:
 ```sh
-./build-parts.sh
-```
-
-You can run LddTool like this:
-```sh
-./run-lddtool.sh ../lxf/1.70_ar234.lxf
-
-...
+cd bin
+./ldd-tool.sh path/to/my.lxf
 <INVENTORY>
  <ITEM>
   <ITEMTYPE>P</ITEMTYPE>
@@ -60,11 +45,40 @@ You can run LddTool like this:
 Estimated weight: 81.342 gram(s)
 ```
 
+# Compiling from source
+
+## Pre-requisites
+
+To compile your own version, you need:
+* Java SE version 1.7 or later.
+* Python 2.7 is also used to build the part model.
+* You also need Google Protocol Buffers. The code was tested with 3.0.0beta2.
+  You can install it from:
+  https://github.com/google/protobuf
+* In order to recompute the weight estimates you also need an LDraw part library.
+
+## Compiling the tools
+
+If everything is properly installed, you can try to compile everything:
+```sh
+cd work
+./build.sh
+```
+
+You can run LddTool like this:
+```sh
+cd work
+./run-ldd-tool.sh ../lxf/model.lxf
+...
+```
+
 This will recompile everything upon every invocation.
 
 ## Recomputing weights based on LDraw
 
 ```sh
+cd work
+./build.sh
 ./run-offline.sh ExtractWeights assets/part-model.txt > weight-list.csv
 ./run-offline.sh ComputeLDrawWeights weight-list <ldraw-path> > new-ldraw-weights.csv
 cp new-ldraw-weights.csv src/model/weights-ldraw.txt
