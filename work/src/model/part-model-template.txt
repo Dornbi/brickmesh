@@ -2619,6 +2619,10 @@ part {
 }
 
 part {
+  id: "2342"
+}
+
+part {
   id: "2343"
   alternate_id: "6269"
 }
@@ -2626,6 +2630,19 @@ part {
 part {
   id: "2346"
   similar_id: "56897"
+}
+
+part {
+  id: "2348a"
+  similar_id: "2348b"
+}
+part {
+  id: "2348b"
+  lego_id: "2348"
+}
+
+part {
+  id: "2349"
 }
 
 part {
@@ -2660,6 +2677,10 @@ part {
 part {
   id: "2377"
   similar_id: "60032"
+}
+
+part {
+  id: "2397"
 }
 
 part {
@@ -2718,6 +2739,10 @@ part {
 
 part {
   id: "2420"
+}
+
+part {
+  id: "2422"
 }
 
 part {
@@ -2887,6 +2912,10 @@ part {
 }
 
 part {
+  id: "2508"
+}
+
+part {
   id: "2524"
 }
 
@@ -3006,6 +3035,14 @@ part {
 }
 
 part {
+  id: "2680"
+  similar_id: "2680b"
+}
+part {
+  id: "2680b"
+}
+
+part {
   id: "2695"
   similar_id: "60208"
 }
@@ -3118,6 +3155,10 @@ part {
 part {
   id: "2871b"
   lego_id: "2871"
+}
+
+part {
+  id: "2873"
 }
 
 part {
@@ -3553,6 +3594,26 @@ part {
 }
 
 part {
+  id: "3183"
+}
+part {
+  id: "3183a"
+  generic_id: "3183"
+}
+part {
+  id: "3183b"
+  generic_id: "3183"
+}
+part {
+  id: "3183c"
+  generic_id: "3183"
+}
+
+part {
+  id: "3184"
+}
+
+part {
   id: "3185"
 }
 
@@ -3695,6 +3756,15 @@ part {
 
 part {
   id: "3586"
+}
+
+part {
+  id: "3614a"
+  similar_id: "3614b"
+}
+part {
+  id: "3614b"
+  lego_id: "3614"
 }
 
 part {
@@ -3880,6 +3950,10 @@ part {
 }
 
 part {
+  id: "3730"
+}
+
+part {
   id: "3731"
   similar_id: "15456"
   alternate_id: "3729"
@@ -3942,6 +4016,10 @@ part {
 
 part {
   id: "3755"
+}
+
+part {
+  id: "3787"
 }
 
 part {
@@ -4610,6 +4688,10 @@ part {
 }
 
 part {
+  id: "4531"
+}
+
+part {
   id: "4532"
   alternate_id: "92410"
 }
@@ -4640,6 +4722,7 @@ part {
 
 part {
   id: "4590"
+  alternate_id: "18624"
 }
 
 # Lever small base
@@ -4752,6 +4835,10 @@ part {
 
 part {
   id: "4624"
+}
+
+part {
+  id: "4625"
 }
 
 part {
@@ -5813,6 +5900,11 @@ part {
 }
 
 part {
+  id: "6584a"
+  lego_id: "6584"
+}
+
+part {
   id: "6587"
   alternate_id: "13670"
 }
@@ -5943,6 +6035,11 @@ part {
 
 part {
   id: "11301"
+}
+
+part {
+  id: "11399"
+  similar_id: "47998"
 }
 
 part {
@@ -6107,6 +6204,11 @@ part {
 }
 
 part {
+  id: "14137"
+  similar_id: "30407"
+}
+
+part {
   id: "14181"
 }
 
@@ -6125,6 +6227,10 @@ part {
 
 part {
   id: "14418"
+}
+
+part {
+  id: "14419"
 }
 
 part {
@@ -6171,6 +6277,10 @@ part {
 
 part {
   id: "15071"
+}
+
+part {
+  id: "15092"
 }
 
 part {
@@ -6306,6 +6416,10 @@ part {
 }
 
 part {
+  id: "18649"
+}
+
+part {
   id: "18651"
 }
 
@@ -6343,6 +6457,10 @@ part {
 }
 
 part {
+  id: "18910"
+}
+
+part {
   id: "18938"
 }
 
@@ -6356,6 +6474,10 @@ part {
 
 part {
   id: "19220"
+}
+
+part {
+  id: "20482"
 }
 
 part {
@@ -6390,6 +6512,10 @@ part {
 
 part {
   id: "22889"
+}
+
+part {
+  id: "22890"
 }
 
 part {
@@ -6457,6 +6583,18 @@ part {
 }
 
 part {
+  id: "30041"
+}
+
+part {
+  id: "30042"
+}
+
+part {
+  id: "30043"
+}
+
+part {
   id: "30044"
 }
 
@@ -6496,6 +6634,10 @@ part {
 
 part {
   id: "30093"
+}
+
+part {
+  id: "30094"
 }
 
 part {
@@ -6749,19 +6891,16 @@ part {
 }
 
 part {
-  id: "30350"
-}
-part {
   id: "30350a"
-  generic_id: "30350"
+  similar_id: "30350b"
+  similar_id: "30350c"
 }
 part {
   id: "30350b"
-  generic_id: "30350"
+  lego_id: "30350"
 }
 part {
   id: "30350c"
-  generic_id: "30350"
 }
 
 part {
@@ -6895,6 +7034,10 @@ part {
 }
 
 part {
+  id: "30407"
+}
+
+part {
   id: "30410"
   alternate_id: "92756"
 }
@@ -6981,6 +7124,10 @@ part {
 
 part {
   id: "30565"
+}
+
+part {
+  id: "30586"
 }
 
 part {
@@ -7546,6 +7693,11 @@ part {
 }
 
 part {
+  id: "42445"
+  similar_id: "99784"
+}
+
+part {
   id: "42446"
 }
 
@@ -7679,6 +7831,10 @@ part {
 
 part {
   id: "44570"
+}
+
+part {
+  id: "44571"
 }
 
 part {
@@ -7842,6 +7998,10 @@ part {
 
 part {
   id: "47975"
+}
+
+part {
+  id: "47998"
 }
 
 part {
@@ -8683,6 +8843,10 @@ part {
 }
 
 part {
+  id: "62743"
+}
+
+part {
   id: "62810"
   alternate_id: "88425"
 }
@@ -8701,6 +8865,10 @@ part {
 
 part {
   id: "62885"
+}
+
+part {
+  id: "63082"
 }
 
 part {
@@ -8767,6 +8935,10 @@ part {
 
 part {
   id: "64453"
+}
+
+part {
+  id: "64566"
 }
 
 part {
@@ -9266,10 +9438,19 @@ part {
 
 part {
   id: "92088"
+  similar_id: "92340"
 }
 
 part {
   id: "92092"
+}
+
+part {
+  id: "92099"
+}
+
+part {
+  id: "92107"
 }
 
 part {
@@ -9310,6 +9491,10 @@ part {
 
 part {
   id: "92691"
+}
+
+part {
+  id: "92692"
 }
 
 part {
@@ -9582,11 +9767,23 @@ part {
 }
 
 part {
+  id: "98263"
+}
+
+part {
   id: "98282"
 }
 
 part {
   id: "98283"
+}
+
+part {
+  id: "98284"
+}
+
+part {
+  id: "98287"
 }
 
 part {
@@ -9652,6 +9849,10 @@ part {
 
 part {
   id: "99780"
+}
+
+part {
+  id: "99784"
 }
 
 part {
