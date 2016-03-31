@@ -2,11 +2,7 @@
 set -e
 set -x
 
-rm -rf gen/java/*
-rm -rf jar/brickmesh*.jar
-rm -rf class/core/*
-rm -rf class/offline/*
-rm -rf class/test/*
+src/clean.sh
 
 # Compile protos.
 protoc src/proto/*.proto \
