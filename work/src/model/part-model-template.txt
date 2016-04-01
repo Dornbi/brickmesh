@@ -199,6 +199,11 @@ part {
 
 part {
   id: "x93"
+  alternate_id: "43903"
+}
+
+part {
+  id: "x939"
   alternate_id: "4328"
 }
 
@@ -731,6 +736,11 @@ part {
 part {
   id: "590"
   alternate_id: "70358"
+}
+
+part {
+  id: "680c01"
+  alternate_id: "71372"
 }
 
 # Technic shock absorber
@@ -2806,6 +2816,10 @@ part {
 }
 
 part {
+  id: "2441"
+}
+
+part {
   id: "2444"
   similar_id: "10247"
 }
@@ -2879,6 +2893,10 @@ part {
 }
 
 part {
+  id: "2470"
+}
+
+part {
   id: "2476"
   similar_id: "2476b"
 }
@@ -2913,6 +2931,10 @@ part {
 
 part {
   id: "2508"
+}
+
+part {
+  id: "2515"
 }
 
 part {
@@ -2963,6 +2985,10 @@ part {
 }
 
 part {
+  id: "2573"
+}
+
+part {
   id: "2577"
 }
 
@@ -2987,6 +3013,10 @@ part {
 part {
   id: "2582"
   alternate_id: "6139"
+}
+
+part {
+  id: "2593"
 }
 
 part {
@@ -3028,6 +3058,10 @@ part {
   id: "2654"
   alternate_id: "54196"
   alternate_id: "93791"
+}
+
+part {
+  id: "2655"
 }
 
 part {
@@ -3273,6 +3307,22 @@ part {
 
 part {
   id: "2972"
+}
+
+part {
+  id: "2994"
+}
+
+part {
+  id: "2995"
+}
+
+part {
+  id: "2996"
+}
+
+part {
+  id: "2998"
 }
 
 part {
@@ -3741,6 +3791,10 @@ part {
 }
 
 part {
+  id: "3482"
+}
+
+part {
   id: "3483"
   similar_id: "61254"
 }
@@ -3793,6 +3847,10 @@ part {
 
 part {
   id: "3633"
+}
+
+part {
+  id: "3634"
 }
 
 part {
@@ -4517,6 +4575,11 @@ part {
 }
 
 part {
+  id: "4259"
+  similar_id: "6248"
+}
+
+part {
   id: "4265"
 }
 part {
@@ -4580,6 +4643,10 @@ part {
 
 part {
   id: "4287"
+}
+
+part {
+  id: "4288"
 }
 
 part {
@@ -4652,6 +4719,16 @@ part {
 
 part {
   id: "4488"
+  alternate_id: "10313"
+}
+
+part {
+  id: "4489a"
+  similar_id: "4489b"
+}
+part {
+  id: "4489b"
+  lego_id: "4489"
 }
 
 part {
@@ -5406,15 +5483,12 @@ part {
 }
 
 part {
-  id: "6014"
-}
-part {
   id: "6014a"
-  generic_id: "6014"
+  similar_id: "6014b"
 }
 part {
   id: "6014b"
-  generic_id: "6014"
+  lego_id: "6014"
 }
 
 part {
@@ -5604,6 +5678,10 @@ part {
 }
 
 part {
+  id: "6118"
+}
+
+part {
   id: "6134"
 }
 
@@ -5778,6 +5856,10 @@ part {
 }
 
 part {
+  id: "6248"
+}
+
+part {
   id: "6249"
 }
 
@@ -5896,6 +5978,26 @@ part {
 }
 
 part {
+  id: "6579"
+}
+
+part {
+  id: "6580"
+  similar_id: "6580a"
+}
+part {
+  id: "6580a"
+}
+
+part {
+  id: "6581"
+}
+
+part {
+  id: "6582"
+}
+
+part {
   id: "6583"
 }
 
@@ -5997,7 +6099,19 @@ part {
 }
 
 part {
+  id: "11094"
+}
+
+part {
   id: "11203"
+}
+
+part {
+  id: "11208"
+}
+
+part {
+  id: "11209"
 }
 
 part {
@@ -6122,6 +6236,11 @@ part {
 }
 
 part {
+  id: "11650c01"
+  alternate_id: "12622"
+}
+
+part {
   id: "11833"
 }
 
@@ -6147,6 +6266,10 @@ part {
 
 part {
   id: "11955"
+}
+
+part {
+  id: "11957"
 }
 
 part {
@@ -6206,6 +6329,10 @@ part {
 part {
   id: "14137"
   similar_id: "30407"
+}
+
+part {
+  id: "14149"
 }
 
 part {
@@ -6300,7 +6427,15 @@ part {
 }
 
 part {
+  id: "15361"
+}
+
+part {
   id: "15395"
+}
+
+part {
+  id: "15396"
 }
 
 part {
@@ -6381,6 +6516,10 @@ part {
 }
 
 part {
+  id: "15744"
+}
+
+part {
   id: "15790"
   similar_id: "30332"
 }
@@ -6405,6 +6544,10 @@ part {
 
 part {
   id: "17485"
+}
+
+part {
+  id: "18450"
 }
 
 part {
@@ -6453,6 +6596,14 @@ part {
 }
 
 part {
+  id: "18892"
+}
+
+part {
+  id: "18896"
+}
+
+part {
   id: "18897"
 }
 
@@ -6469,7 +6620,19 @@ part {
 }
 
 part {
+  id: "18976"
+}
+
+part {
+  id: "18977"
+}
+
+part {
   id: "18980"
+}
+
+part {
+  id: "19215"
 }
 
 part {
@@ -6483,6 +6646,10 @@ part {
 part {
   id: "20953pb01"
   alternate_id: "20953"
+}
+
+part {
+  id: "21445"
 }
 
 part {
@@ -6507,6 +6674,10 @@ part {
 }
 
 part {
+  id: "22410"
+}
+
+part {
   id: "22885"
 }
 
@@ -6525,6 +6696,10 @@ part {
 
 part {
   id: "23996"
+}
+
+part {
+  id: "24055"
 }
 
 part {
@@ -6548,24 +6723,29 @@ part {
 }
 
 part {
+  id: "24326"
+}
+
+part {
   id: "30000"
 }
 
 part {
-  id: "30027"
+  id: "30027a"
+  similar_id: "30027b"
   similar_id: "74967"
 }
 part {
-  id: "30027a"
-  generic_id: "30027"
-}
-part {
   id: "30027b"
-  generic_id: "30027"
+  lego_id: "30027"
 }
 
 part {
   id: "30028"
+}
+
+part {
+  id: "30029"
 }
 
 part {
@@ -6777,7 +6957,75 @@ part {
 }
 
 part {
+  id: "30187a"
+  item {
+    id: "30187u"
+  }
+  item {
+    id: "30188"
+    color: "10"
+  }
+}
+part {
+  id: "30187b"
+  lego_id: "30187"
+  lego_id: "76040"
+  item {
+    id: "30187u"
+  }
+  item {
+    id: "30188"
+    color: "85"
+  }
+}
+part {
+  id: "30187c"
+  item {
+    id: "30187u"
+  }
+  item {
+    id: "30188"
+    color: "59"
+  }
+}
+part {
+  id: "30187d"
+  item {
+    id: "30187u"
+  }
+  item {
+    id: "30188"
+    color: "7"
+  }
+}
+part {
+  id: "30187e"
+  item {
+    id: "30187u"
+  }
+  item {
+    id: "30188"
+    color: "88"
+  }
+}
+part {
+  id: "30187u"
+}
+
+part {
+  id: "30188"
+}
+
+part {
   id: "30193"
+}
+
+part {
+  id: "30189"
+}
+
+part {
+  id: "30190"
 }
 
 part {
@@ -6884,6 +7132,10 @@ part {
   id: "30294"
   alternate_id: "42291"
   alternate_id: "53934"
+}
+
+part {
+  id: "30324"
 }
 
 part {
@@ -7297,6 +7549,10 @@ part {
   id: "32140"
 }
 
+part {
+  id: "32146"
+}
+
 # Technic, Shock Absorber 10L Damped
 part {
   id: "32181c02"
@@ -7503,6 +7759,14 @@ part {
 }
 
 part {
+  id: "33211"
+}
+
+part {
+  id: "33212"
+}
+
+part {
   id: "33243"
 }
 
@@ -7702,6 +7966,10 @@ part {
 }
 
 part {
+  id: "42608"
+}
+
+part {
   id: "42610"
 }
 
@@ -7801,8 +8069,13 @@ part {
 part {
   id: "44352"
 }
+
 part {
   id: "44353"
+}
+
+part {
+  id: "44374"
 }
 
 part {
@@ -7975,6 +8248,10 @@ part {
 }
 
 part {
+  id: "47720"
+}
+
+part {
   id: "47753"
 }
 
@@ -8130,15 +8407,12 @@ part {
 }
 
 part {
-  id: "50859"
-}
-part {
   id: "50859a"
-  generic_id: "50859"
+  similar_id: "50859b"
 }
 part {
   id: "50859b"
-  generic_id: "50859"
+  lego_id: "50859"
 }
 
 part {
@@ -8151,6 +8425,10 @@ part {
 
 part {
   id: "50862"
+}
+
+part {
+  id: "50944"
 }
 
 part {
@@ -8204,6 +8482,10 @@ part {
 }
 
 part {
+  id: "51377"
+}
+
+part {
   id: "51739"
 }
 
@@ -8214,6 +8496,14 @@ part {
 part {
   id: "52035"
   alternate_id: "89536"
+}
+
+part {
+  id: "52036"
+}
+
+part {
+  id: "52037"
 }
 
 part {
@@ -8272,6 +8562,10 @@ part {
 }
 
 part {
+  id: "54120"
+}
+
+part {
   id: "54125pb01"
   similar_id: "54125pb02"
 }
@@ -8327,6 +8621,10 @@ part {
 }
 
 part {
+  id: "55817"
+}
+
+part {
   id: "55976"
 }
 
@@ -8348,6 +8646,10 @@ part {
 }
 
 part {
+  id: "56890"
+}
+
+part {
   id: "56891"
 }
 
@@ -8361,6 +8663,10 @@ part {
 
 part {
   id: "56902"
+}
+
+part {
+  id: "56903"
 }
 
 part {
@@ -8532,6 +8838,10 @@ part {
     color: "85"
     count: 2
   }
+}
+
+part {
+  id: "59521"
 }
 
 part {
@@ -8746,6 +9056,10 @@ part {
 }
 
 part {
+  id: "61483"
+}
+
+part {
   id: "61487"
 }
 
@@ -8771,6 +9085,10 @@ part {
 part {
   id: "61930c01"
   lego_id: "61930"
+}
+
+part {
+  id: "62359"
 }
 
 part {
@@ -8977,6 +9295,18 @@ part {
 }
 
 part {
+  id: "64711"
+}
+
+part {
+  id: "64712"
+}
+
+part {
+  id: "64713"
+}
+
+part {
   id: "64781"
 }
 
@@ -8986,6 +9316,11 @@ part {
 
 part {
   id: "64799"
+}
+
+part {
+  id: "70162"
+  alternate_id: "2815"
 }
 
 part {
@@ -9378,6 +9713,10 @@ part {
 }
 
 part {
+  id: "89509"
+}
+
+part {
   id: "89523"
 }
 
@@ -9673,6 +10012,18 @@ part {
 }
 
 part {
+  id: "93593"
+}
+
+part {
+  id: "93594"
+}
+
+part {
+  id: "93595"
+}
+
+part {
   id: "93604"
 }
 
@@ -9784,6 +10135,10 @@ part {
 
 part {
   id: "98287"
+}
+
+part {
+  id: "98288"
 }
 
 part {

@@ -195,6 +195,7 @@ x187,1.21
 6558,0.28
 6573,3.17
 6578,4.74
+6581,1.00   # This is not really measured, but the estimator gives 0 weight.
 6587,0.48
 6589,0.30
 6629,2.66
