@@ -64,6 +64,13 @@ public final class PartLoader {
   }
   
   public static final class Result {
+    public boolean isEmpty() {
+      if (parts_ != null && parts_.numQty_ > 0) return false;
+      if (unknownPartIds_ != null) return false;
+      if (unknownColorIds_ != null) return false;
+      return true;
+    }
+    
     public RequiredParts parts_;
     public Map<String, Integer> unknownPartIds_;
     public Map<String, Integer> unknownColorIds_;
