@@ -54,8 +54,12 @@ public final class LDrawWeightEstimator {
     LDrawWeightEstimator l = new LDrawWeightEstimator(args[0]);
     for (int i = 1; i < args.length; ++i) {
       Result r = l.partWeightGramsForPart(args[i]);
-      System.out.format("%.3f gram(s), %.3f%% error\n",
-          r.weightGrams(), 100.0 * r.errorMargin());
+      if (r == null) {
+        System.out.format("No LDraw model found.\n");
+      } else {
+        System.out.format("%.3f gram(s), %.3f%% error\n",
+            r.weightGrams(), 100.0 * r.errorMargin());
+      }
     }
   }
   
