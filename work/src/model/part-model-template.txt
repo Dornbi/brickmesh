@@ -23,11 +23,18 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Known parts.
+# This file contains all parts known to BrickMesh. This is loaded into the
+# PartModel class (along with the color model) that can then be used to get
+# information about the parts.
 #
-# Contains:
-# - All part ids from the golden set CSV files.
-# - All mappings from ldraw.xml.
+# This is a protocol buffer file, the schema is described in
+# part-model-proto.proto.
+#
+# An important part of the part model is the weight of parts. These are kept
+# in separate CSV files so that we can layer data coming from different sources
+# into a final model which is compiled by build_part_model.py
+#
+# Part entries in this file must be kept sorted with sort_part_model.py.
 
 part {
   id: "bb192"
