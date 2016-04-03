@@ -47,13 +47,13 @@ public final class LDrawWeightEstimator {
   public static void main(String[] args) throws IOException {
     if (args.length < 2) {
       System.err.println("Not enough args.");
-      System.err.println("Usage: <command> <ldraw-path> <ldraw-filename> [...]\n");
+      System.err.println("Usage: <command> <ldraw-path> <part-id> [...]\n");
       return;
     }
 
     LDrawWeightEstimator l = new LDrawWeightEstimator(args[0]);
     for (int i = 1; i < args.length; ++i) {
-      Result r = l.partWeightGrams(args[i]);
+      Result r = l.partWeightGramsForPart(args[i]);
       System.out.format("%.3f gram(s), %.3f%% error\n",
           r.weightGrams(), 100.0 * r.errorMargin());
     }
@@ -105,7 +105,25 @@ public final class LDrawWeightEstimator {
     };
   }
 
-  public Result partWeightGrams(String filename) throws IOException {
+  public Result partWeightGramsForPart(String partId) {
+    try {
+      return partWeightGramsForFile(partId + ".dat");
+    }
+    catch (IOException e) {
+    }
+
+    String strippedPartId = partId.replaceFirst("[a-z].*\\Z", "");
+    if (!strippedPartId.equals(partId)) {
+      try {
+        return partWeightGramsForFile(strippedPartId + ".dat");
+      }
+      catch (IOException e) {
+      }
+    }
+    return null;
+  }
+
+  public Result partWeightGramsForFile(String filename) throws IOException {
     final double ldrToCm = 0.04;
     final double absDensityGramPerCm3 = 1.052;
     final double f = ldrToCm * ldrToCm * ldrToCm * absDensityGramPerCm3;

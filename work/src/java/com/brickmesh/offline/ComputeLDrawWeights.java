@@ -86,7 +86,7 @@ public final class ComputeLDrawWeights {
       // Try the LDraw file with the part id in the group.
       try {
         LDrawWeightEstimator lw = new LDrawWeightEstimator(ldrawPath);
-        return lw.partWeightGrams(part.id_ + ".dat");
+        return lw.partWeightGramsForFile(part.id_ + ".dat");
       }
       catch (IOException e) {
       }
@@ -96,7 +96,7 @@ public final class ComputeLDrawWeights {
       if (!strippedPartId.equals(part.id_)) {
         try {
           LDrawWeightEstimator lw = new LDrawWeightEstimator(ldrawPath);
-          return lw.partWeightGrams(strippedPartId + ".dat");
+          return lw.partWeightGramsForFile(strippedPartId + ".dat");
         }
         catch (IOException e) {
         }
@@ -107,7 +107,7 @@ public final class ComputeLDrawWeights {
         for (String id : part.alternateId_) {
           try {
             LDrawWeightEstimator lw = new LDrawWeightEstimator(ldrawPath);
-            return lw.partWeightGrams(id + ".dat");
+            return lw.partWeightGramsForFile(id + ".dat");
           }
           catch (IOException e) {
           }
