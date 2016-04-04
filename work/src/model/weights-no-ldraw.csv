@@ -28,6 +28,8 @@
 # These are mostly wild guesses based on similar parts or
 # random ideas. They are kept separate from mesured parts.
 #
+bb217,1           # guess
+bb522,0.2         # guess
 x12,0.385         # from 32474
 x59,0.444         # from 64648
 x127c11,0.3       # guess
@@ -111,16 +113,22 @@ x1681,8           # guess
 14418,0.549       # from 60478
 14419,0.549       # from 60478
 14704,0.615       # from 48336
+15073,5           # guess
+15108,2           # guess
 15361,10          # guess
 15396,2           # guess
+15403,1           # guess
+15411,0.5         # guess
 15536,20          # guess
 15537,15          # guess
 15625,5           # guess
 15744,2           # guess
 16477,25          # guess
+16968,1           # guess
 17454,4           # guess
 17457,3           # guess
 18455,2.5         # guess from 3001
+18663,1           # guess
 18675,5           # guess
 18729,10          # guess
 18866,0.630       # from 33122
@@ -131,8 +139,10 @@ x1681,8           # guess
 18977,2           # guess
 18980,1.5         # guess
 18990,5           # guess
+19020c01,2        # guess
 19212pb01,6       # guess
 19215,1           # guess
+20105,1           # guess
 20684,4           # guess
 20953pb01,2       # guess
 21849pb01,4       # guess
@@ -141,10 +151,14 @@ x1681,8           # guess
 22391,1.5         # guess
 22410,5           # guess
 22483,5           # guess
+22487,1           # guess
 22885,1.5         # guess
 22889,2           # guess
 22890,0.549       # from 60478
+23421,5           # guess
+23422,1           # guess
 23714,0.312       # from 30238
+23922,1           # guess
 23996,6           # guess
 24014,1.5         # guess
 24055,5           # guess
@@ -188,6 +202,8 @@ x1681,8           # guess
 62604pb01,1.913   # from 2548
 62605pb01,8.008   # from 2547a
 72092,3           # guess
+73090a,50         # guess
+73090b,50         # guess
 73313,9.516       # from 73312
 85962,10          # guess
 87559,4.690       # from 2577
@@ -199,6 +215,8 @@ x1681,8           # guess
 92340,24.730      # from 6584
 92580,5           # guess
 92582,0.742       # from 2476
+92713,5           # guess
+92715,10          # guess
 93060,0.814       # from 6260
 93080b,0.085      # from 95831
 93080h,0.085      # from 95831
