@@ -107,6 +107,7 @@ x1688,30          # guess
 7026b,0.754       # 7026 - 3082
 10172,0.365       # from 3899
 11094,10          # guess
+11126,2           # guess
 11208,1           # guess
 11209,1           # guess
 11250,0.253       # from 4522
@@ -141,6 +142,8 @@ x1688,30          # guess
 17454,4           # guess
 17457,3           # guess
 18455,2.5         # guess from 3001
+18587,1           # guess
+18588,2           # guess
 18603c00,2        # guess
 18603c01pb01,2    # guess
 18663,1           # guess
@@ -151,13 +154,16 @@ x1688,30          # guess
 18897,8           # guess
 18909,10          # guess
 18910,3           # guess
+18943,10          # guess
 18976,1           # guess
 18977,2           # guess
 18980,1.5         # guess
 18990,5           # guess
 19020c01,2        # guess
+19086,5           # guess
 19212pb01,6       # guess
 19215,1           # guess
+19540,2.042       # From 11953
 20105,1           # guess
 20684,4           # guess
 20953pb01,2       # guess
@@ -181,11 +187,13 @@ x1688,30          # guess
 23996,6           # guess
 24014,1.5         # guess
 24055,5           # guess
+24122,0.5         # guess
 24201,0.31        # from 11477
 24246,0.5         # guess
 24299,0.5         # guess
 24307,0.1         # guess
 24309,1.1         # guess from 50950
+24316,0.5         # guess
 24326,3           # guess
 24593pb01,2       # guess
 30085,1.913       # from 2548
@@ -213,6 +221,10 @@ x1688,30          # guess
 54125pb01,5       # guess
 54125pb02,5       # guess
 55768,20          # guess
+57028c01,3        # guess
+57028c02,3        # guess
+57028c03,3        # guess
+57028c04,3        # guess
 57539,1           # guess
 57893,5.611       # from 30517
 57910,2.042       # from 62712
@@ -229,6 +241,7 @@ x1688,30          # guess
 62359,1           # guess
 62604pb01,1.913   # from 2548
 62605pb01,8.008   # from 2547a
+64277c01,2        # guess
 64390,3           # guess
 72092,3           # guess
 73090a,50         # guess
@@ -263,3 +276,4 @@ x1688,30          # guess
 98385,0.5         # guess
 98386pb01,0.790   # from 6251
 98386pb02,0.790   # from 6251
+98564,2           # guess
