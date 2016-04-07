@@ -3604,7 +3604,11 @@ part {
 }
 
 part {
-  id: "2855c01"
+  id: "2856"
+}
+
+part {
+  id: "2856c01"
   alternate_id: "74643"
   item {
     id: "2855"
@@ -3615,7 +3619,7 @@ part {
 }
 
 part {
-  id: "2855c02"
+  id: "2856c02"
   item {
     id: "2855"
     color: "12"
@@ -3626,7 +3630,7 @@ part {
 }
 
 part {
-  id: "2855c03"
+  id: "2856c03"
   item {
     id: "2855"
     color: "86"
@@ -3634,10 +3638,6 @@ part {
   item {
     id: "2856"
   }
-}
-
-part {
-  id: "2856"
 }
 
 part {
@@ -5165,8 +5165,8 @@ part {
 }
 
 part {
-  id: "4208"
-  alternate_id: "4210"
+  id: "4210"
+  alternate_id: "4208"
 }
 
 part {
@@ -10994,17 +10994,13 @@ part {
 }
 
 part {
-  id: "62821"
-}
-
-part {
   id: "62821a"
-  generic_id: "62821"
+  similar_id: "62821b"
 }
 
 part {
   id: "62821b"
-  generic_id: "62821"
+  lego_id: "62821"
 }
 
 part {
