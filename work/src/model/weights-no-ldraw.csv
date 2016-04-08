@@ -45,6 +45,7 @@ x1687,2           # guess
 x1688,30          # guess
 2376,0.6          # guess
 2515,10           # guess
+2551,10           # guess
 2857,10           # guess
 2859,50           # guess
 2861,50           # guess
@@ -156,6 +157,7 @@ x1688,30          # guess
 18897,8           # guess
 18909,10          # guess
 18910,3           # guess
+18913c01,200      # guess
 18943,10          # guess
 18976,1           # guess
 18977,2           # guess
@@ -169,6 +171,7 @@ x1688,30          # guess
 20105,1           # guess
 20684,4           # guess
 20953pb01,2       # guess
+21301,10          # guess
 21849pb01,4       # guess
 22385,0.7         # guess from 3068b
 22387,5           # guess
@@ -187,6 +190,8 @@ x1688,30          # guess
 23922,1           # guess
 23969,0.8         # guess
 23996,6           # guess
+23997,100         # guess
+23998,100         # guess
 24014,1.5         # guess
 24055,5           # guess
 24122,0.5         # guess
@@ -202,6 +207,7 @@ x1688,30          # guess
 30218,0.630       # from 33122
 30632,5           # guess
 30649,6           # guess
+33129,20          # guess
 33216,5           # guess 
 41535,0.230       # from 30103
 42602,8           # guess
@@ -212,11 +218,13 @@ x1688,30          # guess
 44571,5           # guess
 45406,5           # guess
 46304,0.094       # from 30170
+47404,10          # guess
 47406,8.719       # from 6085
 47507,9.349       # from 4597
 47843,5           # guess
 47991,20          # guess
 47992,20          # guess
+48005,20          # guess
 48064,10          # guess
 48064screwm,1     # guess
 48064screwp,1     # guess
@@ -233,6 +241,8 @@ x1688,30          # guess
 57028c03,3        # guess
 57028c04,3        # guess
 57539,1           # guess
+57786,200         # guess
+57789,200         # guess
 57893,5.611       # from 30517
 57910,2.042       # from 62712
 58118,3.674       # from 60797c02 * 2
@@ -250,8 +260,11 @@ x1688,30          # guess
 62359,1           # guess
 62604pb01,1.913   # from 2548
 62605pb01,8.008   # from 2547a
+62791,150         # guess
 64277c01,2        # guess
 64390,3           # guess
+64645,30          # guess
+64651,50          # guess
 72092,3           # guess
 73090a,50         # guess
 73090b,50         # guess
@@ -282,6 +295,7 @@ x1688,30          # guess
 95327pb02,1       # guess
 95351pb01,2       # guess
 95351pb02,2       # guess
+95354,2           # guess
 98102,5           # guess
 98385,0.5         # guess
 98386pb01,0.790   # from 6251
