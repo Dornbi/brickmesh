@@ -73,13 +73,96 @@ part {
 }
 
 part {
+  id: "x37"
+  alternate_id: "71321"
+  alternate_id: "85544"
+}
+
+part {
   id: "x59"
   alternate_id: "30224"
 }
 
 part {
+  id: "x71"
+  alternate_id: "70902"
+  alternate_id: "85543"
+}
+
+part {
+  id: "x77"
+}
+
+part {
+  id: "x77cc100"
+  alternate_id: "14728c100"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc125"
+  alternate_id: "14728c125"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc200"
+  alternate_id: "14728c200"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc21"
+  alternate_id: "14728c21"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc22"
+  alternate_id: "14728c22"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc250"
+  alternate_id: "14728c250"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc30"
+  alternate_id: "14728c30"
+  alternate_id: "58558"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc35"
+  alternate_id: "14728c35"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc50"
+  alternate_id: "14728c50"
+  generic_id: "x77"
+}
+
+part {
+  id: "x77cc75"
+  alternate_id: "14728c75"
+  generic_id: "x77"
+}
+
+part {
   id: "x85"
   alternate_id: "71128"
+}
+
+part {
+  id: "x89"
+  alternate_id: "70904"
+  alternate_id: "85545"
 }
 
 part {
@@ -149,6 +232,22 @@ part {
   alternate_id: "14224"
   alternate_id: "63140"
   alternate_id: "75925"
+}
+
+part {
+  id: "x131a"
+  similar_id: "x131b"
+  similar_id: "x131c"
+}
+
+part {
+  id: "x131b"
+}
+
+part {
+  id: "x131c"
+  alternate_id: "758c02"
+  lego_id: "30527"
 }
 
 part {
@@ -321,7 +420,7 @@ part {
 part {
   id: "75c09"
   kindof_id: "75"
-  alternate_id: "73624"
+  alternate_id: "76324"
 }
 
 part {
@@ -368,6 +467,7 @@ part {
   id: "75c16"
   kindof_id: "75"
   alternate_id: "85532"
+  alternate_id: "76255"
 }
 
 part {
@@ -380,6 +480,7 @@ part {
   id: "75c18"
   kindof_id: "75"
   alternate_id: "61356"
+  alternate_id: "76275"
 }
 
 part {
@@ -393,6 +494,7 @@ part {
   kindof_id: "75"
   alternate_id: "54238"
   alternate_id: "60677"
+  alternate_id: "55676"
 }
 
 part {
@@ -419,6 +521,7 @@ part {
   id: "75c24"
   kindof_id: "75"
   alternate_id: "85526"
+  alternate_id: "76277"
 }
 
 part {
@@ -6436,6 +6539,14 @@ part {
 }
 
 part {
+  id: "6042"
+}
+
+part {
+  id: "6043"
+}
+
+part {
   id: "6044"
 }
 
@@ -7588,6 +7699,10 @@ part {
 }
 
 part {
+  id: "15532"
+}
+
+part {
   id: "15533"
 }
 
@@ -7984,6 +8099,11 @@ part {
 
 part {
   id: "22961"
+}
+
+part {
+  id: "23065"
+  similar_id: "41250"
 }
 
 part {
@@ -9453,6 +9573,10 @@ part {
 part {
   id: "41239"
   alternate_id: "32277"
+}
+
+part {
+  id: "41250"
 }
 
 part {
@@ -11552,6 +11676,18 @@ part {
 }
 
 part {
+  # Apparently, BL and LDD has this exactly swapped.
+  id: "71075"
+  lego_id: "71076"
+}
+
+part {
+  # Apparently, BL and LDD has this exactly swapped.
+  id: "71076"
+  lego_id: "71075"
+}
+
+part {
   id: "71137a"
 }
 
@@ -11559,6 +11695,10 @@ part {
   id: "71137b"
   alternate_id: "40620"
   similar_id: "14682"
+}
+
+part {
+  id: "71155"
 }
 
 part {
@@ -12161,6 +12301,10 @@ part {
 }
 
 part {
+  id: "92338"
+}
+
+part {
   id: "92339"
 }
 
@@ -12684,6 +12828,10 @@ part {
 
 part {
   id: "98564"
+}
+
+part {
+  id: "98567"
 }
 
 part {
