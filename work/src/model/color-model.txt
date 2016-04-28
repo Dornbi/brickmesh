@@ -26,625 +26,625 @@
 # Known colors.
 
 color {
-  id: "1"
+  id: "bl:1"
+  id: "l:1"
   name: "White"
-  lego_id: "1"
 }
 
 color {
-  id: "26"
+  id: "bl:26"
+  id: "l:100"
   name: "Light Salmon"
-  lego_id: "100"
 }
 
 color {
-  id: "25"
+  id: "bl:25"
+  id: "l:101"
   name: "Salmon"
-  lego_id: "101"
 }
 
 color {
-  id: "42"
+  id: "bl:42"
+  id: "l:102"
   name: "Medium Blue"
-  lego_id: "102"
 }
 
 color {
-  id: "49"
+  id: "bl:49"
+  id: "l:103"
   name: "Very Light Gray"
-  lego_id: "103"
 }
 
 color {
-  id: "24"
+  id: "bl:24"
+  id: "l:104"
   name: "Purple"
-  lego_id: "104"
 }
 
 color {
-  id: "31"
+  id: "bl:31"
+  id: "l:105"
   name: "Medium Orange"
-  lego_id: "105"
 }
 
 color {
-  id: "4"
+  id: "bl:4"
+  id: "l:106"
   name: "Orange"
-  lego_id: "106"
 }
 
 color {
-  id: "39"
+  id: "bl:39"
+  id: "l:107"
   name: "Dark Turquoise"
-  lego_id: "107"
 }
 
 color {
-  id: "72"
+  id: "bl:72"
+  id: "l:11"
   name: "Maersk Blue"
-  lego_id: "11"
 }
 
 color {
-  id: "13"
+  id: "bl:13"
+  id: "l:111"
   name: "Trans-Black"
-  lego_id: "111"
 }
 
 color {
-  id: "43"
+  id: "bl:43"
+  id: "l:112"
   name: "Violet"
-  lego_id: "112"
 }
 
 color {
-  id: "50"
+  id: "bl:50"
+  id: "l:113"
   name: "Trans-Dark Pink"
-  lego_id: "113"
 }
 
 color {
-  id: "114"
+  id: "bl:114"
+  id: "l:114"
   name: "Trans-Very Lt Blue"
-  lego_id: "114"
 }
 
 color {
-  id: "76"
+  id: "bl:76"
+  id: "l:115"
   name: "Medium Lime"
-  lego_id: "115"
 }
 
 color {
-  id: "40"
+  id: "bl:40"
+  id: "l:116"
   name: "Light Turquoise"
-  lego_id: "116"
 }
 
 color {
-  id: "101"
+  id: "bl:101"
+  id: "l:117"
   name: "Glitter Trans-Clear"
-  lego_id: "117"
 }
 
 color {
-  id: "34"
+  id: "bl:34"
+  id: "l:119"
   name: "Lime"
-  lego_id: "119"
 }
 
 color {
-  id: "29"
+  id: "bl:29"
+  id: "l:12"
   name: "Earth Orange"
-  lego_id: "12"
 }
 
 color {
-  id: "35"
+  id: "bl:35"
+  id: "l:120"
   name: "Light Lime"
-  lego_id: "120"
 }
 
 color {
-  id: "71"
+  id: "bl:71"
+  id: "l:124"
   name: "Magenta"
-  lego_id: "124"
 }
 
 color {
-  id: "51"
+  id: "bl:51"
+  id: "l:126"
   name: "Trans-Purple"
-  lego_id: "126"
 }
 
 color {
-  id: "61"
+  id: "bl:61"
+  id: "l:127"
   name: "Pearl Light Gold"
-  lego_id: "127"
 }
 
 color {
-  id: "102"
+  id: "bl:102"
+  id: "l:129"
   name: "Glitter Trans-Purple"
-  lego_id: "129"
 }
 
 color {
-  id: "66"
+  id: "bl:66"
+  id: "l:131"
   name: "Pearl Light Gray"
-  lego_id: "131"
 }
 
 color {
-  id: "111"
+  id: "bl:111"
+  id: "l:132"
   name: "Speckle Black-Silver"
-  lego_id: "132"
 }
 
 color {
-  id: "55"
+  id: "bl:55"
+  id: "l:135"
   name: "Sand Blue"
-  lego_id: "135"
 }
 
 color {
-  id: "54"
+  id: "bl:54"
+  id: "l:136"
   name: "Sand Purple"
-  lego_id: "136"
 }
 
 color {
-  id: "69"
+  id: "bl:69"
+  id: "l:138"
   name: "Dark Tan"
-  lego_id: "138"
 }
 
 color {
-  id: "84"
+  id: "bl:84"
+  id: "l:139"
   name: "Copper"
-  lego_id: "139"
 }
 
 color {
-  id: "63"
+  id: "bl:63"
+  id: "l:140"
   name: "Dark Blue"
-  lego_id: "140"
 }
 
 color {
-  id: "80"
+  id: "bl:80"
+  id: "l:141"
   name: "Dark Green"
-  lego_id: "141"
 }
 
 color {
-  id: "74"
+  id: "bl:74"
+  id: "l:143"
   name: "Trans-Medium Blue"
-  lego_id: "143"
 }
 
 color {
-  id: "78"
+  id: "bl:78"
+  id: "l:145"
   name: "Metal Blue"
-  lego_id: "145"
 }
 
 color {
-  id: "81"
+  id: "bl:81"
+  id: "l:147"
   name: "Flat Dark Gold"
-  lego_id: "147"
 }
 
 color {
-  id: "48"
+  id: "bl:48"
+  id: "l:151"
   name: "Sand Green"
-  lego_id: "151"
 }
 
 color {
-  id: "58"
+  id: "bl:58"
+  id: "l:153"
   name: "Sand Red"
-  lego_id: "153"
 }
 
 color {
-  id: "59"
+  id: "bl:59"
+  id: "l:154"
   name: "Dark Red"
-  lego_id: "154"
 }
 
 color {
-  id: "28"
+  id: "bl:28"
+  id: "l:18"
   name: "Flesh"
-  lego_id: "18"
 }
 
 color {
-  id: "98"
+  id: "bl:98"
+  id: "l:182"
   name: "Trans-Orange"
-  lego_id: "182"
 }
 
 color {
-  id: "110"
+  id: "bl:110"
+  id: "l:191"
   name: "Bright Light Orange"
-  lego_id: "191"
 }
 
 color {
-  id: "88"
+  id: "bl:88"
+  id: "l:192"
   name: "Reddish Brown"
-  lego_id: "192"
 }
 
 color {
-  id: "86"
+  id: "bl:86"
+  id: "l:194"
   name: "Light Bluish Gray"
-  lego_id: "194"
 }
 
 color {
-  id: "97"
+  id: "bl:97"
+  id: "l:195"
   name: "BlueViolet"
-  lego_id: "195"
 }
 
 color {
-  id: "109"
+  id: "bl:109"
+  id: "l:196"
   name: "Dark Blue-Violet"
-  lego_id: "196"
 }
 
 color {
-  id: "93"
+  id: "bl:93"
+  id: "l:198"
   name: "Light Purple"
-  lego_id: "198"
 }
 
 color {
-  id: "85"
+  id: "bl:85"
+  id: "l:199"
   name: "Dark Bluish Gray"
-  lego_id: "199"
 }
 
 color {
-  id: "9"
+  id: "bl:9"
+  id: "l:2"
   name: "Light Gray"
-  lego_id: "2"
 }
 
 color {
-  id: "60"
+  id: "bl:60"
+  id: "l:20"
   name: "Milky White"
-  lego_id: "20"
 }
 
 color {
-  id: "99"
+  id: "bl:99"
+  id: "l:208"
   name: "Very Light Bluish Gray"
-  lego_id: "208"
 }
 
 color {
-  id: "5"
+  id: "bl:5"
+  id: "l:21"
   name: "Red"
-  lego_id: "21"
 }
 
 color {
-  id: "105"
+  id: "bl:105"
+  id: "l:212"
   name: "Bright Light Blue"
-  lego_id: "212"
 }
 
 color {
-  id: "91"
+  id: "bl:91"
+  id: "l:217"
   name: "Dark Flesh"
-  lego_id: "217"
 }
 
 color {
-  id: "94"
+  id: "bl:94"
+  id: "l:22"
   name: "Medium Dark Pink"
-  lego_id: "22"
 }
 
 color {
-  id: "47"
+  id: "bl:47"
+  id: "l:221"
   name: "Dark Pink"
-  lego_id: "221"
 }
 
 color {
-  id: "104"
+  id: "bl:104"
+  id: "l:222"
   name: "Bright Pink"
-  lego_id: "222"
 }
 
 color {
-  id: "103"
+  id: "bl:103"
+  id: "l:226"
   name: "Bright Light Yellow"
-  lego_id: "226"
 }
 
 color {
-  id: "7"
+  id: "bl:7"
+  id: "l:23"
   name: "Blue"
-  lego_id: "23"
 }
 
 color {
-  id: "87"
+  id: "bl:87"
+  id: "l:232"
   name: "Sky Blue"
-  lego_id: "232"
 }
 
 color {
-  id: "3"
+  id: "bl:3"
+  id: "l:24"
   name: "Yellow"
-  lego_id: "24"
 }
 
 color {
-  id: "8"
+  id: "bl:8"
+  id: "l:25"
   name: "Brown"
-  lego_id: "25"
 }
 
 color {
-  id: "11"
+  id: "bl:11"
+  id: "l:26"
+  id: "l:109"
   name: "Black"
-  lego_id: "26"
-  lego_id: "109"
 }
 
 color {
-  id: "89"
+  id: "bl:89"
+  id: "l:268"
   name: "Dark Purple"
-  lego_id: "268"
 }
 
 color {
-  id: "10"
+  id: "bl:10"
+  id: "l:27"
   name: "Dark Gray"
-  lego_id: "27"
 }
 
 color {
-  id: "6"
+  id: "bl:6"
+  id: "l:28"
   name: "Green"
-  lego_id: "28"
 }
 
 color {
-  id: "90"
+  id: "bl:90"
+  id: "l:283"
   name: "Light Flesh"
-  lego_id: "283"
 }
 
 color {
-  id: "37"
+  id: "bl:37"
+  id: "l:29"
   name: "Medium Green"
-  lego_id: "29"
 }
 
 color {
-  id: "118"
+  id: "bl:118"
+  id: "l:294"
   name: "Glow In Dark Trans"
-  lego_id: "294"
 }
 
 color {
-  id: "115"
+  id: "bl:115"
+  id: "l:297"
   name: "Pearl Gold"
-  lego_id: "297"
 }
 
 color {
-  id: "95"
+  id: "bl:95"
+  id: "l:179"
+  id: "l:298"
   name: "Flat Silver"
-  lego_id: "179"
-  lego_id: "298"
 }
 
 color {
-  id: "33"
+  id: "bl:33"
+  id: "l:3"
   name: "Light Yellow"
-  lego_id: "3"
 }
 
 color {
-  id: "22"
+  id: "bl:22"
+  id: "l:301"
+  id: "l:309"
   name: "Chrome Silver"
-  lego_id: "301"
-  lego_id: "309"
 }
 
 color {
-  id: "120"
+  id: "bl:120"
+  id: "l:308"
   name: "Dark Brown"
-  lego_id: "308"
 }
 
 color {
-  id: "65"
+  id: "bl:65"
+  id: "l:310"
   name: "Metallic Gold"
-  lego_id: "310"
 }
 
 color {
-  id: "108"
+  id: "bl:108"
+  id: "l:311"
   name: "Trans Bright Green"
-  lego_id: "311"
 }
 
 color {
-  id: "150"
+  id: "bl:150"
+  id: "l:312"
   name: "Medium Dark Flesh"
-  lego_id: "312"
 }
 
 color {
-  id: "67"
+  id: "bl:67"
+  id: "l:315"
   name: "Metallic Silver"
-  lego_id: "315"
 }
 
 color {
-  id: "77"
+  id: "bl:77"
+  id: "l:316"
+  id: "l:148"
   name: "Pearl Dark Gray"
-  lego_id: "316"
-  lego_id: "148"
 }
 
 color {
-  id: "153"
+  id: "bl:153"
+  id: "l:321"
   name: "Dark Azure"
-  lego_id: "321"
 }
 
 color {
-  id: "156"
+  id: "bl:156"
+  id: "l:322"
   name: "Medium Azure"
-  lego_id: "322"
 }
 
 color {
-  id: "41"
+  id: "bl:41"
+  id: "l:323"
+  id: "l:118"
   name: "Aqua"
-  lego_id: "323"
-  lego_id: "118"
 }
 
 color {
-  id: "157"
+  id: "bl:157"
+  id: "l:324"
   name: "Medium Lavender"
-  lego_id: "324"
 }
 
 color {
-  id: "154"
+  id: "bl:154"
+  id: "l:325"
   name: "Lavender"
-  lego_id: "325"
 }
 
 color {
-  id: "158"
+  id: "bl:158"
+  id: "l:326"
   name: "Yellowish Green"
-  lego_id: "326"
 }
 
 color {
-  id: "159"
+  id: "bl:159"
+  id: "l:329"
   name: "Glow In Dark White"
-  lego_id: "329"
 }
 
 color {
-  id: "155"
+  id: "bl:155"
+  id: "l:330"
   name: "Olive green"
-  lego_id: "330"
 }
 
 color {
-  id: "96"
+  id: "bl:96"
+  id: "l:36"
   name: "Very Light Orange"
-  lego_id: "36"
 }
 
 color {
-  id: "36"
+  id: "bl:36"
+  id: "l:37"
   name: "Bright Green"
-  lego_id: "37"
 }
 
 color {
-  id: "68"
+  id: "bl:68"
+  id: "l:38"
   name: "Dark Orange"
-  lego_id: "38"
 }
 
 color {
-  id: "44"
+  id: "bl:44"
+  id: "l:39"
   name: "Light Violet"
-  lego_id: "39"
 }
 
 color {
-  id: "12"
+  id: "bl:12"
+  id: "l:40"
   name: "Trans-Clear"
-  lego_id: "40"
 }
 
 color {
-  id: "17"
+  id: "bl:17"
+  id: "l:41"
   name: "Trans-Red"
-  lego_id: "41"
 }
 
 color {
-  id: "15"
+  id: "bl:15"
+  id: "l:42"
   name: "Trans-Light Blue"
-  lego_id: "42"
 }
 
 color {
-  id: "14"
+  id: "bl:14"
+  id: "l:43"
   name: "Trans-Dark Blue"
-  lego_id: "43"
 }
 
 color {
-  id: "19"
+  id: "bl:19"
+  id: "l:44"
   name: "Trans-Yellow"
-  lego_id: "44"
 }
 
 color {
-  id: "62"
+  id: "bl:62"
+  id: "l:45"
   name: "Light Blue"
-  lego_id: "45"
 }
 
 color {
-  id: "18"
+  id: "bl:18"
+  id: "l:47"
   name: "Trans-Neon Orange"
-  lego_id: "47"
 }
 
 color {
-  id: "20"
+  id: "bl:20"
+  id: "l:48"
   name: "Trans-Green"
-  lego_id: "48"
 }
 
 color {
-  id: "16"
+  id: "bl:16"
+  id: "l:49"
   name: "Trans-Neon Green"
-  lego_id: "49"
 }
 
 color {
-  id: "2"
+  id: "bl:2"
+  id: "l:5"
   name: "Tan"
-  lego_id: "5"
 }
 
 color {
-  id: "46"
+  id: "bl:46"
+  id: "l:50"
   name: "Glow In Dark Opaque"
-  lego_id: "50"
 }
 
 color {
-  id: "38"
+  id: "bl:38"
+  id: "l:6"
   name: "Light Green"
-  lego_id: "6"
 }
 
 color {
-  id: "23"
+  id: "bl:23"
+  id: "l:9"
   name: "Pink"
-  lego_id: "9"
 }
 

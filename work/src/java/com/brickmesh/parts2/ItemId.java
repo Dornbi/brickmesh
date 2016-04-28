@@ -25,18 +25,19 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.brickmesh.util;
+package com.brickmesh.parts2;
 
-public final class Log {
-  public static boolean infoEnabled() {
-    return INFO_ENABLED;
-  }
-  
-  public static void info(String msg) {
-    if (INFO_ENABLED) {
-      System.out.println(msg);
-    }
-  }
-
-  private static final boolean INFO_ENABLED = true;
+// An "item" is a part with a color that is in a model.
+//
+// An ItemId consists of:
+// - colorId: an arbitrary id that should be in the color id space.
+// - partId: an arbitrary id that should be in the part id space.
+// - count: how many such items are in the model.
+//
+// The ids should point to an existing color and part, but there is
+// no guarantee that those actually exist.
+public final class ItemId {
+  public String colorId_;
+  public String partId_;
+  public int count_;
 }

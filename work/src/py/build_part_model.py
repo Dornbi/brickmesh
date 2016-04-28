@@ -77,10 +77,15 @@ def BuildPartModel(input_path, weight_files, output_path):
   for weight_file in weight_files:
     weight_maps.append(LoadCsvWeights(weight_file))
   for part in part_model.part:
-    for weight_map in weight_maps:
-      if part.id in weight_map:
-        part.weight_grams = weight_map[part.id]
-        break
+    has_weight = False
+    for part_id in part.id:
+      for weight_map in weight_maps:
+        if part_id in weight_map:
+          part.weight_grams = weight_map[part_id]
+          has_weight = True
+          break
+      if has_weight:
+        break;
   WritePartModel(part_model, output_path)
 
 
