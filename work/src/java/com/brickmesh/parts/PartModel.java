@@ -460,6 +460,9 @@ public class PartModel {
       return;
     }
     
+    // If it already has weight then the weight is that.
+    if (part.weightGrams_ > 0.0) return;
+    
     // If the part consists of sub-parts then the weight is the sum of those.
     if (part.items_ != null) {
       double weightGrams = 0.0;
@@ -474,9 +477,6 @@ public class PartModel {
       part.weightGrams_ = weightGrams;
       return;
     }
-    
-    // If it already has weight then the weight is that.
-    if (part.weightGrams_ > 0.0) return;
     
     // If any of the similar parts contain weight, use that.
     //System.out.println(part.similar_);
