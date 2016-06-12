@@ -145,6 +145,13 @@ public class RequiredItems {
     addDecomposedItem(part, color, colors, count, itemId, count);
     return true;
   }
+
+  public boolean isEmpty() {
+    if (items_.size() > 0) return false;
+    if (unknownItems_ != null && unknownItems_.size() > 0) return false;
+    if (unmappableItems_ != null && unmappableItems_.size() > 0) return false;
+    return true;
+  }
   
   public TreeMap<String, Integer> unknownColorIdsOrNull() {
     return unknownColorIds_;
