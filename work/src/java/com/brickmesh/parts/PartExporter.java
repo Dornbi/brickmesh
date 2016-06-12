@@ -29,6 +29,8 @@ package com.brickmesh.parts;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class PartExporter {
   public static class Options {
@@ -44,27 +46,34 @@ public class PartExporter {
     public boolean acceptUsed_;
     public boolean notify_;
   }
-  
+
   public static void exportToWantedList(
-      RequiredParts parts, OutputStream output, Options options) {
+      TreeMap<ItemId, Integer> items, OutputStream output, Options options) {
     if (options == null) {
       options = new Options();
     }
     PrintStream ps = output instanceof PrintStream ?
       (PrintStream)output : new PrintStream(output);
     ps.println("<INVENTORY>");
-    for (int i = 0; i < parts.numQty_; ++i) {
-      int itemIdx = parts.itemIdx_[i];
+    for (Map.Entry<ItemId, Integer> entry : items.entrySet()) {
       ps.println(" <ITEM>");
       ps.println("  <ITEMTYPE>P</ITEMTYPE>");
       ps.print("  <ITEMID>");
-      ps.print(parts.preferredParts_[itemIdx].id_);
+      String[] partIdPieces = ItemId.idPiecesOrNull(entry.getKey().partId());
+      if (partIdPieces == null || !partIdPieces[0].equals("b")) {
+        throw new AssertionError("Invalid part id to export: " + entry.getKey());
+      }
+      ps.print(partIdPieces[1]);
       ps.println("</ITEMID>");
       ps.print("  <COLOR>");
-      ps.print(parts.color_[itemIdx].id_);
+      String[] colorIdPieces = ItemId.idPiecesOrNull(entry.getKey().colorId());
+      if (colorIdPieces == null || !colorIdPieces[0].equals("b")) {
+        throw new AssertionError("Invalid color id to export: " + entry.getKey());
+      }
+      ps.print(colorIdPieces[1]);
       ps.println("</COLOR>");
       ps.print("  <MINQTY>");
-      ps.print(parts.quantity_[i]);
+      ps.print(entry.getValue());
       ps.println("</MINQTY>");
       if (options.acceptNew_ && !options.acceptUsed_) {
         ps.println("  <CONDITION>N</CONDITION>");

@@ -24,626 +24,633 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Known colors.
+#
+# For colors the permitted namespaces for ids are:
+# b: Bricklink color id, for example "b:85"
+# l: LEGO color id, for example "l:1"
+#
+# A color may have multiple ids in the same namespace, in this case
+# both ids map to the same color.
 
 color {
-  id: "bl:1"
+  id: "b:1"
   id: "l:1"
   name: "White"
 }
 
 color {
-  id: "bl:26"
+  id: "b:26"
   id: "l:100"
   name: "Light Salmon"
 }
 
 color {
-  id: "bl:25"
+  id: "b:25"
   id: "l:101"
   name: "Salmon"
 }
 
 color {
-  id: "bl:42"
+  id: "b:42"
   id: "l:102"
   name: "Medium Blue"
 }
 
 color {
-  id: "bl:49"
+  id: "b:49"
   id: "l:103"
   name: "Very Light Gray"
 }
 
 color {
-  id: "bl:24"
+  id: "b:24"
   id: "l:104"
   name: "Purple"
 }
 
 color {
-  id: "bl:31"
+  id: "b:31"
   id: "l:105"
   name: "Medium Orange"
 }
 
 color {
-  id: "bl:4"
+  id: "b:4"
   id: "l:106"
   name: "Orange"
 }
 
 color {
-  id: "bl:39"
+  id: "b:39"
   id: "l:107"
   name: "Dark Turquoise"
 }
 
 color {
-  id: "bl:72"
+  id: "b:72"
   id: "l:11"
   name: "Maersk Blue"
 }
 
 color {
-  id: "bl:13"
+  id: "b:13"
   id: "l:111"
   name: "Trans-Black"
 }
 
 color {
-  id: "bl:43"
+  id: "b:43"
   id: "l:112"
   name: "Violet"
 }
 
 color {
-  id: "bl:50"
+  id: "b:50"
   id: "l:113"
   name: "Trans-Dark Pink"
 }
 
 color {
-  id: "bl:114"
+  id: "b:114"
   id: "l:114"
   name: "Trans-Very Lt Blue"
 }
 
 color {
-  id: "bl:76"
+  id: "b:76"
   id: "l:115"
   name: "Medium Lime"
 }
 
 color {
-  id: "bl:40"
+  id: "b:40"
   id: "l:116"
   name: "Light Turquoise"
 }
 
 color {
-  id: "bl:101"
+  id: "b:101"
   id: "l:117"
   name: "Glitter Trans-Clear"
 }
 
 color {
-  id: "bl:34"
+  id: "b:34"
   id: "l:119"
   name: "Lime"
 }
 
 color {
-  id: "bl:29"
+  id: "b:29"
   id: "l:12"
   name: "Earth Orange"
 }
 
 color {
-  id: "bl:35"
+  id: "b:35"
   id: "l:120"
   name: "Light Lime"
 }
 
 color {
-  id: "bl:71"
+  id: "b:71"
   id: "l:124"
   name: "Magenta"
 }
 
 color {
-  id: "bl:51"
+  id: "b:51"
   id: "l:126"
   name: "Trans-Purple"
 }
 
 color {
-  id: "bl:61"
+  id: "b:61"
   id: "l:127"
   name: "Pearl Light Gold"
 }
 
 color {
-  id: "bl:102"
+  id: "b:102"
   id: "l:129"
   name: "Glitter Trans-Purple"
 }
 
 color {
-  id: "bl:66"
+  id: "b:66"
   id: "l:131"
   name: "Pearl Light Gray"
 }
 
 color {
-  id: "bl:111"
+  id: "b:111"
   id: "l:132"
   name: "Speckle Black-Silver"
 }
 
 color {
-  id: "bl:55"
+  id: "b:55"
   id: "l:135"
   name: "Sand Blue"
 }
 
 color {
-  id: "bl:54"
+  id: "b:54"
   id: "l:136"
   name: "Sand Purple"
 }
 
 color {
-  id: "bl:69"
+  id: "b:69"
   id: "l:138"
   name: "Dark Tan"
 }
 
 color {
-  id: "bl:84"
+  id: "b:84"
   id: "l:139"
   name: "Copper"
 }
 
 color {
-  id: "bl:63"
+  id: "b:63"
   id: "l:140"
   name: "Dark Blue"
 }
 
 color {
-  id: "bl:80"
+  id: "b:80"
   id: "l:141"
   name: "Dark Green"
 }
 
 color {
-  id: "bl:74"
+  id: "b:74"
   id: "l:143"
   name: "Trans-Medium Blue"
 }
 
 color {
-  id: "bl:78"
+  id: "b:78"
   id: "l:145"
   name: "Metal Blue"
 }
 
 color {
-  id: "bl:81"
+  id: "b:81"
   id: "l:147"
   name: "Flat Dark Gold"
 }
 
 color {
-  id: "bl:48"
+  id: "b:48"
   id: "l:151"
   name: "Sand Green"
 }
 
 color {
-  id: "bl:58"
+  id: "b:58"
   id: "l:153"
   name: "Sand Red"
 }
 
 color {
-  id: "bl:59"
+  id: "b:59"
   id: "l:154"
   name: "Dark Red"
 }
 
 color {
-  id: "bl:28"
+  id: "b:28"
   id: "l:18"
   name: "Flesh"
 }
 
 color {
-  id: "bl:98"
+  id: "b:98"
   id: "l:182"
   name: "Trans-Orange"
 }
 
 color {
-  id: "bl:110"
+  id: "b:110"
   id: "l:191"
   name: "Bright Light Orange"
 }
 
 color {
-  id: "bl:88"
+  id: "b:88"
   id: "l:192"
   name: "Reddish Brown"
 }
 
 color {
-  id: "bl:86"
+  id: "b:86"
   id: "l:194"
   name: "Light Bluish Gray"
 }
 
 color {
-  id: "bl:97"
+  id: "b:97"
   id: "l:195"
   name: "BlueViolet"
 }
 
 color {
-  id: "bl:109"
+  id: "b:109"
   id: "l:196"
   name: "Dark Blue-Violet"
 }
 
 color {
-  id: "bl:93"
+  id: "b:93"
   id: "l:198"
   name: "Light Purple"
 }
 
 color {
-  id: "bl:85"
+  id: "b:85"
   id: "l:199"
   name: "Dark Bluish Gray"
 }
 
 color {
-  id: "bl:9"
+  id: "b:9"
   id: "l:2"
   name: "Light Gray"
 }
 
 color {
-  id: "bl:60"
+  id: "b:60"
   id: "l:20"
   name: "Milky White"
 }
 
 color {
-  id: "bl:99"
+  id: "b:99"
   id: "l:208"
   name: "Very Light Bluish Gray"
 }
 
 color {
-  id: "bl:5"
+  id: "b:5"
   id: "l:21"
   name: "Red"
 }
 
 color {
-  id: "bl:105"
+  id: "b:105"
   id: "l:212"
   name: "Bright Light Blue"
 }
 
 color {
-  id: "bl:91"
+  id: "b:91"
   id: "l:217"
   name: "Dark Flesh"
 }
 
 color {
-  id: "bl:94"
+  id: "b:94"
   id: "l:22"
   name: "Medium Dark Pink"
 }
 
 color {
-  id: "bl:47"
+  id: "b:47"
   id: "l:221"
   name: "Dark Pink"
 }
 
 color {
-  id: "bl:104"
+  id: "b:104"
   id: "l:222"
   name: "Bright Pink"
 }
 
 color {
-  id: "bl:103"
+  id: "b:103"
   id: "l:226"
   name: "Bright Light Yellow"
 }
 
 color {
-  id: "bl:7"
+  id: "b:7"
   id: "l:23"
   name: "Blue"
 }
 
 color {
-  id: "bl:87"
+  id: "b:87"
   id: "l:232"
   name: "Sky Blue"
 }
 
 color {
-  id: "bl:3"
+  id: "b:3"
   id: "l:24"
   name: "Yellow"
 }
 
 color {
-  id: "bl:8"
+  id: "b:8"
   id: "l:25"
   name: "Brown"
 }
 
 color {
-  id: "bl:11"
+  id: "b:11"
   id: "l:26"
   id: "l:109"
   name: "Black"
 }
 
 color {
-  id: "bl:89"
+  id: "b:89"
   id: "l:268"
   name: "Dark Purple"
 }
 
 color {
-  id: "bl:10"
+  id: "b:10"
   id: "l:27"
   name: "Dark Gray"
 }
 
 color {
-  id: "bl:6"
+  id: "b:6"
   id: "l:28"
   name: "Green"
 }
 
 color {
-  id: "bl:90"
+  id: "b:90"
   id: "l:283"
   name: "Light Flesh"
 }
 
 color {
-  id: "bl:37"
+  id: "b:37"
   id: "l:29"
   name: "Medium Green"
 }
 
 color {
-  id: "bl:118"
+  id: "b:118"
   id: "l:294"
   name: "Glow In Dark Trans"
 }
 
 color {
-  id: "bl:115"
+  id: "b:115"
   id: "l:297"
   name: "Pearl Gold"
 }
 
 color {
-  id: "bl:95"
+  id: "b:95"
   id: "l:179"
   id: "l:298"
   name: "Flat Silver"
 }
 
 color {
-  id: "bl:33"
+  id: "b:33"
   id: "l:3"
   name: "Light Yellow"
 }
 
 color {
-  id: "bl:22"
+  id: "b:22"
   id: "l:301"
   id: "l:309"
   name: "Chrome Silver"
 }
 
 color {
-  id: "bl:120"
+  id: "b:120"
   id: "l:308"
   name: "Dark Brown"
 }
 
 color {
-  id: "bl:65"
+  id: "b:65"
   id: "l:310"
   name: "Metallic Gold"
 }
 
 color {
-  id: "bl:108"
+  id: "b:108"
   id: "l:311"
   name: "Trans Bright Green"
 }
 
 color {
-  id: "bl:150"
+  id: "b:150"
   id: "l:312"
   name: "Medium Dark Flesh"
 }
 
 color {
-  id: "bl:67"
+  id: "b:67"
   id: "l:315"
   name: "Metallic Silver"
 }
 
 color {
-  id: "bl:77"
+  id: "b:77"
   id: "l:316"
   id: "l:148"
   name: "Pearl Dark Gray"
 }
 
 color {
-  id: "bl:153"
+  id: "b:153"
   id: "l:321"
   name: "Dark Azure"
 }
 
 color {
-  id: "bl:156"
+  id: "b:156"
   id: "l:322"
   name: "Medium Azure"
 }
 
 color {
-  id: "bl:41"
+  id: "b:41"
   id: "l:323"
   id: "l:118"
   name: "Aqua"
 }
 
 color {
-  id: "bl:157"
+  id: "b:157"
   id: "l:324"
   name: "Medium Lavender"
 }
 
 color {
-  id: "bl:154"
+  id: "b:154"
   id: "l:325"
   name: "Lavender"
 }
 
 color {
-  id: "bl:158"
+  id: "b:158"
   id: "l:326"
   name: "Yellowish Green"
 }
 
 color {
-  id: "bl:159"
+  id: "b:159"
   id: "l:329"
   name: "Glow In Dark White"
 }
 
 color {
-  id: "bl:155"
+  id: "b:155"
   id: "l:330"
   name: "Olive green"
 }
 
 color {
-  id: "bl:96"
+  id: "b:96"
   id: "l:36"
   name: "Very Light Orange"
 }
 
 color {
-  id: "bl:36"
+  id: "b:36"
   id: "l:37"
   name: "Bright Green"
 }
 
 color {
-  id: "bl:68"
+  id: "b:68"
   id: "l:38"
   name: "Dark Orange"
 }
 
 color {
-  id: "bl:44"
+  id: "b:44"
   id: "l:39"
   name: "Light Violet"
 }
 
 color {
-  id: "bl:12"
+  id: "b:12"
   id: "l:40"
   name: "Trans-Clear"
 }
 
 color {
-  id: "bl:17"
+  id: "b:17"
   id: "l:41"
   name: "Trans-Red"
 }
 
 color {
-  id: "bl:15"
+  id: "b:15"
   id: "l:42"
   name: "Trans-Light Blue"
 }
 
 color {
-  id: "bl:14"
+  id: "b:14"
   id: "l:43"
   name: "Trans-Dark Blue"
 }
 
 color {
-  id: "bl:19"
+  id: "b:19"
   id: "l:44"
   name: "Trans-Yellow"
 }
 
 color {
-  id: "bl:62"
+  id: "b:62"
   id: "l:45"
   name: "Light Blue"
 }
 
 color {
-  id: "bl:18"
+  id: "b:18"
   id: "l:47"
   name: "Trans-Neon Orange"
 }
 
 color {
-  id: "bl:20"
+  id: "b:20"
   id: "l:48"
   name: "Trans-Green"
 }
 
 color {
-  id: "bl:16"
+  id: "b:16"
   id: "l:49"
   name: "Trans-Neon Green"
 }
 
 color {
-  id: "bl:2"
+  id: "b:2"
   id: "l:5"
   name: "Tan"
 }
 
 color {
-  id: "bl:46"
+  id: "b:46"
   id: "l:50"
   name: "Glow In Dark Opaque"
 }
 
 color {
-  id: "bl:38"
+  id: "b:38"
   id: "l:6"
   name: "Light Green"
 }
 
 color {
-  id: "bl:23"
+  id: "b:23"
   id: "l:9"
   name: "Pink"
 }

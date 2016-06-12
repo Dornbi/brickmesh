@@ -39,6 +39,17 @@ import part_model_proto_pb2
 from google.protobuf import text_format
 
 
+PART_ID_EXPANSION = {
+  'g'  : ['b', 'l', 'o'],
+  'gb' : ['b', 'o'],
+  'gl' : ['l', 'o'],
+  'b' : ['b'],
+  'l' : ['l'],
+  'o' : ['o'],
+  'v' : ['v'],
+}
+
+
 def LoadCsvWeights(path):
   weight_map = {}
   with open(path) as f:
@@ -79,14 +90,25 @@ def BuildPartModel(input_path, weight_files, output_path):
   for part in part_model.part:
     has_weight = False
     for part_id in part.id:
-      for weight_map in weight_maps:
-        if part_id in weight_map:
-          part.weight_grams = weight_map[part_id]
-          has_weight = True
-          break
+      expanded_ids = ExpandPartId(part_id)
+      for expanded_id in expanded_ids:
+        for weight_map in weight_maps:
+          if expanded_id in weight_map:
+            part.weight_grams = weight_map[expanded_id]
+            has_weight = True
+            break
+        if has_weight:
+          break;
       if has_weight:
         break;
   WritePartModel(part_model, output_path)
+
+
+def ExpandPartId(part_id):
+  id_pieces = part_id.split(':')
+  assert len(id_pieces) == 2
+  expansion = PART_ID_EXPANSION[id_pieces[0]]
+  return [ ex + ':' + id_pieces[1] for ex in expansion ]
 
 
 BuildPartModel('src/model/part-model-template.txt',

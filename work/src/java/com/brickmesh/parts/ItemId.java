@@ -25,19 +25,63 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.brickmesh.parts2;
+package com.brickmesh.parts;
 
 // An "item" is a part with a color that is in a model.
 //
 // An ItemId consists of:
 // - colorId: an arbitrary id that should be in the color id space.
 // - partId: an arbitrary id that should be in the part id space.
-// - count: how many such items are in the model.
 //
 // The ids should point to an existing color and part, but there is
 // no guarantee that those actually exist.
-public final class ItemId {
-  public String colorId_;
-  public String partId_;
-  public int count_;
+//
+// This class is immutable.
+public final class ItemId implements Comparable {
+  public static String[] idPiecesOrNull(String id) {
+    String[] split = id.split(":");
+    if (split.length != 2) return null;
+    return split;
+  }
+  
+  public ItemId(String partId, String colorId) {
+    partId_ = partId;
+    colorId_ = colorId;
+  }
+  
+  public String colorId() {
+    return colorId_;
+  }
+
+  public String partId() {
+    return partId_;
+  }
+  
+  public boolean equals(Object other) {
+    ItemId itemId = (ItemId)other;
+    return colorId_.equals(itemId.colorId_) && partId_.equals(itemId.partId_);
+  } 
+    
+  public int hashCode() {
+    final int PRIME = 31;
+    return colorId_.hashCode() * PRIME + partId_.hashCode();
+  }
+  
+  public int compareTo(Object other) {
+    ItemId itemId = (ItemId)other;
+    int result = partId_.compareTo(itemId.partId_);
+    if (result != 0) return result;
+    return colorId_.compareTo(itemId.colorId_);
+  }
+  
+  public String toString() {
+    StringBuffer sb = new StringBuffer();
+    sb.append(partId_);
+    sb.append('-');
+    sb.append(colorId_);
+    return sb.toString();
+  }
+  
+  private String partId_;
+  private String colorId_;
 }

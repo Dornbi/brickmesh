@@ -19,7 +19,8 @@ PROTO_CLASSPATH=jar/protobuf-java-3.0.0-beta-2.jar
 javac -d class/core \
     -classpath "${PROTO_CLASSPATH}:class/core" \
     -Xlint:unchecked \
-    src/java/com/brickmesh/parts2/*.java \
+    -Xdiags:verbose \
+    src/java/com/brickmesh/parts/*.java \
     src/java/com/brickmesh/util/*.java \
     gen/java/com/brickmesh/proto/*.java
 
@@ -35,15 +36,14 @@ jar cf jar/brickmesh.jar -C class/core com
 javac -d class/test \
     -classpath "${PROTO_CLASSPATH}:jar/brickmesh.jar:class/test" \
     -Xlint:unchecked \
-    src/javatest/com/brickmesh/parts2/*.java \
+    src/javatest/com/brickmesh/parts/*.java \
     src/javatest/com/brickmesh/util/*.java
 
 # Run unit tests & benchmarks.
 TEST_CLASSPATH="${PROTO_CLASSPATH}:jar/brickmesh.jar:class/test"
-java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts2.PartModelTest
-
-#java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.PartLoaderTest
-#java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.RequiredPartsTest
-#java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.util.SorterBenchmark
-#java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.util.SorterTest
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.PartLoaderTest
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.PartModelTest
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.RequiredItemsTest
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.util.SorterBenchmark
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.util.SorterTest
 

@@ -30,6 +30,7 @@ package com.brickmesh.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 
 public final class Util {
   public static int[] intArray(Integer... values) {
@@ -48,7 +49,7 @@ public final class Util {
     return result;
   }
   
-  public static Object[] array(Object... values) {
+  public static Object[] objectArray(Object... values) {
     if (values.length == 0) {
       throw new IllegalArgumentException("Must have at least 1 element.");
     }
@@ -58,6 +59,10 @@ public final class Util {
       result[i] = values[i];
     }
     return result;
+  }
+
+  public static String[] stringArray(String... values) {
+    return (String[])objectArray((Object[])values);
   }
   
   public static String join(String delimiter, Object[] elements) {
@@ -82,9 +87,9 @@ public final class Util {
     return sb.toString();
   }
 
-  public static long printPhaseTime(String phaseName, long startNanos) {
+  public static long logPhaseTime(String phaseName, long startNanos) {
     long nanos = System.nanoTime();
-    System.out.format("%s: %d us\n", phaseName, (nanos - startNanos) / 1000);
+    Log.info(String.format("%s: %d us", phaseName, (nanos - startNanos) / 1000));
     return nanos;
   }
   
@@ -102,6 +107,6 @@ public final class Util {
     }
     return total;
   }
-
+  
   private Util() {}
 };

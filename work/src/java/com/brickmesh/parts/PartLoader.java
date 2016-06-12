@@ -30,8 +30,11 @@ package com.brickmesh.parts;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import javax.xml.parsers.ParserConfigurationException;
@@ -65,15 +68,11 @@ public final class PartLoader {
   
   public static final class Result {
     public boolean isEmpty() {
-      if (parts_ != null && parts_.numQty_ > 0) return false;
-      if (unknownPartIds_ != null) return false;
-      if (unknownColorIds_ != null) return false;
+      if (items_ != null) return false;
       return true;
     }
     
-    public RequiredParts parts_;
-    public Map<String, Integer> unknownPartIds_;
-    public Map<String, Integer> unknownColorIds_;
+    public RequiredItems items_;
     public byte[] imageBytes_;
   }
 
@@ -92,109 +91,56 @@ public final class PartLoader {
   }
   
   public LxfLoader createLxfLoader(Options options) {
-    return new LxfLoader(options);
+    return new LxfLoader(partModel_, options);
   }
   
   public WantedLoader createWantedLoader(Options options) {
-    return new WantedLoader(options);
+    return new WantedLoader(partModel_, options);
   }
   
   public abstract class LoaderBase {
-    public LoaderBase(Options options) {
+    public LoaderBase(PartModel partModel, Options options) {
       options_ = options;
-      partCounts_ = new TreeMap<String, Integer>();
-    }
-
-    public abstract void parse(InputStream input) throws IOException, LoaderException;
-
-    public final Result getResult() {
-      if (result_ == null) {
-        result_ = new Result();
-        RequiredParts parts = new RequiredParts();
-        result_.parts_ = parts;
-        for (Map.Entry<String, Integer> entry : partCounts_.entrySet()) {
-          String[] key = entry.getKey().split("-");
-          String partId = key[0];
-          String colorId = key[1];
-          PartModel.PartGroup group = lookupPart(partId);
-          if (group == null) {
-            result_.unknownPartIds_ = incrementMapCount(result_.unknownPartIds_, partId);
-            continue;
-          }
-          PartModel.Part preferredPart = lookupPreferredPart(partId);
-          PartModel.Color color = preferredPart.color_;
-          if (preferredPart.color_ == null) {
-            color = lookupColor(colorId);
-            if (color == null) {
-              result_.unknownColorIds_ = incrementMapCount(result_.unknownColorIds_, colorId);
-              continue;
-            }
-          }
-          int quantity = entry.getValue();
-          parts.addItem(group, preferredPart, color, quantity);
-        }
-        if (imageBytes_ != null) {
-          result_.imageBytes_ = imageBytes_;
-        }
-      }
-      return result_;
+      items_ = new RequiredItems(partModel, 0);
     }
     
-    protected abstract PartModel.PartGroup lookupPart(String partId);
-    protected abstract PartModel.Part lookupPreferredPart(String partId);
-    protected abstract PartModel.Color lookupColor(String colorId);
+    public abstract void parse(InputStream input) throws IOException, LoaderException;
+    
+    public final Result getResult() {
+      Result result = new Result();
+      result.items_ = items_;
+      result.imageBytes_ = imageBytes_;
+      return result;
+    }
 
-    protected final void incrementPartCount(String partId, int quantity)
+    protected abstract String idNamespace();
+    
+    protected final void addItem(String partId, List<String> colorIds, int count)
         throws LoaderException {
-      Integer count = partCounts_.get(partId);
-      if (count == null) {
-        partCounts_.put(partId, quantity);
-        if (partCounts_.size() > options_.maxNumQty_) {
-          throw new LoaderException(String.format(
-              "Too many different parts in model (limit=%d)", options_.maxNumQty_));
-        }
-      } else {
-        partCounts_.put(partId, count + quantity);
+      if (items_.numDifferentItems() > options_.maxNumQty_) {
+        throw new LoaderException(String.format(
+            "Too many different parts in model (limit=%d)", options_.maxNumQty_));
       }
-      totalQty_ += quantity;
-      if (totalQty_ > options_.maxTotalQty_) {
+      if (items_.numTotalItems() > options_.maxTotalQty_) {
         throw new LoaderException(String.format(
             "Too many total parts in model (limit=%d)", options_.maxTotalQty_));
       }
+      items_.addDecomposed(idNamespace(), partId, colorIds, count);
     }
     
-    protected final Map<String, Integer> incrementMapCount(
-        Map<String, Integer> map, String key) {
-      if (map == null) {
-        map = new TreeMap<String, Integer>();
-      }
-      Integer count = map.get(key);
-      if (count == null) {
-        map.put(key, 1);
-      } else {
-        map.put(key, count + 1);
-      }
-      return map;
-    }
+    protected byte[] imageBytes_;    
 
-    protected Result result_;
-    protected byte[] imageBytes_;
-    
     private Options options_;
-    private int totalQty_;
-    private TreeMap<String, Integer> partCounts_;
+    private RequiredItems items_;
   }
   
   // Loads RequiredParts from Lego Digital Designer files.
   public class LxfLoader extends LoaderBase {
-    public LxfLoader(Options options) {
-      super(options);
+    public LxfLoader(PartModel partModel, Options options) {
+      super(partModel, options);
     }
     
     public void parse(InputStream input) throws IOException, LoaderException {
-      if (result_ != null) {
-        throw new AssertionError("Already has result, cannot parse more.");
-      }
       ZipInputStream zis = new ZipInputStream(input);
       try {
         while (true) {
@@ -218,17 +164,9 @@ public final class PartLoader {
         zis.close();  
       }
     }
-    
-    protected PartModel.PartGroup lookupPart(String partId) {
-      return partModel_.getPartByLegoIdOrNull(partId);
-    }
-    
-    protected PartModel.Part lookupPreferredPart(String partId) {
-      return partModel_.getPreferredPartByLegoIdOrNull(partId);
-    }
-    
-    protected PartModel.Color lookupColor(String colorId) {
-      return partModel_.getColorByLegoIdOrNull(colorId);
+
+    protected String idNamespace() {
+      return "l";
     }
     
     private void parseXml(InputStream input) throws IOException, LoaderException {
@@ -245,7 +183,8 @@ public final class PartLoader {
               }
             } else if (qName.equals("Brick")) {
               part_ = attributes.getValue("designID");
-              color_ = null;
+              color_ = new ArrayList<String>();
+              subPartsWithColor_ = 0;
               count_ = 0;
               ++brickDepth_;
             } else if (qName.equals("Part")) {
@@ -253,40 +192,49 @@ public final class PartLoader {
                 // Older versions of LXF (e.g. 2.3) do not have Brick
                 // elements at all, everything is attached to the Part.
                 part_ = attributes.getValue("designID");
-                color_ = null;
+                color_ = new ArrayList<String>();
+                subPartsWithColor_ = 0;
                 count_ = 0;
               }
-              if (color_ == null) {
-                String colors = attributes.getValue("materials");
+              String colors = attributes.getValue("materials");
+              if (colors == null) {
+                colors = attributes.getValue("materialID");
                 if (colors == null) {
-                  color_ = attributes.getValue("materialID");
-                } else {
-                  color_ = colors.split(",")[0];
-                }
-                if (color_ == null) {
                   throw new AssertionError("Cannot get color from LXF.");
                 }
+                color_.add(colors);
+              } else {
+                if (subPartsWithColor_ == 0) {
+                  color_.addAll(Arrays.asList(colors.split(",")));
+                } else if (subPartsWithColor_ == 1) {
+                  color_ = color_.subList(0, 1);
+                  color_.add(colors.split(",")[0]);
+                } else {
+                  color_.add(colors.split(",")[0]);
+                }
               }
+              ++subPartsWithColor_;
             }
     			}
 
     			public void endElement(String uri, String localName, String qName)
               throws LoaderException {
             if (qName.equals("Brick")) {
-              incrementPartCount(part_ + "-" + color_, 1);
+              addItem(part_, color_, 1);
               part_ = null;
               color_ = null;
               --brickDepth_;
             }
             if (qName.equals("Part") && brickDepth_ == 0) {
-              incrementPartCount(part_ + "-" + color_, 1);
+              addItem(part_, color_, 1);
               part_ = null;
               color_ = null;
             }
     			}
           
           private String part_;
-          private String color_;
+          private List<String> color_;
+          private int subPartsWithColor_;
           private int count_;
           private int brickDepth_;
     		});
@@ -307,8 +255,8 @@ public final class PartLoader {
 
   // Loads RequiredParts from a BrickLink wanted list.
   public class WantedLoader extends LoaderBase {
-    public WantedLoader(Options options) {
-      super(options);
+    public WantedLoader(PartModel partModel, Options options) {
+      super(partModel, options);
     }
     
     public void parse(InputStream input) throws LoaderException, IOException {
@@ -318,19 +266,19 @@ public final class PartLoader {
     			public void startElement(String uri, String localName, String qName,
               Attributes attributes) {
             if (qName.equals("ITEM")) {
-              itemId_ = "";
               color_ = "";
+              partId_ = "";
               quantity_ = "";
             }
             mode_ = qName;
     			}
   
           public void characters(char[] ch, int start, int length) {
-            if (mode_.equals("ITEMID")) {
-              itemId_ = itemId_ + new String(ch, start, length);
-            }
             if (mode_.equals("COLOR")) {
               color_ = color_ + new String(ch, start, length);
+            }
+            if (mode_.equals("ITEMID")) {
+              partId_ = partId_ + new String(ch, start, length);
             }
             if (mode_.equals("MINQTY")) {
               quantity_ = quantity_ + new String(ch, start, length);
@@ -340,16 +288,18 @@ public final class PartLoader {
           public void endElement(String uri, String localName, String qName)
               throws LoaderException {
             if (qName.equals("ITEM")) {
-              String itemId = itemId_.trim();
               short color = Short.parseShort(color_.trim());
+              String partId = partId_.trim();
               int quantity = Integer.parseInt(quantity_.trim());
-              incrementPartCount(itemId + "-" + color, quantity);
+              ArrayList<String> colors = new ArrayList<String>();
+              colors.add(Short.toString(color));
+              addItem(partId, colors, quantity);
             }
           }
   
           private String mode_ = "";
-          private String itemId_ = "";
           private String color_ = "";
+          private String partId_ = "";
           private String quantity_ = "";
     		});
       }
@@ -363,17 +313,9 @@ public final class PartLoader {
         throw new IOException(ex);
       }
   	}
-    
-    protected PartModel.PartGroup lookupPart(String partId) {
-      return partModel_.getPartByIdOrNull(partId);
-    }
-    
-    protected PartModel.Part lookupPreferredPart(String partId) {
-      return partModel_.getPreferredPartByIdOrNull(partId);
-    }
-    
-    protected PartModel.Color lookupColor(String colorId) {
-      return partModel_.getColorByIdOrNull(colorId);
+
+    protected String idNamespace() {
+      return "b";
     }
   }
   

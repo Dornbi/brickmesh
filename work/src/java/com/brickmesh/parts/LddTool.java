@@ -30,6 +30,7 @@ package com.brickmesh.parts;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class LddTool {
   public static void main(String[] args)
@@ -52,20 +53,26 @@ public class LddTool {
       }
     }
 
-    PartLoader.Result result = loader.getResult();
-    PartExporter.exportToWantedList(result.parts_, System.out, null);
-    System.err.format("Estimated weight: %.3f gram(s)\n",
-        result.parts_.weightEstimateGrams());
-    if (result.unknownColorIds_ != null) {
-      for (Map.Entry<String, Integer> entry : result.unknownColorIds_.entrySet()) {
-        System.err.format("Warning: Unknown LEGO color id %s, %d part(s)\n",
+    RequiredItems items = loader.getResult().items_;
+    TreeMap<ItemId, Integer> blItems = items.exportToNamespace("b");
+    PartExporter.exportToWantedList(blItems, System.out, null);
+    System.err.format("Estimated weight: %.3f gram(s)\n", items.weightEstimateGrams());
+    if (items.unknownColorIdsOrNull() != null) {
+      for (Map.Entry<String, Integer> entry : items.unknownColorIdsOrNull().entrySet()) {
+        System.err.format("Warning: Unknown LEGO color id: %s, %d part(s)\n",
             entry.getKey(), entry.getValue());
       }
     }
-    if (result.unknownPartIds_ != null) {
-      for (Map.Entry<String, Integer> entry : result.unknownPartIds_.entrySet()) {
-        System.err.format("Warning: Unknown LEGO part id %s, %d part(s)\n",
+    if (items.unknownPartIdsOrNull() != null) {
+      for (Map.Entry<String, Integer> entry : items.unknownPartIdsOrNull().entrySet()) {
+        System.err.format("Warning: Unknown LEGO part id: %s, %d part(s)\n",
             entry.getKey(), entry.getValue());
+      }
+    }
+    if (items.unmappableItemsOrNull() != null) {
+      for (Map.Entry<ItemId, Integer> entry : items.unmappableItemsOrNull().entrySet()) {
+        System.err.format("Warning: Cannot map LEGO part %s in color %s, %d part(s)\n",
+            entry.getKey().partId(), entry.getKey().colorId(), entry.getValue());
       }
     }
   }

@@ -29,49 +29,111 @@ syntax="proto2";
 package com.brickmesh.proto;
 
 message Color {
+  // The ids of the color. It must have at least one id and may have
+  // an arbitrary number of ids. No two colors are allowed to have the
+  // same id.
   repeated string id = 1;
+  
+  // Human-readable name of the color.
   optional string name = 2;
 }
 
 message ColorModel {
+  // All the known colors in the model.
   repeated Color color = 1;
 }
 
 message Part {
+  // The ids of the part. Like with colors, it must have at least one id
+  // and may have an abitrary number of ids. No two parts are allowed to
+  // have the same id.
+  //
+  // The permitted namespaces for ids are:
+  // b:  - id only valid on BrickLink.
+  // l:  - id only valid in LDD.
+  // o:  - id that is attempted in non-BL and non-LDD context (for example LDraw.)
+  // v:  - virtual id, not valid anywhere.
+  //
+  // Convenience expanded namespaces:
+  // g:  - expands to b: l: o:
+  // gb: - expands to b: o:
+  // gl: - expands to l: o:
+  //
+  // There must not be any collisions between namespaces, for example when
+  // exanded, "g:123" collides with "b:123"; these two must not coexist anywhere
+  // in the model.
   repeated string id = 1;
 
   message Similar {
+    // One of the ids of the similar part. This must be a non-expanded id.
     optional string id = 1;
     
-    enum Confirm {
-      // Automatic replacement both ways.
-      NONE = 0;
-      
-      // Needs confirmation when replacing this part with the other part.
-      OTHER = 1;
-      
-      // Needs confirmation both ways.
-      BOTH = 2;
-    }
-    optional Confirm confirm = 2;
+    // Is confirmation needed to replace similar parts with each other.
+    optional bool confirm = 2;
   }
+
+  // Other existing parts that can be used as a replacement.
+  // This must exist as a separate part with its own id.
   repeated Similar similar = 2;
 
   message Decor {
+    // The id of the part with a decor.
     repeated string id = 1;
   }
+
+  // Decor is syntactic sugar to simiplify the declaration of parts
+  // with decor.
+  //
+  // part {
+  //   id: "g:1"
+  //   decor { id: "g:1b"}
+  // }
+  //
+  // is equivalent to:
+  //
+  // part {
+  //   id: "g:1"
+  //   similar { id: "g:1b" confirm: BOTH }
+  // }
+  // part {
+  //   id: "g:1b"
+  // }
   repeated Decor decor = 3;
 
   message Item {
+    // An id of the contained part.
     optional string id = 1;
+    
+    // The color of the contained part. If this is not set then it
+    // inherits the color of this part.
     optional string color = 2;
+    
+    // How many of the contained parts are part of this one.
+    // If omitted then 1.
     optional int32 count = 3;
   }
+  
+  // If this part is fully equivalent to some combination of other
+  // parts, then they are listed here. Must be more than 1.
   repeated Item item = 4;
   
-  optional double weight_grams = 5;
+  // The weight of the part in grams. The model must be able to figure
+  // out a weight for each part. If this is not set explicitly then it
+  // tries the following rules:
+  // 1. If this part has 'item' fields then it tries to compute it as
+  //    a sum of those.
+  // 2. If this part has similar parts then it tries to use the weight
+  //    of those.
+  optional double weight_grams = 6;
 }
 
+// All recognized parts, irrespective of color.
+message PartModel {
+  repeated Part part = 1;
+}
+
+// One part-color combinations that are actually available and
+// can be bought.
 message AvailablePart {
   optional string id = 1;
 
@@ -85,72 +147,6 @@ message AvailablePart {
   repeated Color color = 2;
 }
 
-message PartModel {
-  repeated Part part = 1;
-}
-
 message AvailableParts {
   repeated AvailablePart part = 1;
 }
-
-/*
-message Color {
-  optional string id = 1;
-  optional string name = 2;
-  repeated string lego_id = 3;
-}
-
-message ColorModel {
-  repeated Color color = 1;
-}
-
-message Part {
-  // Required for each element. The unique id.
-  optional string id = 1;
-  
-  // Required for each leaf element that does not have items
-  // and not a generalization of some other element.
-  optional float weight_grams = 2;
-
-  // The design id used by Lego tools (like LDD).
-  // This should be only used if the lego_id is the id of another
-  // existing part; otherwise alternate_id is preferred.
-  repeated string lego_id = 3;
-
-  // Force the part to be looked up in this color without any warning
-  // to the user. This is useful for parts that only exist in a single
-  // color and are composed of several sub-parts; hence inferring the
-  // single existing color would ambiguous.
-  optional string force_color_id = 10;
-  
-  // Alternate ids for this same exact element.
-  // No other element with this id must exist.
-  repeated string alternate_id = 4;
-
-  // Other existing parts that can be used as a replacement.
-  // This must exist as a separate element.
-  repeated string similar_id = 5;
-  
-  // Id of more generic part that can be used as a substitute.
-  // This must exist as a separate element, albeit it must not have
-  // a weight.
-  optional string generic_id = 6;
-  
-  // Id of more generic part that is the same kind but cannot
-  // be unconditionally used as a substitute.
-  optional string kindof_id = 7;
-  
-  message Item {
-    optional string id = 1;
-    optional string color = 2;
-    optional int32 count = 3 [default = 1];
-  }
-  
-  // Combinations of elements that are similar to this one.
-  repeated Item item = 8;
-}
-
-message PartModel {
-  repeated Part part = 1;
-}
-*/

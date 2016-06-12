@@ -42,105 +42,142 @@ import com.brickmesh.proto.PartModelProto;
 import com.brickmesh.util.Log;
 import com.brickmesh.util.Util;
 
-// The Part model contains all known parts and relationships between them.
-// It is loaded from the PartModel proto files.
 public class PartModel {
   // A single color.
   public static class Color {
-    // The Bricklink ID of the color.
-    public String id_;
-    
+    // The IDs of the color in all color namespaces.
+    public String[] ids_;
+
     // A human-readable name of the color.
     public String name_;
-    
-    // The LEGO ID of the color.
-    public String[] legoId_;
+
+    public String primaryId() {
+      return ids_[0];
+    }
+
+    public String idInNamespace(String namespace) {
+      for (String id : ids_) {
+        if (id.startsWith(namespace) &&
+            id.charAt(namespace.length()) == ':') {
+          return id;      
+        }
+      }
+      return null;
+    }
   }
 
-  // A single part that shops have inventory of.
-  public static class Part {
+  // A part that has a specific color and quantity.
+  // In the model for parts composed from sub-parts, this holds info
+  // about the sub-parts. In this case color_ may be null or explicitly set.
+  public static class Item {
+    // The sub-part.
+    public Part part_;
     
-    // For parts composed from sub-parts, this class holds info
-    // about the sub-parts.
-    public static class Item {
-      // The sub-part.
-      public Part part_;
-
-      // If non-null then the sub-part always comes in this color.
-      // Otherwise it inherits the color of the composed part.
-      public Color color_;
-      
-      // How many sub-parts are needed for the composed part. Usually 1.
-      public int count_;
-      
-      public String toString() {
-        StringBuffer sb = new StringBuffer();
-        sb.append(part_.id_);
-        if (color_ != null) {
-          sb.append(",color=");
-          sb.append(color_.id_);
-        }
-        sb.append(",count=");
-        sb.append(count_);
-        return sb.toString();
-      }
-    }
-
-    // The Bricklink id of the part.    
-    public String id_;
-    
-    // Alternate id(s) of the part or null.
-    public String[] alternateId_;
-    
-    // The weight in grams. Must be nonzero after loading.
-    public float weightGrams_;
-
-    // If this is non-null then this part can only exist in this color.
-    // This is true in the following cases:
-    // 1. If a part uses the force_color_id field.
-    // 2. If the Part contains a superset of the part in the PartGroup
-    //    but the superset contains this part only in that color.
+    // If non-null then the sub-part always comes in this color.
+    // Otherwise it inherits the color of the composed part.
     public Color color_;
-    
-    // If this is a composite part made from other parts, this is the
-    // list of all the parts that it is made from.
-    public Item[] item_;
-    
-    public Part partialClone() {
-      Part part = new Part();
-      part.id_ = id_;
-      part.weightGrams_ = weightGrams_;
-      // Contained items and alternate ids are deliberately not cloned.
-      return part;
-    }
+
+    // How many sub-parts are needed for the composed part. Usually 1.
+    public int count_;
     
     public String toString() {
       StringBuffer sb = new StringBuffer();
-      sb.append(id_);
-      if (alternateId_ != null) {
-        sb.append(" (");
-        sb.append(Util.join(",", alternateId_));
-        sb.append(")");
+      sb.append(part_.primaryId());
+      if (color_ != null) {
+        sb.append(",color=");
+        sb.append(color_.primaryId());
       }
-      sb.append(String.format(": weight=%.3f", weightGrams_));
-      if (item_ != null) {
-        sb.append(" items:[");
-        sb.append(Util.join(",", item_));
+      sb.append(",count=");
+      sb.append(count_);
+      return sb.toString();
+    }
+  }
+  
+  public static class Part {
+    // All the ids of this part. Each one is unique.
+    String[] ids_;
+
+    HashSet<Part> similar_;
+    HashSet<Part> confirm_;
+
+    // If this is a composite part made from other parts, this is the
+    // list of all the parts that it is made from.
+    Item[] items_;
+
+    // If this part that is used to compose other parts, they are listed here.
+    HashSet<Part> parents_;    
+
+    // The weight in grams. Must be nonzero after loading.
+    public double weightGrams_;
+
+    public String primaryId() {
+      return ids_[0];
+    }
+    
+    public String idInNamespace(String namespace) {
+      for (String id : ids_) {
+        if (id.startsWith(namespace) &&
+            id.charAt(namespace.length()) == ':') {
+          return id;      
+        }
+      }
+      return null;
+    }
+    
+    // Returns null if childPart is not found or if it has no color.
+    public Color childPartColor(Part childPart) {
+      if (items_ != null) {
+        for (Item item : items_) {
+          if (item.part_ == childPart) {
+            return item.color_;
+          }
+        }
+      }
+      return null;
+    }
+    
+    // One of the parts that inherits the color of the parent.
+    // The loader guarantees that this is always non-null unless
+    // there are no children.
+    public Part pickChildWithoutColor() {
+      if (items_ != null) {
+        for (Item item : items_) {
+          if (item.color_ == null) {
+            return item.part_;
+          }
+        }
+      }
+      return null;
+    }
+
+    public int numChildrenWithoutColor() {
+      if (items_ != null) {
+        int count = 0;
+        for (Item item : items_) {
+          if (item.color_ == null) {
+            count += item.count_;
+          }
+        }
+        return count;
+      } else {
+        return 0;
+      }
+    }
+
+    public String toString() {
+      StringBuffer sb = new StringBuffer();
+      sb.append("ids=");
+      sb.append(Util.join(",", ids_));
+      sb.append(String.format(",weight=%.3f", weightGrams_));
+      if (items_ != null) {
+        sb.append(",items=[");
+        sb.append(Util.join(",", items_));
         sb.append("]");
       }
       return sb.toString();
     }
   }
-
-  // A group of parts that are treated as equivalent.
-  public static class PartGroup {
-    public ArrayList<Part> part_ = new ArrayList<Part>();
-   
-    public String toString() {
-      return Util.join("; ", part_);
-    }
-  }
-
+  
   public static PartModel getModel() {
     if (model_ == null) {
       model_ = new PartModel(
@@ -162,58 +199,37 @@ public class PartModel {
       throw new AssertionError(e);
     }
   }
-
-  public Color getColorById(String colorId) {
-    Color color = getColorByIdOrNull(colorId);
-    if (color == null) {
-      throw new AssertionError(String.format("Unknown color %s", colorId));
-    }
-    return color;
+  
+  public Color findColorOrNull(String colorId) {
+    return colorMap_.get(colorId);
   }
 
-  public Color getColorByIdOrNull(String colorId) {
-    return colorIdMap_.get(colorId);
-  }
-
-  public Color getColorByLegoIdOrNull(String legoColorId) {
-    return legoColorIdMap_.get(legoColorId);
-  }
-
-  public PartGroup getPartByIdOrNull(String partId) {
+  public Part findPartOrNull(String partId) {
     return partMap_.get(partId);
   }
-
-  public PartGroup getPartByLegoIdOrNull(String legoPartId) {
-    String partId = legoIdMap_.get(legoPartId);
-    if (partId == null) {
-      partId = legoPartId;
-    }
-    return getPartByIdOrNull(partId);
-  }
-  
-  public Part getPreferredPartByIdOrNull(String partId) {
-    PartGroup group = partMap_.get(partId);
-    for (Part part : group.part_) {
-      if (part.id_.equals(partId)) {
-        return part;
+    
+  private static class ErrorCollector {
+    public void error(String message) {
+      System.err.println("Error: " + message);
+      if (messages_ == null) {
+        messages_ = new ArrayList<String>();
       }
-      if (part.alternateId_ != null) {
-        for (String alternateId : part.alternateId_) {
-          if (alternateId.equals(partId)) {
-            return part;
-          }
+      messages_.add(message);
+    }
+    
+    public void finishStage() {
+      if (messages_ != null) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Errors in the current stage:\n");
+        for (String message : messages_) {
+          sb.append(message);
+          sb.append('\n');
         }
+        throw new AssertionError(sb.toString());
       }
     }
-    return null;
-  }
-
-  public Part getPreferredPartByLegoIdOrNull(String legoPartId) {
-    String partId = legoIdMap_.get(legoPartId);
-    if (partId == null) {
-      partId = legoPartId;
-    }
-    return getPreferredPartByIdOrNull(partId);
+    
+    private ArrayList<String> messages_;
   }
   
   private PartModel(Reader colorReader, Reader partReader) {
@@ -223,7 +239,6 @@ public class PartModel {
   
   private void loadColors(Reader reader) {
     try {
-      boolean error = false;
       BufferedReader br = new BufferedReader(reader);
       PartModelProto.ColorModel.Builder builder =
           PartModelProto.ColorModel.newBuilder();
@@ -231,40 +246,40 @@ public class PartModel {
       PartModelProto.ColorModel modelProto = builder.build();
 
       ArrayList<Color> colorArray = new ArrayList<Color>(modelProto.getColorCount());
-      colorIdMap_ = new HashMap<String, Color>(modelProto.getColorCount());
-      legoColorIdMap_ = new HashMap<String, Color>(modelProto.getColorCount());
+      colorMap_ = new HashMap<String, Color>(modelProto.getColorCount());
+      ErrorCollector errorCollector = new ErrorCollector();
 
       for (PartModelProto.Color colorProto : modelProto.getColorList()) {
         Color color = new Color();
-        color.id_ = colorProto.getId();
-        color.name_ = colorProto.getName();
-        color.legoId_ = colorProto.getLegoIdList().toArray(
-            new String[colorProto.getLegoIdCount()]);
-        colorArray.add(color);
-        if (colorIdMap_.put(color.id_, color) != null) {
-          System.err.println("Duplicate color id: " + color.id_);
-          error = true;
+        color.ids_ = colorProto.getIdList().toArray(new String[colorProto.getIdCount()]);
+        if (color.ids_.length == 0) {
+          errorCollector.error("Color with no id.");
+          continue;
         }
-        for (String legoId : color.legoId_) {
-          if (legoColorIdMap_.put(legoId, color) != null) {
-            System.err.println("Duplicate color lego id: " + color.legoId_);
-            error = true;
+        color.name_ = colorProto.getName();
+        colorArray.add(color);
+        for (String id : color.ids_) {
+          if (!isValidColorId(id)) {
+            errorCollector.error("Invalid color id: " + id);
+            continue;
+          }
+          if (colorMap_.put(id, color) != null) {
+            errorCollector.error("Duplicate color id: " + id);
+            continue;
           }
         }
       }
-      if (error) {
-        throw new AssertionError("Duplicate color id(s) found");
-      }
-
-      color_ = colorArray.toArray(new Color[colorArray.size()]);
+      errorCollector.finishStage();
     }
     catch (IOException e) {
       throw new AssertionError(e);
     }
   }
-  
+
   private void loadParts(Reader reader) {
     try {
+      long startNanos = System.nanoTime();
+      
       boolean error = false;
       BufferedReader br = new BufferedReader(reader);
       PartModelProto.PartModel.Builder builder =
@@ -272,316 +287,282 @@ public class PartModel {
       TextFormat.merge(br, builder);
       PartModelProto.PartModel modelProto = builder.build();
       
-      partMap_ = new HashMap<String, PartGroup>(modelProto.getPartCount());
-      legoIdMap_ = new HashMap<String, String>(modelProto.getPartCount() / 10);
+      partMap_ = new HashMap<String, Part>(modelProto.getPartCount());
       
-      // This map contains items that are similar. Similar items are put into
-      // the same PartGroup and are freely replaceable other parts in the same
-      // group.
-      HashMap<String, String> similarMap = new HashMap<String, String>(
-          modelProto.getPartCount());
-      
-      // Contains generic relations. This is basically the same as a similar
-      // relation except for weight: the weight of generic items is derived
-      // from the more specific items.
-      HashMap<String, ArrayList<String>> genericMap =
-          new HashMap<String, ArrayList<String>>(
-          modelProto.getPartCount() / 4);
-      
-      // Contains kindof relations. This is similar to the generic relation
-      // but is asymmetric: the more generic 'kindof' item can be replaced
-      // by the less generic one but not the other way around.
-      HashMap<String, ArrayList<String>> kindofMap =
-          new HashMap<String, ArrayList<String>>(
-          modelProto.getPartCount() / 4);
+      // Stage 1: load all parts.
+      loadPartProto(modelProto);
 
-      // Stage 1: load all parts as a distinct group.
-      loadPartProto(modelProto, similarMap, genericMap, kindofMap);
-      Log.info("partMap_.size()=" + partMap_.size());
-
-      // Stage 2: Populate contained parts. This is a separate stage to make
-      // sure that all parts are loaded.
-      populateContainedParts(modelProto);
+      // Stage 2: Populate contained & similar parts. This is a separate
+      // stage to make sure that all parts are loaded.
+      populateRelatedParts(modelProto);
 
       // Stage 3: Compute weights.
-      computeAllWeights(genericMap, kindofMap);
+      computeWeights();
       
-      // Stage 4: Merge all similar groups into the same PartGroup.
-      mergeSimilarGroups(similarMap, genericMap);
-      HashSet<PartGroup> uniqueGroups = new HashSet<PartGroup>(partMap_.values());
-      Log.info("uniqueGroups.size()=" + uniqueGroups.size());
-
-      // Stage 5: Add all alternate and contained ids.
-      addAlternateIds(uniqueGroups);
       Log.info("partMap_.size()=" + partMap_.size());
-      
-      // Stage 6: Prefer Lego ids.
-      preferLegoIds();
-      
-      // Test the result.
-      checkInvariants();
+      Util.logPhaseTime("Model load", startNanos);
     }
     catch (IOException e) {
       throw new AssertionError(e);
     }
   }
   
-  private void loadPartProto(PartModelProto.PartModel modelProto,
-                             HashMap<String, String> similarMap,
-                             HashMap<String, ArrayList<String>> genericMap,
-                             HashMap<String, ArrayList<String>> kindofMap) {
+  private void loadPartProto(PartModelProto.PartModel modelProto) {
+    ErrorCollector errorCollector = new ErrorCollector();
     for (PartModelProto.Part partProto : modelProto.getPartList()) {
       Part part = new Part();
-      part.id_ = partProto.getId();
-      if (partProto.hasForceColorId()) {
-        part.color_ = getColorById(partProto.getForceColorId());
+      ArrayList<String> ids = new ArrayList<String>(partProto.getIdCount() * 4);
+      for (String id : partProto.getIdList()) {
+        String[] expanded = expandPartId(id);
+        if (expanded == null) {
+          errorCollector.error("Invalid part id: " + id);
+          continue;
+        }
+        for (String expandedId : expanded) {
+          ids.add(expandedId);
+          if (partMap_.put(expandedId, part) != null) {
+            errorCollector.error("Id collision: " + id);
+            continue;
+          }
+        }
       }
-      if (partProto.getAlternateIdCount() > 0) {
-        part.alternateId_ = partProto.getAlternateIdList().toArray(
-            new String[partProto.getAlternateIdCount()]);
+      if (ids.size() == 0) {
+        errorCollector.error("Part with no id.");
+        continue;
       }
+      part.ids_ = ids.toArray(new String[ids.size()]);
       part.weightGrams_ = partProto.getWeightGrams();
-      for (String legoId : partProto.getLegoIdList()) {
-        legoIdMap_.put(legoId, part.id_);
-      }
-      for (String similarId : partProto.getSimilarIdList()) {
-        if (part.id_.equals(similarId)) {
-          throw new AssertionError("Part similar to self: " + similarId);
-        }
-        similarMap.put(part.id_, similarId);
-      }
-      if (partProto.hasGenericId()) {
-        if (part.id_.equals(partProto.getGenericId())) {
-          throw new AssertionError("Part generic to self: " + partProto.getGenericId());
-        }
-        ArrayList<String> list = genericMap.get(partProto.getGenericId());
-        if (list == null) {
-          list = new ArrayList<String>();
-          genericMap.put(partProto.getGenericId(), list);
-        }
-        list.add(part.id_);
-      }
-      if (partProto.hasKindofId()) {
-        if (part.id_.equals(partProto.getKindofId())) {
-          throw new AssertionError("Part kindof to self: " + partProto.getKindofId());
-        }
-        ArrayList<String> list = kindofMap.get(partProto.getKindofId());
-        if (list == null) {
-          list = new ArrayList<String>();
-          kindofMap.put(partProto.getKindofId(), list);
-        }
-        list.add(part.id_);
-      }
-      PartGroup group = new PartGroup();
-      group.part_.add(part);
-      if (partMap_.put(part.id_, group) != null) {
-        throw new AssertionError("Duplicate id: " + part.id_);
-      }
     }
+    errorCollector.finishStage();
   }
-  
-  private void populateContainedParts(PartModelProto.PartModel modelProto) {
+
+  private void populateRelatedParts(PartModelProto.PartModel modelProto) {
+    ErrorCollector errorCollector = new ErrorCollector();
     for (PartModelProto.Part partProto : modelProto.getPartList()) {
-      if (partProto.getItemCount() == 0) continue;
-      Part containingPart = partMap_.get(partProto.getId()).part_.get(0);
-      if (containingPart.weightGrams_ > 0.0f) {
-        throw new AssertionError("Composite item has weight: " + partProto.getId());
-      }
-      Part.Item[] items = new Part.Item[partProto.getItemCount()];
-      for (int i = 0 ; i < partProto.getItemCount(); ++i) {
-        Part.Item item = new Part.Item();
-        item.part_ = partMap_.get(partProto.getItem(i).getId()).part_.get(0);
-        if (item.part_ == containingPart) {
-          throw new AssertionError("Item contains self: " + partProto.getId());
-        }
-        if (partProto.getItem(i).hasColor()) {
-          item.color_ = getColorById(partProto.getItem(i).getColor());
-        }
-        item.count_ = partProto.getItem(i).getCount();
-        items[i] = item;
-      }
-      containingPart.item_ = items;
-    }
-  }
+      String partId = translatePartIdOrError(partProto.getId(0));
+      Part part = partMap_.get(partId);
 
-  private void computeAllWeights(HashMap<String, ArrayList<String>> genericMap,
-                                 HashMap<String, ArrayList<String>> kindofMap) {
-    preVerifyWeights(genericMap, kindofMap);
-    for (PartGroup group : partMap_.values()) {
-      for (Part part : group.part_) {
-        computeWeight(part, genericMap, kindofMap);
-      }
-    }
-  }
-
-  private void preVerifyWeights(HashMap<String, ArrayList<String>> genericMap,
-                                HashMap<String, ArrayList<String>> kindofMap) {
-    for (PartGroup group : partMap_.values()) {
-      for (Part part : group.part_) {
-        if (part.item_ != null ||
-            genericMap.containsKey(part.id_) ||
-            kindofMap.containsKey(part.id_)) {
-          if (part.weightGrams_ > 0.0f) {
-            throw new AssertionError("Part must not contain weight: " + part.id_);
+      // Populate similar parts.
+      if (partProto.getSimilarCount() > 0) {
+        for (PartModelProto.Part.Similar similarProto : partProto.getSimilarList()) {
+          String similarId = similarProto.getId();
+          Part similarPart = partMap_.get(similarId);
+          if (similarPart == null) {
+            errorCollector.error(
+                "Similar part not found: " + similarId + " in part: " + partId);
+            continue;
           }
-        } else {
-          if (part.weightGrams_ <= 0.0f) {
-            throw new AssertionError("Part must contain weight: " + part.id_);
+          if (!addSimilarPart(part, similarPart, errorCollector)) {
+            continue;
+          }
+          if (similarProto.getConfirm()) {
+            part.confirm_ = includeInSet(similarPart, part.confirm_);
+            similarPart.confirm_ = includeInSet(part, similarPart.confirm_);
           }
         }
       }
-    }                              
+
+      // Decor ids are really just syntactic sugar to automatically create
+      // them and make them related to the undecorated version.
+      if (partProto.getDecorCount() > 0) {
+        for (PartModelProto.Part.Decor decorProto : partProto.getDecorList()) {
+          Part decorPart = new Part();
+          ArrayList<String> ids = new ArrayList<String>(decorProto.getIdCount() * 4);
+          for (String id : decorProto.getIdList()) {
+            String[] expanded = expandPartId(id);
+            if (expanded == null) {
+              errorCollector.error("Invalid decor part id: " + id + " in part: " + partId);
+            }
+            for (String expandedId : expanded) {
+              ids.add(expandedId);
+              if (partMap_.put(expandedId, decorPart) != null) {
+                errorCollector.error("Decor id collision: " + id);
+                continue;
+              }
+            }
+          }
+          if (ids.size() == 0) {
+            errorCollector.error("Decor with no id in part " + partId);
+            continue;
+          }
+          decorPart.ids_ = ids.toArray(new String[ids.size()]);
+          decorPart.similar_ = new HashSet<Part>();
+          if (!addSimilarPart(part, decorPart, errorCollector)) {
+            continue;
+          }
+          part.confirm_ = includeInSet(decorPart, part.confirm_);
+          decorPart.confirm_ = includeInSet(part, decorPart.confirm_);
+        }
+      }
+      
+      // Populate contained parts.
+      if (partProto.getItemCount() > 0) {
+        Item[] items = new Item[partProto.getItemCount()];
+        for (int i = 0 ; i < partProto.getItemCount(); ++i) {
+          PartModelProto.Part.Item itemProto = partProto.getItem(i);
+          String itemId = itemProto.getId();
+          Item item = new Item();
+          item.part_ = partMap_.get(itemId);
+          if (item.part_ == null) {
+            errorCollector.error("Contained item not found: " + itemId + " in part: " + partId);
+            continue;
+          }
+          if (itemProto.hasColor()) {
+            if (i == 0) {
+              errorCollector.error("Item 0 must not have color in part: " + partId);
+              continue;
+            }
+            String colorId = itemProto.getColor();
+            item.color_ = colorMap_.get(colorId);
+            if (item.color_ == null) {
+              errorCollector.error("Unknown color: " + colorId + " in part: " + partId);
+              continue;
+            }
+          }
+          if (itemProto.hasCount()) {
+            item.count_ = itemProto.getCount();
+            if (item.count_ <= 0) {
+              errorCollector.error("Invalid count: " + item.count_ + " in part: " + partId);
+              continue;
+            }
+          } else {
+            item.count_ = 1;
+          }
+          items[i] = item;
+          if (item.part_.parents_ == null) {
+            item.part_.parents_ = new HashSet<Part>();
+          }
+          if (!item.part_.parents_.add(part)) {
+            errorCollector.error("Duplicate inclusion of: " + itemId + " in part: " + partId);
+            continue;
+          }
+        }
+        part.items_ = items;
+      }
+    }
+    errorCollector.finishStage();
   }
   
-  private void computeWeight(Part part,
-                             HashMap<String, ArrayList<String>> genericMap,
-                             HashMap<String, ArrayList<String>> kindofMap) {
-    if (part.weightGrams_ > 0.0f) return;
-    float weightGrams = 0.0f;
-    if (part.item_ != null) {
-      for (Part.Item item : part.item_) {
-        computeWeight(item.part_, genericMap, kindofMap);
-        weightGrams += item.part_.weightGrams_;
+  private void computeWeights() {
+    ErrorCollector errorCollector = new ErrorCollector();
+    for (Part part : partMap_.values()) {
+      HashSet<Part> visited = new HashSet<Part>();
+      computeWeight(part, visited, errorCollector);
+      if (part.weightGrams_ <= 0.0) {
+        errorCollector.error("Unable to compute weight for part: " + part.primaryId());
+      }
+    }
+    errorCollector.finishStage();
+  }
+  
+  private void computeWeight(Part part, HashSet<Part> visited, ErrorCollector errorCollector) {
+    if (!visited.add(part)) {
+      return;
+    }
+    
+    // If the part consists of sub-parts then the weight is the sum of those.
+    if (part.items_ != null) {
+      double weightGrams = 0.0;
+      for (Item item : part.items_) {
+        computeWeight(item.part_, visited, errorCollector);
+        if (item.part_.weightGrams_ <= 0.0) {
+          errorCollector.error("Sub-part weight missing or there is a loop: " +
+              part.ids_[0] + ", " + item.part_.primaryId());
+        }
+        weightGrams += item.part_.weightGrams_ * item.count_;
       }
       part.weightGrams_ = weightGrams;
       return;
     }
-    ArrayList<String> specificIds = genericMap.get(part.id_);
-    if (specificIds == null) {
-      specificIds = kindofMap.get(part.id_);
+    
+    // If it already has weight then the weight is that.
+    if (part.weightGrams_ > 0.0) return;
+    
+    // If any of the similar parts contain weight, use that.
+    //System.out.println(part.similar_);
+    if (part.similar_ != null) {
+      for (Part similarPart : part.similar_) {
+        computeWeight(similarPart, visited, errorCollector);
+        if (similarPart.weightGrams_ > 0.0) {
+          part.weightGrams_ = similarPart.weightGrams_;
+          return;
+        }
+      }
     }
-    if (specificIds == null) {
-      throw new AssertionError("No way to compute weight: " + part.id_);
+  }
+  
+  private boolean addSimilarPart(Part part, Part similarPart, ErrorCollector errorCollector) {
+    if (part.similar_ == null) {
+      part.similar_ = new HashSet<Part>();
     }
-    for (String specificId : specificIds) {
-      Part specificPart = partMap_.get(specificId).part_.get(0);
-      computeWeight(specificPart, genericMap, kindofMap);
-      weightGrams += specificPart.weightGrams_;
+    if (!part.similar_.add(similarPart)) {
+      errorCollector.error(
+          "Similar part already present: " + similarPart.primaryId() +
+          " in part: " + part.primaryId());
+      return false;
     }
-    part.weightGrams_ = weightGrams / specificIds.size();
+    if (similarPart.similar_ == null) {
+      similarPart.similar_ = new HashSet<Part>();
+    }
+    if (!similarPart.similar_.add(part)) {
+      errorCollector.error(
+          "Similar part already present: " + similarPart.primaryId() +
+          " in part: " + part.primaryId());
+      return false;
+    }
+    return true;
   }
 
-  private void mergeSimilarGroups(HashMap<String, String> similarMap,
-                                  HashMap<String, ArrayList<String>> genericMap) {
-    int max = 0;
-    String maxId = "";
-    for (Map.Entry<String, String> entry : similarMap.entrySet()) {
-      int size = mergeGroups(entry.getKey(), entry.getValue());
-      if (size > max) {
-        max = size;
-        maxId = entry.getKey();
-      }
+  private static HashSet<Part> includeInSet(Part part, HashSet<Part> set) {
+    if (set == null) {
+      set = new HashSet<Part>();
     }
-    for (Map.Entry<String, ArrayList<String>> entry : genericMap.entrySet()) {
-      for (String other : entry.getValue()) {
-        int size = mergeGroups(entry.getKey(), other);
-        if (size > max) {
-          max = size;
-          maxId = entry.getKey();
-        }
-      }
-    }
-    Log.info("maxId=" + maxId + " max=" + max);
-  }
-  
-  private int mergeGroups(String group1Id, String group2Id) {
-    PartGroup group1 = partMap_.get(group1Id);
-    if (group1 == null) {
-      throw new AssertionError("Unknown group to merge: " + group1Id);
-    }
-    PartGroup group2 = partMap_.get(group2Id);
-    if (group2 == null) {
-      throw new AssertionError("Unknown similar id: " + group2Id);
-    }
-    if (group1 == group2) {
-      throw new AssertionError("Cannot merge a group into itself: " +
-          group1Id + ", " + group2Id);
-    }
-    group1.part_.addAll(group2.part_);
-    for (Part part : group1.part_) {
-      partMap_.put(part.id_, group1);
-    }
-    return group1.part_.size();
+    set.add(part);
+    return set;
   }
 
-  private void populateKindOfGroups(HashMap<String, String> kindofMap) {
-    for (Map.Entry<String, String> entry : kindofMap.entrySet()) {
-      PartGroup group1 = partMap_.get(entry.getKey());
-      if (group1 == null) {
-        throw new AssertionError("Unknown kindof id: " + entry.getKey());
-      }
-      PartGroup group2 = partMap_.get(entry.getValue());
-      if (group2 == null) {
-        throw new AssertionError("Unknown kindof id: " + entry.getValue());
-      }
-      group2.part_.addAll(group1.part_);
-    }
+  private static boolean isValidColorId(String colorId) {
+    String idSpace = ItemId.idPiecesOrNull(colorId)[0];
+    if (idSpace == null) return false;
+    if (idSpace.equals("l")) return true;
+    if (idSpace.equals("b")) return true;
+    return false;
   }
   
-  private void addAlternateIds(HashSet<PartGroup> uniqueGroups) {
-    for (PartGroup group : uniqueGroups) {
-      for (Part part : group.part_) {
-        if (part.alternateId_ != null) {
-          for (String alternateId : part.alternateId_) {
-            if (partMap_.put(alternateId, group) != null) {
-              throw new AssertionError("Duplicate alternate id: " + alternateId);
-            }
-          }
-        }
-        if (part.item_ != null) {
-          for (Part.Item item : part.item_) {
-            if (item.part_.item_ != null) {
-              throw new AssertionError(
-                  "Double containment hierarchy not allowed: " + part.id_);
-            }
-            PartGroup itemGroup = partMap_.get(item.part_.id_);
-            Part itemPart = part.partialClone();
-            itemPart.color_ = item.color_;
-            itemGroup.part_.add(itemPart); 
-          }
-        }
-      }
+  private static String[] expandPartId(String partId) {
+    String[] idPieces = ItemId.idPiecesOrNull(partId);
+    if (idPieces == null) return null;
+    String[] expanded = PART_ID_EXPANSION.get(idPieces[0]);
+    if (expanded == null) return null;
+    String[] result = new String[expanded.length];
+    for (int i = 0; i < expanded.length; ++i) {
+      result[i] = expanded[i] + ":" + idPieces[1];
     }
+    return result;
   }
   
-  private void preferLegoIds() {
-    for (String legoId : legoIdMap_.values()) {
-      PartGroup group = partMap_.get(legoId);
-      for (int i = 0; i < group.part_.size(); ++i) {
-        if (i > 0 && group.part_.get(i).id_.equals(legoId)) {
-          Part swap = group.part_.get(i);
-          group.part_.set(i, group.part_.get(0));
-          group.part_.set(0, swap);
-        }
-      }
+  private static String translatePartIdOrError(String partId) {
+    String[] expandedIds = expandPartId(partId);
+    if (expandedIds == null || expandedIds.length < 1) {
+      throw new AssertionError("Cannot translate: " + partId);
     }
+    return expandedIds[0];
   }
-  
-  private void checkInvariants() {
-    for (Map.Entry<String, PartGroup> entry : partMap_.entrySet()) {
-      String partId = entry.getKey();
 
-      // Test that the key occurs in the PartGroup.
-      if (getPreferredPartByIdOrNull(partId) == null) {
-        throw new AssertionError("Part not found: " + partId);
-      }
-      
-      for (Part part : entry.getValue().part_) {
-        if (part.weightGrams_ == 0.0f) {
-          throw new AssertionError("Zero weight: " + part.id_);
-        }
-      }
-    }
-  }
-  
-  private Color[] color_;
-  private HashMap<String, Color> colorIdMap_;
-  private HashMap<String, Color> legoColorIdMap_;
-
-  private Part[] part_;
-  private PartGroup[] group_;
-  private HashMap<String, PartGroup> partMap_;
-  private HashMap<String, String> legoIdMap_;
+  private HashMap<String, Color> colorMap_;
+  private HashMap<String, Part> partMap_;
 
   private static PartModel model_;
+  private static final HashMap<String, String[]> PART_ID_EXPANSION;
+  
+  static {
+    PART_ID_EXPANSION = new HashMap<String, String[]>();
+    PART_ID_EXPANSION.put("g", Util.stringArray("b", "l", "o"));
+    PART_ID_EXPANSION.put("gb", Util.stringArray("b", "o"));
+    PART_ID_EXPANSION.put("gl", Util.stringArray("l", "o"));
+    PART_ID_EXPANSION.put("b", Util.stringArray("b"));
+    PART_ID_EXPANSION.put("l", Util.stringArray("l"));
+    PART_ID_EXPANSION.put("o", Util.stringArray("o"));
+    PART_ID_EXPANSION.put("v", Util.stringArray("v"));
+  }
 }

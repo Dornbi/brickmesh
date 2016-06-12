@@ -30,6 +30,7 @@ package com.brickmesh.parts;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.TreeMap;
 
 import com.brickmesh.util.TestCase;
 
@@ -46,37 +47,33 @@ class PartLoaderTest extends TestCase {
         PartLoader.Options.createUnlimited());
     loader.parse(new FileInputStream("src/testdata/test.lxf"));
     PartLoader.Result result = loader.getResult();
-    expectTrue(null == result.unknownPartIds_);
-    expectTrue(null == result.unknownColorIds_);
+    RequiredItems items = result.items_;
+    expectEquals(null, items.unknownPartIdsOrNull());
+    expectEquals(null, items.unknownColorIdsOrNull());
     expectTrue(result.imageBytes_ != null);
-        
-    RequiredParts parts = result.parts_;
-    expectEquals(2, parts.numItems_);
-    expectEquals("3005", parts.preferredParts_[0].id_);
-    expectEquals("5", parts.color_[0].id_);
-    expectEquals(3, parts.quantity_[0]);
-    expectEquals("6019", parts.preferredParts_[1].id_);
-    expectEquals("103", parts.color_[1].id_);
-    expectEquals(1, parts.quantity_[1]);
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b");
+    TreeMap<ItemId, Integer> expected = new TreeMap<ItemId, Integer>();
+    expected.put(new ItemId("b:3005", "b:5"), 3);
+    expected.put(new ItemId("b:6019", "b:103"), 1);
+    expectEquals(actual, expected);
   }
   
-  private static void testLoadWanted() 
+  private static void testLoadWanted()
       throws IOException, PartLoader.LoaderException {
     PartLoader.WantedLoader loader = new PartLoader().createWantedLoader(
         PartLoader.Options.createUnlimited());
     loader.parse(new FileInputStream("src/testdata/wanted.xml"));
     PartLoader.Result result = loader.getResult();
-    expectTrue(null == result.unknownPartIds_);
-    expectTrue(null == result.unknownColorIds_);
-    expectTrue(result.imageBytes_ == null);
+    RequiredItems items = result.items_;
+    expectEquals(null, items.unknownPartIdsOrNull());
+    expectEquals(null, items.unknownColorIdsOrNull());
+    expectEquals(null, result.imageBytes_);
         
-    RequiredParts parts = result.parts_;
-    expectEquals(2, parts.numItems_);
-    expectEquals("3004", parts.preferredParts_[0].id_);
-    expectEquals(6, parts.color_[0].id_);
-    expectEquals(1, parts.quantity_[0]);
-    expectEquals("3023", parts.preferredParts_[1].id_);
-    expectEquals(5, parts.color_[1].id_);
-    expectEquals(4, parts.quantity_[1]);
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b");
+    TreeMap<ItemId, Integer> expected = new TreeMap<ItemId, Integer>();
+    expected.put(new ItemId("b:3004", "b:6"), 1);
+    expected.put(new ItemId("b:3023", "b:5"), 4);
+    expectEquals(actual, expected);
   }
 };

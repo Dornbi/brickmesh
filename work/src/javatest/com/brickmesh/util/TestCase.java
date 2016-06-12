@@ -35,10 +35,29 @@ public class TestCase {
   protected static void expectTrue(boolean b) {
     if (!b) throw new AssertionError("Test failed.");
   }
+
+  protected static void expectFalse(boolean b) {
+    if (b) throw new AssertionError("Test failed.");
+  }
   
   protected static void expectEquals(Object o1, Object o2) {
-    o1 = normalize(o1);
-    o2 = normalize(o2);
+    if (o1 != null) o1 = normalize(o1);
+    if (o2 != null) o2 = normalize(o2);
+
+    if (o1 == null) {
+      if (o2 == null) {
+        return;
+      } else {
+        System.err.format("Not equal: null != %s\n", o2.toString());
+        throw new AssertionError("Test failed.");
+      }
+    } else {
+      if (o2 == null) {
+        System.err.format("Not equal: %s != null\n", o1.toString());
+        throw new AssertionError("Test failed.");
+      }
+    }
+    
     if (o1 instanceof Double && o1 instanceof Double) {
       double d1 = (Double)o1;
       double d2 = (Double)o2;
@@ -50,7 +69,6 @@ public class TestCase {
       System.err.format("Not equal: %s != %s\n", o1.toString(), o2.toString());
       throw new AssertionError("Test failed.");
     }
-
   }
   
   private static final Object normalize(Object o) {

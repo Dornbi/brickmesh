@@ -36,51 +36,7979 @@
 #
 # Part entries in this file must be kept sorted with sort_part_model.py.
 
-# ID space:
-# g - generic id. Must be valid on BL, but can be tried in other contexts.
-# ga - generic alternate id. Like g, but must not be valid in BrickLink.
-# bl - id only valid on BrickLink
-# l - id only valid in LDD
-# v - virtual id, not valid anywhere
+# For parts the permitted namespaces for ids are:
+# b:  - id only valid on BrickLink.
+# l:  - id only valid in LDD.
+# o:  - id that is attempted in non-BL and non-LDD context (for example LDraw.)
+# v:  - virtual id, not valid anywhere.
+#
+# Convenience expanded namespaces:
+# g:  - expands to b: l: o:
+# gb: - expands to b: o:
+# gl: - expands to l: o:
 
 part {
-  id: "g:3070"
-  similar {
-    id: "g:3070a"
+  id: "gb:bb192"
+  id: "gl:55707a"
+  similar { id: "b:62885" }
+}
+
+part {
+  id: "gb:bb217"
+}
+
+part {
+  id: "gb:bb339c01"
+  id: "gl:61929"
+}
+
+part {
+  id: "gb:bb522"
+}
+
+part {
+  id: "gb:bb601"
+  id: "gl:11145"
+  similar { id: "b:8529" }
+}
+
+part {
+  id: "gb:x8"
+  id: "gl:6255"
+}
+
+part {
+  id: "gb:x12"
+  id: "gl:33176"
+}
+
+part {
+  id: "gb:x37"
+  id: "gl:71321"
+  id: "gl:85544"
+}
+
+part {
+  id: "gb:x59"
+  id: "gl:30224"
+}
+
+part {
+  id: "gb:x71"
+  id: "gl:70902"
+  id: "gl:85543"
+}
+
+part {
+  id: "gb:x77"
+}
+
+part {
+  id: "gb:x77a"
+  id: "gl:56823"
+  similar { id: "b:x77"}
+}
+
+part {
+  id: "gb:x77ac100"
+  id: "o:56823c100"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac150"
+  id: "o:56823c150"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac20"
+  id: "o:56823c20"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac25"
+  id: "o:56823c25"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac28"
+  id: "o:56823c28"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac200"
+  id: "o:56823c200"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac30"
+  id: "o:56823c30"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac50"
+  id: "o:56823c50"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac500"
+  id: "o:56823c500"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77ac75"
+  id: "o:56823c75"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
+  id: "gb:x77b"
+  id: "gl:rb00166"
+  similar { id: "b:x77"}
+}
+
+part {
+  id: "gb:x77c"
+  id: "gl:14728"
+  similar { id: "b:x77"}
+}
+
+part {
+  id: "gb:x77cc100"
+  id: "o:14728c100"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc125"
+  id: "o:14728c125"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc200"
+  id: "o:14728c200"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc21"
+  id: "o:14728c21"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc22"
+  id: "o:14728c22"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc250"
+  id: "o:14728c250"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc30"
+  id: "o:14728c30"
+  id: "gl:58558"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc35"
+  id: "o:14728c35"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc50"
+  id: "o:14728c50"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x77cc75"
+  id: "o:14728c75"
+  similar { id: "b:x77" confirm: true }
+}
+
+part {
+  id: "gb:x85"
+  id: "gl:71128"
+}
+
+part {
+  id: "gb:x89"
+  id: "gl:70904"
+  id: "gl:85545"
+}
+
+part {
+  id: "gb:x90"
+  id: "gl:70905"
+  id: "gl:85546"
+}
+
+part {
+  id: "gb:x93"
+  id: "gl:43903"
+}
+
+part {
+  id: "gb:x97"
+  id: "gl:30133"
+}
+
+part {
+  id: "gb:x100"
+  id: "gl:30084"
+}
+
+part {
+  id: "gb:x104"
+  id: "gl:6093"
+}
+
+part {
+  id: "gb:x112"
+  id: "gl:33122"
+}
+
+# String with End Studs
+part {
+  id: "gb:x127"
+}
+
+part {
+  id: "gb:x127c11"
+  id: "gl:14226"
+  id: "gl:56576"
+  id: "gl:63143"
+  id: "gl:76064"
+  similar { id: "b:x127" confirm: true }
+}
+
+part {
+  id: "gb:x127c21"
+  id: "gl:14210"
+  id: "gl:63141"
+  id: "gl:76065"
+  similar { id: "b:x127" confirm: true }
+}
+
+part {
+  id: "gb:x127c31"
+  id: "gl:14225"
+  id: "gl:56578"
+  id: "gl:63142"
+  similar { id: "b:x127" confirm: true }
+}
+
+part {
+  id: "gb:x127c41"
+  id: "gl:14224"
+  id: "gl:63140"
+  id: "gl:75925"
+  similar { id: "b:x127" confirm: true }
+}
+
+part {
+  id: "gb:x131a"
+  similar { id: "b:x131b" }
+  similar { id: "b:x131c" }
+}
+
+part {
+  id: "gb:x131b"
+}
+
+part {
+  id: "gb:x131c"
+  id: "o:758c02"
+  id: "gl:30527"
+}
+
+part {
+  id: "gb:x136"
+  id: "gl:32294"
+}
+
+part {
+  id: "gb:x164"
+  id: "gl:30370"
+}
+
+part {
+  id: "gb:x169"
+  id: "gl:30191"
+}
+
+part {
+  id: "gb:x187"
+  similar { id: "b:3648" }
+}
+
+part {
+  id: "gb:x207"
+  id: "gl:345"
+}
+
+part {
+  id: "gb:x222"
+  id: "gl:2038"
+}
+
+part {
+  id: "gb:x224"
+  id: "gl:41751"
+}
+
+part {
+  id: "gb:x346"
+  id: "gl:16646"
+  id: "gl:41669"
+}
+
+part {
+  id: "gb:x577"
+  id: "gl:18753"
+  id: "gl:43122"
+  id: "gl:46667"
+}
+
+part {
+  id: "gb:x682c01"
+  id: "gl:76247"
+}
+
+part {
+  id: "gb:x787"
+  id: "gl:46303"
+}
+
+part {
+  id: "gb:x789"
+  id: "gl:42409"
+}
+
+part {
+  id: "gb:x872"
+  id: "gl:32495"
+}
+
+part {
+  id: "gb:x873"
+  id: "gl:32496"
+}
+
+part {
+  id: "gb:x873c01"
+  id: "o:32495c01"
+  id: "gl:50301"
+  item {
+    id: "b:x872"
   }
-  similar {
-    id: "g:3070b"
+  item {
+    id: "b:x873"
+    color: "b:11"
   }
 }
 
 part {
-  id: "g:3070a"
+  id: "gb:x939"
+  id: "gl:4328"
 }
 
 part {
-  id: "g:3070b"
-  id: "ga:30039"
+  id: "gb:x1612"
+}
+
+part {
+  id: "gb:x1676"
+  id: "gl:54690"
+}
+
+part {
+  id: "gb:x1681"
+  id: "gl:13972"
+  id: "gl:53992"
+}
+
+part {
+  id: "gb:x1687"
+  id: "gl:57051"
+}
+
+part {
+  id: "gb:x1688"
+  id: "gl:54754"
+}
+
+part {
+  id: "gb:44"
+  id: "gl:32126"
+}
+
+part {
+  id: "gb:60c01"
+  id: "gl:76019"
+  id: "gl:76244"
+  id: "o:76244c01"
+}
+
+# 3mm rigid hose family
+part {
+  id: "gb:75"
+}
+
+part {
+  id: "gb:75c02"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c03"
+  id: "gl:58856"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c04"
+  id: "gl:60187"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c05"
+  id: "gl:47070"
+  id: "gl:51976"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c06"
+  id: "gl:76279"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c07"
+  id: "gl:55053"
+  id: "gl:60166"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c08"
+  id: "gl:55646"
+  id: "gl:55668"
+  id: "gl:60675"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c09"
+  id: "gl:76324"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c10"
+  id: "gl:40168"
+  id: "gl:76302"
+  id: "gl:76446"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c11"
+  id: "gl:63037"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c12"
+  id: "gl:60676"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c13"
+  id: "gl:76292"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c14"
+  id: "gl:50160"
+  id: "gl:56178"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c15"
+  id: "gl:42690"
+  id: "gl:89645"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c16"
+  id: "gl:85532"
+  id: "gl:76255"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c17"
+  id: "gl:76270"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c18"
+  id: "gl:61356"
+  id: "gl:76275"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c19"
+  id: "gl:76257"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c20"
+  id: "gl:54238"
+  id: "gl:60677"
+  id: "gl:55676"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c21"
+  id: "gl:76259"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c22"
+  id: "gl:48439"
+  id: "gl:62530"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c23"
+  id: "gl:56418"
+  id: "gl:76254"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c24"
+  id: "gl:85526"
+  id: "gl:76277"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c25"
+  id: "gl:53475"
+  id: "gl:64461"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c26"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c27"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c28"
+  id: "gl:76280"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c29"
+  id: "gl:43798"
+  id: "gl:76389"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c30"
+  id: "gl:56203"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c31"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c32"
+  id: "gl:57274"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c33"
+  id: "gl:32"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c34"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c36"
+  id: "gl:21986"
+  id: "gl:60778"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c40"
+  id: "gl:46305"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c44"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c45"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c49"
+  id: "gl:85523"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c53"
+  similar { id: "b:75" confirm: true }
+}
+
+part {
+  id: "gb:75c63"
+  similar { id: "b:75" confirm: true }
+}
+
+# 7mm ribbed hose family
+part {
+  id: "gb:78"
+}
+
+part {
+  id: "gb:78c02"
+  id: "gl:22055"
+  id: "gl:22688"
+  id: "gl:22899"
+  id: "gl:23117"
+  id: "gl:41092"
+  id: "gl:50157"
+  id: "gl:55099"
+  id: "gl:56602"
+  id: "gl:57713"
+  id: "gl:72504"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c03"
+  id: "gl:21164"
+  id: "gl:22685"
+  id: "gl:22687"
+  id: "gl:23001"
+  id: "gl:40162"
+  id: "gl:41081"
+  id: "gl:52112"
+  id: "gl:57715"
+  id: "gl:72706"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c04"
+  id: "gl:22054"
+  id: "gl:22902"
+  id: "gl:23394"
+  id: "gl:40164"
+  id: "gl:55418"
+  id: "gl:57716"
+  id: "gl:59905"
+  id: "gl:71952"
+  id: "gl:71984"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c05"
+  id: "gl:23006"
+  id: "gl:57717"
+  id: "gl:72853"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c06"
+  id: "gl:71944"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c07"
+  id: "gl:22976"
+  id: "gl:57719"
+  id: "gl:71985"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c08"
+  id: "gl:22516"
+  id: "gl:23039"
+  id: "gl:56905"
+  id: "gl:57720"
+  id: "gl:71817"
+  id: "gl:71951"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c09"
+  id: "gl:23002"
+  id: "gl:41079"
+  id: "gl:52113"
+  id: "gl:57721"
+  id: "gl:71917"
+  id: "gl:71922"
+  id: "gl:72641"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c10"
+  id: "gl:22053"
+  id: "gl:44068"
+  id: "gl:57723"
+  id: "gl:71949"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c11"
+  id: "gl:23003"
+  id: "gl:53292"
+  id: "gl:55100"
+  id: "gl:57722"
+  id: "gl:71986"
+  id: "gl:72729"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c12"
+  id: "gl:42692"
+  id: "gl:60146"
+  id: "gl:71819"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c13"
+  id: "gl:23395"
+  id: "gl:43801"
+  id: "gl:46818"
+  id: "gl:57711"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c14"
+  id: "gl:71923"
+  id: "gl:72740"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c15"
+  id: "gl:22431"
+  id: "gl:46306"
+  id: "gl:71946"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c16"
+  id: "gl:22900"
+  id: "gl:56714"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c17"
+  id: "gl:60501"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c18"
+  id: "gl:23004"
+  id: "gl:46819"
+  id: "gl:57712"
+  id: "gl:72039"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c19"
+  id: "gl:43675"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c20"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c21"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c22"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c23"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c24"
+  id: "gl:23397"
+  id: "gl:46820"
+  id: "gl:57714"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c25"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c26"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c27"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c28"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c29"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c30"
+  id: "gl:22678"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c31"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:78c32"
+  similar { id: "b:78" confirm: true }
+}
+
+part {
+  id: "gb:90"
+}
+
+part {
+  id: "gb:91"
+}
+
+part {
+  id: "gb:108"
+}
+
+part {
+  id: "gb:109"
+  id: "gl:2910"
+}
+
+part {
+  id: "gb:110a"
+}
+
+part {
+  id: "gb:110b"
+}
+
+part {
+  id: "gb:122c01"
+}
+
+part {
+  id: "gb:122c02"
+}
+
+part {
+  id: "gb:193a2"
+  id: "o:3842a"
+}
+
+part {
+  id: "gb:193b2"
+  id: "o:3842b"
+  id: "gl:3842"
+  similar { id: "b:2446" }
+}
+
+part {
+  id: "gb:445"
+}
+
+part {
+  id: "gb:446"
+}
+
+part {
+  id: "gb:471"
+  id: "gl:30127"
+}
+
+part {
+  id: "gb:476"
+  id: "gl:6076"
+  similar { id: "b:30212" }
+}
+
+part {
+  id: "gb:551"
+  id: "gl:32086"
+}
+
+part {
+  id: "gb:553"
+  id: "gl:18841"
+}
+
+part {
+  id: "gb:553a"
+  id: "o:30367a"
+  similar { id: "b:553" }
+}
+
+part {
+  id: "gb:553b"
+  id: "gl:30367"
+  id: "o:30367b"
+  similar { id: "b:553" }
+}
+
+part {
+  id: "gb:553c"
+  id: "o:30367c"
+  similar { id: "b:553" }
+}
+
+part {
+  id: "gb:590"
+  id: "gl:70358"
+}
+
+part {
+  id: "gb:600"
+  id: "gl:6234"
+}
+
+part {
+  id: "gb:601"
+}
+
+part {
+  id: "gb:680c01"
+  id: "gl:71372"
+}
+
+# Technic shock absorber
+part {
+  id: "gb:731c01"
+  item {
+    id: "b:732"
+  }
+  item {
+    id: "b:731c02"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "gb:731c02"
+}
+
+part {
+  id: "gb:731c03"
+  similar { id: "b:731c02" confirm: true }
+}
+
+part {
+  id: "gb:731c04"
+  id: "gl:76537"
+  similar { id: "b:731c01" confirm: true }
+  item {
+    id: "b:732"
+  }
+  item {
+    id: "b:731c03"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "gb:731c05"
+  similar { id: "b:731c01" confirm: true }
+}
+
+part {
+  id: "gb:731c06"
+  id: "gl:76138"
+  similar { id: "b:731c01" confirm: true }
+}
+
+part {
+  id: "gb:732"
+}
+
+part {
+  id: "gb:751"
+}
+
+part {
+  id: "gb:752"
+}
+
+part {
+  id: "gb:772"
+  similar { id: "b:3245c" }
+}
+
+# Minifig leg assembly
+part {
+  id: "gb:970"
+  id: "gl:3815"
+}
+
+part {
+  id: "gb:970c00"
+  id: "gl:73200"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+  }
+  item {
+    id: "b:972"
+  }
+}
+
+part {
+  id: "gb:970c01"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:1"
+  }
+  item {
+    id: "b:972"
+    color: "b:1"
+  }
+}
+
+part {
+  id: "gb:970c02"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:2"
+  }
+  item {
+    id: "b:972"
+    color: "b:2"
+  }
+}
+
+part {
+  id: "gb:970c03"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:3"
+  }
+  item {
+    id: "b:972"
+    color: "b:3"
+  }
+}
+
+part {
+  id: "gb:970c04"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:4"
+  }
+  item {
+    id: "b:972"
+    color: "b:4"
+  }
+}
+
+part {
+  id: "gb:970c05"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:5"
+  }
+  item {
+    id: "b:972"
+    color: "b:5"
+  }
+}
+
+part {
+  id: "gb:970c06"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:6"
+  }
+  item {
+    id: "b:972"
+    color: "b:6"
+  }
+}
+
+part {
+  id: "gb:970c07"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:7"
+  }
+  item {
+    id: "b:972"
+    color: "b:7"
+  }
+}
+
+part {
+  id: "gb:970c08"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:8"
+  }
+  item {
+    id: "b:972"
+    color: "b:8"
+  }
+}
+
+part {
+  id: "gb:970c09"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:9"
+  }
+  item {
+    id: "b:972"
+    color: "b:9"
+  }
+}
+
+part {
+  id: "gb:970c10"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:10"
+  }
+  item {
+    id: "b:972"
+    color: "b:10"
+  }
+}
+
+part {
+  id: "gb:970c11"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:11"
+  }
+  item {
+    id: "b:972"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "gb:970c110"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:110"
+  }
+  item {
+    id: "b:972"
+    color: "b:110"
+  }
+}
+
+part {
+  id: "gb:970c115"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:115"
+  }
+  item {
+    id: "b:972"
+    color: "b:115"
+  }
+}
+
+part {
+  id: "gb:970c150"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:150"
+  }
+  item {
+    id: "b:972"
+    color: "b:150"
+  }
+}
+
+part {
+  id: "gb:970c153"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:153"
+  }
+  item {
+    id: "b:972"
+    color: "b:153"
+  }
+}
+
+part {
+  id: "gb:970c155"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:155"
+  }
+  item {
+    id: "b:972"
+    color: "b:155"
+  }
+}
+
+part {
+  id: "gb:970c16"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:16"
+  }
+  item {
+    id: "b:972"
+    color: "b:16"
+  }
+}
+
+part {
+  id: "gb:970c34"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:34"
+  }
+  item {
+    id: "b:972"
+    color: "b:34"
+  }
+}
+
+part {
+  id: "gb:970c36"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:36"
+  }
+  item {
+    id: "b:972"
+    color: "b:36"
+  }
+}
+
+part {
+  id: "gb:970c42"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:42"
+  }
+  item {
+    id: "b:972"
+    color: "b:42"
+  }
+}
+
+part {
+  id: "gb:970c43"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:43"
+  }
+  item {
+    id: "b:972"
+    color: "b:43"
+  }
+}
+
+part {
+  id: "gb:970c47"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:47"
+  }
+  item {
+    id: "b:972"
+    color: "b:47"
+  }
+}
+
+part {
+  id: "gb:970c48"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:48"
+  }
+  item {
+    id: "b:972"
+    color: "b:48"
+  }
+}
+
+part {
+  id: "gb:970c55"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:55"
+  }
+  item {
+    id: "b:972"
+    color: "b:55"
+  }
+}
+
+part {
+  id: "gb:970c59"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:59"
+  }
+  item {
+    id: "b:972"
+    color: "b:59"
+  }
+}
+
+part {
+  id: "gb:970c63"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:63"
+  }
+  item {
+    id: "b:972"
+    color: "b:63"
+  }
+}
+
+part {
+  id: "gb:970c68"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:68"
+  }
+  item {
+    id: "b:972"
+    color: "b:68"
+  }
+}
+
+part {
+  id: "gb:970c69"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:69"
+  }
+  item {
+    id: "b:972"
+    color: "b:69"
+  }
+}
+
+part {
+  id: "gb:970c77"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:77"
+  }
+  item {
+    id: "b:972"
+    color: "b:77"
+  }
+}
+
+part {
+  id: "gb:970c80"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:80"
+  }
+  item {
+    id: "b:972"
+    color: "b:80"
+  }
+}
+
+part {
+  id: "gb:970c85"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:85"
+  }
+  item {
+    id: "b:972"
+    color: "b:85"
+  }
+}
+
+part {
+  id: "gb:970c86"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:86"
+  }
+  item {
+    id: "b:972"
+    color: "b:86"
+  }
+}
+
+part {
+  id: "gb:970c87"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:87"
+  }
+  item {
+    id: "b:972"
+    color: "b:87"
+  }
+}
+
+part {
+  id: "gb:970c88"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:88"
+  }
+  item {
+    id: "b:972"
+    color: "b:88"
+  }
+}
+
+part {
+  id: "gb:970c89"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:89"
+  }
+  item {
+    id: "b:972"
+    color: "b:89"
+  }
+}
+
+part {
+  id: "gb:970c90"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:90"
+  }
+  item {
+    id: "b:972"
+    color: "b:90"
+  }
+}
+
+part {
+  id: "gb:970c98"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:98"
+  }
+  item {
+    id: "b:972"
+    color: "b:98"
+  }
+}
+
+part {
+  id: "gb:970c99"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:99"
+  }
+  item {
+    id: "b:972"
+    color: "b:99"
+  }
+}
+
+part {
+  id: "gb:971"
+  id: "gl:3816"
+}
+
+part {
+  id: "gb:972"
+  id: "gl:3817"
+}
+
+# Minifig body
+part {
+  id: "gb:973"
+  id: "gl:3814"
+  id: "gl:88476"
+}
+
+part {
+  id: "gl:76382"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+  }
+  item {
+    id: "b:982"
+  }
+  item {
+    id: "b:983"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c01"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:1"
+  }
+  item {
+    id: "b:982"
+    color: "b:1"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c02"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:5"
+  }
+  item {
+    id: "b:982"
+    color: "b:5"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c03"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:47"
+  }
+  item {
+    id: "b:982"
+    color: "b:47"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c04"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:4"
+  }
+  item {
+    id: "b:982"
+    color: "b:4"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c05"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:4"
+  }
+  item {
+    id: "b:982"
+    color: "b:4"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c06"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:7"
+  }
+  item {
+    id: "b:982"
+    color: "b:7"
+  }
+  item {
+    id: "b:983"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c07"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:7"
+  }
+  item {
+    id: "b:982"
+    color: "b:7"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c08"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:11"
+  }
+  item {
+    id: "b:982"
+    color: "b:11"
+  }
+  item {
+    id: "b:983"
+    color: "b:90"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c09"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:1"
+  }
+  item {
+    id: "b:982"
+    color: "b:1"
+  }
+  item {
+    id: "b:983"
+    color: "b:1"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c10"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:3"
+  }
+  item {
+    id: "b:982"
+    color: "b:3"
+  }
+  item {
+    id: "b:983"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c11"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:3"
+  }
+  item {
+    id: "b:982"
+    color: "b:3"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c12"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:6"
+  }
+  item {
+    id: "b:982"
+    color: "b:6"
+  }
+  item {
+    id: "b:983"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c13"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:8"
+  }
+  item {
+    id: "b:982"
+    color: "b:8"
+  }
+  item {
+    id: "b:983"
+    color: "b:8"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c14"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:11"
+  }
+  item {
+    id: "b:982"
+    color: "b:11"
+  }
+  item {
+    id: "b:983"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c15"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:10"
+  }
+  item {
+    id: "b:982"
+    color: "b:10"
+  }
+  item {
+    id: "b:983"
+    color: "b:48"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c16"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:9"
+  }
+  item {
+    id: "b:982"
+    color: "b:9"
+  }
+  item {
+    id: "b:983"
+    color: "b:9"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c17"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:42"
+  }
+  item {
+    id: "b:982"
+    color: "b:42"
+  }
+  item {
+    id: "b:983"
+    color: "b:42"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c18"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:11"
+  }
+  item {
+    id: "b:982"
+    color: "b:11"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c19"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:3"
+  }
+  item {
+    id: "b:982"
+    color: "b:3"
+  }
+  item {
+    id: "b:983"
+    color: "b:1"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c20"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:6"
+  }
+  item {
+    id: "b:982"
+    color: "b:6"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c21"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:7"
+  }
+  item {
+    id: "b:982"
+    color: "b:7"
+  }
+  item {
+    id: "b:983"
+    color: "b:1"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c22"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:10"
+  }
+  item {
+    id: "b:982"
+    color: "b:10"
+  }
+  item {
+    id: "b:983"
+    color: "b:9"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c23"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:5"
+  }
+  item {
+    id: "b:982"
+    color: "b:5"
+  }
+  item {
+    id: "b:983"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c24"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:7"
+  }
+  item {
+    id: "b:982"
+    color: "b:7"
+  }
+  item {
+    id: "b:983"
+    color: "b:5"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c25"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:9"
+  }
+  item {
+    id: "b:982"
+    color: "b:9"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c27"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:7"
+  }
+  item {
+    id: "b:982"
+    color: "b:7"
+  }
+  item {
+    id: "b:983"
+    color: "b:10"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c28"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:5"
+  }
+  item {
+    id: "b:982"
+    color: "b:5"
+  }
+  item {
+    id: "b:983"
+    color: "b:10"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c29"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:10"
+  }
+  item {
+    id: "b:982"
+    color: "b:10"
+  }
+  item {
+    id: "b:983"
+    color: "b:1"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c30"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:10"
+  }
+  item {
+    id: "b:982"
+    color: "b:10"
+  }
+  item {
+    id: "b:983"
+    color: "b:10"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c31"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:5"
+  }
+  item {
+    id: "b:982"
+    color: "b:5"
+  }
+  item {
+    id: "b:983"
+    color: "b:1"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c32"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:88"
+  }
+  item {
+    id: "b:982"
+    color: "b:88"
+  }
+  item {
+    id: "b:983"
+    color: "b:88"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c33"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:42"
+  }
+  item {
+    id: "b:982"
+    color: "b:42"
+  }
+  item {
+    id: "b:983"
+    color: "b:86"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c34"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:5"
+  }
+  item {
+    id: "b:982"
+    color: "b:5"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c35"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:6"
+  }
+  item {
+    id: "b:982"
+    color: "b:6"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c36"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:89"
+  }
+  item {
+    id: "b:982"
+    color: "b:89"
+  }
+  item {
+    id: "b:983"
+    color: "b:86"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c39"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:5"
+  }
+  item {
+    id: "b:982"
+    color: "b:5"
+  }
+  item {
+    id: "b:983"
+    color: "b:69"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c40"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:42"
+  }
+  item {
+    id: "b:982"
+    color: "b:42"
+  }
+  item {
+    id: "b:983"
+    color: "b:63"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c41"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:11"
+  }
+  item {
+    id: "b:982"
+    color: "b:11"
+  }
+  item {
+    id: "b:983"
+    color: "b:59"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c42"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:11"
+  }
+  item {
+    id: "b:982"
+    color: "b:11"
+  }
+  item {
+    id: "b:983"
+    color: "b:1"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c43"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:89"
+  }
+  item {
+    id: "b:982"
+    color: "b:89"
+  }
+  item {
+    id: "b:983"
+    color: "b:90"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c44"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:5"
+  }
+  item {
+    id: "b:982"
+    color: "b:5"
+  }
+  item {
+    id: "b:983"
+    color: "b:5"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c45"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:11"
+  }
+  item {
+    id: "b:982"
+    color: "b:11"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c46"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:55"
+  }
+  item {
+    id: "b:982"
+    color: "b:55"
+  }
+  item {
+    id: "b:983"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c47"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:86"
+  }
+  item {
+    id: "b:982"
+    color: "b:86"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c49"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:89"
+  }
+  item {
+    id: "b:982"
+    color: "b:89"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c50"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:55"
+  }
+  item {
+    id: "b:982"
+    color: "b:55"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c51"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:80"
+  }
+  item {
+    id: "b:982"
+    color: "b:80"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c52"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:69"
+  }
+  item {
+    id: "b:982"
+    color: "b:69"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c53"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:63"
+  }
+  item {
+    id: "b:982"
+    color: "b:63"
+  }
+  item {
+    id: "b:983"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c54"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:55"
+  }
+  item {
+    id: "b:982"
+    color: "b:55"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c55"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:2"
+  }
+  item {
+    id: "b:982"
+    color: "b:2"
+  }
+  item {
+    id: "b:983"
+    color: "b:2"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c56"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:3"
+  }
+  item {
+    id: "b:982"
+    color: "b:3"
+  }
+  item {
+    id: "b:983"
+    color: "b:7"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c57"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:59"
+  }
+  item {
+    id: "b:982"
+    color: "b:59"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c58"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:155"
+  }
+  item {
+    id: "b:982"
+    color: "b:155"
+  }
+  item {
+    id: "b:983"
+    color: "b:155"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c60"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:85"
+  }
+  item {
+    id: "b:982"
+    color: "b:85"
+  }
+  item {
+    id: "b:983"
+    color: "b:88"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c61"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:153"
+  }
+  item {
+    id: "b:982"
+    color: "b:153"
+  }
+  item {
+    id: "b:983"
+    color: "b:153"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c62"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:69"
+  }
+  item {
+    id: "b:982"
+    color: "b:69"
+  }
+  item {
+    id: "b:983"
+    color: "b:150"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c63"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:120"
+  }
+  item {
+    id: "b:982"
+    color: "b:120"
+  }
+  item {
+    id: "b:983"
+    color: "b:120"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c66"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:89"
+  }
+  item {
+    id: "b:982"
+    color: "b:89"
+  }
+  item {
+    id: "b:983"
+    color: "b:89"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c67"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:2"
+  }
+  item {
+    id: "b:982"
+    color: "b:2"
+  }
+  item {
+    id: "b:983"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c71"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:55"
+  }
+  item {
+    id: "b:982"
+    color: "b:55"
+  }
+  item {
+    id: "b:983"
+    color: "b:2"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c72"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:88"
+  }
+  item {
+    id: "b:982"
+    color: "b:88"
+  }
+  item {
+    id: "b:983"
+    color: "b:28"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:973c73"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+    color: "b:85"
+  }
+  item {
+    id: "b:982"
+    color: "b:85"
+  }
+  item {
+    id: "b:983"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:981"
+  id: "gl:3819"
+}
+
+part {
+  id: "gb:982"
+  id: "gl:3818"
+}
+
+part {
+  id: "gb:983"
+  id: "gl:3820"
+}
+
+part {
+  id: "gb:989"
+  id: "gl:30345"
+  id: "gl:76385"
+}
+
+part {
+  id: "g:2039"
+}
+
+part {
+  id: "g:2335"
+  id: "gl:60779"
+  id: "gl:11055"
+}
+
+part {
+  id: "g:2336"
+}
+
+part {
+  id: "g:2339"
+  id: "gl:14395"
+  similar { id: "b:2339u" }
+}
+
+part {
+  id: "gb:2339u"
+  id: "o:76768u"
+}
+
+part {
+  id: "g:2340"
+}
+
+part {
+  id: "g:2341"
+  id: "gl:18759"
+}
+
+part {
+  id: "g:2342"
+}
+
+part {
+  id: "g:2343"
+  id: "gl:6269"
+}
+
+part {
+  id: "g:2345"
+  similar { id: "b:87421" }
+}
+
+part {
+  id: "g:2346"
+  similar { id: "b:56897" }
+}
+
+part {
+  id: "gb:2348a"
+  similar { id: "b:2348b" }
+}
+
+part {
+  id: "gb:2348b"
+  id: "gl:2348"
+}
+
+part {
+  id: "g:2349"
+}
+
+part {
+  id: "gb:2350a"
+  similar { id: "b:2350b" }
+  similar { id: "b:2350c" }
+}
+
+part {
+  id: "gb:2350b"
+  id: "gl:2350"
+}
+
+part {
+  id: "gb:2350c"
+}
+
+part {
+  id: "g:2351"
+}
+
+part {
+  id: "gb:2352a"
+  similar { id: "b:2352b" }
+}
+
+part {
+  id: "gb:2352b"
+  id: "gl:2352"
+}
+
+part {
+  id: "g:2356"
+  id: "gl:44042"
+}
+
+part {
+  id: "g:2357"
+}
+
+part {
+  id: "gb:2362"
+}
+
+part {
+  id: "gb:2362a"
+  id: "o:30009a"
+  similar { id: "b:2362" }
+}
+
+part {
+  id: "gb:2362b"
+  id: "l:2362"
+  id: "o:30009b"
+  similar { id: "b:2362" }
+}
+
+part {
+  id: "g:2376"
+  similar { id: "b:74698" }
+}
+
+part {
+  id: "g:2377"
+  similar { id: "b:60032" }
+}
+
+part {
+  id: "g:2397"
+}
+
+part {
+  id: "g:2399"
+  similar { id: "b:50373" }
+}
+
+part {
+  id: "g:2400"
+}
+
+part {
+  id: "g:2401"
+}
+
+part {
+  id: "g:2408"
+  id: "gl:30097"
+}
+
+part {
+  id: "g:2409"
+}
+
+part {
+  id: "gb:2412"
+}
+
+part {
+  id: "gb:2412a"
+  similar { id: "b:2412" }
+}
+
+part {
+  id: "gb:2412b"
+  id: "l:2412"
+  id: "gl:15561"
+  id: "gl:30244"
+  similar { id: "b:2412" }
+}
+
+part {
+  id: "g:2413"
+  similar { id: "b:14181" }
+}
+
+part {
+  id: "g:2415"
+}
+
+part {
+  id: "g:2417"
+}
+
+part {
+  id: "gb:2418"
+}
+
+part {
+  id: "gb:2418a"
+  similar { id: "b:2418" }
+}
+
+part {
+  id: "gb:2418b"
+  id: "l:2418"
+  similar { id: "b:2418" }
+}
+
+part {
+  id: "g:2419"
+}
+
+part {
+  id: "g:2420"
+}
+
+part {
+  id: "g:2421"
+}
+
+part {
+  id: "g:2422"
+}
+
+part {
+  id: "g:2423"
+}
+
+part {
+  id: "g:2424"
+  similar { id: "b:51858" }
+}
+
+part {
+  id: "g:2429"
+}
+
+part {
+  id: "gb:2429c01"
+  id: "gl:73983"
+  item {
+    id: "b:2429"
+  }
+  item {
+    id: "b:2430"
+  }
+}
+
+part {
+  id: "g:2430"
+}
+
+part {
+  id: "g:2431"
+  id: "gl:91143"
+}
+
+part {
+  id: "g:2432"
+}
+
+part {
+  id: "g:2433"
+}
+
+part {
+  id: "g:2434"
+}
+
+part {
+  id: "g:2435"
+}
+
+part {
+  id: "g:2436"
+  similar { id: "b:2436b" }
+}
+
+part {
+  id: "gb:2436b"
+  id: "gl:10201"
+}
+
+part {
+  id: "g:2437"
+}
+
+part {
+  id: "g:2439"
+  similar { id: "b:92926" }
+}
+
+part {
+  id: "g:2440"
+}
+
+part {
+  id: "g:2441"
+}
+
+part {
+  id: "g:2443"
+}
+
+part {
+  id: "g:2444"
+  similar { id: "b:10247" }
+}
+
+part {
+  id: "g:2445"
+}
+
+part {
+  id: "g:2446"
+  id: "gl:30124"
+  id: "gl:88415"
+}
+
+part {
+  id: "g:2447"
+}
+
+part {
+  id: "g:2449"
+}
+
+part {
+  id: "g:2450"
+}
+
+part {
+  id: "g:2452"
+}
+
+part {
+  id: "g:2453"
+  similar { id: "b:2453b" }
+}
+
+part {
+  id: "gb:2453b"
+}
+
+part {
+  id: "g:2454"
+  similar { id: "b:46212" }
+}
+
+part {
+  id: "g:2456"
+  id: "gl:44237"
+}
+
+part {
+  id: "g:2458"
+}
+
+part {
+  id: "g:2460"
+}
+
+part {
+  id: "g:2462"
+}
+
+part {
+  id: "g:2463"
+}
+
+part {
+  id: "g:2464"
+}
+
+part {
+  id: "g:2465"
+}
+
+part {
+  id: "g:2466"
+}
+
+part {
+  id: "g:2467"
+}
+
+part {
+  id: "g:2468"
+}
+
+part {
+  id: "g:2470"
+}
+
+part {
+  id: "g:2473"
+  id: "gl:2498"
+}
+
+part {
+  id: "g:2474"
+  id: "gl:2497"
+}
+
+part {
+  id: "g:2475"
+}
+
+part {
+  id: "g:2476"
+  similar { id: "b:2476b" }
+}
+
+part {
+  id: "gb:2476b"
+}
+
+part {
+  id: "g:2479"
+}
+
+part {
+  id: "g:2483"
+}
+
+part {
+  id: "g:2489"
+}
+
+part {
+  id: "g:2493"
+  similar { id: "b:2493a" }
+}
+
+part {
+  id: "gb:2493a"
+}
+
+part {
+  id: "g:2494"
+}
+
+  
+part {
+  id: "g:2495"
+}
+
+part {
+  id: "g:2496"
+  id: "gl:88423"
+}
+
+part {
+  id: "g:2507"
+  id: "gl:30058"
+}
+
+part {
+  id: "g:2508"
+}
+
+part {
+  id: "g:2512"
+}
+
+part {
+  id: "g:2515"
+}
+
+part {
+  id: "g:2524"
+}
+
+part {
+  id: "g:2527"
+}
+
+part {
+  id: "g:2529"
+  similar { id: "b:60607" }
+}
+
+part {
+  id: "gb:2537a"
+  id: "gl:2537"
+  similar { id: "b:2537b" }
+}
+
+part {
+  id: "gb:2537b"
+}
+
+part {
+  id: "gb:2538a"
+  id: "gl:2538"
+  similar { id: "b:2538b" }
+}
+
+part {
+  id: "gb:2538b"
+}
+
+part {
+  id: "g:2539"
+}
+
+part {
+  id: "g:2540"
+}
+
+part {
+  id: "g:2546"
+}
+
+part {
+  id: "g:2547"
+  id: "o:2547a"
+  id: "o:2547b"
+}
+
+part {
+  id: "g:2548"
+  similar { id: "b:87587" }
+}
+
+part {
+  id: "g:2551"
+  similar { id: "b:21301" }
+}
+
+part {
+  id: "g:2554"
+}
+
+part {
+  id: "g:2555"
+  id: "gl:12825"
+  similar { id: "b:15712" }
+  similar { id: "b:93794" }
+}
+
+part {
+  id: "g:2560"
+}
+
+part {
+  id: "g:2564"
+}
+
+part {
+  id: "g:2566"
+}
+
+part {
+  id: "g:2569"
+}
+
+part {
+  id: "g:2571"
+}
+
+part {
+  id: "g:2572"
+}
+
+part {
+  id: "g:2573"
+}
+
+part {
+  id: "g:2577"
+}
+
+part {
+  id: "gb:2578"
+}
+
+part {
+  id: "gb:2578a"
+  id: "l:2578"
+  similar { id: "b:2578" confirm: true }
+}
+
+part {
+  id: "gb:2578b"
+  similar { id: "b:2578" confirm: true }
+}
+
+part {
+  id: "gb:2580c01"
+  id: "gl:74573"
+}
+
+part {
+  id: "g:2582"
+  id: "gl:6139"
+}
+
+part {
+  id: "g:2584"
+}
+
+part {
+  id: "g:2585"
+}
+
+part {
+  id: "g:2593"
+}
+
+part {
+  id: "g:2598"
+}
+
+part {
+  id: "g:2599"
+  id: "gl:10190"
+  id: "gl:59275"
+}
+
+part {
+  id: "g:2607"
+}
+
+part {
+  id: "g:2609"
+}
+
+part {
+  id: "gb:2609a"
+  similar { id: "b:2609" }
+}
+
+part {
+  id: "gb:2609b"
+  similar { id: "b:2609" }
+}
+
+part {
+  id: "gb:2609c"
+  similar { id: "b:2609" }
+}
+
+part {
+  id: "g:2617"
+}
+
+part {
+  id: "g:2618"
+}
+
+part {
+  id: "g:2620"
+}
+
+part {
+  id: "g:2621"
+}
+
+part {
+  id: "g:2622"
+}
+
+part {
+  id: "g:2625"
+  similar { id: "b:50303" }
+}
+
+part {
+  id: "g:2626"
+}
+
+part {
+  id: "gb:2634c01"
+  id: "gl:2634"
+  similar { id: "b:2634c02" }
+  similar { id: "b:89648c01" }
+}
+
+part {
+  id: "gb:2634c02"
+}
+
+part {
+  id: "g:2635"
+  similar { id: "b:2635b" }
+  similar { id: "b:92086" }
+}
+
+part {
+  id: "gb:2635b"
+}
+
+part {
+  id: "g:2636"
+  similar { id: "b:59807" }
+}
+
+part {
+  id: "g:2637"
+}
+
+part {
+  id: "g:2638"
+}
+
+part {
+  id: "g:2639"
+}
+
+part {
+  id: "g:2642"
+}
+
+part {
+  id: "g:2653"
+}
+
+part {
+  id: "g:2654"
+  id: "gl:54196"
+  id: "gl:93791"
+}
+
+part {
+  id: "g:2655"
+}
+
+part {
+  id: "g:2680"
+  similar { id: "b:2680b" }
+}
+
+part {
+  id: "gb:2680b"
+}
+
+part {
+  id: "g:2694"
+}
+
+part {
+  id: "g:2695"
+  similar { id: "b:60208" }
+}
+
+part {
+  id: "g:2696"
+}
+
+part {
+  id: "g:2711"
+}
+
+part {
+  id: "g:2730"
+}
+
+part {
+  id: "g:2736"
+}
+
+part {
+  id: "g:2739"
+}
+
+part {
+  id: "gb:2739a"
+  similar { id: "b:2739" }
+}
+
+part {
+  id: "gb:2739b"
+  id: "gl:32005"
+  similar { id: "b:2739" }
+}
+
+part {
+  id: "g:2741"
+}
+
+part {
+  id: "g:2743"
+}
+
+part {
+  id: "g:2744"
+}
+
+part {
+  id: "g:2780"
+  similar { id: "b:4459" }
+}
+
+part {
+  id: "g:2807"
+}
+
+part {
+  id: "g:2817"
+}
+
+part {
+  id: "g:2819"
+}
+
+part {
+  id: "g:2823"
+}
+
+part {
+  id: "g:2825"
+  id: "gl:32006"
+}
+
+part {
+  id: "g:2850"
+  similar { id: "b:2850b" }
+}
+
+part {
+  id: "gb:2850b"
+}
+
+part {
+  id: "g:2851"
+}
+
+part {
+  id: "g:2852"
+}
+
+part {
+  id: "g:2853"
+}
+
+part {
+  id: "g:2854"
+  id: "gl:10721"
+}
+
+part {
+  id: "g:2855"
+}
+
+part {
+  id: "g:2856"
+}
+
+part {
+  id: "gb:2856c01"
+  id: "gl:74643"
+  item {
+    id: "b:2855"
+  }
+  item {
+    id: "b:2856"
+  }
+}
+
+part {
+  id: "gb:2856c02"
+  item {
+    id: "b:2856"
+  }
+  item {
+    id: "b:2855"
+    color: "b:12"
+  }
+}
+
+part {
+  id: "gb:2856c03"
+  item {
+    id: "b:2856"
+  }
+  item {
+    id: "b:2855"
+    color: "b:86"
+  }
+}
+
+part {
+  id: "g:2857"
+}
+
+part {
+  id: "g:2859"
+  id: "gl:75541"
+}
+
+part {
+  id: "g:2861"
+  id: "gl:75542"
+}
+
+part {
+  id: "g:2865"
+  id: "gl:74746"
+}
+
+part {
+  id: "g:2866"
+}
+
+part {
+  id: "g:2867"
+  id: "gl:74747"
+}
+
+part {
+  id: "gb:2871"
+  similar { id: "b:2871b" }
+}
+
+part {
+  id: "gb:2871b"
+  id: "l:2871"
+}
+
+part {
+  id: "g:2873"
+}
+
+part {
+  id: "g:2875"
+}
+
+part {
+  id: "g:2876"
+}
+
+part {
+  id: "g:2877"
+}
+
+part {
+  id: "gb:2878c01"
+  id: "gl:74784"
+}
+
+part {
+  id: "g:2902"
+}
+
+part {
+  id: "g:2903"
+}
+
+part {
+  id: "g:2904"
+}
+
+part {
+  id: "g:2905"
+  similar { id: "b:99773" }
+}
+
+part {
+  id: "g:2906"
+}
+
+part {
+  id: "g:2907"
+}
+
+part {
+  id: "g:2908"
+}
+
+part {
+  id: "gb:2909"
+}
+
+part {
+  id: "gb:2909c01"
+}
+
+part {
+  id: "gb:2909c02"
+  id: "l:2909"
+  id: "gl:41475"
+  id: "gl:75348"
+  similar { id: "b:2909c01" confirm: true }
+  item {
+    id: "b:2909"
+  }
+  item {
+    id: "b:109"
+  }
+  item {
+    id: "b:110b"
+  }
+}
+
+part {
+  id: "gb:2909c03"
+  id: "gl:74741"
+  similar { id: "b:2909c01" confirm: true }
+  item {
+    id: "b:2909"
+  }
+  item {
+    id: "b:109"
+  }
+  item {
+    id: "b:110a"
+  }
+}
+
+part {
+  id: "g:2920"
+}
+
+part {
+  id: "g:2921"
+}
+
+part {
+  id: "g:2922"
+}
+
+part {
+  id: "g:2926"
+}
+
+part {
+  id: "g:2927"
+  similar { id: "b:50254" }
+}
+
+part {
+  id: "g:2950"
+}
+
+part {
+  id: "g:2951"
+}
+
+part {
+  id: "g:2952"
+}
+
+part {
+  id: "g:2958"
+  id: "gl:2723"
+  id: "gl:52901"
+}
+
+part {
+  id: "g:2972"
+  similar { id: "b:87058" }
+}
+
+part {
+  id: "g:2994"
+}
+
+part {
+  id: "g:2995"
+}
+
+part {
+  id: "g:2996"
+}
+
+part {
+  id: "g:2998"
+}
+
+part {
+  id: "g:3001"
+}
+
+part {
+  id: "g:3002"
+}
+
+part {
+  id: "g:3003"
+  id: "gl:6223"
+}
+
+part {
+  id: "g:3004"
+  id: "gl:93792"
+  similar { id: "b:3065" }
+}
+
+part {
+  id: "g:3005"
+  id: "gl:30071"
+}
+
+part {
+  id: "g:3006"
+  id: "gl:92538"
+}
+
+part {
+  id: "g:3007"
+  id: "gl:93888"
+}
+
+part {
+  id: "g:3008"
+}
+
+part {
+  id: "g:3009"
+  similar { id: "b:3067" }
+}
+
+part {
+  id: "g:3010"
+  similar { id: "b:3066" }
+}
+
+part {
+  id: "g:3020"
+}
+
+part {
+  id: "g:3021"
+}
+
+part {
+  id: "g:3022"
+  id: "gl:94148"
+}
+
+part {
+  id: "g:3023"
+  id: "gl:6225"
+}
+
+part {
+  id: "g:3024"
+  id: "gl:30008"
+}
+
+part {
+  id: "g:3026"
+}
+
+part {
+  id: "g:3027"
+}
+
+part {
+  id: "g:3028"
+}
+
+part {
+  id: "g:3029"
+}
+
+part {
+  id: "g:3030"
+  similar { id: "b:3030a" }
+}
+
+part {
+  id: "gb:3030a"
+}
+
+part {
+  id: "g:3031"
+}
+
+part {
+  id: "g:3032"
+}
+
+part {
+  id: "g:3033"
+}
+
+part {
+  id: "g:3034"
+}
+
+part {
+  id: "g:3035"
+}
+
+part {
+  id: "g:3036"
+}
+
+part {
+  id: "g:3037"
+  similar { id: "b:3037b" }
+}
+
+part {
+  id: "gb:3037b"
+}
+
+part {
+  id: "g:3038"
+}
+
+part {
+  id: "g:3039"
+  id: "gl:6227"
+}
+
+part {
+  id: "g:3040"
+  id: "gl:6270"
+  similar { id: "b:3040a" }
+}
+
+part {
+  id: "gb:3040a"
+}
+
+part {
+  id: "g:3041"
+}
+
+part {
+  id: "g:3042"
+}
+
+part {
+  id: "g:3043"
+}
+
+part {
+  id: "gb:3044"
+}
+
+part {
+  id: "gb:3044a"
+  similar { id: "b:3044" }
+}
+
+part {
+  id: "gb:3044b"
+  id: "l:3044"
+  similar { id: "b:3044" }
+}
+
+part {
+  id: "gb:3044c"
+  similar { id: "b:3044" }
+}
+
+part {
+  id: "g:3045"
+}
+
+part {
+  id: "gb:3046a"
+  id: "gl:3046"
+  similar { id: "b:3046b" }
+}
+
+part {
+  id: "gb:3046b"
+}
+
+part {
+  id: "gb:3048a"
+  similar { id: "b:3048b" }
+  similar { id: "b:3048c" }
+  similar { id: "b:15571" }
+}
+
+part {
+  id: "gb:3048b"
+}
+
+part {
+  id: "gb:3048c"
+  id: "gl:3048"
+}
+
+part {
+  id: "gb:3049"
+}
+
+part {
+  id: "gb:3049a"
+  similar { id: "b:3049" }
+}
+
+part {
+  id: "gb:3049b"
+  id: "l:3049"
+  similar { id: "b:3049" }
+}
+
+part {
+  id: "gb:3049c"
+  similar { id: "b:3049" }
+}
+
+part {
+  id: "gb:3062"
+}
+
+part {
+  id: "gb:3062a"
+  similar { id: "b:3062" confirm: true }
+}
+
+part {
+  id: "gb:3062b"
+  id: "gl:30068"
+  id: "l:3062"
+  similar { id: "b:3062" confirm: true }
+}
+
+part {
+  id: "g:3063"
+  similar { id: "b:3063a" }
+  similar { id: "b:85080" }
+}
+
+part {
+  id: "gb:3063a"
+}
+
+part {
+  id: "g:3065"
+}
+
+part {
+  id: "g:3066"
+}
+
+part {
+  id: "g:3067"
+}
+
+part {
+  id: "gb:3068"
+}
+
+part {
+  id: "gb:3068a"
+  similar { id: "b:3068" }
+}
+
+part {
+  id: "gb:3068b"
+  id: "l:3068"
+  id: "gl:88409"
+  similar { id: "b:3068" }
+}
+
+part {
+  id: "gb:3069"
+}
+
+part {
+  id: "gb:3069a"
+  similar { id: "b:3069" }
+}
+
+part {
+  id: "gb:3069b"
+  id: "l:3069"
+  id: "gl:30070"
+  id: "gl:88630"
+  id: "gl:59489"
+  similar { id: "b:3069" }
+}
+
+part {
+  id: "gb:3070"
+}
+
+part {
+  id: "gb:3070a"
+  similar { id: "b:3070" }
+}
+
+part {
+  id: "gb:3070b"
+  id: "l:3070"
+  id: "gl:30039"
+  similar { id: "b:3070" }
+}
+
+part {
+  id: "g:3134"
+  similar { id: "b:3134a" }
+}
+
+part {
+  id: "gb:3134a"
+}
+
+part {
+  id: "gb:3137c01"
+}
+
+part {
+  id: "g:3139"
+  similar { id: "b:59895" }
+}
+
+part {
+  id: "g:3145"
+}
+
+part {
+  id: "g:3176"
+}
+
+part {
+  id: "g:3183"
+}
+
+part {
+  id: "gb:3183a"
+  similar { id: "b:3183" }
+}
+
+part {
+  id: "gb:3183b"
+  similar { id: "b:3183" }
+}
+
+part {
+  id: "gb:3183c"
+  similar { id: "b:3183" }
+}
+
+part {
+  id: "g:3184"
+}
+
+part {
+  id: "g:3185"
+}
+
+part {
+  id: "g:3188"
+  similar { id: "b:92263" }
+}
+
+part {
+  id: "g:3189"
+  similar { id: "b:92262" }
+}
+
+part {
+  id: "g:3192"
+  id: "gl:3190"
+  similar { id: "b:60657" }
+}
+
+part {
+  id: "g:3193"
+  id: "gl:3191"
+  similar { id: "b:60658" }
+}
+
+part {
+  id: "g:3194"
+}
+
+part {
+  id: "g:3195"
+}
+
+part {
+  id: "gb:3228"
+}
+
+part {
+  id: "gb:3228a"
+  similar { id: "b:3228" }
+}
+
+part {
+  id: "gb:3228b"
+  similar { id: "b:3228" }
+}
+
+part {
+  id: "gb:3228c"
+  id: "l:3228"
+  similar { id: "b:3228" }
+}
+
+part {
+  id: "gb:3245b"
+  similar { id: "b:3245c" }
+}
+
+part {
+  id: "gb:3245c"
+  id: "gl:3245"
+}
+
+part {
+  id: "g:3297"
+}
+
+part {
+  id: "g:3298"
+  similar { id: "b:30474" }
+}
+
+part {
+  id: "g:3299"
+}
+
+part {
+  id: "g:3300"
+}
+
+part {
+  id: "g:3307"
+  similar { id: "b:12939" }
+}
+
+part {
+  id: "g:3308"
+  similar { id: "b:16577" }
+}
+
+part {
+  id: "g:3358"
+}
+
+part {
+  id: "g:3359"
+}
+
+part {
+  id: "g:3403"
+}
+
+part {
+  id: "gb:3403c01"
+  id: "gl:73603"
+  item {
+    id: "b:3403"
+  }
+  item {
+    id: "b:3404"
+  }
+}
+
+part {
+  id: "g:3404"
+  similar { id: "b:30658" }
+}
+
+part {
+  id: "g:3436"
+}
+
+part {
+  id: "g:3455"
+  similar { id: "b:92950" }
+}
+
+part {
+  id: "g:3456"
+}
+
+part {
+  id: "g:3460"
+}
+
+part {
+  id: "g:3464"
+}
+
+part {
+  id: "g:3474"
+}
+
+part {
+  id: "gb:3475"
+  similar { id: "b:98302" }
+}
+
+part {
+  id: "gb:3475a"
+  similar { id: "b:3475" }
+}
+
+part {
+  id: "gb:3475b"
+  id: "l:3475"
+  similar { id: "b:3475" }
+}
+
+part {
+  id: "g:3479"
+}
+
+part {
+  id: "g:3482"
+}
+
+part {
+  id: "g:3483"
+  similar { id: "b:61254" }
+}
+
+part {
+  id: "g:3492"
+}
+
+part {
+  id: "gb:3492c01"
+  item {
+    id: "b:3492"
+  }
+  item {
+    id: "b:3493"
+    count: 2
+  }
+  item {
+    id: "b:bb217"
+    color: "b:22"
+  }
+  id: "gl:75172"
+}
+
+part {
+  id: "g:3493"
+}
+
+part {
+  id: "g:3581"
+}
+
+part {
+  id: "g:3582"
+}
+
+part {
+  id: "g:3585"
+}
+
+part {
+  id: "g:3586"
+}
+
+part {
+  id: "g:3587"
+}
+
+part {
+  id: "gb:3614a"
+  similar { id: "b:3614b" }
+}
+
+part {
+  id: "gb:3614b"
+  id: "gl:3614"
+}
+
+part {
+  id: "g:3622"
+  id: "gl:45505"
+}
+
+part {
+  id: "g:3623"
+}
+
+part {
+  id: "gb:3626"
+}
+
+part {
+  id: "gb:3626a"
+  id: "o:30011a"
+  similar { id: "b:3626" }
+}
+
+part {
+  id: "gb:3626b"
+  id: "o:30011b"
+  similar { id: "b:3626" }
+}
+
+part {
+  id: "gb:3626c"
+  id: "o:30011c"
+  id: "l:3626"
+  similar { id: "b:3626" }
+}
+
+part {
+  id: "g:3633"
+}
+
+part {
+  id: "g:3634"
+}
+
+part {
+  id: "g:3639"
+}
+
+part {
+  id: "g:3640"
+}
+
+part {
+  id: "g:3641"
+  similar { id: "b:87414" }
+}
+
+part {
+  id: "g:3644"
+}
+
+part {
+  id: "g:3647"
+  similar { id: "b:10928" }
+}
+
+part {
+  id: "g:3648"
+}
+
+part {
+  id: "g:3649"
+}
+
+part {
+  id: "gb:3650"
+}
+
+part {
+  id: "gb:3650a"
+  similar { id: "b:3650" }
+}
+
+part {
+  id: "gb:3650b"
+  id: "l:3650"
+  similar { id: "b:3650" }
+}
+
+part {
+  id: "g:3659"
+}
+
+part {
+  id: "g:3660"
+}
+
+part {
+  id: "g:3665"
+}
+
+part {
+  id: "g:3666"
+}
+
+part {
+  id: "g:3673"
+}
+
+part {
+  id: "g:3675"
+}
+
+part {
+  id: "g:3676"
+}
+
+part {
+  id: "gb:3678"
+}
+
+part {
+  id: "gb:3678a"
+  similar { id: "b:3678" }
+}
+
+part {
+  id: "gb:3678b"
+  id: "l:3678"
+  similar { id: "b:3678" }
+}
+
+part {
+  id: "g:3679"
+}
+
+part {
+  id: "g:3680"
+}
+
+part {
+  id: "g:3684"
+  id: "gl:30499"
+  similar { id: "b:3684b" }
+  similar { id: "b:3684c" }
+}
+
+part {
+  id: "gb:3684b"
+}
+
+part {
+  id: "gb:3684c"
+  id: "gl:98560"
+}
+
+part {
+  id: "g:3685"
+}
+
+part {
+  id: "g:3688"
+}
+
+part {
+  id: "g:3700"
+}
+
+part {
+  id: "g:3701"
+}
+
+part {
+  id: "g:3702"
+}
+
+part {
+  id: "g:3703"
+}
+
+part {
+  id: "g:3704"
+  similar { id: "b:32062" }
+}
+
+part {
+  id: "g:3705"
+}
+
+part {
+  id: "g:3706"
+}
+
+part {
+  id: "g:3707"
+}
+
+part {
+  id: "g:3708"
+}
+
+part {
+  id: "gb:3709b"
+  id: "gl:3709"
+}
+
+part {
+  id: "g:3710"
+}
+
+part {
+  id: "g:3711"
+  id: "gl:14696"
+}
+
+part {
+  id: "g:3713"
+  id: "gl:6590"
+}
+
+part {
+  id: "g:3730"
+}
+
+part {
+  id: "g:3731"
+  id: "gl:3729"
+  similar { id: "b:15456" }
+}
+
+part {
+  id: "g:3736"
+}
+
+part {
+  id: "g:3737"
+  similar { id: "b:3737b" }
+}
+
+part {
+  id: "gb:3737b"
+}
+
+part {
+  id: "g:3738"
+}
+
+part {
+  id: "g:3741"
+}
+
+part {
+  id: "g:3742"
+  id: "gl:56750"
+}
+
+part {
+  id: "gb:3742c01"
+  item: {
+    id: "b:3742"
+    count: 4
+  }
+}
+
+part {
+  id: "g:3743"
+}
+
+part {
+  id: "gb:3747"
+}
+
+part {
+  id: "gb:3747a"
+  id: "l:3747"
+  similar { id: "b:3747" }
+}
+
+part {
+  id: "gb:3747b"
+  similar { id: "b:3747" }
+}
+
+part {
+  id: "g:3749"
+  id: "gl:6562"
+}
+
+part {
+  id: "g:3754"
+  id: "gl:44590"
+}
+
+part {
+  id: "g:3755"
+}
+
+part {
+  id: "g:3787"
+}
+
+part {
+  id: "g:3788"
+  similar { id: "b:60212" }
 }
 
 part {
   id: "g:3794"
-  similar {
-    id: "g:3794a"
+  similar { id: "b:15573" }
+}
+
+part {
+  id: "gb:3794a"
+  similar { id: "b:3794" }
+}
+
+part {
+  id: "gb:3794b"
+  similar { id: "b:3794" }
+}
+
+part {
+  id: "g:3795"
+}
+
+part {
+  id: "g:3811"
+}
+
+part {
+  id: "g:3821"
+}
+
+part {
+  id: "g:3822"
+}
+
+part {
+  id: "g:3823"
+}
+
+part {
+  id: "gb:3829c01"
+  id: "gl:3828"
+  id: "gl:3829"
+  id: "gl:73081"
+}
+
+part {
+  id: "g:3830"
+}
+
+part {
+  id: "g:3831"
+}
+
+part {
+  id: "g:3832"
+}
+
+part {
+  id: "g:3833"
+}
+
+part {
+  id: "g:3835"
+}
+
+part {
+  id: "g:3836"
+}
+
+part {
+  id: "g:3837"
+  similar { id: "b:88431" }
+}
+
+part {
+  id: "g:3838"
+}
+
+part {
+  id: "gb:3839"
+}
+
+part {
+  id: "gb:3839a"
+  similar { id: "b:3839" }
+}
+
+part {
+  id: "gb:3839b"
+  id: "l:3839"
+  similar { id: "b:3839" }
+}
+
+part {
+  id: "g:3846"
+}
+
+part {
+  id: "g:3853"
+}
+
+part {
+  id: "g:3854"
+  similar { id: "b:60608" }
+}
+
+part {
+  id: "g:3855"
+  similar { id: "b:3855a" }
+}
+
+part {
+  id: "gb:3855a"
+}
+
+part {
+  id: "g:3856"
+}
+
+part {
+  id: "g:3857"
+  id: "gl:2748"
+}
+
+part {
+  id: "g:3861"
+}
+
+part {
+  id: "g:3865"
+}
+
+part {
+  id: "g:3867"
+  id: "gl:6098"
+}
+
+part {
+  id: "g:3873"
+  id: "gl:15379"
+}
+
+part {
+  id: "g:3878"
+  id: "gl:88412"
+}
+
+part {
+  id: "g:3894"
+}
+
+part {
+  id: "g:3895"
+}
+
+part {
+  id: "g:3900"
+}
+
+part {
+  id: "g:3901"
+}
+
+part {
+  id: "g:3933"
+}
+
+part {
+  id: "g:3934"
+}
+
+part {
+  id: "g:3935"
+}
+
+part {
+  id: "g:3936"
+}
+
+part {
+  id: "g:3937"
+}
+
+part {
+  id: "g:3938"
+}
+
+part {
+  id: "g:3939"
+  similar { id: "b:58181" }
+}
+
+part {
+  id: "g:3941"
+  id: "gl:6116"
+  id: "gl:6143"
+}
+
+part {
+  id: "gb:3942"
+}
+
+part {
+  id: "gb:3942a"
+  similar { id: "b:3942" }
+}
+
+part {
+  id: "gb:3942b"
+  similar { id: "b:3942" }
+}
+
+part {
+  id: "gb:3942c"
+  id: "l:3942"
+  id: "gl:14918"
+  similar { id: "b:3942" }
+}
+
+part {
+  id: "gb:3943"
+}
+
+part {
+  id: "gb:3943a"
+  similar { id: "b:3943" }
+}
+
+part {
+  id: "gb:3943b"
+  id: "l:3943"
+  similar { id: "b:3943" }
+}
+
+part {
+  id: "g:3956"
+}
+
+part {
+  id: "g:3957"
+  id: "gl:30064"
+  similar { id: "b:3957b" }
+}
+
+part {
+  id: "gb:3957b"
+  id: "o:30064b"
+}
+
+part {
+  id: "g:3958"
+}
+
+part {
+  id: "g:3960"
+  id: "gl:30065"
+}
+
+part {
+  id: "g:3961"
+}
+
+part {
+  id: "gb:3962"
+  similar { id: "b:19220" }
+}
+
+part {
+  id: "gb:3962a"
+  similar { id: "b:3962" }
+}
+
+part {
+  id: "gb:3962b"
+  id: "l:3962"
+  similar { id: "b:3962" }
+}
+
+part {
+  id: "g:3963"
+}
+
+part {
+  id: "g:4019"
+  similar { id: "b:94925" }
+}
+
+part {
+  id: "g:4022"
+}
+
+part {
+  id: "g:4025"
+  id: "gl:15604"
+  similar { id: "b:4092" }
+}
+
+part {
+  id: "g:4032"
+  similar { id: "b:4032b" }
+}
+
+part {
+  id: "gb:4032b"
+}
+
+part {
+  id: "g:4033"
+  similar { id: "b:6556" }
+}
+
+part {
+  id: "g:4034"
+}
+
+part {
+  id: "g:4035"
+}
+
+part {
+  id: "g:4036"
+}
+
+part {
+  id: "g:4070"
+  id: "gl:30069"
+}
+
+part {
+  id: "g:4073"
+  id: "gl:6141"
+  id: "gl:30057"
+}
+
+part {
+  id: "g:4079"
+  similar { id: "b:4079b" }
+}
+
+part {
+  id: "gb:4079b"
+}
+
+part {
+  id: "g:4080"
+  similar { id: "b:15455" }
+}
+
+part {
+  id: "gb:4081"
+}
+
+part {
+  id: "gb:4081a"
+  similar { id: "b:4081" confirm: true }
+}
+
+part {
+  id: "gb:4081b"
+  id: "l:4081"
+  similar { id: "b:4081" confirm: true }
+}
+
+part {
+  id: "g:4083"
+}
+
+part {
+  id: "g:4084"
+}
+
+part {
+  id: "gb:4085"
+}
+
+part {
+  id: "gb:4085a"
+  similar { id: "b:4085" }
+}
+
+part {
+  id: "gb:4085b"
+  similar { id: "b:4085" }
+}
+
+part {
+  id: "gb:4085c"
+  similar { id: "b:4085" }
+}
+
+part {
+  id: "gb:4085d"
+  id: "l:4085"
+  id: "gl:60897"
+  similar { id: "b:4085" }
+}
+
+part {
+  id: "g:4092"
+}
+
+part {
+  id: "gb:4093"
+}
+
+part {
+  id: "gb:4093a"
+  id: "l:4093"
+  similar { id: "b:4093" confirm: true }
+}
+
+part {
+  id: "gb:4093b"
+  similar { id: "b:4093" confirm: true }
+}
+
+part {
+  id: "gb:4093c"
+  similar { id: "b:4093" confirm: true }
+}
+
+part {
+  id: "g:4130"
+}
+
+part {
+  id: "g:4131"
+}
+
+part {
+  id: "g:4132"
+  similar { id: "b:60598" }
+}
+
+part {
+  id: "g:4133"
+}
+
+part {
+  id: "g:4150"
+  similar { id: "b:14769" }
+}
+
+part {
+  id: "gb:4151"
+}
+
+part {
+  id: "gb:4151b"
+  id: "l:4151"
+  similar { id: "b:4151" confirm: true }
+}
+
+part {
+  id: "g:4161"
+}
+
+part {
+  id: "g:4162"
+}
+
+part {
+  id: "g:4175"
+}
+
+part {
+  id: "g:4176"
+  id: "gl:30607"
+}
+
+part {
+  id: "g:4181"
+}
+
+part {
+  id: "g:4182"
+}
+
+part {
+  id: "g:4183"
+}
+
+part {
+  id: "g:4185"
+  id: "gl:2786"
+}
+
+part {
+  id: "g:4186"
+}
+
+part {
+  id: "g:4201"
+  id: "gl:43802"
+}
+
+part {
+  id: "g:4202"
+  id: "gl:60033"
+}
+
+part {
+  id: "g:4204"
+  id: "gl:44041"
+}
+
+part {
+  id: "g:4209"
+}
+
+part {
+  id: "g:4210"
+  id: "gl:4208"
+}
+
+part {
+  id: "g:4211"
+}
+
+part {
+  id: "gb:4212a"
+  similar { id: "b:4212b" }
+}
+
+part {
+  id: "gb:4212b"
+  id: "gl:4212"
+}
+
+part {
+  id: "g:4213"
+}
+
+part {
+  id: "g:4214"
+}
+
+part {
+  id: "gb:4215"
+  id: "gl:30077"
+}
+
+part {
+  id: "gb:4215a"
+  id: "o:30077a"
+  similar { id: "b:4215" }
+}
+
+part {
+  id: "gb:4215b"
+  id: "l:4215"
+  id: "o:30077b"
+  similar { id: "b:4215" }
+  similar { id: "b:60581" }
+}
+
+part {
+  id: "g:4216"
+}
+
+part {
+  id: "g:4217"
+}
+
+part {
+  id: "g:4218"
+  id: "gl:30061"
+}
+
+part {
+  id: "g:4219"
+}
+
+part {
+  id: "g:4228"
+}
+
+part {
+  id: "g:4229"
+}
+
+part {
+  id: "g:4259"
+  similar { id: "b:6248" }
+}
+
+part {
+  id: "g:4265"
+}
+
+part {
+  id: "gb:4265a"
+  similar { id: "b:4265" }
+}
+
+part {
+  id: "gb:4265b"
+  similar { id: "b:4265" }
+}
+
+part {
+  id: "gb:4265c"
+  id: "gl:32123"
+  similar { id: "b:4265" }
+}
+
+part {
+  id: "g:4266"
+}
+
+part {
+  id: "g:4267"
+}
+
+part {
+  id: "g:4274"
+}
+
+part {
+  id: "g:4275"
+}
+
+part {
+  id: "g:4276"
+}
+
+part {
+  id: "g:4282"
+}
+
+part {
+  id: "g:4284"
+}
+
+part {
+  id: "gb:4285"
+}
+
+part {
+  id: "gb:4285a"
+  similar { id: "b:4285" }
+}
+
+part {
+  id: "gb:4285b"
+  id: "l:4285"
+  similar { id: "b:4285" }
+}
+
+part {
+  id: "g:4286"
+  similar { id: "b:4286b" }
+}
+
+part {
+  id: "gb:4286b"
+}
+
+part {
+  id: "g:4287"
+}
+
+part {
+  id: "g:4288"
+}
+
+part {
+  id: "g:4289"
+}
+
+part {
+  id: "g:4315"
+}
+
+part {
+  id: "g:4342"
+}
+
+part {
+  id: "g:4345"
+  id: "gl:30060"
+  similar { id: "b:4345a" }
+}
+
+part {
+  id: "gb:4345a"
+}
+
+part {
+  id: "g:4346"
+  id: "gl:30059"
+}
+
+part {
+  id: "g:4349"
+}
+
+part {
+  id: "g:4360"
+}
+
+part {
+  id: "g:4429"
+}
+
+part {
+  id: "g:4444"
+}
+
+part {
+  id: "g:4445"
+}
+
+part {
+  id: "g:4447"
+}
+
+part {
+  id: "g:4448"
+}
+
+part {
+  id: "g:4459"
+}
+
+part {
+  id: "gb:4460a"
+  similar { id: "b:4460b" }
+}
+
+part {
+  id: "gb:4460b"
+  id: "gl:4460"
+}
+
+part {
+  id: "g:4466"
+  id: "gl:70972"
+}
+
+part {
+  id: "g:4467"
+  id: "gl:70969"
+}
+
+part {
+  id: "g:4474"
+}
+
+part {
+  id: "g:4475"
+}
+
+part {
+  id: "gb:4476a"
+  id: "gl:4476"
+  similar { id: "b:4476b" }
+}
+
+part {
+  id: "gb:4476b"
+}
+
+part {
+  id: "g:4477"
+}
+
+part {
+  id: "g:4485"
+  similar { id: "b:4485b" }
+}
+
+part {
+  id: "gb:4485b"
+  id: "gl:86035"
+}
+
+part {
+  id: "g:4488"
+  id: "gl:10313"
+}
+
+part {
+  id: "gb:4489a"
+  similar { id: "b:4489b" }
+}
+
+part {
+  id: "gb:4489b"
+  id: "gl:4489"
+}
+
+part {
+  id: "g:4490"
+}
+
+part {
+  id: "g:4495"
+}
+
+part {
+  id: "g:4509"
+}
+
+part {
+  id: "g:4510"
+}
+
+part {
+  id: "g:4511"
+}
+
+part {
+  id: "g:4515"
+}
+
+part {
+  id: "gb:4518b"
+}
+
+part {
+  id: "gb:4518bc01"
+  id: "gl:46564"
+  item {
+    id: "b:4518b"
   }
-  similar {
-    id: "g:3794b"
-  }
-  similar {
-    id: "g:15573"
+  item {
+    id: "b:45707"
   }
 }
 
 part {
-  id: "g:3794a"
+  id: "g:4519"
 }
 
 part {
-  id: "g:3794b"
+  id: "g:4522"
+}
+
+part {
+  id: "g:4530"
+  id: "gl:96859"
+}
+
+part {
+  id: "g:4531"
+}
+
+part {
+  id: "g:4532"
+  id: "gl:92410"
+}
+
+part {
+  id: "g:4533"
+  id: "gl:30125"
+}
+
+part {
+  id: "g:4536"
+}
+
+part {
+  id: "g:4588"
+}
+
+part {
+  id: "g:4589"
+  id: "gl:6188"
+  similar { id: "b:4589b" }
+}
+
+part {
+  id: "gb:4589b"
+  id: "gl:59900"
+  id: "gl:64288"
+}
+
+part {
+  id: "g:4590"
+  id: "gl:18624"
+}
+
+part {
+  id: "g:4591"
+}
+
+# Lever small base
+part {
+  id: "gb:4592"
+  id: "gl:298"
+}
+
+part {
+  id: "l:4592"
+  id: "gl:73587"
+  item {
+    id: "b:4592"
+  }
+  item {
+    id: "b:4593"
+  }
+}
+
+part {
+  id: "gb:4592c01"
+  item {
+    id: "b:4592"
+  }
+  item {
+    id: "b:4593"
+    color: "b:3"
+  }
+}
+
+part {
+  id: "gb:4592c02"
+  item {
+    id: "b:4592"
+  }
+  item {
+    id: "b:4593"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "gb:4592c03"
+  item {
+    id: "b:4592"
+  }
+  item {
+    id: "b:4593"
+    color: "b:9"
+  }
+}
+
+part {
+  id: "gb:4592c04"
+  item {
+    id: "b:4592"
+  }
+  item {
+    id: "b:4593"
+    color: "b:1"
+  }
+}
+
+part {
+  id: "gb:4592c05"
+  item {
+    id: "b:4592"
+  }
+  item {
+    id: "b:4593"
+    color: "b:86"
+  }
+}
+
+part {
+  id: "g:4593"
+}
+
+part {
+  id: "g:4594"
+}
+
+part {
+  id: "g:4595"
+}
+
+part {
+  id: "g:4596"
+}
+
+part {
+  id: "g:4597"
+}
+
+part {
+  id: "g:4598"
+}
+
+part {
+  id: "g:4599"
+  similar { id: "b:4599b" }
+}
+
+part {
+  id: "gb:4599b"
+}
+
+part {
+  id: "g:4600"
+}
+
+part {
+  id: "g:4617"
+  similar { id: "b:4617a" }
+}
+
+part {
+  id: "gb:4617a"
+}
+
+part {
+  id: "g:4623"
+  similar { id: "b:88072" }
+}
+
+part {
+  id: "g:4624"
+}
+
+part {
+  id: "g:4625"
+}
+
+part {
+  id: "gb:4697"
+}
+
+part {
+  id: "gb:4697a"
+  similar { id: "b:4697" }
+}
+
+part {
+  id: "gb:4697b"
+  id: "l:4697"
+  similar { id: "b:4697" }
+}
+
+part {
+  id: "g:4714"
+}
+
+part {
+  id: "g:4715"
+}
+
+part {
+  id: "g:4716"
+}
+
+part {
+  id: "gb:4719"
+}
+
+part {
+  id: "gb:4719c01"
+  id: "l:4719"
+  id: "gl:73537"
+  item {
+    id: "b:4719"
+  }
+  item {
+    id: "b:2807"
+    color: "b:11"
+    count: 2
+  }
+  item {
+    id: "b:4720"
+    count: 2
+  }
+}
+
+part {
+  id: "g:4720"
+}
+
+part {
+  id: "g:4727"
+}
+
+part {
+  id: "g:4728"
+  similar { id: "b:98262" }
+}
+
+part {
+  id: "g:4729"
+}
+
+part {
+  id: "g:4730"
+  similar { id: "b:6232" }
+}
+
+part {
+  id: "g:4732"
+}
+
+part {
+  id: "g:4733"
+}
+
+part {
+  id: "g:4735"
+}
+
+part {
+  id: "g:4737"
+}
+
+part {
+  id: "g:4738"
+}
+
+part {
+  id: "gb:4738a"
+  similar { id: "b:4738" }
+}
+
+part {
+  id: "gb:4738b"
+  similar { id: "b:4738" }
+}
+
+part {
+  id: "g:4739"
+}
+
+part {
+  id: "gb:4739a"
+  similar { id: "b:4739" }
+}
+
+part {
+  id: "gb:4739b"
+  similar { id: "b:4739" }
+}
+
+part {
+  id: "g:4740"
+  id: "gl:30063"
+  id: "gl:71874"
+}
+
+part {
+  id: "g:4741"
+}
+
+part {
+  id: "g:4742"
+}
+
+part {
+  id: "g:4744"
+}
+
+part {
+  id: "g:4746"
+}
+
+part {
+  id: "g:4773"
+  id: "gl:4770"
+}
+
+part {
+  id: "g:4790"
+  similar { id: "b:4790b" }
+}
+
+part {
+  id: "gb:4790b"
+}
+
+part {
+  id: "gb:4794b"
+  id: "gl:4794"
+}
+
+part {
+  id: "g:4844"
+  similar { id: "b:13349" }
+}
+
+part {
+  id: "g:4854"
+  similar { id: "b:72454" }
+}
+
+part {
+  id: "g:4855"
+  similar { id: "b:13349" }
+}
+
+part {
+  id: "gb:4856a"
+  id: "gl:4856"
+  similar { id: "b:4856b" }
+}
+
+part {
+  id: "gb:4856b"
+}
+
+part {
+  id: "g:4857"
+}
+
+part {
+  id: "g:4858"
+  similar { id: "b:93348" }
+}
+
+part {
+  id: "g:4859"
+  similar { id: "b:48183" }
+}
+
+part {
+  id: "g:4861"
+}
+
+part {
+  id: "g:4862"
+}
+
+part {
+  id: "g:4863"
+}
+
+part {
+  id: "gb:4864"
+  similar { id: "b:87552" }
+}
+
+part {
+  id: "gb:4864a"
+  similar { id: "b:4864" }
+}
+
+part {
+  id: "gb:4864b"
+  id: "l:4864"
+  similar { id: "b:4864" }
+}
+
+part {
+  id: "gb:4865"
+  id: "o:4865a"
+  id: "gl:30010"
+  similar { id: "b:4865b" }
+}
+
+part {
+  id: "gb:4865b"
+  id: "l:4865"
+  id: "gl:15714"
+}
+
+part {
+  id: "gb:4868a"
+}
+
+part {
+  id: "gb:4868ac01"
+  item {
+    id: "b:4868a"
+  }
+  item {
+    id: "b:4869"
+    color: "b:9"
+  }
+}
+
+part {
+  id: "gb:4868b"
+  id: "gl:4868"
+}
+
+part {
+  id: "gb:4868bc01"
+  item {
+    id: "b:4868b"
+  }
+  item {
+    id: "b:4869"
+    color: "b:86"
+  }
+}
+
+part {
+  id: "g:4869"
+}
+
+part {
+  id: "g:4870"
+}
+
+part {
+  id: "gb:4870c01"
+  item {
+    id: "b:4870"
+  }
+  item {
+    id: "b:4624"
+    color: "b:9"
+    count: 2
+  }
+  item {
+    id: "b:3139"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:4870c02"
+  item {
+    id: "b:4870"
+  }
+  item {
+    id: "b:4624"
+    color: "b:1"
+    count: 2
+  }
+  item {
+    id: "b:3139"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:4870c03"
+  item {
+    id: "b:4870"
+  }
+  item {
+    id: "b:4624"
+    color: "b:86"
+    count: 2
+  }
+  item {
+    id: "b:3139"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:4870c04"
+  item {
+    id: "b:4870"
+  }
+  item {
+    id: "b:4624"
+    color: "b:1"
+    count: 2
+  }
+  item {
+    id: "b:59895"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:4870c05"
+  item {
+    id: "b:4870"
+  }
+  item {
+    id: "b:30027b"
+    color: "b:11"
+    count: 2
+  }
+  item {
+    id: "b:30028"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:4870c06"
+  item {
+    id: "b:4870"
+  }
+  item {
+    id: "b:4624"
+    color: "b:86"
+    count: 2
+  }
+  item {
+    id: "b:3641"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:4870c07"
+  item {
+    id: "b:4870"
+  }
+  item {
+    id: "b:4624"
+    color: "b:86"
+    count: 2
+  }
+  item {
+    id: "b:59895"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "g:4871"
+}
+
+part {
+  id: "g:4872"
+  similar { id: "b:72475" }
+}
+
+# 4mm pneumatic tube family
+part {
+  id: "g:5102"
+}
+
+part {
+  id: "gb:5102c02"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c03"
+  id: "gl:21761"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c04"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c05"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c06"
+  id: "gl:21766"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c07"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c08"
+  id: "gl:21837"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c09"
+  id: "gl:21826"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c10"
+  id: "gl:21767"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c11"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c12"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c13"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c14"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c15"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c16"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c17"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c18"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c19"
+  id: "gl:21839"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c20"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c21"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c22"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c23"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c24"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c25"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c26"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c27"
+  id: "gl:21830"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c28"
+  id: "gl:21825"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c29"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c30"
+  id: "gl:21833"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c31"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c32"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c33"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c34"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c35"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c36"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c37"
+  id: "gl:21835"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c38"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c39"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c40"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c42"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c48"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c50"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c54"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c60"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c66"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c68"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c76"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c80"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c82"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "gb:5102c89"
+  similar { id: "b:5102" confirm: true }
+}
+
+part {
+  id: "g:6002"
+}
+
+part {
+  id: "g:6003"
+}
+
+part {
+  id: "g:6005"
+  id: "gl:92903"
+}
+
+part {
+  id: "gb:6014a"
+  similar { id: "b:6014b" }
+}
+
+part {
+  id: "gb:6014b"
+  id: "gl:6014"
+}
+
+part {
+  id: "g:6015"
+  similar { id: "b:60700" }
+  similar { id: "b:87697" }
+}
+
+part {
+  id: "g:6019"
+  similar { id: "b:61252" }
+}
+
+part {
+  id: "g:6020"
+}
+
+part {
+  id: "g:6021"
+}
+
+part {
+  id: "g:6023"
+}
+
+part {
+  id: "g:6024"
+}
+
+part {
+  id: "g:6025"
+}
+
+part {
+  id: "g:6026"
+}
+
+part {
+  id: "gb:6026c01"
+  item {
+    id: "b:6026"
+  }
+  item {
+    id: "b:6027"
+  }
+  item {
+    id: "b:6028"
+  }
+}
+
+part {
+  id: "g:6027"
+}
+
+part {
+  id: "g:6028"
+}
+
+part {
+  id: "gb:6029a"
+  id: "gl:87695"
+}
+
+part {
+  id: "g:6030"
+}
+
+part {
+  id: "g:6032"
+}
+
+part {
+  id: "g:6035"
+  id: "gl:74880"
+}
+
+part {
+  id: "g:6037"
+}
+
+part {
+  id: "g:6039"
+}
+
+part {
+  id: "g:6040"
+}
+
+part {
+  id: "g:6041"
+}
+
+part {
+  id: "g:6042"
+}
+
+part {
+  id: "g:6043"
+}
+
+part {
+  id: "g:6044"
+}
+
+part {
+  id: "g:6055"
+}
+
+part {
+  id: "g:6056"
+}
+
+part {
+  id: "g:6058"
+}
+
+part {
+  id: "g:6059"
+  id: "gl:12818"
+}
+
+part {
+  id: "g:6060"
+  id: "gl:15967"
+}
+
+part {
+  id: "g:6061"
+}
+
+part {
+  id: "g:6063"
+}
+
+part {
+  id: "g:6064"
+}
+
+part {
+  id: "g:6065"
+}
+
+part {
+  id: "g:6066"
+}
+
+part {
+  id: "g:6067"
+}
+
+part {
+  id: "g:6069"
+  similar { id: "b:48933" }
+}
+
+part {
+  id: "g:6070"
+}
+
+part {
+  id: "g:6072"
+}
+
+part {
+  id: "g:6075"
+}
+
+part {
+  id: "g:6078"
+}
+
+part {
+  id: "g:6081"
+}
+
+part {
+  id: "g:6082"
+}
+
+part {
+  id: "g:6083"
+}
+
+part {
+  id: "g:6086"
+}
+
+part {
+  id: "g:6087"
+  similar { id: "b:76766" }
+}
+
+part {
+  id: "g:6091"
+}
+
+part {
+  id: "g:6104"
+}
+
+part {
+  id: "g:6105"
+}
+
+part {
+  id: "g:6106"
+}
+
+part {
+  id: "g:6107"
+}
+
+part {
+  id: "g:6108"
+  similar { id: "b:14707" }
+}
+
+part {
+  id: "g:6111"
+}
+
+part {
+  id: "g:6112"
+}
+
+part {
+  id: "g:6118"
+}
+
+part {
+  id: "g:6120"
+}
+
+part {
+  id: "g:6134"
+}
+
+part {
+  id: "g:6152"
+}
+
+part {
+  id: "gb:6153a"
+  similar { id: "b:6153b" }
+}
+
+part {
+  id: "gb:6153b"
+  id: "gl:6153"
+}
+
+part {
+  id: "g:6154"
+}
+
+part {
+  id: "g:6155"
+}
+
+part {
+  id: "g:6157"
+  similar { id: "b:11002" }
+}
+
+part {
+  id: "g:6160"
+  similar { id: "b:57894" }
+}
+
+part {
+  id: "g:6162"
+  similar { id: "b:47376" }
+}
+
+part {
+  id: "g:6165"
+}
+
+part {
+  id: "g:6168"
+}
+
+part {
+  id: "gb:6168c01"
+  id: "gl:75347"
+}
+
+part {
+  id: "g:6177"
+}
+
+part {
+  id: "g:6178"
+}
+
+part {
+  id: "g:6179"
+}
+
+part {
+  id: "g:6180"
+}
+
+part {
+  id: "g:6182"
+}
+
+part {
+  id: "g:6183"
+}
+
+part {
+  id: "g:6184"
+}
+
+part {
+  id: "g:6190"
+}
+
+part {
+  id: "g:6191"
+  id: "gl:10314"
+}
+
+part {
+  id: "g:6192"
+  id: "gl:30337"
+}
+
+part {
+  id: "g:6205"
+}
+
+part {
+  id: "g:6212"
+}
+
+part {
+  id: "gl:6213"
+  decor { id: "gb:6213pb01" }
+}
+
+part {
+  id: "g:6215"
+}
+
+part {
+  id: "g:6216"
+}
+
+part {
+  id: "g:6219"
+}
+
+part {
+  id: "g:6222"
+}
+
+part {
+  id: "gb:6228a"
+  similar { id: "b:6228u" }
+}
+
+part {
+  id: "gb:6228b"
+  id: "gl:6228"
+  similar { id: "b:6228u" }
+}
+
+part {
+  id: "gb:6228c"
+  similar { id: "b:6228u" }
+}
+
+part {
+  id: "gb:6228u"
+}
+
+part {
+  id: "g:6230"
+}
+
+part {
+  id: "g:6231"
+}
+
+part {
+  id: "g:6232"
+}
+
+part {
+  id: "g:6233"
+}
+
+part {
+  id: "g:6235"
+}
+
+part {
+  id: "g:6236"
+}
+
+part {
+  id: "gb:6236c01"
+  id: "gl:75547"
+  similar { id: "b:6236c02" }
+  item {
+    id: "b:6236"
+  }
+  item {
+    id: "b:601"
+    color: "b:1"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:6236c02"
+  item {
+    id: "b:6236"
+  }
+  item {
+    id: "b:601"
+    color: "b:3"
+    count: 2
+  }
+}
+
+part {
+  id: "g:6238"
+}
+
+part {
+  id: "g:6239"
+  id: "gl:18989"
+}
+
+part {
+  id: "gb:6246a"
+  id: "gl:55298"
+}
+
+part {
+  id: "gb:6246b"
+  id: "gl:55295"
+}
+
+part {
+  id: "gb:6246c"
+  id: "gl:55297"
+}
+
+part {
+  id: "gb:6246d"
+  id: "gl:55300"
+}
+
+part {
+  id: "gb:6246e"
+  id: "gl:55299"
+}
+
+part {
+  id: "gb:6246f"
+  id: "gl:55296"
+}
+
+part {
+  id: "g:6248"
+}
+
+part {
+  id: "g:6249"
+}
+
+part {
+  id: "g:6250"
+}
+
+part {
+  id: "g:6251"
+}
+
+part {
+  id: "g:6259"
+  id: "gl:6218"
+  id: "gl:20430"
+}
+
+part {
+  id: "g:6260"
+  similar { id: "b:60115" }
+}
+
+part {
+  id: "g:6265"
+}
+
+part {
+  id: "g:6266"
+}
+
+part {
+  id: "g:6267"
+}
+
+part {
+  id: "g:6536"
+}
+
+part {
+  id: "gb:6538"
+}
+
+part {
+  id: "gb:6538a"
+  similar { id: "b:6538" }
+}
+
+part {
+  id: "gb:6538b"
+  id: "l:6538"
+  similar { id: "b:6538" }
+}
+
+part {
+  id: "gb:6538c"
+  id: "gl:59443"
+  similar { id: "b:6538" }
+}
+
+part {
+  id: "g:6539"
+}
+
+part {
+  id: "g:6541"
+}
+
+part {
+  id: "g:6542"
+  similar { id: "b:6542b" }
+  similar { id: "b:18942" }
+}
+
+part {
+  id: "gb:6542b"
+}
+
+part {
+  id: "g:6546"
+  similar { id: "b:60614" }
+}
+
+part {
+  id: "g:6553"
+}
+
+part {
+  id: "g:6556"
+}
+
+part {
+  id: "g:6558"
+}
+
+part {
+  id: "g:6564"
+}
+
+part {
+  id: "g:6565"
+}
+
+part {
+  id: "gb:6567c01"
+  id: "gl:6567"
+  similar { id: "b:6567c02" }
+  similar { id: "b:6567c03" }
+  # This is similar to 13760+13756, but there is no such 13760c01
+}
+
+part {
+  id: "gb:6567c02"
+}
+
+part {
+  id: "gb:6567c03"
+}
+
+part {
+  id: "g:6571"
+}
+
+part {
+  id: "g:6572"
+}
+
+part {
+  id: "g:6573"
+}
+
+part {
+  id: "g:6574"
+}
+
+part {
+  id: "g:6575"
+}
+
+part {
+  id: "g:6576"
+}
+
+part {
+  id: "g:6578"
+  similar { id: "b:58090" }
+}
+
+part {
+  id: "g:6579"
+}
+
+part {
+  id: "g:6580"
+  similar { id: "b:6580a" }
+}
+
+part {
+  id: "gb:6580a"
+}
+
+part {
+  id: "g:6581"
+}
+
+part {
+  id: "g:6582"
+}
+
+part {
+  id: "g:6583"
+}
+
+part {
+  id: "gb:6584a"
+  id: "gl:6584"
+}
+
+part {
+  id: "g:6585"
+}
+
+part {
+  id: "g:6587"
+  id: "gl:13670"
+}
+
+part {
+  id: "g:6588"
+  id: "gl:32239"
+}
+
+part {
+  id: "g:6589"
+}
+
+part {
+  id: "g:6592"
+}
+
+part {
+  id: "g:6628"
+}
+
+part {
+  id: "g:6629"
+}
+
+part {
+  id: "g:6630"
+}
+
+part {
+  id: "g:6631"
+}
+
+part {
+  id: "g:6632"
+}
+
+part {
+  id: "g:6636"
+}
+
+part {
+  id: "g:6641"
+  id: "gl:19437"
+}
+
+part {
+  id: "g:6881"
+  similar { id: "b:10202" }
+}
+
+part {
+  id: "g:7026"
+  id: "gl:73594"
+  id: "o:3081cc01"
+  similar { id: "b:7026ac01" }
+  similar { id: "b:7026bc01" }
+}
+
+part {
+  id: "gb:7026a"
+}
+
+part {
+  id: "gb:7026ac01"
+  id: "o:3081ac01"
+  item {
+    id: "b:7026a"
+  }
+  item {
+    id: "b:7026glass"
+    color: "b:12"
+  }
+}
+
+part {
+  id: "gb:7026b"
+}
+
+part {
+  id: "gb:7026bc01"
+  id: "o:3081bc01"
+  item {
+    id: "b:7026b"
+  }
+  item {
+    id: "b:7026glass"
+    color: "b:12"
+  }
+}
+
+part {
+  id: "gb:7026glass"
+  id: "gl:3082"
+}
+
+part {
+  id: "g:8529"
+}
+
+part {
+  id: "gb:9244c01"
+  id: "gl:9244"
+  item {
+    id: "b:90"
+    count: 2
+  }
+  item {
+    id: "b:91"
+  }
+}
+
+part {
+  id: "gb:10039c01"
+  id: "gl:10039"
+}
+
+part {
+  id: "g:10172"
+}
+
+part {
+  id: "g:10197"
+}
+
+part {
+  id: "g:10202"
+}
+
+part {
+  id: "g:10247"
+}
+
+part {
+  id: "g:10288"
+}
+
+part {
+  id: "g:10884"
+  similar { id: "b:30239" }
+}
+
+part {
+  id: "g:10928"
+}
+
+part {
+  id: "g:11002"
+}
+
+part {
+  id: "g:11090"
+}
+
+part {
+  id: "g:11094"
+}
+
+part {
+  id: "gb:11125c01"
+  id: "o:11140c01"
+  id: "gl:11767"
+}
+
+part {
+  id: "g:11126"
+}
+
+part {
+  id: "g:11203"
+}
+
+part {
+  id: "g:11208"
+}
+
+part {
+  id: "g:11209"
+}
+
+part {
+  id: "g:11211"
+}
+
+part {
+  id: "g:11212"
+}
+
+part {
+  id: "g:11213"
+}
+
+part {
+  id: "g:11214"
+}
+
+part {
+  id: "g:11215"
+}
+
+part {
+  id: "g:11250"
+}
+
+part {
+  id: "g:11253"
+  id: "gl:18747"
+}
+
+part {
+  id: "g:11272"
+}
+
+part {
+  id: "g:11289"
+}
+
+part {
+  id: "g:11290"
+}
+
+part {
+  id: "g:11291"
+}
+
+part {
+  id: "g:11293"
+}
+
+part {
+  id: "g:11295"
+}
+
+part {
+  id: "g:11297"
+}
+
+part {
+  id: "g:11301"
+}
+
+part {
+  id: "g:11399"
+  similar { id: "b:47998" }
+}
+
+part {
+  id: "gb:11402a"
+  id: "gl:604550"
+  similar { id: "b:6246a" }
+}
+
+part {
+  id: "gb:11402b"
+  id: "gl:604549"
+}
+
+part {
+  id: "gb:11402c"
+  id: "gl:604548"
+  similar { id: "b:6246f" }
+}
+
+part {
+  id: "gb:11402d"
+  id: "gl:604553"
+}
+
+part {
+  id: "gb:11402e"
+  id: "gl:604615"
+}
+
+part {
+  id: "gb:11402f"
+  id: "gl:604614"
+}
+
+part {
+  id: "gb:11402g"
+  id: "gl:604551"
+  similar { id: "b:6246e" }
+}
+
+part {
+  id: "gb:11402h"
+  id: "gl:604552"
+  similar { id: "b:6246d" }
+}
+
+part {
+  id: "gb:11402i"
+  id: "gl:604547"
+  similar { id: "b:6246b" }
+}
+
+part {
+  id: "g:11455"
+}
+
+part {
+  id: "g:11458"
+}
+
+part {
+  id: "g:11476"
+}
+
+part {
+  id: "g:11477"
+}
+
+part {
+  id: "g:11478"
+}
+
+part {
+  id: "gl:11603"
+  decor { id: "gb:11603pb01" }
+  decor { id: "gb:11603pb02" }
+}
+
+part {
+  id: "gb:11650c01"
+  id: "gl:12622"
+}
+
+part {
+  id: "g:11833"
+}
+
+part {
+  id: "g:11946"
+}
+
+part {
+  id: "g:11947"
+}
+
+part {
+  id: "g:11949"
+}
+
+part {
+  id: "g:11950"
+}
+
+part {
+  id: "g:11953"
+  similar { id: "b:19540" }
+}
+
+part {
+  id: "g:11954"
+}
+
+part {
+  id: "g:11955"
+}
+
+part {
+  id: "g:11957"
+}
+
+part {
+  id: "gl:12888"
+  decor { id: "gb:12888pb01" }
+}
+
+part {
+  id: "g:12939"
+  id: "gl:15254"
+}
+
+part {
+  id: "g:13252"
+}
+
+part {
+  id: "g:13269"
+}
+
+part {
+  id: "g:13349"
+}
+
+part {
+  id: "gl:13392"
+  decor { id: "gb:13392pb01" }
+  decor { id: "gb:13392pb02" }
+}
+
+part {
+  id: "g:13459"
+}
+
+part {
+  id: "g:13547"
+}
+
+part {
+  id: "g:13548"
+}
+
+part {
+  id: "g:13562"
+  similar { id: "b:30132" }
+}
+
+part {
+  id: "g:13756"
+}
+
+part {
+  id: "g:13760"
+}
+
+part {
+  id: "g:13965"
+}
+
+part {
+  id: "g:13971"
+  similar { id: "b:56902" }
+}
+
+part {
+  id: "g:14137"
+  similar { id: "b:30407" }
+}
+
+part {
+  id: "g:14149"
+}
+
+part {
+  id: "g:14181"
+}
+
+part {
+  id: "g:14301"
+  id: "gl:758"
+}
+
+part {
+  id: "g:14413"
+}
+
+part {
+  id: "g:14417"
+}
+
+part {
+  id: "g:14418"
+}
+
+part {
+  id: "g:14419"
+}
+
+part {
+  id: "g:14520"
+  similar { id: "b:52038" }
+}
+
+part {
+  id: "g:14682"
+}
+
+part {
+  id: "g:14704"
+}
+
+part {
+  id: "g:14707"
+  id: "gl:18838"
+}
+
+part {
+  id: "g:14716"
+}
+
+part {
+  id: "g:14718"
+}
+
+part {
+  id: "g:14719"
+}
+
+part {
+  id: "g:14720"
+}
+
+part {
+  id: "g:14769"
+}
+
+part {
+  id: "g:15038"
+}
+
+part {
+  id: "g:15068"
+}
+
+part {
+  id: "g:15071"
+}
+
+part {
+  id: "g:15073"
+}
+
+part {
+  id: "g:15092"
+}
+
+part {
+  id: "g:15100"
+}
+
+part {
+  id: "g:15108"
+}
+
+part {
+  id: "g:15208"
+}
+
+part {
+  id: "g:15209"
+}
+
+part {
+  id: "g:15265"
+}
+
+part {
+  id: "g:15279"
+}
+
+part {
+  id: "gb:15301c01"
+  id: "gl:15400"
+}
+
+part {
+  id: "g:15303"
+}
+
+part {
+  id: "g:15361"
+}
+
+part {
+  id: "g:15391"
+}
+
+part {
+  id: "g:15392"
+}
+
+part {
+  id: "g:15395"
+}
+
+part {
+  id: "g:15396"
+}
+
+part {
+  id: "g:15397"
+}
+
+part {
+  id: "g:15403"
+}
+
+part {
+  id: "g:15411"
+}
+
+part {
+  id: "g:15413"
+}
+
+part {
+  id: "g:15444"
+}
+
+part {
+  id: "g:15455"
+}
+
+part {
+  id: "g:15456"
+}
+
+part {
+  id: "g:15458"
+}
+
+part {
+  id: "g:15459"
+}
+
+part {
+  id: "g:15460"
+}
+
+part {
+  id: "g:15461"
+}
+
+part {
+  id: "g:15462"
+}
+
+part {
+  id: "g:15470"
+}
+
+part {
+  id: "g:15532"
+}
+
+part {
+  id: "g:15533"
+}
+
+part {
+  id: "g:15535"
+}
+
+part {
+  id: "g:15536"
+}
+
+part {
+  id: "g:15537"
+}
+
+part {
+  id: "g:15540"
+}
+
+part {
+  id: "g:15571"
 }
 
 part {
@@ -88,48 +8016,5632 @@ part {
 }
 
 part {
-  id: "ga:44342"
-  decor {
-    id: "bl:44342pb01"
+  id: "gl:15623"
+  decor { id: "gb:15623pb001" }
+  decor { id: "gb:15623pb002" }
+}
+
+part {
+  id: "g:15624"
+}
+
+part {
+  id: "g:15625"
+}
+
+part {
+  id: "gl:15626"
+  decor { id: "gb:15626pb01" }
+  decor { id: "gb:15626pb02" }
+  decor { id: "gb:15626pb03" }
+  decor { id: "gb:15626pb04" }
+}
+
+part {
+  id: "g:15627"
+}
+
+part {
+  id: "gl:15679"
+  decor { id: "gb:15679pb01" }
+}
+
+part {
+  id: "g:15706"
+}
+
+part {
+  id: "g:15712"
+}
+
+part {
+  id: "g:15744"
+}
+
+part {
+  id: "g:15790"
+  similar { id: "b:30332" }
+}
+
+part {
+  id: "g:16477"
+}
+
+part {
+  id: "g:16577"
+}
+
+part {
+  id: "g:16968"
+}
+
+part {
+  id: "g:17114"
+  similar { id: "b:57908" confirm: true }
+}
+
+part {
+  id: "g:17454"
+}
+
+part {
+  id: "g:17457"
+}
+
+part {
+  id: "g:17485"
+}
+
+part {
+  id: "gl:18051"
+  decor { id: "gb:18051pb001" }
+}
+
+part {
+  id: "gl:18052"
+  decor { id: "gb:18052pb001" }
+}
+
+part {
+  id: "g:18450"
+}
+
+part {
+  id: "g:18455"
+}
+
+part {
+  id: "g:18587"
+}
+
+part {
+  id: "g:18588"
+}
+
+part {
+  id: "gl:18868"
+  id: "gb:18603c00"
+}
+
+part {
+  id: "gl:19981"
+  decor { id: "gb:18603c01pb01" }
+}
+
+part {
+  id: "g:18646"
+}
+
+part {
+  id: "g:18649"
+}
+
+part {
+  id: "g:18651"
+}
+
+part {
+  id: "g:18653"
+}
+
+part {
+  id: "g:18654"
+}
+
+part {
+  id: "g:18663"
+}
+
+part {
+  id: "g:18671"
+}
+
+part {
+  id: "g:18674"
+}
+
+part {
+  id: "g:18675"
+}
+
+part {
+  id: "g:18677"
+}
+
+part {
+  id: "g:18729"
+}
+
+part {
+  id: "g:18866"
+  similar { id: "b:30218" }
+}
+
+part {
+  id: "g:18892"
+}
+
+part {
+  id: "g:18895"
+}
+
+part {
+  id: "g:18896"
+}
+
+part {
+  id: "g:18897"
+}
+
+part {
+  id: "g:18907"
+}
+
+part {
+  id: "g:18908"
+}
+
+part {
+  id: "g:18909"
+}
+
+part {
+  id: "g:18910"
+}
+
+part {
+  id: "gb:18913c01"
+  id: "gl:20033"
+}
+
+part {
+  id: "g:18938"
+}
+
+part {
+  id: "g:18939"
+  similar { id: "b:48452" }
+}
+
+part {
+  id: "g:18940"
+}
+
+part {
+  id: "g:18942"
+}
+
+part {
+  id: "g:18943"
+}
+
+part {
+  id: "g:18944"
+}
+
+part {
+  id: "g:18945"
+}
+
+part {
+  id: "g:18946"
+}
+
+part {
+  id: "g:18947"
+}
+
+part {
+  id: "g:18948"
+}
+
+part {
+  id: "g:18972"
+}
+
+part {
+  id: "g:18973"
+}
+
+part {
+  id: "g:18974"
+}
+
+part {
+  id: "g:18975"
+}
+
+part {
+  id: "g:18976"
+}
+
+part {
+  id: "g:18977"
+}
+
+part {
+  id: "g:18980"
+}
+
+part {
+  id: "g:18990"
+}
+
+part {
+  id: "g:19001"
+  similar { id: "b:90109" }
+}
+
+part {
+  id: "gb:19020c01"
+  id: "gl:18734"
+}
+
+part {
+  id: "g:19086"
+}
+
+part {
+  id: "gl:19212"
+  decor { id: "gb:19212pb01" }
+}
+
+part {
+  id: "g:19215"
+}
+
+part {
+  id: "g:19220"
+}
+
+part {
+  id: "g:19540"
+}
+
+part {
+  id: "g:20105"
+}
+
+part {
+  id: "g:20309"
+}
+
+part {
+  id: "g:20482"
+}
+
+part {
+  id: "g:20582"
+}
+
+part {
+  id: "g:20684"
+}
+
+part {
+  id: "gl:20953"
+  decor { id: "gb:20953pb01" }
+}
+
+part {
+  id: "g:21301"
+}
+
+part {
+  id: "g:21445"
+}
+
+part {
+  id: "g:21459"
+}
+
+part {
+  id: "gl:21849"
+  decor { id: "gb:21849pb01" }
+}
+
+part {
+  id: "g:22385"
+}
+
+part {
+  id: "g:22387"
+}
+
+part {
+  id: "g:22388"
+}
+
+part {
+  id: "g:22391"
+}
+
+part {
+  id: "g:22410"
+}
+
+part {
+  id: "g:22483"
+}
+
+part {
+  id: "g:22487"
+}
+
+part {
+  id: "g:22667"
+  id: "gl:71842"
+}
+
+part {
+  id: "g:22885"
+}
+
+part {
+  id: "g:22889"
+}
+
+part {
+  id: "g:22890"
+}
+
+part {
+  id: "g:22961"
+}
+
+part {
+  id: "g:23065"
+  similar { id: "b:41250" }
+}
+
+part {
+  id: "g:23405"
+}
+
+part {
+  id: "g:23421"
+}
+
+part {
+  id: "g:23422"
+}
+
+part {
+  id: "g:23714"
+  id: "gl:62575"
+}
+
+part {
+  id: "g:23922"
+}
+
+part {
+  id: "g:23969"
+}
+
+part {
+  id: "g:23996"
+}
+
+part {
+  id: "g:23997"
+}
+
+part {
+  id: "gb:23997c01"
+  id: "gl:23999"
+  item {
+    id: "b:23997"
   }
-  decor {
-    id: "bl:44342px2"
+  item {
+    id: "b:23998"
+    color: "b:86"
   }
 }
 
-#part {
-#  id: "l:76041"
-#  similar: "bl:x39c01"
-#  item {
-#    id: "v:60797p1"
-#  }
-#  item {
-#    id: "v:60797p2"
-#  }
-#}
+part {
+  id: "g:23998"
+}
 
-#part {
-#  id: "bl:60797c01"
-#  id: "ld:30178c01"
-#  and {
-#    id: "v:67097p1"
-#    color: 2
-#  }
-#  and {
-#    id: "v:67097p2"
-#  }
-#}
+part {
+  id: "g:24014"
+}
 
-#part {
-#  id: "v:60797p1"
-#  weight_grams: 0.1
-#}
+part {
+  id: "g:24055"
+}
 
-#part {
-#  id: "v:60797p2"
-#  weight_grams: 0.1
-#}
+part {
+  id: "g:24116"
+}
 
-#part {
-#  id: "bl:x39c01"
-#}
+part {
+  id: "g:24122"
+}
+
+part {
+  id: "g:24151"
+}
+
+part {
+  id: "g:24201"
+}
+
+part {
+  id: "g:24246"
+}
+
+part {
+  id: "g:24299"
+}
+
+part {
+  id: "g:24307"
+}
+
+part {
+  id: "g:24309"
+}
+
+part {
+  id: "g:24316"
+}
+
+part {
+  id: "g:24326"
+}
+
+part {
+  id: "gl:24593"
+  decor { id: "gb:24593pb01" }
+}
+
+part {
+  id: "g:30000"
+}
+
+part {
+  id: "g:30016"
+}
+
+part {
+  id: "g:30022"
+}
+
+part {
+  id: "gb:30027a"
+  similar { id: "b:30027b" }
+  similar { id: "b:74967" }
+}
+
+part {
+  id: "gb:30027b"
+  id: "gl:30027"
+}
+
+part {
+  id: "g:30028"
+}
+
+part {
+  id: "g:30029"
+}
+
+part {
+  id: "g:30031"
+  similar { id: "b:98397" }
+}
+
+part {
+  id: "g:30033"
+  similar { id: "b:75937" }
+}
+
+part {
+  id: "g:30036"
+}
+
+part {
+  id: "g:30041"
+}
+
+part {
+  id: "g:30042"
+}
+
+part {
+  id: "g:30043"
+}
+
+part {
+  id: "g:30044"
+}
+
+part {
+  id: "g:30045"
+}
+
+part {
+  id: "g:30046"
+  id: "gl:37411"
+}
+
+part {
+  id: "g:30047"
+}
+
+part {
+  id: "g:30056"
+}
+
+part {
+  id: "g:30062"
+}
+
+part {
+  id: "g:30072"
+}
+
+part {
+  id: "g:30076"
+}
+
+part {
+  id: "g:30078"
+}
+
+part {
+  id: "g:30083"
+}
+
+part {
+  id: "g:30085"
+  id: "o:x98"
+}
+
+part {
+  id: "g:30086"
+  id: "gl:75977"
+}
+
+part {
+  id: "g:30090"
+}
+
+part {
+  id: "g:30093"
+}
+
+part {
+  id: "g:30094"
+}
+
+part {
+  id: "g:30099"
+}
+
+part {
+  id: "g:30100"
+}
+
+part {
+  id: "g:30103"
+}
+
+part {
+  id: "g:30104"
+  id: "gl:60169"
+}
+
+part {
+  id: "g:30115"
+}
+
+part {
+  id: "g:30117"
+  id: "gl:30320"
+}
+
+part {
+  id: "g:30118"
+}
+
+part {
+  id: "g:30132"
+}
+
+part {
+  id: "g:30134"
+}
+
+part {
+  id: "g:30136"
+}
+
+part {
+  id: "g:30137"
+}
+
+part {
+  id: "g:30140"
+}
+
+part {
+  id: "g:30144"
+  id: "gl:97492"
+}
+
+part {
+  id: "g:30145"
+}
+
+part {
+  id: "g:30147"
+}
+
+part {
+  id: "g:30149"
+}
+
+part {
+  id: "gb:30151"
+}
+
+part {
+  id: "gb:30151a"
+  similar { id: "b:30151" }
+}
+
+part {
+  id: "gb:30151b"
+  id: "l:30151"
+  similar { id: "b:30151" }
+}
+
+part {
+  id: "g:30155"
+}
+
+part {
+  id: "g:30156"
+}
+
+part {
+  id: "g:30157"
+}
+
+part {
+  id: "g:30161"
+}
+
+part {
+  id: "g:30162"
+}
+
+part {
+  id: "g:30165"
+}
+
+part {
+  id: "g:30169"
+}
+
+part {
+  id: "g:30170"
+}
+
+part {
+  id: "g:30171"
+  id: "gl:90510"
+}
+
+part {
+  id: "g:30172"
+}
+
+part {
+  id: "g:30173"
+  id: "gl:88420"
+  similar { id: "b:30173b" }
+  similar { id: "b:21459" }
+}
+
+part {
+  id: "gb:30173b"
+}
+
+part {
+  id: "g:30176"
+}
+
+part {
+  id: "g:30179"
+  similar { id: "b:60596" }
+}
+
+part {
+  id: "gb:30179c01"
+  item {
+    id: "b:30179"
+  }
+  item {
+    id: "b:x39c02"
+    color: "b:9"
+  }
+}
+
+part {
+  id: "gb:30179c02"
+  item {
+    id: "b:30179"
+  }
+  item {
+    id: "b:x39c03"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "gb:30179c03"
+  item {
+    id: "b:30179"
+  }
+  item {
+    id: "b:x39c01"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "gb:30179c04"
+  item {
+    id: "b:30179"
+  }
+  item {
+    id: "b:x39c01"
+    color: "b:5"
+  }
+}
+
+part {
+  id: "gb:30179c05"
+  item {
+    id: "b:30179"
+  }
+  item {
+    id: "b:x39c02"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "gb:30179c06"
+  item {
+    id: "b:30179"
+  }
+  item {
+    id: "b:x39c01"
+    color: "b:85"
+  }
+}
+
+part {
+  id: "g:30180"
+}
+
+part {
+  id: "g:30181"
+}
+
+part {
+  id: "g:30182"
+}
+
+part {
+  id: "g:30183"
+}
+
+part {
+  id: "gb:30185c01"
+  id: "gl:76029"
+  similar { id: "b:30185c02" }
+  similar { id: "b:30185c03" }
+  similar { id: "b:30185c04" }
+  similar { id: "b:30185c05" }
+}
+
+part {
+  id: "gb:30185c02"
+}
+
+part {
+  id: "gb:30185c03"
+}
+
+part {
+  id: "gb:30185c04"
+}
+
+part {
+  id: "gb:30185c05"
+}
+
+part {
+  id: "gb:30187a"
+  item {
+    id: "b:30187u"
+  }
+  item {
+    id: "b:30188"
+    color: "b:10"
+  }
+}
+
+part {
+  id: "gb:30187b"
+  id: "gl:30187"
+  id: "gl:76040"
+  item {
+    id: "b:30187u"
+  }
+  item {
+    id: "b:30188"
+    color: "b:85"
+  }
+}
+
+part {
+  id: "gb:30187c"
+  item {
+    id: "b:30187u"
+  }
+  item {
+    id: "b:30188"
+    color: "b:59"
+  }
+}
+
+part {
+  id: "gb:30187d"
+  item {
+    id: "b:30187u"
+  }
+  item {
+    id: "b:30188"
+    color: "b:7"
+  }
+}
+
+part {
+  id: "gb:30187e"
+  item {
+    id: "b:30187u"
+  }
+  item {
+    id: "b:30188"
+    color: "b:88"
+  }
+}
+
+part {
+  id: "gb:30187u"
+}
+
+part {
+  id: "g:30188"
+}
+
+part {
+  id: "g:30189"
+}
+
+part {
+  id: "g:30190"
+}
+
+part {
+  id: "g:30193"
+}
+
+part {
+  id: "g:30201"
+}
+
+part {
+  id: "g:30209"
+}
+
+part {
+  id: "g:30212"
+}
+
+part {
+  id: "g:30218"
+}
+
+part {
+  id: "g:30222"
+}
+
+part {
+  id: "g:30223"
+}
+
+part {
+  id: "g:30225"
+  id: "gl:51595"
+}
+
+part {
+  id: "g:30229"
+}
+
+part {
+  id: "g:30235"
+}
+
+part {
+  id: "g:30236"
+}
+
+part {
+  id: "gb:30237"
+  id: "gl:95820"
+  similar { id: "b:30237b" }
+}
+
+part {
+  id: "gb:30237b"
+  id: "l:30237"
+}
+
+part {
+  id: "g:30238"
+}
+
+part {
+  id: "g:30239"
+}
+
+part {
+  id: "g:30241"
+  id: "gl:60475"
+}
+
+part {
+  id: "gb:30241b"
+  id: "o:60475b"
+}
+
+part {
+  id: "g:30246"
+}
+
+part {
+  id: "g:30248"
+}
+
+part {
+  id: "g:30249"
+}
+
+part {
+  id: "g:30250"
+}
+
+part {
+  id: "g:30251"
+}
+
+part {
+  id: "g:30256"
+  similar { id: "b:98549" }
+}
+
+part {
+  id: "g:30263"
+}
+
+part {
+  id: "g:30272"
+}
+
+part {
+  id: "g:30274"
+}
+
+part {
+  id: "g:30275"
+}
+
+part {
+  id: "g:30283"
+  similar { id: "b:60219" }
+}
+
+part {
+  id: "g:30285"
+}
+
+part {
+  id: "g:30288"
+}
+
+part {
+  id: "g:30293"
+  id: "gl:42284"
+  id: "gl:53933"
+}
+
+part {
+  id: "g:30294"
+  id: "gl:42291"
+  id: "gl:53934"
+}
+
+part {
+  id: "g:30296"
+}
+
+part {
+  id: "g:30300"
+}
+
+part {
+  id: "g:30324"
+}
+
+part {
+  id: "g:30332"
+}
+
+part {
+  id: "gb:30343c01"
+  id: "gl:76033"
+  similar { id: "b:30343c02" }
+}
+
+part {
+  id: "gb:30343c02"
+}
+
+part {
+  id: "gb:30350a"
+  similar { id: "b:30350b" }
+  similar { id: "b:30350c" }
+}
+
+part {
+  id: "gb:30350b"
+  id: "gl:30350"
+}
+
+part {
+  id: "gb:30350c"
+}
+
+part {
+  id: "g:30355"
+}
+
+part {
+  id: "g:30356"
+}
+
+part {
+  id: "g:30357"
+}
+
+part {
+  id: "g:30358"
+}
+
+part {
+  id: "gb:30359"
+}
+
+part {
+  id: "gb:30359a"
+  similar { id: "b:30359" }
+}
+
+part {
+  id: "gb:30359b"
+  id: "l:30359"
+  similar { id: "b:30359" }
+}
+
+part {
+  id: "g:30360"
+  similar { id: "b:93168" }
+}
+
+part {
+  id: "gb:30361"
+}
+
+part {
+  id: "gb:30361a"
+  similar { id: "b:30361" }
+}
+
+part {
+  id: "gb:30361b"
+  similar { id: "b:30361" }
+}
+
+part {
+  id: "gb:30361c"
+  id: "l:30361"
+  similar { id: "b:30361" }
+}
+
+part {
+  id: "g:30363"
+}
+
+part {
+  id: "g:30364"
+}
+
+part {
+  id: "g:30365"
+}
+
+part {
+  id: "g:30372"
+}
+
+part {
+  id: "g:30373"
+}
+
+part {
+  id: "g:30374"
+  id: "gl:578"
+  id: "gl:21462"
+}
+
+part {
+  id: "g:30377"
+}
+
+part {
+  id: "g:30381"
+  id: "gl:96232"
+  id: "gl:98011"
+}
+
+part {
+  id: "g:30382"
+}
+
+part {
+  id: "g:30383"
+}
+
+part {
+  id: "g:30384"
+  similar { id: "b:89762" }
+}
+
+part {
+  id: "g:30386"
+}
+
+part {
+  id: "g:30387"
+}
+
+part {
+  id: "g:30388"
+}
+
+part {
+  id: "gb:30389"
+}
+
+part {
+  id: "gb:30389b"
+  id: "l:30389"
+  similar { id: "b:30389c" }
+}
+
+part {
+  id: "gb:30389c"
+}
+
+part {
+  id: "g:30390"
+  id: "gl:15647"
+}
+
+part {
+  id: "g:30391"
+  similar { id: "b:92402" }
+}
+
+part {
+  id: "g:30394"
+  id: "gl:21709"
+}
+
+part {
+  id: "g:30395"
+}
+
+part {
+  id: "g:30400"
+}
+
+part {
+  id: "g:30401"
+}
+
+part {
+  id: "g:30407"
+}
+
+part {
+  id: "g:30410"
+  id: "gl:92756"
+}
+
+part {
+  id: "g:30413"
+  id: "gl:15207"
+  id: "gl:43337"
+}
+
+part {
+  id: "g:30414"
+}
+
+part {
+  id: "g:30474"
+}
+
+part {
+  id: "g:30483"
+}
+
+part {
+  id: "gl:30485"
+  decor { id: "gb:30485pb01" }
+  decor { id: "gb:30485pb02" }
+}
+
+part {
+  id: "g:30497"
+}
+
+part {
+  id: "g:30503"
+}
+
+part {
+  id: "g:30504"
+}
+
+part {
+  id: "g:30505"
+}
+
+part {
+  id: "g:30516"
+}
+
+part {
+  id: "gb:30516c01"
+  id: "gl:76514"
+  item {
+    id: "b:30516"
+  }
+  item {
+    id: "b:30658"
+  }
+}
+
+part {
+  id: "gb:30516cu"
+  item {
+    id: "b:3404"
+  }
+  item {
+    id: "b:30516"
+  }
+}
+
+part {
+  id: "g:30517"
+  similar { id: "b:57893" }
+  similar { id: "b:58827" }
+  similar { id: "b:95347" }  
+}
+
+part {
+  id: "g:30518"
+}
+
+part {
+  id: "g:30526"
+}
+
+part {
+  id: "g:30528"
+}
+
+part {
+  id: "g:30535"
+}
+
+part {
+  id: "g:30536"
+}
+
+part {
+  id: "g:30540"
+}
+
+part {
+  id: "g:30541"
+}
+
+part {
+  id: "g:30552"
+}
+
+part {
+  id: "g:30553"
+}
+
+part {
+  id: "g:30562"
+  id: "gl:46361"
+}
+
+part {
+  id: "g:30565"
+}
+
+part {
+  id: "g:30586"
+}
+
+part {
+  id: "g:30592"
+}
+
+part {
+  id: "g:30602"
+  id: "gl:47904"
+}
+
+part {
+  id: "g:30603"
+}
+
+part {
+  id: "g:30614"
+  id: "gl:41630"
+}
+
+part {
+  id: "g:30622"
+}
+
+part {
+  id: "g:30626"
+}
+
+part {
+  id: "g:30632"
+}
+
+part {
+  id: "g:30633"
+}
+
+part {
+  id: "g:30644"
+}
+
+part {
+  id: "g:30647"
+}
+
+part {
+  id: "g:30648"
+}
+
+part {
+  id: "g:30649"
+}
+
+part {
+  id: "g:30658"
+}
+
+part {
+  id: "g:30663"
+  id: "gl:16091"
+}
+
+part {
+  id: "g:32000"
+}
+
+part {
+  id: "g:32001"
+}
+
+part {
+  id: "g:32002"
+}
+
+part {
+  id: "g:32007"
+}
+
+part {
+  id: "g:32009"
+}
+
+part {
+  id: "g:32012"
+}
+
+part {
+  id: "g:32013"
+}
+
+part {
+  id: "g:32014"
+}
+
+part {
+  id: "g:32015"
+}
+
+part {
+  id: "g:32016"
+}
+
+part {
+  id: "g:32017"
+}
+
+part {
+  id: "g:32018"
+}
+
+part {
+  id: "g:32019"
+}
+
+part {
+  id: "g:32020"
+  similar { id: "b:86652" }
+}
+
+part {
+  id: "g:32028"
+}
+
+part {
+  id: "g:32030"
+}
+
+part {
+  id: "g:32034"
+}
+
+part {
+  id: "g:32039"
+}
+
+part {
+  id: "g:32040"
+}
+
+part {
+  id: "g:32054"
+}
+
+part {
+  id: "g:32056"
+}
+
+part {
+  id: "g:32059"
+}
+
+part {
+  id: "g:32060"
+  id: "o:x480"
+}
+
+part {
+  id: "g:32062"
+}
+
+part {
+  id: "g:32063"
+}
+
+part {
+  id: "g:32064"
+  similar { id: "b:32064b" }
+  similar { id: "b:32064c" }
+}
+
+part {
+  id: "gb:32064b"
+}
+
+part {
+  id: "gb:32064c"
+}
+
+part {
+  id: "g:32065"
+}
+
+part {
+  id: "g:32068"
+}
+
+part {
+  id: "g:32069"
+}
+
+part {
+  id: "g:32072"
+}
+
+part {
+  id: "g:32073"
+}
+
+part {
+  id: "gb:32074c01"
+  similar { id: "b:57029c01" }
+}
+
+part {
+  id: "g:32083"
+}
+
+part {
+  id: "g:32084"
+}
+
+part {
+  id: "g:32124"
+}
+
+part {
+  id: "g:32125"
+}
+
+part {
+  id: "g:32132"
+}
+
+part {
+  id: "g:32138"
+}
+
+part {
+  id: "g:32140"
+}
+
+part {
+  id: "g:32146"
+}
+
+part {
+  id: "g:32175"
+  similar { id: "b:58177" }
+}
+
+part {
+  id: "g:32177"
+}
+
+part {
+  id: "gb:32181"
+}
+
+part {
+  id: "gb:32181c02"
+  id: "l:32181"
+  id: "gl:76320"
+  item {
+    id: "b:32181"
+  }
+  item {
+    id: "b:32182"
+    color: "b:11"
+  }
+  item {
+    id: "b:32183c01"
+    color: "b:11"
+  }
+  item {
+    id: "b:108"
+    color: "b:22"
+  }
+}
+
+part {
+  id: "gb:32181c03"
+  item {
+    id: "b:32181"
+  }
+  item {
+    id: "b:32182"
+    color: "b:11"
+  }
+  item {
+    id: "b:32183c01"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "g:32182"
+}
+
+part {
+  id: "g:32183"
+}
+
+part {
+  id: "gb:32183c01"
+  item {
+    id: "b:32040"
+  }
+  item {
+    id: "b:32183"
+  }
+}
+
+part {
+  id: "g:32184"
+}
+
+part {
+  id: "g:32186"
+}
+
+part {
+  id: "g:32187"
+}
+
+part {
+  id: "g:32188"
+  id: "gl:22972"
+}
+
+part {
+  id: "g:32189"
+  id: "gl:22973"
+}
+
+part {
+  id: "g:32190"
+  id: "gl:22749"
+}
+
+part {
+  id: "g:32191"
+  id: "gl:22750"
+}
+
+part {
+  id: "g:32192"
+}
+
+part {
+  id: "g:32198"
+}
+
+part {
+  id: "g:32199"
+  id: "gl:55709"
+}
+
+part {
+  id: "g:32200"
+}
+
+part {
+  id: "g:32201"
+}
+
+part {
+  id: "g:32202"
+}
+
+part {
+  id: "g:32209"
+  id: "gl:59426"
+}
+
+part {
+  id: "g:32235"
+}
+
+part {
+  id: "g:32249"
+}
+
+part {
+  id: "g:32250"
+}
+
+part {
+  id: "g:32251"
+}
+
+part {
+  id: "g:32269"
+  id: "gl:18575"
+}
+
+part {
+  id: "g:32270"
+}
+
+part {
+  id: "g:32271"
+}
+
+part {
+  id: "g:32278"
+  id: "gl:64871"
+}
+
+part {
+  id: "g:32291"
+}
+
+part {
+  id: "g:32293"
+}
+
+part {
+  id: "g:32310"
+}
+
+part {
+  id: "g:32316"
+}
+
+part {
+  id: "g:32324"
+}
+
+part {
+  id: "g:32333"
+}
+
+part {
+  id: "g:32348"
+}
+
+part {
+  id: "g:32449"
+}
+
+part {
+  id: "g:32474"
+  similar { id: "b:53585" }
+}
+
+part {
+  id: "g:32494"
+}
+
+part {
+  id: "g:32498"
+}
+
+part {
+  id: "g:32523"
+}
+
+part {
+  id: "g:32524"
+}
+
+part {
+  id: "g:32525"
+  id: "gl:64290"
+}
+
+part {
+  id: "g:32526"
+}
+
+part {
+  id: "g:32527"
+}
+
+part {
+  id: "g:32528"
+}
+
+part {
+  id: "g:32529"
+}
+
+part {
+  id: "g:32530"
+}
+
+part {
+  id: "g:32534"
+}
+
+part {
+  id: "g:32535"
+}
+
+part {
+  id: "g:32555"
+}
+
+part {
+  id: "g:32556"
+}
+
+part {
+  id: "g:32557"
+}
+
+part {
+  id: "g:32580"
+}
+
+part {
+  id: "g:33057"
+}
+
+part {
+  id: "g:33121"
+}
+
+part {
+  id: "g:33129"
+}
+
+part {
+  id: "g:33211"
+}
+
+part {
+  id: "g:33212"
+}
+
+part {
+  id: "g:33215"
+  id: "gl:42000"
+  id: "gl:10487"
+}
+
+part {
+  id: "g:33216"
+}
+
+part {
+  id: "g:33227"
+}
+
+part {
+  id: "g:33243"
+}
+
+part {
+  id: "g:33286"
+}
+
+part {
+  id: "g:33291"
+}
+
+part {
+  id: "g:33299"
+}
+
+part {
+  id: "g:33320"
+  id: "o:x223"
+}
+
+part {
+  id: "g:40001"
+  id: "gl:18352"
+}
+
+part {
+  id: "g:40234"
+}
+
+part {
+  id: "g:40241"
+  similar { id: "b:64390" }
+}
+
+part {
+  id: "g:40242"
+}
+
+part {
+  id: "g:40244"
+}
+
+part {
+  id: "g:40344"
+  id: "gl:32531"
+}
+
+part {
+  id: "g:40345"
+  id: "gl:32532"
+}
+
+part {
+  id: "g:40379"
+}
+
+part {
+  id: "g:40490"
+  id: "gl:64289"
+}
+
+part {
+  id: "g:40902"
+}
+
+part {
+  id: "g:41239"
+  id: "gl:32277"
+}
+
+part {
+  id: "g:41250"
+}
+
+part {
+  id: "g:41530"
+}
+
+part {
+  id: "g:41531"
+}
+
+part {
+  id: "g:41532"
+}
+
+part {
+  id: "g:41533"
+}
+
+part {
+  id: "g:41535"
+}
+
+part {
+  id: "g:41539"
+  id: "gl:42534"
+}
+
+part {
+  id: "g:41677"
+}
+
+part {
+  id: "g:41678"
+}
+
+part {
+  id: "g:41747"
+}
+
+part {
+  id: "g:41748"
+}
+
+part {
+  id: "g:41749"
+  id: "gl:42019"
+}
+
+part {
+  id: "g:41750"
+  id: "gl:42020"
+}
+
+part {
+  id: "g:41764"
+}
+
+part {
+  id: "g:41765"
+}
+
+part {
+  id: "g:41766"
+}
+
+part {
+  id: "g:41767"
+}
+
+part {
+  id: "g:41768"
+}
+
+part {
+  id: "g:41769"
+}
+
+part {
+  id: "g:41770"
+}
+
+part {
+  id: "g:41854"
+}
+
+part {
+  id: "g:41855"
+}
+
+part {
+  id: "g:41862"
+}
+
+part {
+  id: "g:41880"
+  id: "gl:64804"
+}
+
+part {
+  id: "g:41881"
+  similar { id: "b:94531" }
+}
+
+part {
+  id: "g:41883"
+}
+
+part {
+  id: "g:41896"
+}
+
+part {
+  id: "g:41897"
+}
+
+part {
+  id: "g:42003"
+}
+
+part {
+  id: "g:42021"
+  id: "gl:41761"
+}
+
+part {
+  id: "g:42022"
+  id: "gl:41762"
+}
+
+part {
+  id: "g:42023"
+  id: "gl:41763"
+}
+
+part {
+  id: "g:42060"
+}
+
+part {
+  id: "g:42061"
+}
+
+part {
+  id: "g:42445"
+  similar { id: "b:99784" }
+}
+
+part {
+  id: "g:42446"
+}
+
+part {
+  id: "g:42448"
+}
+
+part {
+  id: "g:42602"
+}
+
+part {
+  id: "g:42604"
+  id: "gl:55539"
+}
+
+part {
+  id: "g:42608"
+}
+
+part {
+  id: "g:42610"
+}
+
+part {
+  id: "g:42936"
+}
+
+part {
+  id: "g:42938"
+}
+
+part {
+  id: "g:42941"
+}
+
+part {
+  id: "g:42942"
+}
+
+part {
+  id: "g:43085"
+}
+
+part {
+  id: "g:43086"
+}
+
+part {
+  id: "g:43093"
+}
+
+part {
+  id: "g:43121"
+}
+
+part {
+  id: "g:43708"
+}
+
+part {
+  id: "g:43710"
+}
+
+part {
+  id: "g:43711"
+}
+
+part {
+  id: "g:43712"
+}
+
+part {
+  id: "g:43719"
+}
+
+part {
+  id: "g:43720"
+}
+
+part {
+  id: "g:43721"
+}
+
+part {
+  id: "g:43722"
+}
+
+part {
+  id: "g:43723"
+}
+
+part {
+  id: "g:43857"
+}
+
+part {
+  id: "g:43888"
+}
+
+part {
+  id: "g:43898"
+  id: "gl:44882"
+}
+
+part {
+  id: "g:44126"
+}
+
+part {
+  id: "g:44224"
+}
+
+part {
+  id: "g:44225"
+}
+
+part {
+  id: "g:44292"
+}
+
+part {
+  id: "g:44294"
+}
+
+part {
+  id: "g:44300"
+}
+
+part {
+  id: "g:44301"
+}
+
+part {
+  id: "g:44302"
+}
+
+part {
+  id: "g:44308"
+}
+
+part {
+  id: "g:44309"
+}
+
+part {
+  id: "gl:44336"
+  decor { id: "gb:44336pb01" }
+  decor { id: "gb:44336pb02" }
+  decor { id: "gb:44336pb03" }
+}
+
+part {
+  id: "gl:44341"
+  decor { id: "gb:44341pb01" }
+  decor { id: "gb:44341px2" }
+}
+
+part {
+  id: "o:44342"
+  decor { id: "gb:44342pb01" }
+  decor { id: "gb:44342px2" }
+}
+
+part {
+  id: "o:44343"
+  decor { id: "gb:44343pb01" }
+  decor { id: "gb:44343pb02" }
+  decor { id: "gb:44343px3" }
+}
+
+part {
+  id: "g:44350"
+}
+
+part {
+  id: "g:44351"
+}
+
+part {
+  id: "g:44352"
+}
+
+part {
+  id: "g:44353"
+}
+
+part {
+  id: "g:44358"
+}
+
+part {
+  id: "g:44359"
+  id: "gl:58772"
+  id: "gl:58773"
+}
+
+part {
+  id: "g:44374"
+}
+
+part {
+  id: "gb:44375a"
+  id: "gl:44375"
+  id: "o:45729a"
+  similar { id: "b:44375b" }
+}
+
+part {
+  id: "gb:44375b"
+  id: "o:45729b"
+  id: "gl:21599"
+}
+
+part {
+  id: "g:44567"
+}
+
+part {
+  id: "g:44568"
+}
+
+part {
+  id: "g:44569"
+  similar { id: "b:92092" }
+}
+
+part {
+  id: "g:44570"
+}
+
+part {
+  id: "g:44571"
+}
+
+part {
+  id: "g:44572"
+}
+
+part {
+  id: "g:44661"
+}
+
+part {
+  id: "g:44674"
+}
+
+part {
+  id: "g:44675"
+}
+
+part {
+  id: "g:44676"
+}
+
+part {
+  id: "g:44728"
+  id: "gl:92411"
+  id: "gl:21712"
+}
+
+part {
+  id: "g:44771"
+}
+
+part {
+  id: "g:44772"
+}
+
+part {
+  id: "g:44809"
+}
+
+part {
+  id: "g:44822"
+  id: "gl:95120"
+}
+
+part {
+  id: "g:45301"
+}
+
+part {
+  id: "g:45406"
+}
+
+part {
+  id: "g:45410"
+}
+
+part {
+  id: "g:45411"
+}
+
+part {
+  id: "g:45590"
+}
+
+part {
+  id: "g:45677"
+}
+
+part {
+  id: "g:45705"
+  id: "gl:59195"
+}
+
+part {
+  id: "g:45707"
+}
+
+part {
+  id: "g:45708"
+}
+
+part {
+  id: "g:45982"
+}
+
+part {
+  id: "g:46103"
+}
+
+part {
+  id: "g:46212"
+}
+
+part {
+  id: "g:46304"
+}
+
+part {
+  id: "g:46413"
+}
+
+part {
+  id: "g:47376"
+}
+
+part {
+  id: "g:47397"
+}
+
+part {
+  id: "g:47398"
+}
+
+part {
+  id: "g:47404"
+}
+
+part {
+  id: "g:47405"
+}
+
+part {
+  id: "g:47406"
+}
+
+part {
+  id: "g:47407"
+}
+
+part {
+  id: "g:47432"
+}
+
+part {
+  id: "g:47452"
+}
+
+part {
+  id: "g:47454"
+}
+
+part {
+  id: "g:47455"
+}
+
+part {
+  id: "g:47456"
+}
+
+part {
+  id: "g:47457"
+}
+
+part {
+  id: "g:47458"
+}
+
+part {
+  id: "g:47474"
+}
+
+part {
+  id: "g:47501"
+}
+
+part {
+  id: "g:47506"
+}
+
+part {
+  id: "g:47507"
+}
+
+part {
+  id: "g:47508"
+}
+
+part {
+  id: "g:47543"
+  id: "gl:48310"
+}
+
+part {
+  id: "g:47576"
+}
+
+part {
+  id: "g:47712"
+}
+
+part {
+  id: "g:47713"
+}
+
+part {
+  id: "g:47720"
+}
+
+part {
+  id: "g:47753"
+}
+
+part {
+  id: "g:47755"
+}
+
+part {
+  id: "g:47759"
+}
+
+part {
+  id: "g:47843"
+}
+
+part {
+  id: "g:47844"
+}
+
+part {
+  id: "g:47847"
+  id: "gl:54782"
+  id: "gl:57512"
+}
+
+part {
+  id: "g:47905"
+}
+
+part {
+  id: "g:47973"
+}
+
+part {
+  id: "g:47974"
+}
+
+part {
+  id: "g:47975"
+}
+
+part {
+  id: "g:47991"
+}
+
+part {
+  id: "g:47992"
+}
+
+part {
+  id: "g:47994"
+}
+
+part {
+  id: "g:47998"
+}
+
+part {
+  id: "gb:48002a"
+  id: "gl:48002"
+  similar { id: "b:48002b" }
+}
+
+part {
+  id: "gb:48002b"
+}
+
+part {
+  id: "g:48005"
+}
+
+part {
+  id: "g:48064"
+}
+
+part {
+  id: "gb:48064c01"
+  similar { id: "b:48064c02" }
+  item {
+    id: "b:48083c01"
+  }
+  item {
+    id: "b:48064"
+  }
+  item {
+    id: "b:48064screwp"
+    color: "b:5"
+  }
+  item {
+    id: "b:48093"
+    color: "b:5"
+  }
+}
+
+part {
+  id: "gb:48064c02"
+  id: "gl:54824"
+  item {
+    id: "b:48083c02"
+  }
+  item {
+    id: "b:48064"
+  }
+  item {
+    id: "b:48064screwm"
+    color: "b:67"
+  }
+  item {
+    id: "b:x1612"
+    color: "b:86"
+  }
+}
+
+part {
+  id: "gb:48064screwm"
+}
+
+part {
+  id: "gb:48064screwp"
+}
+
+part {
+  id: "gb:48083c01"
+}
+
+part {
+  id: "gb:48083c02"
+}
+
+part {
+  id: "g:48092"
+}
+
+part {
+  id: "g:48093"
+}
+
+part {
+  id: "g:48168"
+  similar { id: "b:18938" }
+}
+
+part {
+  id: "g:48169"
+}
+
+part {
+  id: "g:48170"
+}
+
+part {
+  id: "g:48171"
+}
+
+part {
+  id: "g:48172"
+}
+
+part {
+  id: "g:48183"
+  id: "gl:90194"
+}
+
+part {
+  id: "g:48288"
+  similar { id: "b:90498" }
+}
+
+part {
+  id: "g:48294"
+}
+
+part {
+  id: "g:48336"
+}
+
+part {
+  id: "g:48452"
+}
+
+part {
+  id: "gb:48452cx1"
+  id: "gl:50163"
+  item {
+    id: "b:48452"
+  }
+  item {
+    id: "b:48168"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "g:48490"
+}
+
+part {
+  id: "g:48496"
+  id: "gl:18171"
+}
+
+part {
+  id: "g:48723"
+}
+
+part {
+  id: "g:48724"
+}
+
+part {
+  id: "g:48729"
+  similar { id: "b:48729b" }
+}
+
+part {
+  id: "gb:48729b"
+}
+
+part {
+  id: "g:48933"
+}
+
+part {
+  id: "g:48989"
+}
+
+part {
+  id: "g:49668"
+  id: "gl:49673"
+}
+
+part {
+  id: "g:50254"
+}
+
+part {
+  id: "g:50303"
+}
+
+part {
+  id: "g:50304"
+}
+
+part {
+  id: "g:50305"
+}
+
+part {
+  id: "g:50373"
+}
+
+part {
+  id: "g:50450"
+}
+
+part {
+  id: "g:50451"
+}
+
+part {
+  id: "g:50687"
+}
+
+part {
+  id: "g:50745"
+}
+
+part {
+  id: "g:50747"
+}
+
+part {
+  id: "gb:50859a"
+  similar { id: "b:50859b" }
+}
+
+part {
+  id: "gb:50859b"
+  id: "gl:50859"
+}
+
+part {
+  id: "g:50860"
+}
+
+part {
+  id: "g:50861"
+}
+
+part {
+  id: "g:50862"
+}
+
+part {
+  id: "g:50943"
+}
+
+part {
+  id: "g:50944"
+}
+
+part {
+  id: "g:50945"
+  id: "gl:50951"
+}
+
+part {
+  id: "g:50946"
+  id: "gl:10885"
+}
+
+part {
+  id: "g:50947"
+}
+
+part {
+  id: "g:50948"
+}
+
+part {
+  id: "g:50950"
+}
+
+part {
+  id: "g:50955"
+}
+
+part {
+  id: "g:50956"
+}
+
+part {
+  id: "g:50965"
+}
+
+part {
+  id: "g:50967"
+}
+
+part {
+  id: "g:50986"
+  id: "gl:10312"
+}
+
+part {
+  id: "gb:50990a"
+  id: "gl:50990"
+  similar { id: "b:50990b" }
+}
+
+part {
+  id: "gb:50990b"
+}
+
+part {
+  id: "g:51011"
+  id: "gl:92409"
+  id: "gl:42611"
+}
+
+part {
+  id: "g:51377"
+}
+
+part {
+  id: "g:51739"
+}
+
+part {
+  id: "g:51858"
+}
+
+part {
+  id: "g:52031"
+}
+
+part {
+  id: "g:52035"
+  id: "gl:89536"
+}
+
+part {
+  id: "g:52036"
+}
+
+part {
+  id: "g:52037"
+}
+
+part {
+  id: "g:52038"
+}
+
+part {
+  id: "g:52040"
+}
+
+part {
+  id: "g:52041"
+}
+
+part {
+  id: "g:52107"
+}
+
+part {
+  id: "g:52501"
+}
+
+part {
+  id: "g:53400"
+}
+
+part {
+  id: "g:53401"
+}
+
+part {
+  id: "g:53451"
+  id: "gl:88513"
+}
+
+part {
+  id: "g:53452"
+}
+
+part {
+  id: "g:53533"
+}
+
+part {
+  id: "g:53550"
+}
+
+part {
+  id: "g:53551"
+}
+
+part {
+  id: "g:53585"
+}
+
+part {
+  id: "g:53586"
+}
+
+part {
+  id: "g:53588"
+}
+
+part {
+  id: "g:53787"
+  id: "gl:54715"
+}
+
+part {
+  id: "g:53788"
+}
+
+part {
+  id: "g:53792"
+}
+
+part {
+  id: "g:53793"
+  id: "gl:55967"
+}
+
+part {
+  id: "gl:53983"
+  decor { id: "gb:53983pb01" }
+  decor { id: "gb:53983pb02" }
+}
+
+part {
+  id: "g:54087"
+}
+
+part {
+  id: "g:54090"
+}
+
+part {
+  id: "g:54091"
+}
+
+part {
+  id: "gl:54923"
+  decor { id: "gb:54092c01" }
+  decor { id: "gb:54092c02" }
+}
+
+part {
+  id: "g:54093"
+  similar { id: "b:93541" }
+}
+
+part {
+  id: "g:54094"
+}
+
+part {
+  id: "g:54095"
+}
+
+part {
+  id: "g:54096"
+}
+
+part {
+  id: "g:54097"
+}
+
+part {
+  id: "g:54100"
+}
+
+part {
+  id: "gb:54100c01"
+  id: "gl:54779"
+  similar { id: "b:54100c02" }
+  item {
+    id: "b:54100"
+  }
+  item {
+    id: "b:54101"
+    color: "b:86"
+  }
+}
+
+part {
+  id: "gb:54100c02"
+  item {
+    id: "b:54100"
+  }
+  item {
+    id: "b:54101"
+    color: "b:85"
+  }
+}
+
+part {
+  id: "g:54101"
+}
+
+part {
+  id: "g:54120"
+}
+
+part {
+  id: "gl:54125"
+  decor { id: "gb:54125pb01" }
+  decor { id: "gb:54125pb02" }
+}
+
+part {
+  id: "g:54200"
+  id: "gl:50746"
+}
+
+part {
+  id: "g:54271"
+}
+
+part {
+  id: "g:54383"
+}
+
+part {
+  id: "g:54384"
+}
+
+part {
+  id: "gb:54701c01"
+  id: "gl:54654"
+  similar { id: "b:54701c02" }
+  similar { id: "b:54701c03" }
+  similar { id: "b:54701c04" }
+}
+
+part {
+  id: "gb:54701c02"
+}
+
+part {
+  id: "gb:54701c03"
+}
+
+part {
+  id: "gb:54701c04"
+}
+
+part {
+  id: "g:54821"
+}
+
+part {
+  id: "gb:54930c01"
+  id: "gl:54869"
+}
+
+part {
+  id: "g:55013"
+}
+
+part {
+  id: "gb:55206c01"
+  id: "gl:54870"
+}
+
+part {
+  id: "g:55236"
+}
+
+part {
+  id: "gb:55423c01"
+  id: "gl:57999"
+  id: "gl:55423"
+}
+
+part {
+  id: "g:55615"
+}
+
+part {
+  id: "g:55767"
+}
+
+part {
+  id: "g:55768"
+}
+
+part {
+  id: "g:55804"
+}
+
+part {
+  id: "g:55805"
+  id: "gl:11146"
+}
+
+part {
+  id: "g:55806"
+  id: "gl:11147"
+}
+
+part {
+  id: "g:55817"
+}
+
+part {
+  id: "g:55963"
+}
+
+part {
+  id: "g:55969"
+}
+
+part {
+  id: "g:55976"
+}
+
+part {
+  id: "g:55978"
+}
+
+part {
+  id: "g:55981"
+  id: "gl:20896"
+}
+
+part {
+  id: "g:55982"
+}
+
+part {
+  id: "g:56145"
+}
+
+part {
+  id: "g:56890"
+}
+
+part {
+  id: "g:56891"
+}
+
+part {
+  id: "g:56897"
+}
+
+part {
+  id: "g:56898"
+}
+
+part {
+  id: "g:56902"
+}
+
+part {
+  id: "g:56903"
+}
+
+part {
+  id: "g:56904"
+}
+
+part {
+  id: "g:56908"
+}
+
+part {
+  id: "gb:57028c01"
+  id: "gl:57028"
+  similar { id: "b:57028c02" }
+  similar { id: "b:57028c03" }
+  similar { id: "b:57028c04" }
+}
+
+part {
+  id: "gb:57028c02"
+}
+
+part {
+  id: "gb:57028c03"
+}
+
+part {
+  id: "gb:57028c04"
+}
+
+part {
+  id: "gb:57029c01"
+  id: "gl:57796"
+}
+
+part {
+  id: "g:57515"
+}
+
+part {
+  id: "g:57518"
+  id: "gl:88323"
+}
+
+part {
+  id: "g:57519"
+}
+
+part {
+  id: "g:57520"
+}
+
+part {
+  id: "g:57539"
+  id: "gl:14925"
+}
+
+part {
+  id: "g:57585"
+}
+
+part {
+  id: "g:57587"
+  id: "gl:60288"
+}
+
+part {
+  id: "g:57779"
+}
+
+part {
+  id: "g:57781"
+}
+
+part {
+  id: "g:57783"
+}
+
+part {
+  id: "g:57786"
+}
+
+part {
+  id: "g:57789"
+}
+
+part {
+  id: "gb:57789c01"
+  id: "gl:59278"
+  item {
+    id: "b:57789"
+  }
+  item {
+    id: "b:57786"
+    color: "b:86"
+  }
+}
+
+part {
+  id: "g:57792"
+}
+
+part {
+  id: "g:57893"
+}
+
+part {
+  id: "g:57894"
+}
+
+part {
+  id: "g:57895"
+  id: "gl:60803"
+}
+
+part {
+  id: "g:57908"
+}
+
+part {
+  id: "g:57909"
+}
+
+part {
+  id: "g:57910"
+  similar { id: "b:62712" }
+  similar { id: "b:92013" }
+}
+
+part {
+  id: "g:58088"
+}
+
+part {
+  id: "g:58090"
+}
+
+part {
+  id: "g:58118"
+}
+
+part {
+  id: "gb:58120c01"
+  id: "gl:58120"
+}
+
+part {
+  id: "gb:58121c01"
+  id: "gl:58121"
+}
+
+part {
+  id: "gb:58122c01"
+  id: "gl:58122"
+}
+
+part {
+  id: "gb:58123bc01"
+  similar { id: "b:58123c01" }
+}
+
+part {
+  id: "gb:58123c01"
+  id: "gl:58123"
+}
+
+part {
+  id: "g:58176"
+}
+
+part {
+  id: "g:58177"
+}
+
+part {
+  id: "g:58181"
+}
+
+part {
+  id: "g:58380"
+  similar { id: "b:446" }
+}
+
+part {
+  id: "g:58381"
+  similar { id: "b:445" }
+}
+
+part {
+  id: "g:58827"
+}
+
+part {
+  id: "g:58846"
+}
+
+part {
+  id: "gl:59233"
+  decor { id: "gb:59233pb01" }
+  decor { id: "gb:59233pb02" }
+  decor { id: "gb:59233pb03" }
+}
+
+part {
+  id: "g:59349"
+  id: "gl:59350"
+}
+
+part {
+  id: "g:59363"
+}
+
+part {
+  id: "g:59494"
+}
+
+part {
+  id: "g:59510"
+}
+
+part {
+  id: "gb:59510c01"
+  id: "gl:58119"
+  item {
+    id: "b:59510"
+  }
+  item {
+    id: "b:59494"
+    color: "b:85"
+    count: 2
+  }
+}
+
+part {
+  id: "g:59521"
+}
+
+part {
+  id: "g:59807"
+}
+
+part {
+  id: "g:59895"
+}
+
+part {
+  id: "g:60032"
+}
+
+part {
+  id: "g:60115"
+}
+
+part {
+  id: "g:60208"
+}
+
+part {
+  id: "g:60212"
+}
+
+part {
+  id: "g:60219"
+}
+
+part {
+  id: "g:60470"
+  similar { id: "b:60470b" }
+}
+
+part {
+  id: "gb:60470b"
+}
+
+part {
+  id: "g:60471"
+}
+
+part {
+  id: "g:60474"
+}
+
+part {
+  id: "g:60476"
+}
+
+part {
+  id: "g:60477"
+}
+
+part {
+  id: "g:60478"
+}
+
+part {
+  id: "g:60479"
+}
+
+part {
+  id: "g:60481"
+}
+
+part {
+  id: "g:60483"
+  id: "gl:74695"
+}
+
+part {
+  id: "g:60484"
+}
+
+part {
+  id: "g:60485"
+}
+
+part {
+  id: "g:60581"
+  id: "gl:87543"
+}
+
+part {
+  id: "g:60583"
+  id: "gl:60801"
+  similar { id: "b:60583b" }
+}
+
+part {
+  id: "gb:60583b"
+}
+
+part {
+  id: "g:60592"
+}
+
+part {
+  id: "g:60593"
+}
+
+part {
+  id: "g:60594"
+}
+
+part {
+  id: "g:60596"
+}
+
+part {
+  id: "g:60598"
+}
+
+part {
+  id: "g:60599"
+}
+
+part {
+  id: "g:60601"
+  id: "gl:86209"
+}
+
+part {
+  id: "g:60602"
+}
+
+part {
+  id: "g:60603"
+  id: "gl:86210"
+}
+
+part {
+  id: "g:60607"
+}
+
+part {
+  id: "g:60608"
+}
+
+part {
+  id: "g:60614"
+}
+
+part {
+  id: "g:60616"
+}
+
+part {
+  id: "g:60621"
+}
+
+part {
+  id: "g:60623"
+}
+
+part {
+  id: "g:60656"
+}
+
+part {
+  id: "g:60657"
+}
+
+part {
+  id: "g:60658"
+}
+
+part {
+  id: "g:60700"
+}
+
+part {
+  id: "v:60797-1"
+}
+
+part {
+  id: "v:60797-2"
+}
+
+part {
+  id: "gb:60797c01"
+  item {
+    id: "v:60797-1"
+  }
+  item {
+    id: "v:60797-2"
+    color: "b:15"
+  }
+}
+
+part {
+  id: "gb:60797c02"
+  item {
+    id: "v:60797-1"
+  }
+  item {
+    id: "v:60797-2"
+    color: "b:13"
+  }
+}
+
+part {
+  id: "gb:60797c03"
+  item {
+    id: "v:60797-1"
+  }
+  item {
+    id: "v:60797-2"
+    color: "b:88"
+  }
+}
+
+part {
+  id: "gl:60797"
+  item {
+    id: "v:60797-1"
+  }
+  item {
+    id: "v:60797-2"
+  }
+}
+
+part {
+  id: "g:60800"
+  similar { id: "b:60800a" }
+}
+
+part {
+  id: "gb:60800a"
+}
+
+part {
+  id: "g:60806"
+}
+
+part {
+  id: "g:60808"
+}
+
+part {
+  id: "g:60849"
+  id: "gl:58367"
+  id: "gl:64769"
+}
+
+part {
+  id: "g:60930"
+}
+
+part {
+  id: "g:60935"
+}
+
+part {
+  id: "g:61053"
+  id: "gl:89650"
+}
+
+part {
+  id: "g:61068"
+  similar { id: "b:88930" }
+}
+
+part {
+  id: "g:61069"
+}
+
+part {
+  id: "g:61070"
+}
+
+part {
+  id: "g:61071"
+}
+
+part {
+  id: "g:61072"
+}
+
+part {
+  id: "g:61073"
+}
+
+part {
+  id: "gb:61100c01"
+  id: "gl:61100"
+}
+
+part {
+  id: "g:61184"
+  id: "o:x1855"
+}
+
+part {
+  id: "g:61191"
+}
+
+part {
+  id: "g:61252"
+}
+
+part {
+  id: "g:61254"
+  similar { id: "b:61254b" }
+}
+
+part {
+  id: "gb:61254b"
+}
+
+part {
+  id: "g:61345"
+}
+
+part {
+  id: "g:61409"
+}
+
+part {
+  id: "g:61480"
+}
+
+part {
+  id: "g:61481"
+}
+
+part {
+  id: "g:61482"
+  id: "gl:97927"
+}
+
+part {
+  id: "g:61483"
+}
+
+part {
+  id: "g:61484"
+  id: "gl:92115"
+}
+
+part {
+  id: "g:61485"
+}
+
+part {
+  id: "g:61487"
+}
+
+part {
+  id: "g:61510"
+}
+
+part {
+  id: "g:61678"
+  id: "gl:11153"
+}
+
+part {
+  id: "g:61780"
+}
+
+part {
+  id: "g:61800"
+}
+
+part {
+  id: "g:61904"
+}
+
+part {
+  id: "g:61905"
+}
+
+part {
+  id: "gb:61927c01"
+  id: "gl:61927"
+}
+
+part {
+  id: "gb:61930c01"
+  id: "gl:61930"
+}
+
+part {
+  id: "g:62113"
+}
+
+part {
+  id: "g:62359"
+}
+
+part {
+  id: "g:62360"
+}
+
+part {
+  id: "g:62361"
+}
+
+part {
+  id: "g:62462"
+  similar { id: "b:75535" }
+}
+
+part {
+  id: "g:62519"
+}
+
+part {
+  id: "g:62520"
+}
+
+part {
+  id: "gb:62520c01"
+  id: "gl:61903"
+  item {
+    id: "b:62519"
+  }
+  item {
+    id: "b:62520"
+    count: 2
+  }
+}
+
+part {
+  id: "g:62531"
+}
+
+part {
+  id: "g:62576"
+  id: "gl:64634"
+}
+
+part {
+  id: "gl:62604"
+  decor { id: "gb:62604pb01" }
+}
+
+part {
+  id: "gl:62603"
+  decor { id: "gb:62605pb01" }
+}
+
+part {
+  id: "gl:62606"
+  decor { id: "gb:62605pb01c01" }
+  item {
+    id: "b:62604pb01"
+  }
+  item {
+    id: "b:62605pb01"
+  }
+}
+
+part {
+  id: "g:62694"
+}
+
+part {
+  id: "g:62696"
+  id: "gl:88426"
+}
+
+part {
+  id: "g:62700"
+}
+
+part {
+  id: "g:62701"
+}
+
+part {
+  id: "g:62712"
+}
+
+part {
+  id: "g:62743"
+}
+
+part {
+  id: "g:62791"
+}
+
+part {
+  id: "gb:62791c01"
+  id: "gl:62792"
+  item {
+    id: "b:62791"
+  }
+  item {
+    id: "b:54101"
+    color: "b:85"
+  }
+}
+
+part {
+  id: "g:62810"
+  id: "gl:88425"
+}
+
+part {
+  id: "g:62812"
+}
+
+part {
+  id: "gb:62821a"
+  similar { id: "b:62821b" }
+}
+
+part {
+  id: "gb:62821b"
+  id: "gl:62821"
+}
+
+part {
+  id: "g:62885"
+}
+
+part {
+  id: "g:63082"
+}
+
+part {
+  id: "g:63864"
+}
+
+part {
+  id: "g:63868"
+}
+
+part {
+  id: "g:63869"
+}
+
+part {
+  id: "g:63965"
+  id: "gl:18274"
+}
+
+part {
+  id: "g:64178"
+}
+
+part {
+  id: "g:64179"
+}
+
+part {
+  id: "g:64225"
+}
+
+part {
+  id: "g:64227"
+}
+
+part {
+  id: "g:64275"
+}
+
+part {
+  id: "gb:64277c01"
+  id: "gl:85582"
+}
+
+part {
+  id: "g:64390"
+}
+
+part {
+  id: "g:64391"
+}
+
+part {
+  id: "g:64392"
+}
+
+part {
+  id: "g:64393"
+}
+
+part {
+  id: "g:64394"
+}
+
+part {
+  id: "gb:64415c01"
+  id: "gl:64414"
+  id: "o:91966c01"
+  id: "gl:91992"
+  id: "gl:64415"
+}
+
+part {
+  id: "gb:64424c01"
+  id: "gl:64422"
+  similar { id: "b:91968c01" }
+}
+
+part {
+  id: "g:64448"
+}
+
+part {
+  id: "g:64449"
+}
+
+part {
+  id: "g:64450"
+}
+
+part {
+  id: "g:64451"
+}
+
+part {
+  id: "g:64453"
+}
+
+part {
+  id: "g:64566"
+}
+
+part {
+  id: "g:64567"
+  id: "gl:577"
+  id: "gl:15556"
+  id: "gl:23306"
+}
+
+part {
+  id: "g:64644"
+}
+
+part {
+  id: "g:64645"
+  id: "gl:14740"
+}
+
+part {
+  id: "g:64647"
+}
+
+part {
+  id: "g:64648"
+}
+
+part {
+  id: "g:64651"
+}
+
+part {
+  id: "g:64680"
+}
+
+part {
+  id: "g:64681"
+}
+
+part {
+  id: "g:64682"
+}
+
+part {
+  id: "g:64683"
+}
+
+part {
+  id: "g:64711"
+}
+
+part {
+  id: "g:64712"
+}
+
+part {
+  id: "g:64713"
+}
+
+part {
+  id: "g:64781"
+}
+
+part {
+  id: "g:64782"
+}
+
+part {
+  id: "g:64799"
+}
+
+part {
+  id: "g:64892"
+}
+
+part {
+  id: "g:70162"
+  id: "gl:2815"
+}
+
+part {
+  id: "g:70644"
+  id: "gl:30"
+}
+
+part {
+  # Apparently, BL and LDD has this exactly swapped.
+  id: "gl:71075"
+  id: "b:71076"
+}
+
+part {
+  # Apparently, BL and LDD has this exactly swapped.
+  id: "gl:71076"
+  id: "b:71075"
+}
+
+part {
+  id: "gb:71137a"
+  id: "gl:71137"
+}
+
+part {
+  id: "gb:71137b"
+  id: "gl:40620"
+  similar { id: "b:14682" }
+}
+
+part {
+  id: "g:71155"
+}
+
+part {
+  id: "g:71184"
+}
+
+part {
+  id: "g:72092"
+}
+
+part {
+  id: "g:72156"
+}
+
+part {
+  id: "g:72454"
+}
+
+part {
+  id: "g:72475"
+}
+
+part {
+  id: "g:73037"
+}
+
+part {
+  id: "gb:73090a"
+  similar { id: "b:73090b" }
+}
+
+part {
+  id: "gb:73090b"
+  id: "gl:73843"
+}
+
+part {
+  id: "g:73092"
+}
+
+part {
+  id: "g:73312"
+}
+
+part {
+  id: "g:73313"
+}
+
+part {
+  id: "g:73435"
+}
+
+part {
+  id: "gb:73435c01"
+  id: "gl:73194"
+  similar { id: "b:73435" confirm: true }
+}
+
+part {
+  id: "gb:73435c02"
+  similar { id: "b:73435" confirm: true }
+}
+
+part {
+  id: "gb:73435c03"
+  similar { id: "b:73435" confirm: true }
+}
+
+part {
+  id: "gb:73435c04"
+  similar { id: "b:73435" confirm: true }
+}
+
+part {
+  id: "g:73436"
+}
+
+part {
+  id: "gb:73436c01"
+  id: "gl:47899"
+  similar { id: "b:73436" confirm: true }
+}
+
+part {
+  id: "gb:73436c02"
+  similar { id: "b:73436" confirm: true }
+}
+
+part {
+  id: "gb:73436c03"
+  similar { id: "b:73436" confirm: true }
+}
+
+part {
+  id: "gb:73436c04"
+  similar { id: "b:73436" confirm: true }
+}
+
+part {
+  id: "gb:73590c01"
+}
+
+part {
+  id: "gb:73590c01a"
+  similar { id: "b:73590c01" }
+  item {
+    id: "b:751"
+  }
+  item {
+    id: "b:752"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:73590c01b"
+  similar { id: "b:73590c01" }
+  item {
+    id: "b:751"
+  }
+  item {
+    id: "b:752"
+    color: "b:11"
+    count: 2
+  }
+}
+
+part {
+  id: "gb:73590c02a"
+  similar { id: "b:73590c01" }
+}
+
+part {
+  id: "gb:73590c02b"
+  similar { id: "b:73590c01" }
+}
+
+part {
+  id: "gb:73590c02c"
+  similar { id: "b:73590c01" }
+}
+
+part {
+  id: "gb:73590c03a"
+  id: "gl:6211"
+  id: "gl:64230"
+  similar { id: "b:73590c01" }
+}
+
+part {
+  id: "gb:73590c03b"
+  similar { id: "b:73590c01" }
+}
+
+part {
+  id: "g:74698"
+}
+
+part {
+  id: "g:74967"
+}
+
+part {
+  id: "g:75535"
+}
+
+part {
+  id: "g:75937"
+}
+
+part {
+  id: "v:76041-1"
+}
+
+part {
+  id: "v:76041-2"
+}
+
+part {
+  id: "gl:76041"
+  item {
+    id: "v:76041-1"
+  }
+  item {
+    id: "v:76041-2"
+  }
+}
+
+part {
+  id: "o:76041c01"
+  id: "gb:x39c01"
+  item {
+    id: "v:76041-1"
+  }
+  item {
+    id: "v:76041-2"
+    color: "b:15"
+  }
+}
+
+part {
+  id: "o:76041c02"
+  id: "gb:x39c02"
+  item {
+    id: "v:76041-1"
+  }
+  item {
+    id: "v:76041-2"
+    color: "b:13"
+  }
+}
+
+part {
+  id: "o:76041c03"
+  id: "gb:x39c03"
+  item {
+    id: "v:76041-1"
+  }
+  item {
+    id: "v:76041-2"
+    color: "b:20"
+  }
+}
+
+part {
+  id: "o:76041c04"
+  id: "gb:x39c04"
+  item {
+    id: "v:76041-1"
+  }
+  item {
+    id: "v:76041-2"
+    color: "b:14"
+  }
+}
+
+part {
+  id: "g:76766"
+}
+
+part {
+  id: "g:76768"
+  similar { id: "b:2339u" }
+}
+
+part {
+  id: "g:84599"
+}
+
+part {
+  id: "g:84954"
+}
+
+part {
+  id: "g:85080"
+}
+
+part {
+  id: "gb:85489a"
+  id: "gl:85558"
+}
+
+part {
+  id: "gb:85489b"
+  id: "gl:85557"
+}
+
+part {
+  id: "g:85861"
+}
+
+part {
+  id: "g:85940"
+}
+
+part {
+  id: "g:85941"
+}
+
+part {
+  id: "g:85943"
+}
+
+part {
+  id: "gl:85959"
+  decor { id: "gb:85959pb02" }
+  decor { id: "gb:85959pb03" }
+  decor { id: "gb:85959pb04" }
+}
+
+part {
+  id: "g:85962"
+}
+
+part {
+  id: "g:85969"
+}
+
+part {
+  id: "g:85970"
+  id: "gl:13731"
+}
+
+part {
+  id: "g:85974"
+}
+
+part {
+  id: "g:85975"
+}
+
+part {
+  id: "g:85976"
+}
+
+part {
+  id: "g:85977"
+}
+
+part {
+  id: "g:85983"
+}
+
+part {
+  id: "g:85984"
+}
+
+part {
+  id: "g:86500"
+}
+
+part {
+  id: "g:86652"
+}
+
+part {
+  id: "g:87058"
+}
+
+part {
+  id: "g:87079"
+}
+
+part {
+  id: "g:87080"
+}
+
+part {
+  id: "g:87081"
+}
+
+part {
+  id: "g:87082"
+}
+
+part {
+  id: "g:87083"
+}
+
+part {
+  id: "g:87086"
+}
+
+part {
+  id: "g:87087"
+}
+
+part {
+  id: "g:87407"
+}
+
+part {
+  id: "g:87408"
+}
+
+part {
+  id: "g:87414"
+}
+
+part {
+  id: "g:87421"
+}
+
+part {
+  id: "g:87513"
+}
+
+part {
+  id: "gb:87513c01"
+  id: "gl:64228"
+  item {
+    id: "b:87513"
+  }
+  item {
+    id: "b:87515"
+    color: "b:85"
+  }
+}
+
+part {
+  id: "g:87515"
+}
+
+part {
+  id: "g:87544"
+  id: "gl:74968"
+  similar { id: "b:2362" }
+}
+
+part {
+  id: "g:87552"
+  id: "gl:94638"
+}
+
+part {
+  id: "g:87559"
+}
+
+part {
+  id: "gb:87574c01"
+  id: "gl:87574"
+}
+
+part {
+  id: "g:87580"
+  id: "gl:23893"
+}
+
+part {
+  id: "g:87587"
+}
+
+part {
+  id: "g:87601"
+}
+
+part {
+  id: "g:87606"
+}
+
+part {
+  id: "g:87609"
+}
+
+part {
+  id: "g:87611"
+}
+
+part {
+  id: "g:87612"
+}
+
+part {
+  id: "g:87613"
+}
+
+part {
+  id: "g:87614"
+}
+
+part {
+  id: "g:87615"
+}
+
+part {
+  id: "g:87616"
+}
+
+part {
+  id: "g:87619"
+}
+
+part {
+  id: "g:87620"
+}
+
+part {
+  id: "g:87697"
+}
+
+part {
+  id: "g:87749"
+}
+
+part {
+  id: "g:87751"
+}
+
+part {
+  id: "g:87752"
+}
+
+part {
+  id: "g:87761"
+}
+
+part {
+  id: "g:87826"
+}
+
+part {
+  id: "g:87926"
+}
+
+part {
+  id: "g:87990"
+  id: "gl:18227"
+}
+
+part {
+  id: "g:87991"
+  id: "gl:18226"
+}
+
+part {
+  id: "g:87994"
+  id: "gl:17715"
+}
+
+part {
+  id: "g:88072"
+  id: "gl:4623b"
+}
+
+part {
+  id: "g:88289"
+}
+
+part {
+  id: "g:88292"
+}
+
+part {
+  id: "g:88293"
+}
+
+part {
+  id: "g:88393"
+}
+
+part {
+  id: "g:88431"
+}
+
+part {
+  id: "gb:88492c00"
+  id: "gl:64022c00"
+  id: "gl:64022"
+}
+
+part {
+  id: "g:88516"
+}
+
+part {
+  id: "g:88517"
+}
+
+part {
+  id: "g:88646"
+  id: "gl:17836"
+}
+
+part {
+  id: "g:88930"
+}
+
+part {
+  id: "g:89201"
+}
+
+part {
+  id: "g:89509"
+}
+
+part {
+  id: "g:89523"
+}
+
+part {
+  id: "gb:89648"
+}
+
+part {
+  id: "gb:89648c01"
+  id: "l:89648"
+  item {
+    id: "b:89648"
+  }
+  item {
+    id: "b:89649"
+    color: "b:13"
+  }
+}
+
+part {
+  id: "g:89649"
+}
+
+part {
+  id: "g:89762"
+}
+
+part {
+  id: "g:90109"
+}
+
+part {
+  id: "g:90195"
+}
+
+part {
+  id: "g:90201"
+}
+
+part {
+  id: "g:90202"
+}
+
+part {
+  id: "g:90258"
+}
+
+part {
+  id: "g:90498"
+}
+
+part {
+  id: "g:90540"
+}
+
+part {
+  id: "g:91049"
+}
+
+part {
+  id: "g:91176"
+}
+
+part {
+  id: "g:91347"
+}
+
+part {
+  id: "g:91405"
+}
+
+part {
+  id: "g:91501"
+}
+
+part {
+  id: "g:91884"
+}
+
+part {
+  id: "gb:91968c01"
+  id: "gl:64417"
+  id: "gl:91994"
+  id: "gl:91968"
+}
+
+part {
+  id: "g:91988"
+}
+
+part {
+  id: "g:92013"
+}
+
+part {
+  id: "g:92086"
+}
+
+part {
+  id: "g:92088"
+  similar { id: "b:92340" }
+}
+
+part {
+  id: "g:92092"
+}
+
+part {
+  id: "g:92099"
+}
+
+part {
+  id: "g:92107"
+}
+
+part {
+  id: "g:92262"
+}
+
+part {
+  id: "g:92263"
+}
+
+part {
+  id: "g:92279"
+}
+
+part {
+  id: "g:92280"
+}
+
+part {
+  id: "g:92338"
+}
+
+part {
+  id: "g:92339"
+}
+
+part {
+  id: "g:92340"
+}
+
+part {
+  id: "g:92402"
+}
+
+part {
+  id: "g:92438"
+}
+
+part {
+  id: "g:92474"
+}
+
+part {
+  id: "g:92579"
+}
+
+part {
+  id: "g:92580"
+}
+
+part {
+  id: "g:92582"
+}
+
+part {
+  id: "g:92583"
+}
+
+part {
+  id: "g:92584"
+}
+
+part {
+  id: "g:92589"
+}
+
+part {
+  id: "g:92591"
+}
+
+part {
+  id: "g:92593"
+}
+
+part {
+  id: "g:92690"
+}
+
+part {
+  id: "g:92691"
+}
+
+part {
+  id: "g:92692"
+}
+
+part {
+  id: "gb:92693c01"
+  id: "gl:92693"
+}
+
+part {
+  id: "g:92710"
+}
+
+part {
+  id: "gb:92710c01"
+  similar { id: "b:92710c02" }
+  similar { id: "b:92710c03" }
+  item {
+    id: "b:92710"
+  }
+  item {
+    id: "b:92711"
+    color: "b:85"
+  }
+  id: "gl:92709"
+}
+
+part {
+  id: "gb:92710c02"
+  item {
+    id: "b:92710"
+  }
+  item {
+    id: "b:92711"
+    color: "b:1"
+  }
+}
+
+part {
+  id: "gb:92710c03"
+  item {
+    id: "b:92710"
+  }
+  item {
+    id: "b:92711"
+    color: "b:88"
+  }
+}
+
+part {
+  id: "g:92711"
+}
+
+part {
+  id: "g:92713"
+}
+
+part {
+  id: "g:92715"
+}
+
+part {
+  id: "gb:92715c01"
+  id: "gl:92712"
+  item {
+    id: "b:92715"
+  }
+  item {
+    id: "b:92713"
+    color: "b:11"
+  }
+  item {
+    id: "b:bb522"
+    color: "b:4"
+    count: 2
+  }
+}
+
+part {
+  id: "g:92842"
+}
+
+part {
+  id: "g:92906"
+}
+
+part {
+  id: "g:92907"
+}
+
+part {
+  id: "g:92908"
+}
+
+part {
+  id: "g:92909"
+}
+
+part {
+  id: "g:92910"
+}
+
+part {
+  id: "g:92911"
+}
+
+part {
+  id: "g:92912"
+}
+
+part {
+  id: "g:92926"
+}
+
+part {
+  id: "g:92946"
+  id: "gl:15672"
+}
+
+part {
+  id: "g:92947"
+}
+
+part {
+  id: "g:92950"
+}
+
+part {
+  id: "g:93060"
+}
+
+part {
+  id: "g:93061"
+}
+
+part {
+  id: "gb:93080a"
+  id: "gl:96480"
+}
+
+part {
+  id: "gb:93080b"
+  id: "gl:96488"
+}
+
+part {
+  id: "gb:93080c"
+  id: "gl:96484"
+}
+
+part {
+  id: "gb:93080d"
+  id: "gl:96482"
+}
+
+part {
+  id: "gb:93080e"
+  id: "gl:96485"
+}
+
+part {
+  id: "gb:93080f"
+  id: "gl:96489"
+}
+
+part {
+  id: "gb:93080g"
+  id: "gl:96483"
+}
+
+part {
+  id: "gb:93080h"
+  id: "gl:96487"
+}
+
+part {
+  id: "gb:93080i"
+  id: "gl:96481"
+}
+
+part {
+  id: "gb:93080j"
+  id: "gl:96479"
+}
+
+part {
+  id: "gb:93080k"
+  id: "gl:96486"
+}
+
+part {
+  id: "gb:93080l"
+  id: "gl:96490"
+}
+
+part {
+  id: "gb:93080m"
+  id: "gl:96491"
+}
+
+part {
+  id: "gb:93081a"
+  id: "gl:95828"
+}
+
+part {
+  id: "gb:93081b"
+  id: "gl:95827"
+}
+
+part {
+  id: "gb:93081c"
+  id: "gl:95829"
+}
+
+part {
+  id: "gb:93081d"
+  id: "gl:95831"
+}
+
+part {
+  id: "gb:93081e"
+  id: "gl:95832"
+}
+
+part {
+  id: "g:93095"
+}
+
+part {
+  id: "g:93096"
+}
+
+part {
+  id: "g:93140"
+}
+
+part {
+  id: "g:93168"
+}
+
+part {
+  id: "g:93273"
+}
+
+part {
+  id: "g:93274"
+}
+
+part {
+  id: "g:93348"
+}
+
+part {
+  id: "g:93541"
+}
+
+part {
+  id: "g:93555"
+  id: "gl:18754"
+}
+
+part {
+  id: "g:93587"
+}
+
+part {
+  id: "g:93589"
+}
+
+part {
+  id: "g:93590"
+}
+
+part {
+  id: "g:93591"
+}
+
+part {
+  id: "g:93593"
+}
+
+part {
+  id: "g:93594"
+}
+
+part {
+  id: "g:93595"
+}
+
+part {
+  id: "g:93597"
+}
+
+part {
+  id: "g:93598"
+}
+
+part {
+  id: "g:93604"
+}
+
+part {
+  id: "g:93606"
+}
+
+part {
+  id: "g:93609"
+}
+
+part {
+  id: "g:93794"
+}
+
+part {
+  id: "g:94161"
+}
+
+part {
+  id: "g:94531"
+}
+
+part {
+  id: "g:94925"
+}
+
+part {
+  id: "g:95188"
+}
+
+part {
+  id: "g:95198"
+}
+
+part {
+  id: "g:95227"
+}
+
+part {
+  id: "gb:95292c01"
+  id: "gl:15035"
+  id: "gl:18405"
+  id: "gl:95292"
+  similar { id: "b:2909c01" }
+}
+
+part {
+  id: "g:95326"
+}
+
+part {
+  id: "gl:95327"
+  decor { id: "gb:95327pb01" }
+  decor { id: "gb:95327pb02" }
+}
+
+part {
+  id: "g:95342"
+  decor { id: "gb:95342pb01" }
+}
+
+part {
+  id: "g:95347"
+}
+
+part {
+  id: "gl:95351"
+  decor { id: "gb:95351pb01" }
+  decor { id: "gb:95351pb02" }
+}
+
+part {
+  id: "g:95354"
+}
+
+part {
+  id: "gb:95646c01"
+  id: "gl:95646"
+}
+
+part {
+  id: "g:95648"
+}
+
+part {
+  id: "g:95650"
+}
+
+part {
+  id: "g:95652"
+}
+
+part {
+  id: "g:95654"
+}
+
+part {
+  id: "g:95658"
+}
+
+part {
+  id: "g:98100"
+}
+
+part {
+  id: "g:98102"
+}
+
+part {
+  id: "g:98136"
+}
+
+part {
+  id: "g:98138"
+}
+
+part {
+  id: "g:98262"
+}
+
+part {
+  id: "g:98263"
+}
+
+part {
+  id: "g:98280"
+}
+
+part {
+  id: "g:98281"
+}
+
+part {
+  id: "g:98282"
+}
+
+part {
+  id: "g:98283"
+}
+
+part {
+  id: "g:98284"
+}
+
+part {
+  id: "g:98285"
+}
+
+part {
+  id: "g:98286"
+}
+
+part {
+  id: "g:98287"
+}
+
+part {
+  id: "g:98288"
+}
+
+part {
+  id: "g:98302"
+}
+
+part {
+  id: "g:98385"
+  id: "gl:18228"
+}
+
+part {
+  id: "gl:98386" 
+  decor { id: "gb:98386pb01" }
+  decor { id: "gb:98386pb02" }
+}
+
+part {
+  id: "g:98397"
+}
+
+part {
+  id: "g:98549"
+}
+
+part {
+  id: "g:98564"
+}
+
+part {
+  id: "g:98567"
+}
+
+part {
+  id: "g:98585"
+}
+
+part {
+  id: "g:98835"
+}
+
+part {
+  id: "g:98989"
+}
+
+part {
+  id: "g:99008"
+}
+
+part {
+  id: "g:99009"
+}
+
+part {
+  id: "gb:99009c01"
+  id: "gl:601948"
+  item {
+    id: "b:99009"
+  }
+  item {
+    id: "b:99010"
+    color: "b:11"
+  }
+}
+
+part {
+  id: "g:99010"
+}
+
+part {
+  id: "g:99012"
+}
+
+part {
+  id: "gl:99013"
+  decor { id: "gb:99013pb01" }
+}
+
+part {
+  id: "g:99021"
+}
+
+part {
+  id: "g:99206"
+}
+
+part {
+  id: "g:99207"
+}
+
+part {
+  id: "g:99301"
+}
+
+part {
+  id: "g:99380"
+}
+
+part {
+  id: "g:99455"
+}
+
+part {
+  id: "gb:99498c01"
+  id: "gl:99498"
+}
+
+part {
+  id: "gb:99499c01"
+  id: "gl:99499"
+}
+
+part {
+  id: "g:99773"
+}
+
+part {
+  id: "g:99774"
+}
+
+part {
+  id: "g:99780"
+}
+
+part {
+  id: "g:99781"
+}
+
+part {
+  id: "g:99784"
+}
+
+part {
+  id: "g:99948"
+}
+
