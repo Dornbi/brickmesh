@@ -37,16 +37,39 @@ import com.brickmesh.util.TestCase;
 class PartLoaderTest extends TestCase {
   public static void main(String[] args)
       throws IOException, PartLoader.LoaderException {
-    testLoadLxf();
+    testLoadEmptyLxf();
+    testLoadSimpleLxf();
     testLoadWanted();
   }
 
-  private static void testLoadLxf() 
+  private static void testLoadEmptyLxf() 
       throws IOException, PartLoader.LoaderException {
     PartLoader.LxfLoader loader = new PartLoader().createLxfLoader(
         PartLoader.Options.createUnlimited());
-    loader.parse(new FileInputStream("src/testdata/test.lxf"));
+    loader.parse(new FileInputStream("src/testdata/test-empty.lxf"));
     PartLoader.Result result = loader.getResult();
+    expectTrue(result != null);
+    expectTrue(result.isEmpty());
+    RequiredItems items = result.items_;
+    expectTrue(items != null);
+    expectEquals(0, items.numTotalItems());
+    expectEquals(0, items.numDifferentItems());
+    expectEquals(null, items.unknownPartIdsOrNull());
+    expectEquals(null, items.unknownPartIdsOrNull());
+    expectEquals(null, items.unknownColorIdsOrNull());
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b");
+    TreeMap<ItemId, Integer> expected = new TreeMap<ItemId, Integer>();
+    expectEquals(actual, expected);
+  }
+
+  private static void testLoadSimpleLxf() 
+      throws IOException, PartLoader.LoaderException {
+    PartLoader.LxfLoader loader = new PartLoader().createLxfLoader(
+        PartLoader.Options.createUnlimited());
+    loader.parse(new FileInputStream("src/testdata/test-simple.lxf"));
+    PartLoader.Result result = loader.getResult();
+    expectTrue(!result.isEmpty());
     RequiredItems items = result.items_;
     expectEquals(null, items.unknownPartIdsOrNull());
     expectEquals(null, items.unknownColorIdsOrNull());
@@ -65,6 +88,7 @@ class PartLoaderTest extends TestCase {
         PartLoader.Options.createUnlimited());
     loader.parse(new FileInputStream("src/testdata/wanted.xml"));
     PartLoader.Result result = loader.getResult();
+    expectTrue(!result.isEmpty());
     RequiredItems items = result.items_;
     expectEquals(null, items.unknownPartIdsOrNull());
     expectEquals(null, items.unknownColorIdsOrNull());

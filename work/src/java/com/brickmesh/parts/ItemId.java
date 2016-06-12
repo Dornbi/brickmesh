@@ -56,6 +56,19 @@ public final class ItemId implements Comparable {
   public String partId() {
     return partId_;
   }
+
+  public ItemId withoutNamespace() {
+    ItemId result = this;
+    int pos = partId_.lastIndexOf(':');
+    if (pos >= 0) {
+      result.partId_ = partId_.substring(pos + 1);
+    }
+    pos = colorId_.lastIndexOf(':');
+    if (pos >= 0) {
+      result.colorId_ = colorId_.substring(pos + 1);
+    }
+    return result;
+  }
   
   public boolean equals(Object other) {
     ItemId itemId = (ItemId)other;

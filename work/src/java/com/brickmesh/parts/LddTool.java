@@ -57,22 +57,19 @@ public class LddTool {
     TreeMap<ItemId, Integer> blItems = items.exportToNamespace("b");
     PartExporter.exportToWantedList(blItems, System.out, null);
     System.err.format("Estimated weight: %.3f gram(s)\n", items.weightEstimateGrams());
-    if (items.unknownColorIdsOrNull() != null) {
-      for (Map.Entry<String, Integer> entry : items.unknownColorIdsOrNull().entrySet()) {
-        System.err.format("Warning: Unknown LEGO color id: %s, %d part(s)\n",
-            entry.getKey(), entry.getValue());
-      }
-    }
-    if (items.unknownPartIdsOrNull() != null) {
-      for (Map.Entry<String, Integer> entry : items.unknownPartIdsOrNull().entrySet()) {
-        System.err.format("Warning: Unknown LEGO part id: %s, %d part(s)\n",
-            entry.getKey(), entry.getValue());
+
+    if (items.unknownItemsOrNull() != null) {
+      for (Map.Entry<ItemId, Integer> entry : items.unknownItemsOrNull().entrySet()) {
+        ItemId itemId = entry.getKey().withoutNamespace();
+        System.err.format("Warning: Did not recognize LEGO item: part=%s, color=%s, count=%d\n",
+            itemId.partId(), itemId.colorId(), entry.getValue());
       }
     }
     if (items.unmappableItemsOrNull() != null) {
       for (Map.Entry<ItemId, Integer> entry : items.unmappableItemsOrNull().entrySet()) {
-        System.err.format("Warning: Cannot map LEGO part %s in color %s, %d part(s)\n",
-            entry.getKey().partId(), entry.getKey().colorId(), entry.getValue());
+        ItemId itemId = entry.getKey().withoutNamespace();
+        System.err.format("Warning: Unable to map LEGO item: part=%s, color=%s, count=%d\n",
+            itemId.partId(), itemId.colorId(), entry.getValue());
       }
     }
   }

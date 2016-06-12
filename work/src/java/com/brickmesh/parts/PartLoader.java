@@ -68,7 +68,8 @@ public final class PartLoader {
   
   public static final class Result {
     public boolean isEmpty() {
-      if (items_ != null) return false;
+      if (items_ == null) return false;
+      if (items_.numTotalItems() > 0) return false;
       return true;
     }
     

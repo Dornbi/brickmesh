@@ -189,7 +189,13 @@ public class RequiredItems {
   // in that namespace. A side effect is that the items that are not
   // mappable are moved to unmappableItems().
   public TreeMap<ItemId, Integer> exportToNamespace(String namespace) {
-    composeToNamespace(namespace);
+    if (composedToNamespace_ == null) {
+      composeToNamespace(namespace);
+      composedToNamespace_ = namespace;
+    } else if (!composedToNamespace_.equals(namespace)) {
+      throw new IllegalStateException("Already composed to namespace: " +
+          composedToNamespace_);
+    }
     TreeMap<ItemId, Integer> result = new TreeMap<ItemId, Integer>();
     for (HashMap<String, Item> items : items_.values()) {
       for (Item item : items.values()) {
@@ -458,6 +464,7 @@ public class RequiredItems {
   
   private int numDifferentItems_;
   private int numTotalItems_;
+  private String composedToNamespace_;
 
   // Unknown color ids. The entry is the number of items affected.
   private TreeMap<String, Integer> unknownColorIds_;

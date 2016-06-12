@@ -41,6 +41,7 @@ javac -d class/test \
 
 # Run unit tests & benchmarks.
 TEST_CLASSPATH="${PROTO_CLASSPATH}:jar/brickmesh.jar:class/test"
+java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.ItemIdTest
 java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.PartLoaderTest
 java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.PartModelTest
 java -cp "${TEST_CLASSPATH}" -Xmx128m com.brickmesh.parts.RequiredItemsTest

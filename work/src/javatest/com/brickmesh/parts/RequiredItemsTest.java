@@ -37,6 +37,7 @@ import com.brickmesh.util.TestCase;
 
 class RequiredItemsTest extends TestCase {
   public static void main(String[] args) {
+    new RequiredItemsTest().testEmpty();
     new RequiredItemsTest().testSimpleWithUnknowns();
     new RequiredItemsTest().testSimpleDecompose();
     new RequiredItemsTest().testMinifigDecompose();
@@ -49,7 +50,20 @@ class RequiredItemsTest extends TestCase {
     partModel_ = PartModel.getModel();
     expectedItems_ = new HashMap<String, HashMap<String, RequiredItems.Item>>();
   }
-    
+
+  private void testEmpty() {
+    RequiredItems actual = new RequiredItems(partModel_, 10);
+    expectEquals(0, actual.numDifferentItems());
+    expectEquals(0, actual.numTotalItems());
+    expectEquals(0.0, actual.weightEstimateGrams());
+    expectActual(actual);
+
+    TreeMap<ItemId, Integer> expected = extractExpected();
+    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b");
+    expectEquals(exported, expected);
+    expectActual(actual);
+  }
+  
   private void testSimpleWithUnknowns() {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addDecomposed("l", "3005", "1", 3));

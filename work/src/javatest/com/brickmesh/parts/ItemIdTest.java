@@ -25,18 +25,27 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.brickmesh.util;
+package com.brickmesh.parts;
 
-public final class Log {
-  public static boolean infoEnabled() {
-    return INFO_ENABLED;
-  }
-  
-  public static void info(String msg) {
-    if (INFO_ENABLED) {
-      System.out.println(msg);
-    }
+import com.brickmesh.util.TestCase;
+
+class ItemIdTest extends TestCase {
+  public static void main(String[] args) {
+    testSimple();
+    testWithoutNamespace();
   }
 
-  private static final boolean INFO_ENABLED = false;
-}
+  private static void testSimple() {
+    ItemId itemId1 = new ItemId("b:12", "b:5");
+    ItemId itemId2 = new ItemId("b:12", "b:5");
+    expectEquals(itemId1, itemId2);
+    expectEquals(itemId1.hashCode(), itemId2.hashCode());
+  }
+
+  private static void testWithoutNamespace() {
+    ItemId itemId1 = new ItemId("b:12", "b:5").withoutNamespace();
+    ItemId itemId2 = new ItemId("12", "5");
+    expectEquals(itemId1, itemId2);
+    expectEquals(itemId1.hashCode(), itemId2.hashCode());
+  }
+};
