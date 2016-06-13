@@ -107,16 +107,17 @@ public final class TimeStats {
         totalMaxIdx = i;
       }
     }
-    System.err.format("Total min = %d us (%s)\n",
+    
+    Log.perfLog("Total min = %d us (%s)\n",
         totalMinNanos / 1000, items_[totalMinIdx]);
-    System.err.format("Total max = %d us (%s)\n",
+    Log.perfLog("Total max = %d us (%s)\n",
         totalMaxNanos / 1000, items_[totalMaxIdx]);
     for (int phase = 0; phase < Phase.MAX; ++phase) {
-      System.err.format("Phase %s min = %d us (%s)\n", Phase.getName(phase),
+      Log.perfLog("Phase %s min = %d us (%s)\n", Phase.getName(phase),
           phaseMinNanos[phase] / 1000, items_[phaseMinIdx[phase]]);
-      System.err.format("Phase %s max = %d us (%s)\n", Phase.getName(phase),
+      Log.perfLog("Phase %s max = %d us (%s)\n", Phase.getName(phase),
           phaseMaxNanos[phase] / 1000, items_[phaseMaxIdx[phase]]);
-      System.err.format("Phase %s avg = %d us\n", Phase.getName(phase),
+      Log.perfLog("Phase %s avg = %d us\n", Phase.getName(phase),
           phaseAvgNanos[phase] / 1000 / idx_);
     }
   }

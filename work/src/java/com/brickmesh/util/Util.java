@@ -93,7 +93,7 @@ public final class Util {
 
   public static long logPhaseTime(String phaseName, long startNanos) {
     long nanos = System.nanoTime();
-    Log.info(String.format("%s: %d us", phaseName, (nanos - startNanos) / 1000));
+    Log.perfLog("%s: %d us", phaseName, (nanos - startNanos) / 1000);
     return nanos;
   }
   
@@ -113,4 +113,4 @@ public final class Util {
   }
   
   private Util() {}
-};
+  };

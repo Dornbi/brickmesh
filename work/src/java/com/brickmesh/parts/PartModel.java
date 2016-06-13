@@ -299,7 +299,7 @@ public class PartModel {
       // Stage 3: Compute weights.
       computeWeights();
       
-      Log.info("partMap_.size()=" + partMap_.size());
+      Log.info("partMap_.size()=%d", partMap_.size());
       Util.logPhaseTime("Model load", startNanos);
     }
     catch (IOException e) {

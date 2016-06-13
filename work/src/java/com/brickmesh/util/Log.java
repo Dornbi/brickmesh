@@ -38,5 +38,24 @@ public final class Log {
     }
   }
 
+  public static void info(String format, Object... args) {
+    info(String.format(format, args));
+  }
+
+  public static boolean perfLogEnabled() {
+    return PERFLOG_ENABLED;
+  }
+
+  public static void perfLog(String msg) {
+    if (PERFLOG_ENABLED) {
+      System.out.println(msg);
+    }
+  }
+
+  public static void perfLog(String format, Object... args) {
+    perfLog(String.format(format, args));
+  }
+
   private static final boolean INFO_ENABLED = false;
+  private static final boolean PERFLOG_ENABLED = false;
 }
