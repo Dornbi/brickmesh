@@ -19,12 +19,11 @@ PROTO_CLASSPATH=jar/protobuf-java-3.0.0-beta-2.jar
 javac -d class/core \
     -classpath "${PROTO_CLASSPATH}:class/core" \
     -Xlint:unchecked \
+    src/java/com/brickmesh/offline/*.java \
     src/java/com/brickmesh/parts/*.java \
     src/java/com/brickmesh/util/*.java \
     gen/java/com/brickmesh/proto/*.java
 
-#src/java/com/brickmesh/offline/*.java \
-#src/java/com/brickmesh/parts/*.java \
 
 mkdir -p class/core/com/brickmesh/assets
 cp src/model/*-model.txt class/core/com/brickmesh/assets

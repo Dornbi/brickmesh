@@ -33,6 +33,7 @@ import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.brickmesh.parts.ItemId;
 import com.brickmesh.parts.PartModel;
 
 // Computes weight estimates for many parts based on LDraw geometry.
@@ -46,12 +47,12 @@ public final class ComputeLDrawWeights {
     
     ArrayList<String> ids = loadIdsFromCsv(args[0]);
     for (String partId : ids) {
-      PartModel.PartGroup group = partModel_.getPartByIdOrNull(partId);
-      if (group == null) {
+      PartModel.Part part = partModel_.findPartOrNull(partId);
+      if (part == null) {
         System.err.println("Unknown part: " + partId);
         return;
       }
-      double w = group.part_.get(0).weightGrams_;
+      double w = part.weightGrams_;
       LDrawWeightEstimator.Result result = estimateWeightOrNull(partId, args[1]);
       if (result == null) {
         System.err.println("No result for " + partId);
@@ -79,53 +80,25 @@ public final class ComputeLDrawWeights {
   
   private static LDrawWeightEstimator.Result estimateWeightOrNull(
       String partId, String ldrawPath) {
-    PartModel.PartGroup group = partModel_.getPartByIdOrNull(partId);
-    if (group == null) return null;
+    PartModel.Part part = partModel_.findPartOrNull(partId);
+    if (part == null) return null;
 
-    for (PartModel.Part part : group.part_) {
-      // Try the LDraw file with the part id in the group.
+    LDrawWeightEstimator lw = new LDrawWeightEstimator(ldrawPath);
+    for (String id : part.ids_) {
+      // Try the id first.
+      String[] idPieces = ItemId.idPiecesOrNull(id);
+      if (idPieces == null) continue;
       try {
-        LDrawWeightEstimator lw = new LDrawWeightEstimator(ldrawPath);
-        return lw.partWeightGramsForFile(part.id_ + ".dat");
+        return lw.partWeightGramsForFile(idPieces[1] + ".dat");
       }
-      catch (IOException e) {
-      }
+      catch (IOException e) {}
 
       // Try stripping the postfix, if any.
-      String strippedPartId = part.id_.replaceFirst("[a-z].*\\Z", "");
-      if (!strippedPartId.equals(part.id_)) {
-        try {
-          LDrawWeightEstimator lw = new LDrawWeightEstimator(ldrawPath);
-          return lw.partWeightGramsForFile(strippedPartId + ".dat");
-        }
-        catch (IOException e) {
-        }
+      String strippedId = idPieces[1].replaceFirst("[a-z].*\\Z", "");
+      try {
+        return lw.partWeightGramsForFile(strippedId + ".dat");
       }
-
-      // Try alternate ids.
-      if (part.alternateId_ != null) {
-        for (String id : part.alternateId_) {
-          try {
-            LDrawWeightEstimator lw = new LDrawWeightEstimator(ldrawPath);
-            return lw.partWeightGramsForFile(id + ".dat");
-          }
-          catch (IOException e) {
-          }
-        }
-      }
-
-      // If the part is a composition of multiple sub-parts, try
-      // the sum of the sub-parts.
-      if (part.item_ != null) {
-        LDrawWeightEstimator.Result result = new LDrawWeightEstimator.Result();
-        for (PartModel.Part.Item item : part.item_) {
-          LDrawWeightEstimator.Result r = 
-              estimateWeightOrNull(item.part_.id_, ldrawPath);
-          if (r == null) continue;
-          result.add(r);
-        }
-        return result;
-      }
+      catch (IOException e) {}
     }
     return null;
   }
