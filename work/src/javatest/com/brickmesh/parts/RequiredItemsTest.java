@@ -190,7 +190,7 @@ class RequiredItemsTest extends TestCase {
   }
   
   private void expectActual(RequiredItems actual) {
-    expectEquals(expectedItems_, actual.items());
+    expectEquals(expectedItems_, actual.debugItems());
     expectEquals(expectedUnknownColorIds_, actual.unknownColorIdsOrNull());
     expectEquals(expectedUnknownPartIds_, actual.unknownPartIdsOrNull());
     expectEquals(expectedUnknownItems_, actual.unknownItemsOrNull());

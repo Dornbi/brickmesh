@@ -223,7 +223,7 @@ public class RequiredItems {
   
   // Access to the internal representation. This should only be used
   // for testing & debugging.
-  public HashMap<String, HashMap<String, Item>> items() {
+  public HashMap<String, HashMap<String, Item>> debugItems() {
     return items_;
   }
   
