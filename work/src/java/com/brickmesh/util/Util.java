@@ -65,7 +65,7 @@ public final class Util {
     return (String[])objectArray((Object[])values);
   }
   
-  public static String join(String delimiter, Object[] elements) {
+  public static String joinArray(String delimiter, Object[] elements) {
     StringBuffer sb = new StringBuffer();
     boolean d = false;
     for (Object e : elements) {
@@ -76,7 +76,7 @@ public final class Util {
     return sb.toString();
   }
 
-  public static String join(String delimiter, Iterable<?> elements) {
+  public static String joinIterable(String delimiter, Iterable<?> elements) {
     StringBuffer sb = new StringBuffer();
     boolean d = false;
     for (Object e : elements) {
@@ -85,6 +85,10 @@ public final class Util {
       d = true;
     }
     return sb.toString();
+  }
+
+  public static String joinStrings(String delimiter, String... values) {
+    return joinArray(delimiter, stringArray(values));
   }
 
   public static long logPhaseTime(String phaseName, long startNanos) {

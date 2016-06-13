@@ -167,11 +167,11 @@ public class PartModel {
     public String toString() {
       StringBuffer sb = new StringBuffer();
       sb.append("ids=");
-      sb.append(Util.join(",", ids_));
+      sb.append(Util.joinArray(",", ids_));
       sb.append(String.format(",weight=%.3f", weightGrams_));
       if (items_ != null) {
         sb.append(",items=[");
-        sb.append(Util.join(",", items_));
+        sb.append(Util.joinArray(",", items_));
         sb.append("]");
       }
       return sb.toString();

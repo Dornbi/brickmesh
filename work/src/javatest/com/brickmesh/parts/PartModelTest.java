@@ -37,6 +37,7 @@ import com.google.protobuf.TextFormat;
 
 import com.brickmesh.proto.PartModelProto;
 import com.brickmesh.util.TestCase;
+import com.brickmesh.util.Util;
 
 class PartModelTest extends TestCase {
   public static void main(String[] args) {
@@ -113,7 +114,7 @@ class PartModelTest extends TestCase {
   }
   
   private static String customColorModelPath() throws IOException {
-    final String COLOR_MODEL = String.join("\n",
+    final String COLOR_MODEL = Util.joinStrings("\n",
       "color {",
       "  id: 'b:1'",
       "  name: 'Color'",

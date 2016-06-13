@@ -30,6 +30,7 @@ package com.brickmesh.parts;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeMap;
@@ -79,7 +80,7 @@ public class RequiredItems {
       if (originalIds_ != null) {
         sb.append(",originalIds=(");
         boolean first = true;
-        for (HashMap.Entry<ItemId, Integer> entry : originalIds_.entrySet()) {
+        for (Map.Entry<ItemId, Integer> entry : originalIds_.entrySet()) {
           if (!first) sb.append(',');
           sb.append(entry.getKey().toString());
           sb.append(":");
@@ -243,7 +244,7 @@ public class RequiredItems {
         if (item.originalIds_ == null) {
           throw new AssertionError("No original ids: " + item);
         }
-        for (HashMap.Entry<ItemId, Integer> entry : item.originalIds_.entrySet()) {
+        for (Map.Entry<ItemId, Integer> entry : item.originalIds_.entrySet()) {
           ItemId itemId = entry.getKey();
           if (unmappableItems_ == null) {
             unmappableItems_ = new TreeMap<ItemId, Integer>();
@@ -315,7 +316,7 @@ public class RequiredItems {
         if (existingItem.originalIds_ == null) {
           existingItem.originalIds_ = new HashMap<ItemId, Integer>(item.originalIds_.size());
         }
-        for (HashMap.Entry<ItemId, Integer> entry : item.originalIds_.entrySet()) {
+        for (Map.Entry<ItemId, Integer> entry : item.originalIds_.entrySet()) {
           ItemId itemId = entry.getKey();
           Integer existingCount = existingItem.originalIds_.get(itemId);
           if (existingCount == null) {
