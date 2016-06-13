@@ -35,7 +35,7 @@
 # into a final model which is compiled by build_part_model.py
 #
 # Part entries in this file must be kept sorted with sort_part_model.py.
-
+#
 # For parts the permitted namespaces for ids are:
 # b:  - id only valid on BrickLink.
 # l:  - id only valid in LDD.
@@ -122,6 +122,12 @@ part {
 }
 
 part {
+  id: "gb:x77ac200"
+  id: "o:56823c200"
+  similar { id: "b:x77a" confirm: true }
+}
+
+part {
   id: "gb:x77ac20"
   id: "o:56823c20"
   similar { id: "b:x77a" confirm: true }
@@ -140,26 +146,20 @@ part {
 }
 
 part {
-  id: "gb:x77ac200"
-  id: "o:56823c200"
-  similar { id: "b:x77a" confirm: true }
-}
-
-part {
   id: "gb:x77ac30"
   id: "o:56823c30"
   similar { id: "b:x77a" confirm: true }
 }
 
 part {
-  id: "gb:x77ac50"
-  id: "o:56823c50"
+  id: "gb:x77ac500"
+  id: "o:56823c500"
   similar { id: "b:x77a" confirm: true }
 }
 
 part {
-  id: "gb:x77ac500"
-  id: "o:56823c500"
+  id: "gb:x77ac50"
+  id: "o:56823c50"
   similar { id: "b:x77a" confirm: true }
 }
 
@@ -1307,21 +1307,6 @@ part {
 }
 
 part {
-  id: "gb:970c11"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:11"
-  }
-  item {
-    id: "b:972"
-    color: "b:11"
-  }
-}
-
-part {
   id: "gb:970c110"
   item {
     id: "b:970"
@@ -1348,6 +1333,21 @@ part {
   item {
     id: "b:972"
     color: "b:115"
+  }
+}
+
+part {
+  id: "gb:970c11"
+  item {
+    id: "b:970"
+  }
+  item {
+    id: "b:971"
+    color: "b:11"
+  }
+  item {
+    id: "b:972"
+    color: "b:11"
   }
 }
 
@@ -1741,23 +1741,6 @@ part {
   id: "gb:973"
   id: "gl:3814"
   id: "gl:88476"
-}
-
-part {
-  id: "gl:76382"
-  item {
-    id: "b:973"
-  }
-  item {
-    id: "b:981"
-  }
-  item {
-    id: "b:982"
-  }
-  item {
-    id: "b:983"
-    count: 2
-  }
 }
 
 part {
@@ -8119,16 +8102,6 @@ part {
 }
 
 part {
-  id: "gl:18868"
-  id: "gb:18603c00"
-}
-
-part {
-  id: "gl:19981"
-  decor { id: "gb:18603c01pb01" }
-}
-
-part {
   id: "g:18646"
 }
 
@@ -8175,6 +8148,11 @@ part {
 part {
   id: "g:18866"
   similar { id: "b:30218" }
+}
+
+part {
+  id: "gl:18868"
+  id: "gb:18603c00"
 }
 
 part {
@@ -8316,6 +8294,11 @@ part {
 
 part {
   id: "g:19540"
+}
+
+part {
+  id: "gl:19981"
+  decor { id: "gb:18603c01pb01" }
 }
 
 part {
@@ -11100,12 +11083,6 @@ part {
 }
 
 part {
-  id: "gl:54923"
-  decor { id: "gb:54092c01" }
-  decor { id: "gb:54092c02" }
-}
-
-part {
   id: "g:54093"
   similar { id: "b:93541" }
 }
@@ -11207,6 +11184,12 @@ part {
 
 part {
   id: "g:54821"
+}
+
+part {
+  id: "gl:54923"
+  decor { id: "gb:54092c01" }
+  decor { id: "gb:54092c02" }
 }
 
 part {
@@ -11731,6 +11714,16 @@ part {
 }
 
 part {
+  id: "gl:60797"
+  item {
+    id: "v:60797-1"
+  }
+  item {
+    id: "v:60797-2"
+  }
+}
+
+part {
   id: "gb:60797c01"
   item {
     id: "v:60797-1"
@@ -11760,16 +11753,6 @@ part {
   item {
     id: "v:60797-2"
     color: "b:88"
-  }
-}
-
-part {
-  id: "gl:60797"
-  item {
-    id: "v:60797-1"
-  }
-  item {
-    id: "v:60797-2"
   }
 }
 
@@ -11985,13 +11968,13 @@ part {
 }
 
 part {
-  id: "gl:62604"
-  decor { id: "gb:62604pb01" }
+  id: "gl:62603"
+  decor { id: "gb:62605pb01" }
 }
 
 part {
-  id: "gl:62603"
-  decor { id: "gb:62605pb01" }
+  id: "gl:62604"
+  decor { id: "gb:62604pb01" }
 }
 
 part {
@@ -12513,6 +12496,23 @@ part {
   item {
     id: "v:76041-2"
     color: "b:14"
+  }
+}
+
+part {
+  id: "gl:76382"
+  item {
+    id: "b:973"
+  }
+  item {
+    id: "b:981"
+  }
+  item {
+    id: "b:982"
+  }
+  item {
+    id: "b:983"
+    count: 2
   }
 }
 
