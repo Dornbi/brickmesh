@@ -95,17 +95,17 @@ public class PartModel {
   
   public static class Part {
     // All the ids of this part. Each one is unique.
-    String[] ids_;
+    public String[] ids_;
 
-    HashSet<Part> similar_;
-    HashSet<Part> confirm_;
+    public HashSet<Part> similar_;
+    public HashSet<Part> confirm_;
 
     // If this is a composite part made from other parts, this is the
     // list of all the parts that it is made from.
-    Item[] items_;
+    public Item[] items_;
 
     // If this part that is used to compose other parts, they are listed here.
-    HashSet<Part> parents_;    
+    public HashSet<Part> parents_;    
 
     // The weight in grams. Must be nonzero after loading.
     public double weightGrams_;
