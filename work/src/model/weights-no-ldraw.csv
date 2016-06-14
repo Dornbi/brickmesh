@@ -34,13 +34,13 @@ b:x12,0.385         # from 32474
 b:x59,0.444         # from 64648
 b:x77ac100,2        # guess
 b:x77ac150,3        # guess
+b:x77ac200,4        # guess
 b:x77ac20,0.4       # guess
 b:x77ac25,0.5       # guess
 b:x77ac28,0.56      # guess
-b:x77ac200,4        # guess
 b:x77ac30,0.6       # guess
-b:x77ac50,1         # guess
 b:x77ac500,10       # guess
+b:x77ac50,1         # guess
 b:x77ac75,1.5       # guess
 b:x77cc100,2        # guess
 b:x77cc125,2.5      # guess
@@ -172,11 +172,11 @@ l:18052,3           # guess
 b:18455,2.5         # guess from 3001
 b:18587,1           # guess
 b:18588,2           # guess
-l:18868,2           # guess
 b:18663,1           # guess
 b:18675,5           # guess
 b:18729,10          # guess
 b:18866,0.630       # from 33122
+l:18868,2           # guess
 b:18895,4           # guess
 b:18896,2           # guess
 b:18897,8           # guess
@@ -295,8 +295,8 @@ b:60935,6           # guess
 b:61053,3.084       # from 47330
 b:61930c01,7.348    # from 60797c02 * 4
 b:62359,1           # guess
-l:62604,1.913       # from 2548
 l:62603,8.008       # from 2547a
+l:62604,1.913       # from 2548
 b:62791,150         # guess
 b:64277c01,2        # guess
 b:64390,3           # guess
@@ -307,6 +307,10 @@ b:72092,3           # guess
 b:73090a,50         # guess
 b:73090b,50         # guess
 b:73313,9.516       # from 73312
+v:73435-1,2         # guess
+v:73435-2,2         # guess
+v:73436-1,2         # guess
+v:73436-2,2         # guess
 v:76041-1,1.6       # guess
 v:76041-2,1.6       # guess
 b:85962,10          # guess

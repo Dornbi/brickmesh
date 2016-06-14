@@ -206,12 +206,6 @@ part {
 }
 
 part {
-  id: "gb:x77cc22"
-  id: "o:14728c22"
-  similar { id: "b:x77" confirm: true }
-}
-
-part {
   id: "gb:x77cc250"
   id: "o:14728c250"
   similar { id: "b:x77" confirm: true }
@@ -265,16 +259,6 @@ part {
 }
 
 part {
-  id: "gb:x97"
-  id: "gl:30133"
-}
-
-part {
-  id: "gb:x100"
-  id: "gl:30084"
-}
-
-part {
   id: "gb:x104"
   id: "gl:6093"
 }
@@ -286,7 +270,7 @@ part {
 
 # String with End Studs
 part {
-  id: "gb:x127"
+  id: "o:x127"
 }
 
 part {
@@ -295,7 +279,7 @@ part {
   id: "gl:56576"
   id: "gl:63143"
   id: "gl:76064"
-  similar { id: "b:x127" confirm: true }
+  similar { id: "o:x127" confirm: true }
 }
 
 part {
@@ -303,7 +287,7 @@ part {
   id: "gl:14210"
   id: "gl:63141"
   id: "gl:76065"
-  similar { id: "b:x127" confirm: true }
+  similar { id: "o:x127" confirm: true }
 }
 
 part {
@@ -311,7 +295,7 @@ part {
   id: "gl:14225"
   id: "gl:56578"
   id: "gl:63142"
-  similar { id: "b:x127" confirm: true }
+  similar { id: "o:x127" confirm: true }
 }
 
 part {
@@ -319,7 +303,7 @@ part {
   id: "gl:14224"
   id: "gl:63140"
   id: "gl:75925"
-  similar { id: "b:x127" confirm: true }
+  similar { id: "o:x127" confirm: true }
 }
 
 part {
@@ -392,11 +376,6 @@ part {
 }
 
 part {
-  id: "gb:x787"
-  id: "gl:46303"
-}
-
-part {
   id: "gb:x789"
   id: "gl:42409"
 }
@@ -416,7 +395,7 @@ part {
   id: "o:32495c01"
   id: "gl:50301"
   item {
-    id: "b:x872"
+    id: "o:x872"
   }
   item {
     id: "b:x873"
@@ -942,18 +921,8 @@ part {
 }
 
 part {
-  id: "gb:78c29"
-  similar { id: "b:78" confirm: true }
-}
-
-part {
-  id: "gb:78c30"
-  id: "gl:22678"
-  similar { id: "b:78" confirm: true }
-}
-
-part {
   id: "gb:78c31"
+  id: "gl:22678"
   similar { id: "b:78" confirm: true }
 }
 
@@ -1142,6 +1111,8 @@ part {
   id: "gl:3815"
 }
 
+# TODO: Update this
+# http://www.bricklink.com/catalogItemIn.asp?P=970&in=P
 part {
   id: "gb:970c00"
   id: "gl:73200"
@@ -1322,21 +1293,6 @@ part {
 }
 
 part {
-  id: "gb:970c115"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:115"
-  }
-  item {
-    id: "b:972"
-    color: "b:115"
-  }
-}
-
-part {
   id: "gb:970c11"
   item {
     id: "b:970"
@@ -1352,36 +1308,6 @@ part {
 }
 
 part {
-  id: "gb:970c150"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:150"
-  }
-  item {
-    id: "b:972"
-    color: "b:150"
-  }
-}
-
-part {
-  id: "gb:970c153"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:153"
-  }
-  item {
-    id: "b:972"
-    color: "b:153"
-  }
-}
-
-part {
   id: "gb:970c155"
   item {
     id: "b:970"
@@ -1393,21 +1319,6 @@ part {
   item {
     id: "b:972"
     color: "b:155"
-  }
-}
-
-part {
-  id: "gb:970c16"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:16"
-  }
-  item {
-    id: "b:972"
-    color: "b:16"
   }
 }
 
@@ -1468,21 +1379,6 @@ part {
   item {
     id: "b:972"
     color: "b:43"
-  }
-}
-
-part {
-  id: "gb:970c47"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:47"
-  }
-  item {
-    id: "b:972"
-    color: "b:47"
   }
 }
 
@@ -1573,21 +1469,6 @@ part {
   item {
     id: "b:972"
     color: "b:69"
-  }
-}
-
-part {
-  id: "gb:970c77"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:77"
-  }
-  item {
-    id: "b:972"
-    color: "b:77"
   }
 }
 
@@ -1712,21 +1593,6 @@ part {
 }
 
 part {
-  id: "gb:970c99"
-  item {
-    id: "b:970"
-  }
-  item {
-    id: "b:971"
-    color: "b:99"
-  }
-  item {
-    id: "b:972"
-    color: "b:99"
-  }
-}
-
-part {
   id: "gb:971"
   id: "gl:3816"
 }
@@ -1743,6 +1609,8 @@ part {
   id: "gl:88476"
 }
 
+# TODO: Update this
+# http://www.bricklink.com/catalogItemIn.asp?P=973&in=P
 part {
   id: "gb:973c01"
   item {
@@ -3213,18 +3081,13 @@ part {
 }
 
 part {
-  id: "gb:2418"
-}
-
-part {
   id: "gb:2418a"
-  similar { id: "b:2418" }
+  similar { id: "b:2418b" }
 }
 
 part {
   id: "gb:2418b"
   id: "l:2418"
-  similar { id: "b:2418" }
 }
 
 part {
@@ -3593,18 +3456,13 @@ part {
 }
 
 part {
-  id: "gb:2578"
-}
-
-part {
   id: "gb:2578a"
   id: "l:2578"
-  similar { id: "b:2578" confirm: true }
+  similar { id: "b:2578b" confirm: true }
 }
 
 part {
   id: "gb:2578b"
-  similar { id: "b:2578" confirm: true }
 }
 
 part {
@@ -3634,9 +3492,9 @@ part {
 }
 
 part {
-  id: "g:2599"
+  id: "gb:2599a"
   id: "gl:10190"
-  id: "gl:59275"
+  similar { id: "l:59275" }
 }
 
 part {
@@ -4320,19 +4178,14 @@ part {
 }
 
 part {
-  id: "gb:3062"
-}
-
-part {
   id: "gb:3062a"
-  similar { id: "b:3062" confirm: true }
+  similar { id: "b:3062b" confirm: true }
 }
 
 part {
   id: "gb:3062b"
   id: "gl:30068"
   id: "l:3062"
-  similar { id: "b:3062" confirm: true }
 }
 
 part {
@@ -4491,23 +4344,18 @@ part {
 }
 
 part {
-  id: "gb:3228"
-}
-
-part {
   id: "gb:3228a"
-  similar { id: "b:3228" }
+  similar { id: "b:3228b" }
 }
 
 part {
   id: "gb:3228b"
-  similar { id: "b:3228" }
 }
 
 part {
   id: "gb:3228c"
   id: "l:3228"
-  similar { id: "b:3228" }
+  similar { id: "b:3228b" }
 }
 
 part {
@@ -4693,26 +4541,21 @@ part {
 }
 
 part {
-  id: "gb:3626"
-}
-
-part {
   id: "gb:3626a"
   id: "o:30011a"
-  similar { id: "b:3626" }
 }
 
 part {
   id: "gb:3626b"
   id: "o:30011b"
-  similar { id: "b:3626" }
+  similar { id: "b:3626a" }
 }
 
 part {
   id: "gb:3626c"
   id: "o:30011c"
   id: "l:3626"
-  similar { id: "b:3626" }
+  similar { id: "b:3626a" }
 }
 
 part {
@@ -4797,18 +4640,13 @@ part {
 }
 
 part {
-  id: "gb:3678"
-}
-
-part {
   id: "gb:3678a"
-  similar { id: "b:3678" }
 }
 
 part {
   id: "gb:3678b"
   id: "l:3678"
-  similar { id: "b:3678" }
+  similar { id: "b:3678a" }
 }
 
 part {
@@ -4948,18 +4786,13 @@ part {
 }
 
 part {
-  id: "gb:3747"
-}
-
-part {
   id: "gb:3747a"
   id: "l:3747"
-  similar { id: "b:3747" }
 }
 
 part {
   id: "gb:3747b"
-  similar { id: "b:3747" }
+  similar { id: "b:3747a" }
 }
 
 part {
@@ -4988,11 +4821,6 @@ part {
 part {
   id: "g:3794"
   similar { id: "b:15573" }
-}
-
-part {
-  id: "gb:3794a"
-  similar { id: "b:3794" }
 }
 
 part {
@@ -5202,18 +5030,13 @@ part {
 }
 
 part {
-  id: "gb:3943"
-}
-
-part {
   id: "gb:3943a"
-  similar { id: "b:3943" }
 }
 
 part {
   id: "gb:3943b"
   id: "l:3943"
-  similar { id: "b:3943" }
+  similar { id: "b:3943a" }
 }
 
 part {
@@ -5384,23 +5207,18 @@ part {
 }
 
 part {
-  id: "gb:4093"
-}
-
-part {
   id: "gb:4093a"
   id: "l:4093"
-  similar { id: "b:4093" confirm: true }
 }
 
 part {
   id: "gb:4093b"
-  similar { id: "b:4093" confirm: true }
+  similar { id: "b:4093a" confirm: true }
 }
 
 part {
   id: "gb:4093c"
-  similar { id: "b:4093" confirm: true }
+  similar { id: "b:4093a" confirm: true }
 }
 
 part {
@@ -5569,23 +5387,18 @@ part {
 }
 
 part {
-  id: "g:4265"
-}
-
-part {
   id: "gb:4265a"
-  similar { id: "b:4265" }
 }
 
 part {
   id: "gb:4265b"
-  similar { id: "b:4265" }
+  similar { id: "b:4265a" }
 }
 
 part {
   id: "gb:4265c"
   id: "gl:32123"
-  similar { id: "b:4265" }
+  similar { id: "b:4265a" }
 }
 
 part {
@@ -6001,18 +5814,13 @@ part {
 }
 
 part {
-  id: "gb:4697"
-}
-
-part {
   id: "gb:4697a"
-  similar { id: "b:4697" }
 }
 
 part {
   id: "gb:4697b"
   id: "l:4697"
-  similar { id: "b:4697" }
+  similar { id: "b:4697a" }
 }
 
 part {
@@ -6579,11 +6387,6 @@ part {
 
 part {
   id: "gb:5102c34"
-  similar { id: "b:5102" confirm: true }
-}
-
-part {
-  id: "gb:5102c35"
   similar { id: "b:5102" confirm: true }
 }
 
@@ -8598,6 +8401,11 @@ part {
 }
 
 part {
+  id: "g:30084"
+  id: "o:x100"
+}
+
+part {
   id: "g:30085"
   id: "o:x98"
 }
@@ -8651,6 +8459,10 @@ part {
 
 part {
   id: "g:30132"
+}
+
+part {
+  id: "g:30133"
 }
 
 part {
@@ -9346,12 +9158,13 @@ part {
 }
 
 part {
-  id: "gb:30516cu"
+  id: "gb:30516c02"
   item {
     id: "b:3404"
   }
   item {
     id: "b:30516"
+    color: "b:11"
   }
 }
 
@@ -10491,6 +10304,11 @@ part {
 }
 
 part {
+  id: "g:46303"
+  id: "o:x787"
+}
+
+part {
   id: "g:46304"
 }
 
@@ -10619,6 +10437,16 @@ part {
   id: "g:47847"
   id: "gl:54782"
   id: "gl:57512"
+}
+
+part {
+  id: "gl:47899"
+  item {
+    id: "v:73436-1"
+  }
+  item {
+    id: "v:73436-2"
+  }
 }
 
 part {
@@ -11501,6 +11329,10 @@ part {
 }
 
 part {
+  id: "gl:59275"
+}
+
+part {
   id: "g:59349"
   id: "gl:59350"
 }
@@ -12304,6 +12136,16 @@ part {
 }
 
 part {
+  id: "gl:73194"
+  item {
+    id: "v:73435-1"
+  }
+  item {
+    id: "v:73435-2"
+  }
+}
+
+part {
   id: "g:73312"
 }
 
@@ -12312,62 +12154,111 @@ part {
 }
 
 part {
-  id: "g:73435"
+  id: "v:73435-1"
+}
+
+part {
+  id: "v:73435-2"
 }
 
 part {
   id: "gb:73435c01"
-  id: "gl:73194"
-  similar { id: "b:73435" confirm: true }
+  item {
+    id: "v:73435-1"
+  }
+  item {
+    id: "v:73435-2"
+    color: "b:12"
+  }
 }
 
 part {
   id: "gb:73435c02"
-  similar { id: "b:73435" confirm: true }
+  item {
+    id: "v:73435-1"
+  }
+  item {
+    id: "v:73435-2"
+    color: "b:15"
+  }
 }
 
 part {
   id: "gb:73435c03"
-  similar { id: "b:73435" confirm: true }
+  item {
+    id: "v:73435-1"
+  }
+  item {
+    id: "v:73435-2"
+    color: "b:13"
+  }
 }
 
 part {
   id: "gb:73435c04"
-  similar { id: "b:73435" confirm: true }
+  item {
+    id: "v:73435-1"
+  }
+  item {
+    id: "v:73435-2"
+    color: "b:88"
+  }
 }
 
 part {
-  id: "g:73436"
+  id: "v:73436-1"
+}
+
+part {
+  id: "v:73436-2"
 }
 
 part {
   id: "gb:73436c01"
-  id: "gl:47899"
-  similar { id: "b:73436" confirm: true }
+  item {
+    id: "v:73436-1"
+  }
+  item {
+    id: "v:73436-2"
+    color: "b:12"
+  }
 }
 
 part {
   id: "gb:73436c02"
-  similar { id: "b:73436" confirm: true }
+  item {
+    id: "v:73436-1"
+  }
+  item {
+    id: "v:73436-2"
+    color: "b:15"
+  }
 }
 
 part {
   id: "gb:73436c03"
-  similar { id: "b:73436" confirm: true }
+  item {
+    id: "v:73436-1"
+  }
+  item {
+    id: "v:73436-2"
+    color: "b:13"
+  }
 }
 
 part {
   id: "gb:73436c04"
-  similar { id: "b:73436" confirm: true }
-}
-
-part {
-  id: "gb:73590c01"
+  item {
+    id: "v:73436-1"
+  }
+  item {
+    id: "v:73436-2"
+    color: "b:88"
+  }
 }
 
 part {
   id: "gb:73590c01a"
-  similar { id: "b:73590c01" }
   item {
     id: "b:751"
   }
@@ -12379,7 +12270,7 @@ part {
 
 part {
   id: "gb:73590c01b"
-  similar { id: "b:73590c01" }
+  similar { id: "b:73590c01a" }
   item {
     id: "b:751"
   }
@@ -12392,29 +12283,29 @@ part {
 
 part {
   id: "gb:73590c02a"
-  similar { id: "b:73590c01" }
+  similar { id: "b:73590c01a" }
 }
 
 part {
   id: "gb:73590c02b"
-  similar { id: "b:73590c01" }
+  similar { id: "b:73590c01a" }
 }
 
 part {
   id: "gb:73590c02c"
-  similar { id: "b:73590c01" }
+  similar { id: "b:73590c01a" }
 }
 
 part {
   id: "gb:73590c03a"
   id: "gl:6211"
   id: "gl:64230"
-  similar { id: "b:73590c01" }
+  similar { id: "b:73590c01a" }
 }
 
 part {
   id: "gb:73590c03b"
-  similar { id: "b:73590c01" }
+  similar { id: "b:73590c01a" }
 }
 
 part {
