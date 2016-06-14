@@ -33,6 +33,11 @@
 # both ids map to the same color.
 
 color {
+  id: "b:0"
+  name: "Not applicable"
+}
+
+color {
   id: "b:1"
   id: "l:1"
   name: "White"
