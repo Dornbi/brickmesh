@@ -24,7 +24,6 @@ javac -d class/core \
     src/java/com/brickmesh/util/*.java \
     gen/java/com/brickmesh/proto/*.java
 
-
 mkdir -p class/core/com/brickmesh/assets
 cp src/model/*-model.txt class/core/com/brickmesh/assets
 cp assets/*.txt class/core/com/brickmesh/assets
