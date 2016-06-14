@@ -76,11 +76,11 @@ def ReadOne(path, line_dict):
 def PartIdSortKey(part_id):
   if part_id == '#':
     return 'a'
-  m = re.match('([a-z]*)([0-9]+)(.*)', part_id)
-  if m.group(1):
-    return 'b%s%09d%s' % (m.group(1), int(m.group(2)), m.group(3))
+  m = re.match('([a-z]+):([a-z]*)([0-9]+)(.*)', part_id)
+  if m.group(2):
+    return 'b%s%09d%s:%s' % (m.group(2), int(m.group(3)), m.group(4), m.group(1))
   else:
-    return 'c%09d%s' % (int(m.group(2)), m.group(3))
+    return 'c%09d%s:%s' % (int(m.group(3)), m.group(4), m.group(1))
 
 
 def PrintSorted(part_dict):
