@@ -139,10 +139,9 @@ message AvailablePart {
 
   message Color {
     optional string color = 1;
-    optional double used_price_usd = 2;
-    optional int64 num_used_stores = 3;
+    optional int64 num_stores = 2;
+    optional double used_price_usd = 3;
     optional double new_price_usd = 4;
-    optional int64 num_new_stores = 5;
   }
   repeated Color color = 2;
 }
