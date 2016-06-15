@@ -67,7 +67,7 @@ def ScrapePartAvailability(part_id):
     if color_match is None:
       continue
     color = int(color_match.group(1))
-    if color <= 0:
+    if color < 0:
       continue
     if span.a.next_sibling is None:
       continue
