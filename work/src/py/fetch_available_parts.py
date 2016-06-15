@@ -108,8 +108,13 @@ def FetchOne(part_ids):
 
 
 def FetchAllAvailableParts(part_model):
-  result = Parallel(n_jobs=10)(delayed(FetchOne)(list(part.id))
-                               for part in part_model.part)
+  part_ids = []
+  for part in part_model.part:
+    part_ids.append(list(part.id))
+    for decor in part.decor:
+      part_ids.append(list(decor.id))
+
+  result = Parallel(n_jobs=10)(delayed(FetchOne)(id) for id in part_ids)
   available_parts = part_model_proto_pb2.AvailableParts()
   for a in result:
     if a is not None:
