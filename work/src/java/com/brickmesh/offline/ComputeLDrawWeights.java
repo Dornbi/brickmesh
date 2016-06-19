@@ -44,7 +44,7 @@ public final class ComputeLDrawWeights {
       System.err.println("Usage: <command> <weights-csv> <ldraw-path>\n");
       return;
     }
-    
+
     ArrayList<String> ids = loadIdsFromCsv(args[0]);
     for (String partId : ids) {
       PartModel.Part part = partModel_.findPartOrNull(partId);
@@ -61,7 +61,7 @@ public final class ComputeLDrawWeights {
       }
     }
   }
-  
+
   private static ArrayList<String> loadIdsFromCsv(String csvPath)
       throws IOException {
     ArrayList<String> result = new ArrayList<String>();
@@ -77,7 +77,7 @@ public final class ComputeLDrawWeights {
     }
     return result;
   }
-  
+
   private static LDrawWeightEstimator.Result estimateWeightOrNull(
       String partId, String ldrawPath) {
     PartModel.Part part = partModel_.findPartOrNull(partId);

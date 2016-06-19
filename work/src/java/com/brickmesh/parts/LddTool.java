@@ -40,7 +40,7 @@ public class LddTool {
       System.err.println("Usage: <command> <lxf-path> [<lxf-path> ...]>\n");
       return;
     }
-    
+
     PartLoader.LxfLoader loader = new PartLoader().createLxfLoader(
         PartLoader.Options.createUnlimited());
     for (String arg : args) {

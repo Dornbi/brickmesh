@@ -48,7 +48,7 @@ public final class Util {
     }
     return result;
   }
-  
+
   public static Object[] objectArray(Object... values) {
     if (values.length == 0) {
       throw new IllegalArgumentException("Must have at least 1 element.");
@@ -64,7 +64,7 @@ public final class Util {
   public static String[] stringArray(String... values) {
     return (String[])objectArray((Object[])values);
   }
-  
+
   public static String joinArray(String delimiter, Object[] elements) {
     StringBuffer sb = new StringBuffer();
     boolean d = false;
@@ -96,7 +96,7 @@ public final class Util {
     Log.perfLog("%s: %d us", phaseName, (nanos - startNanos) / 1000);
     return nanos;
   }
-  
+
   public static long copyStream(InputStream from, OutputStream to)
       throws IOException {
     long total = 0;
@@ -111,6 +111,6 @@ public final class Util {
     }
     return total;
   }
-  
+
   private Util() {}
   };

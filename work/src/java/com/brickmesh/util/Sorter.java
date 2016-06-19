@@ -37,14 +37,14 @@ public final class Sorter {
   public interface Sortable {
     // Number of elements.
     int size();
-    
+
     // Should the element at idx1 be before the element at idx2?
     boolean before(int idx1, int idx2);
-    
+
     // Swaps the two elements.
     void swap(int idx1, int idx2);
   }
-  
+
   public static void quicksort(Sortable sortable, Random rand) {
     quicksort(sortable, 0, sortable.size() - 1, rand);
   }
@@ -72,7 +72,7 @@ public final class Sorter {
         } else if (right == pivot) {
           pivot = left;
         }
-        
+
         sortable.swap(left, right);
         ++left;
         --right;
@@ -94,14 +94,14 @@ public final class Sorter {
       if (n == pivot) {
         return;
       } else if (n < pivot) {
-        right = pivot - 1; 
+        right = pivot - 1;
       } else {
         left = pivot + 1;
       }
     }
     throw new AssertionError("Invalid index");
   }
-  
+
   private static int partition(Sortable sortable, int left, int right,
       int pivot) {
     sortable.swap(pivot, right);

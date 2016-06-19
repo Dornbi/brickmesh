@@ -31,7 +31,7 @@ public final class Log {
   public static boolean infoEnabled() {
     return INFO_ENABLED;
   }
-  
+
   public static void info(String msg) {
     if (INFO_ENABLED) {
       System.out.println(msg);

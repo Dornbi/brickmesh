@@ -43,12 +43,12 @@ public final class ItemId implements Comparable {
     if (split.length != 2) return null;
     return split;
   }
-  
+
   public ItemId(String partId, String colorId) {
     partId_ = partId;
     colorId_ = colorId;
   }
-  
+
   public String colorId() {
     return colorId_;
   }
@@ -69,24 +69,24 @@ public final class ItemId implements Comparable {
     }
     return result;
   }
-  
+
   public boolean equals(Object other) {
     ItemId itemId = (ItemId)other;
     return colorId_.equals(itemId.colorId_) && partId_.equals(itemId.partId_);
-  } 
-    
+  }
+
   public int hashCode() {
     final int PRIME = 31;
     return colorId_.hashCode() * PRIME + partId_.hashCode();
   }
-  
+
   public int compareTo(Object other) {
     ItemId itemId = (ItemId)other;
     int result = partId_.compareTo(itemId.partId_);
     if (result != 0) return result;
     return colorId_.compareTo(itemId.colorId_);
   }
-  
+
   public String toString() {
     StringBuffer sb = new StringBuffer();
     sb.append(partId_);
@@ -94,7 +94,7 @@ public final class ItemId implements Comparable {
     sb.append(colorId_);
     return sb.toString();
   }
-  
+
   private String partId_;
   private String colorId_;
 }

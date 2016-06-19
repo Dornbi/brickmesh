@@ -46,7 +46,7 @@ public class UnknownItems {
   public TreeMap<ItemId, Integer> unmappableItemsOrNull() {
     return unmappableItems_;
   }
-  
+
   public void addUnknownItem(ItemId itemId, boolean partKnown, boolean colorKnown, int count) {
     if (!partKnown) {
       unknownPartIds_ = addMapCount(unknownPartIds_, itemId.partId(), count);
@@ -58,7 +58,7 @@ public class UnknownItems {
       unknownItems_ = addMapCount(unknownItems_, itemId, count);
     }
   }
-  
+
   public void addUnmappableItem(ItemId itemId, int count) {
     unmappableItems_ = allocMapIfNeeded(unmappableItems_);
     Integer c = unmappableItems_.get(itemId);
@@ -66,13 +66,13 @@ public class UnknownItems {
       unmappableItems_.put(itemId, count);
     } else {
       unmappableItems_.put(itemId, Math.max(c, count));
-    }    
+    }
   }
-  
+
   public void clearUnmappableItems() {
     unmappableItems_ = null;
   }
-  
+
   public boolean isEmpty() {
     return unknownItems_ == null && unmappableItems_ == null;
   }
@@ -87,7 +87,7 @@ public class UnknownItems {
     }
     return map;
   }
-  
+
   private static <K> TreeMap<K, Integer> allocMapIfNeeded(TreeMap<K, Integer> map) {
     if (map == null) {
       return new TreeMap<K, Integer>();
@@ -95,7 +95,7 @@ public class UnknownItems {
       return map;
     }
   }
-  
+
   // Unknown color ids. The entry is the number of items affected.
   private TreeMap<String, Integer> unknownColorIds_;
 

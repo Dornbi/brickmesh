@@ -40,7 +40,7 @@ public class PartExporter {
       acceptUsed_ = false;
       notify_ = false;
     }
-    
+
     public int wantedListId_;
     public boolean acceptNew_;
     public boolean acceptUsed_;

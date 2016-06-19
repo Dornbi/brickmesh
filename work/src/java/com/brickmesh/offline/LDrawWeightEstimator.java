@@ -62,34 +62,34 @@ public final class LDrawWeightEstimator {
       }
     }
   }
-  
+
   public static class Result {
     public Result() {
       w1_ = 0.0;
       w2_ = 0.0;
     }
-    
+
     public Result(double w1, double w2) {
       w1_ = w1;
       w2_ = w2;
     }
-    
+
     public double weightGrams() {
       return w1_;
     }
-    
+
     public boolean isExact() {
       return Math.abs(w1_ - w2_) < 1e-10;
     }
-    
+
     public double errorMargin() {
       return Math.abs(w2_ - w1_) / w1_;
     }
-    
+
     public String toString() {
       return w1_ + ", " + w2_;
     }
-    
+
     public void add(Result other) {
       w1_ += other.w1_;
       w2_ += other.w2_;
@@ -98,7 +98,7 @@ public final class LDrawWeightEstimator {
     private double w1_;
     private double w2_;
   }
-  
+
   public LDrawWeightEstimator(String ldrawPath) {
     includeDirs_ = new File[] {
       new File("."),
@@ -131,12 +131,12 @@ public final class LDrawWeightEstimator {
     final double ldrToCm = 0.04;
     final double absDensityGramPerCm3 = 1.052;
     final double f = ldrToCm * ldrToCm * ldrToCm * absDensityGramPerCm3;
-    
+
     Matrix3 noop = new Matrix3();
     ArrayList<Triangle> triangles = loadTriangles(filename, noop, +1);
     Vector3 min = minCorner(triangles);
     Vector3 max = maxCorner(triangles);
-    
+
     Matrix3 center = center(min, max);
     double v1 = Math.abs(signedVolume(center, triangles));
 
@@ -156,7 +156,7 @@ public final class LDrawWeightEstimator {
     }
     throw new IOException("No path found for file: " + filename);
   }
-  
+
   private ArrayList<Triangle> loadTriangles(String filename, Matrix3 m, int invertSign)
       throws IOException {
     ArrayList<Triangle> result = new ArrayList<Triangle>();
@@ -185,7 +185,7 @@ public final class LDrawWeightEstimator {
           }
         }
       }
-  
+
       if (tokens[0].equals("1")) {
         // Include a sub-file.
         Vector3 t = parseVector3(tokens, 2, reader, filename);
@@ -222,7 +222,7 @@ public final class LDrawWeightEstimator {
     }
     return result;
   }
-  
+
   private double signedVolume(Matrix3 m, ArrayList<Triangle> triangles) {
     double volume = 0.0;
     for (Triangle t : triangles) {
@@ -284,7 +284,7 @@ public final class LDrawWeightEstimator {
     }
     return tokens[pos];
   }
-  
+
   public static Vector3 parseVector3(String[] tokens, int pos,
       LineNumberReader reader, String filename) {
     if (tokens.length <= pos + 2) {
@@ -297,14 +297,14 @@ public final class LDrawWeightEstimator {
       Double.parseDouble(tokens[pos + 2]));
     return v;
   }
-  
+
   private static class Vector3 {
     public Vector3() {
       x_ = 0.0;
       y_ = 0.0;
       z_ = 0.0;
     }
-    
+
     public Vector3(double x, double y, double z) {
       x_ = x;
       y_ = y;
@@ -318,18 +318,18 @@ public final class LDrawWeightEstimator {
     public Vector3 plus(Vector3 v) {
       return new Vector3(x_ + v.x_, y_ + v.y_, z_ + v.z_);
     }
-    
+
     public Vector3 crossProduct(Vector3 v) {
       return new Vector3(
           y_ * v.z_ - z_ * v.y_,
           z_ * v.x_ - x_ * v.z_,
           x_ * v.y_ - y_ * v.x_);
     }
-    
+
     public double dotProduct(Vector3 v) {
       return x_ * v.x_ + y_ * v.y_ + z_ * v.z_;
     }
-    
+
     public String toString() {
       StringBuffer sb = new StringBuffer();
       sb.append("(");
@@ -341,10 +341,10 @@ public final class LDrawWeightEstimator {
       sb.append(")");
       return sb.toString();
     }
-    
+
     public final double x_, y_, z_;
   }
-  
+
   private static class Triangle {
     public Triangle(Vector3 p1, Vector3 p2, Vector3 p3, int sign) {
       if (sign > 0) {
@@ -357,7 +357,7 @@ public final class LDrawWeightEstimator {
         p3_ = p2;
       }
     }
-    
+
     public final Vector3 p1_;
     public final Vector3 p2_;
     public final Vector3 p3_;
@@ -383,14 +383,14 @@ public final class LDrawWeightEstimator {
       double p = n.dotProduct(vx_);
       return p > 0.0 ? +1 : -1;
     }
-       
+
     public Vector3 transformVector(Vector3 orig) {
       return new Vector3(
           vx_.x_ * orig.x_ + vx_.y_ * orig.y_ + vx_.z_ * orig.z_ + t_.x_,
           vy_.x_ * orig.x_ + vy_.y_ * orig.y_ + vy_.z_ * orig.z_ + t_.y_,
           vz_.x_ * orig.x_ + vz_.y_ * orig.y_ + vz_.z_ * orig.z_ + t_.z_);
     }
-    
+
     public Vector3 transformNormal(Vector3 orig) {
       return new Vector3(
           vx_.x_ * orig.x_ + vx_.y_ * orig.y_ + vx_.z_ * orig.z_,
@@ -428,10 +428,10 @@ public final class LDrawWeightEstimator {
       sb.append(")");
       return sb.toString();
     }
-    
+
     public Vector3 vx_, vy_, vz_;
     public Vector3 t_;
   }
-  
+
   private File[] includeDirs_;
 };

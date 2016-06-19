@@ -59,7 +59,7 @@ public class PartModel {
       for (String id : ids_) {
         if (id.startsWith(namespace) &&
             id.charAt(namespace.length()) == ':') {
-          return id;      
+          return id;
         }
       }
       return null;
@@ -79,14 +79,14 @@ public class PartModel {
   public static class Item {
     // The sub-part.
     public Part part_;
-    
+
     // If non-null then the sub-part always comes in this color.
     // Otherwise it inherits the color of the composed part.
     public Color color_;
 
     // How many sub-parts are needed for the composed part. Usually 1.
     public int count_;
-    
+
     public String toString() {
       StringBuffer sb = new StringBuffer();
       sb.append(part_.primaryId());
@@ -99,7 +99,7 @@ public class PartModel {
       return sb.toString();
     }
   }
-  
+
   public static class Part {
     // All the ids of this part. Each one is unique.
     public String[] ids_;
@@ -112,7 +112,7 @@ public class PartModel {
     public Item[] items_;
 
     // If this part that is used to compose other parts, they are listed here.
-    public HashSet<Part> parents_;    
+    public HashSet<Part> parents_;
 
     // The weight in grams. Must be nonzero after loading.
     public double weightGrams_;
@@ -120,17 +120,17 @@ public class PartModel {
     public String primaryId() {
       return ids_[0];
     }
-    
+
     public String idInNamespace(String namespace) {
       for (String id : ids_) {
         if (id.startsWith(namespace) &&
             id.charAt(namespace.length()) == ':') {
-          return id;      
+          return id;
         }
       }
       return null;
     }
-    
+
     // Returns null if childPart is not found or if it has no color.
     public Color childPartColor(Part childPart) {
       if (items_ != null) {
@@ -142,7 +142,7 @@ public class PartModel {
       }
       return null;
     }
-    
+
     // One of the parts that inherits the color of the parent.
     // The loader guarantees that this is always non-null unless
     // there are no children.
@@ -184,7 +184,7 @@ public class PartModel {
       return sb.toString();
     }
   }
-  
+
   public static PartModel getModel() {
     if (model_ == null) {
       model_ = new PartModel(
@@ -206,7 +206,7 @@ public class PartModel {
       throw new AssertionError(e);
     }
   }
-  
+
   public Color findColorOrNull(String colorId) {
     return colorMap_.get(colorId);
   }
@@ -214,7 +214,7 @@ public class PartModel {
   public Part findPartOrNull(String partId) {
     return partMap_.get(partId);
   }
-    
+
   private static class ErrorCollector {
     public void error(String message) {
       System.err.println("Error: " + message);
@@ -223,7 +223,7 @@ public class PartModel {
       }
       messages_.add(message);
     }
-    
+
     public void finishStage() {
       if (messages_ != null) {
         StringBuilder sb = new StringBuilder();
@@ -235,15 +235,15 @@ public class PartModel {
         throw new AssertionError(sb.toString());
       }
     }
-    
+
     private ArrayList<String> messages_;
   }
-  
+
   private PartModel(Reader colorReader, Reader partReader) {
     loadColors(colorReader);
     loadParts(partReader);
   }
-  
+
   private void loadColors(Reader reader) {
     try {
       BufferedReader br = new BufferedReader(reader);
@@ -286,16 +286,16 @@ public class PartModel {
   private void loadParts(Reader reader) {
     try {
       long startNanos = System.nanoTime();
-      
+
       boolean error = false;
       BufferedReader br = new BufferedReader(reader);
       PartModelProto.PartModel.Builder builder =
           PartModelProto.PartModel.newBuilder();
       TextFormat.merge(br, builder);
       PartModelProto.PartModel modelProto = builder.build();
-      
+
       partMap_ = new HashMap<String, Part>(modelProto.getPartCount());
-      
+
       // Stage 1: load all parts.
       loadPartProto(modelProto);
 
@@ -305,7 +305,7 @@ public class PartModel {
 
       // Stage 3: Compute weights.
       computeWeights();
-      
+
       Log.info("partMap_.size()=%d", partMap_.size());
       Util.logPhaseTime("Model load", startNanos);
     }
@@ -313,7 +313,7 @@ public class PartModel {
       throw new AssertionError(e);
     }
   }
-  
+
   private void loadPartProto(PartModelProto.PartModel modelProto) {
     ErrorCollector errorCollector = new ErrorCollector();
     for (PartModelProto.Part partProto : modelProto.getPartList()) {
@@ -401,7 +401,7 @@ public class PartModel {
           decorPart.confirm_ = includeInSet(part, decorPart.confirm_);
         }
       }
-      
+
       // Populate contained parts.
       if (partProto.getItemCount() > 0) {
         Item[] items = new Item[partProto.getItemCount()];
@@ -449,7 +449,7 @@ public class PartModel {
     }
     errorCollector.finishStage();
   }
-  
+
   private void computeWeights() {
     ErrorCollector errorCollector = new ErrorCollector();
     for (Part part : partMap_.values()) {
@@ -461,15 +461,15 @@ public class PartModel {
     }
     errorCollector.finishStage();
   }
-  
+
   private void computeWeight(Part part, HashSet<Part> visited, ErrorCollector errorCollector) {
     if (!visited.add(part)) {
       return;
     }
-    
+
     // If it already has weight then the weight is that.
     if (part.weightGrams_ > 0.0) return;
-    
+
     // If the part consists of sub-parts then the weight is the sum of those.
     if (part.items_ != null) {
       double weightGrams = 0.0;
@@ -484,7 +484,7 @@ public class PartModel {
       part.weightGrams_ = weightGrams;
       return;
     }
-    
+
     // If any of the similar parts contain weight, use that.
     //System.out.println(part.similar_);
     if (part.similar_ != null) {
@@ -497,7 +497,7 @@ public class PartModel {
       }
     }
   }
-  
+
   private boolean addSimilarPart(Part part, Part similarPart, ErrorCollector errorCollector) {
     if (part.similar_ == null) {
       part.similar_ = new HashSet<Part>();
@@ -535,7 +535,7 @@ public class PartModel {
     if (idSpace.equals("b")) return true;
     return false;
   }
-  
+
   private static String[] expandPartId(String partId) {
     String[] idPieces = ItemId.idPiecesOrNull(partId);
     if (idPieces == null) return null;
@@ -547,7 +547,7 @@ public class PartModel {
     }
     return result;
   }
-  
+
   private static String translatePartIdOrError(String partId) {
     String[] expandedIds = expandPartId(partId);
     if (expandedIds == null || expandedIds.length < 1) {
@@ -561,7 +561,7 @@ public class PartModel {
 
   private static PartModel model_;
   private static final HashMap<String, String[]> PART_ID_EXPANSION;
-  
+
   static {
     PART_ID_EXPANSION = new HashMap<String, String[]>();
     PART_ID_EXPANSION.put("g", Util.stringArray("b", "l", "o"));

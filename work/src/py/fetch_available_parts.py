@@ -2,7 +2,7 @@
 
 # Copyright (c) 2016, Peter Dornbach
 # All rights reserved.
-# 
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
 #     * Redistributions of source code must retain the above copyright
@@ -13,7 +13,7 @@
 #     * Neither the name BrickMesh nor the names of its contributors may be used
 #       to endorse or promote products derived from this software without
 #       specific prior written permission.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 # WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -53,14 +53,14 @@ def ScrapePartAvailability(part_id):
   url = "http://www.bricklink.com/v2/catalog/catalogitem.page?" + urllib.urlencode(parameters)
   html = urllib.urlopen(url).read()
   soup = BS(html, 'html.parser')
-  
+
   def interesting_span(tag):
     if tag.name != 'span':
       return False
     if tag.a is None:
       return False
     return tag.a.has_attr('onclick')
-  
+
   available_colors = {}
   for span in soup.find_all(interesting_span):
     color_match = re.search('\( *([-0-9]+) *\)', span.a['onclick'])
@@ -129,8 +129,8 @@ def FetchAllAvailableParts(part_model):
         color_proto.color = 'b:%s' % color
         color_proto.num_lots = colors[color]
   return available_parts
-  
-  
+
+
 part_model = ReadPartModel('src/model/part-model-template.txt')
 available_parts = FetchAllAvailableParts(part_model)
 WriteAvailableParts(available_parts, 'src/model/available-parts.txt')

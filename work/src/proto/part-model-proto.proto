@@ -33,7 +33,7 @@ message Color {
   // an arbitrary number of ids. No two colors are allowed to have the
   // same id.
   repeated string id = 1;
-  
+
   // Human-readable name of the color.
   optional string name = 2;
 }
@@ -67,7 +67,7 @@ message Part {
   message Similar {
     // One of the ids of the similar part. This must be a non-expanded id.
     optional string id = 1;
-    
+
     // Is confirmation needed to replace similar parts with each other.
     optional bool confirm = 2;
   }
@@ -103,20 +103,20 @@ message Part {
   message Item {
     // An id of the contained part.
     optional string id = 1;
-    
+
     // The color of the contained part. If this is not set then it
     // inherits the color of this part.
     optional string color = 2;
-    
+
     // How many of the contained parts are part of this one.
     // If omitted then 1.
     optional int32 count = 3;
   }
-  
+
   // If this part is fully equivalent to some combination of other
   // parts, then they are listed here. Must be more than 1.
   repeated Item item = 4;
-  
+
   // The weight of the part in grams. The model must be able to figure
   // out a weight for each part. If this is not set explicitly then it
   // tries the following rules:

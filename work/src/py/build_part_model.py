@@ -2,7 +2,7 @@
 
 # Copyright (c) 2016, Peter Dornbach
 # All rights reserved.
-# 
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
 #     * Redistributions of source code must retain the above copyright
@@ -13,7 +13,7 @@
 #     * Neither the name BrickMesh nor the names of its contributors may be used
 #       to endorse or promote products derived from this software without
 #       specific prior written permission.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 # WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -61,7 +61,7 @@ def LoadCsvWeights(path):
       weight = float(weight_str)
       weight_map[part_id] = weight
   return weight_map
-        
+
 
 def ReadPartModel(path):
   with open(path) as f:
@@ -73,8 +73,8 @@ def ReadPartModel(path):
       print path
       raise
     return part_model
-  
-  
+
+
 def WritePartModel(part_model, path):
   with open(path, "w") as f:
     content = text_format.MessageToString(part_model)

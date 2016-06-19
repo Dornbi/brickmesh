@@ -41,21 +41,21 @@ final class SorterTest extends TestCase {
     ReverseIntSortable(int[] array) {
       array_ = array;
     }
-    
+
     public int size() {
       return array_.length;
     }
-    
+
     public boolean before(int i1, int i2) {
       return array_[i1] > array_[i2];
     }
-    
+
     public void swap(int i1, int i2) {
       int temp = array_[i1];
       array_[i1] = array_[i2];
       array_[i2] = temp;
     }
-    
+
     public String toString() {
       return Arrays.toString(array_);
     }
@@ -104,7 +104,7 @@ final class SorterTest extends TestCase {
       expectTrue(allNumbers.size() == numElems);
     }
   }
-  
+
   private static void shuffle(Sorter.Sortable sortable, Random r) {
     for (int i = 0; i < sortable.size() * 10; ++i) {
       int i1 = r.nextInt(sortable.size());

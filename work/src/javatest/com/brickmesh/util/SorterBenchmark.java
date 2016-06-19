@@ -40,15 +40,15 @@ final class SorterBenchmark extends Benchmark {
             array.length + ", " + array2.length);
       }
     }
-    
+
     public int size() {
       return array_.length;
     }
-    
+
     public boolean before(int i1, int i2) {
       return array_[i1] > array_[i2];
     }
-    
+
     public void swap(int i1, int i2) {
       int temp = array_[i1];
       array_[i1] = array_[i2];
@@ -57,7 +57,7 @@ final class SorterBenchmark extends Benchmark {
       array2_[i1] = array2_[i2];
       array2_[i2] = temp2;
     }
-    
+
     private final int[] array_;
     private final int[] array2_;
   }
@@ -73,7 +73,7 @@ final class SorterBenchmark extends Benchmark {
     benchmarkQuickSort(100000);
     phaseStartNanos = printRuntimeStats("QuickSort", phaseStartNanos);
   }
-  
+
   private static long benchmarkIntArray(int size) {
     int[] array = new int[size];
     for (int i = 0; i < size; ++i) {

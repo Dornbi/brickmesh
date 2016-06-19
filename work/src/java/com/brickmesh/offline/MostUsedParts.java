@@ -51,7 +51,7 @@ public final class MostUsedParts {
       System.err.println("Usage: <command> <lxf-file> [<lxf-file> ...]\n");
       return;
     }
-    
+
     HashMap<ItemId, Integer> counts = countParts(args);
     ArrayList<Map.Entry<ItemId, Integer>> parts =
         new ArrayList<Map.Entry<ItemId, Integer>>(counts.entrySet());
@@ -62,15 +62,15 @@ public final class MostUsedParts {
         return e2.getValue() - e1.getValue();
       }
     });
-    
+
     for (Map.Entry<ItemId, Integer> entry : parts) {
       ItemId itemId = entry.getKey();
       int qty = entry.getValue();
       System.out.format("%16s: %5d\n", itemId, qty);
     }
   }
-  
-  private static HashMap<ItemId, Integer> countParts(String[] args) 
+
+  private static HashMap<ItemId, Integer> countParts(String[] args)
       throws IOException, PartLoader.LoaderException {
     PartLoader.LxfLoader loader = new PartLoader(partModel_).createLxfLoader(
       PartLoader.Options.createUnlimited());
@@ -96,7 +96,7 @@ public final class MostUsedParts {
         counts.put(itemId, count + item.count_);
       }
     }
-    
+
     return counts;
   }
 

@@ -77,7 +77,7 @@ class MissingPartTool {
           partTemplateStream.println("  id: \"" + partId + "\"");
           partTemplateStream.println("}");
           partTemplateStream.println();
-        
+
           LDrawWeightEstimator.Result weightResult = estimator.partWeightGramsForPart(partId);
           if (weightResult == null) {
             noWeightStream.format("%s,\n", partId);

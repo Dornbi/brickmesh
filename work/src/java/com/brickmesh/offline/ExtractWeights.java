@@ -41,10 +41,10 @@ public final class ExtractWeights {
       System.err.println("Usage: <command> <part-model-path>\n");
       return;
     }
-    
+
     processPartModel(args[0]);
   }
-  
+
   private static void processPartModel(String path)
       throws IOException {
     LineNumberReader reader = new LineNumberReader(new FileReader(path));
@@ -64,12 +64,12 @@ public final class ExtractWeights {
       }
     }
   }
-  
+
   static {
     try {
       MATCH_PART_ID = Pattern.compile("\\A *id: \\\"([a-z0-9]+)\\\".*");
       MATCH_WEIGHT = Pattern.compile("\\A *weight_grams: ([0-9\\.]+).*");
-      
+
     }
     catch (PatternSyntaxException e) {
       throw new AssertionError(e);

@@ -39,7 +39,7 @@ public class TestCase {
   protected static void expectFalse(boolean b) {
     if (b) throw new AssertionError("Test failed.");
   }
-  
+
   protected static void expectEquals(Object o1, Object o2) {
     if (o1 != null) o1 = normalize(o1);
     if (o2 != null) o2 = normalize(o2);
@@ -57,7 +57,7 @@ public class TestCase {
         throw new AssertionError("Test failed.");
       }
     }
-    
+
     if (o1 instanceof Double && o1 instanceof Double) {
       double d1 = (Double)o1;
       double d2 = (Double)o2;
@@ -70,7 +70,7 @@ public class TestCase {
       throw new AssertionError("Test failed.");
     }
   }
-  
+
   private static final Object normalize(Object o) {
     if (o instanceof Float) {
       return (double)(Float)o;
@@ -92,6 +92,6 @@ public class TestCase {
     }
     return o.toString();
   }
-  
+
   private static final double EPSILON = 1e-5;
 };

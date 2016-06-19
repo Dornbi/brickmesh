@@ -44,7 +44,7 @@ class PartModelTest extends TestCase {
     testLoadRealModel();
     testComputeWeight();
   }
-  
+
   private static void testLoadRealModel() {
     // This loads the model and also performs a bunch of checks.
     PartModel partModel = PartModel.getModel();
@@ -112,7 +112,7 @@ class PartModelTest extends TestCase {
       .build();
     return writeTempMessage(model);
   }
-  
+
   private static String customColorModelPath() throws IOException {
     final String COLOR_MODEL = Util.joinStrings("\n",
       "color {",
@@ -123,7 +123,7 @@ class PartModelTest extends TestCase {
     TextFormat.merge(new StringReader(COLOR_MODEL), builder);
     return writeTempMessage(builder.build());
   }
-  
+
   private static String writeTempMessage(Message message) throws IOException {
     FileWriter fw = null;
     try {

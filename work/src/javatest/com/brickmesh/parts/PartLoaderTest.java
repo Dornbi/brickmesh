@@ -42,7 +42,7 @@ class PartLoaderTest extends TestCase {
     testLoadWanted();
   }
 
-  private static void testLoadEmptyLxf() 
+  private static void testLoadEmptyLxf()
       throws IOException, PartLoader.LoaderException {
     PartLoader.LxfLoader loader = new PartLoader().createLxfLoader(
         PartLoader.Options.createUnlimited());
@@ -64,7 +64,7 @@ class PartLoaderTest extends TestCase {
     expectEquals(actual, expected);
   }
 
-  private static void testLoadSimpleLxf() 
+  private static void testLoadSimpleLxf()
       throws IOException, PartLoader.LoaderException {
     PartLoader.LxfLoader loader = new PartLoader().createLxfLoader(
         PartLoader.Options.createUnlimited());
@@ -83,7 +83,7 @@ class PartLoaderTest extends TestCase {
     expected.put(new ItemId("b:6019", "b:103"), 1);
     expectEquals(actual, expected);
   }
-  
+
   private static void testLoadWanted()
       throws IOException, PartLoader.LoaderException {
     PartLoader.WantedLoader loader = new PartLoader().createWantedLoader(
@@ -96,7 +96,7 @@ class PartLoaderTest extends TestCase {
     expectEquals(null, unknownItems.unknownPartIdsOrNull());
     expectEquals(null, unknownItems.unknownColorIdsOrNull());
     expectEquals(null, result.imageBytes_);
-        
+
     TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", null);
     TreeMap<ItemId, Integer> expected = new TreeMap<ItemId, Integer>();
     expected.put(new ItemId("b:3004", "b:6"), 1);
