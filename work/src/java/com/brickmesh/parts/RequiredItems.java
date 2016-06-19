@@ -281,14 +281,19 @@ public class RequiredItems {
     private Item bestItemForChild(
         PartModel.Part part, PartModel.Color color, String namespace) {
       Item bestItem = null;
+      int bestParentCount = 0;
       if (part.parents_ != null) {
         for (PartModel.Part parent : part.parents_) {
           PartModel.Color childColor = parent.childPartColor(part);
           if (childColor == null) {
             // No specific color set for the child ==> the color of the parent is the same.
             Item parentItem = bestItemForChild(parent, color, namespace);
-            if (parentItem != null && (bestItem == null || parentItem.count_ > bestItem.count_)) {
-              bestItem = parentItem;
+            if (parentItem != null) {
+              int parentCount = parentItem.part_.numPartsInHierarchy() * parentItem.count_;
+              if (bestItem == null || parentCount > bestParentCount) {
+                bestItem = parentItem;
+                bestParentCount = parentCount;
+              }
             }
           } else {
             if (childColor != color) continue;
@@ -302,8 +307,12 @@ public class RequiredItems {
             for (Item otherItem : otherItems.values()) {
               PartModel.Color otherColor = otherItem.color_;
               Item parentItem = bestItemForChild(parent, otherColor, namespace);
-              if (parentItem != null && (bestItem == null || parentItem.count_ > bestItem.count_)) {
-                bestItem = parentItem;
+              if (parentItem != null) {
+                int parentCount = parentItem.part_.numPartsInHierarchy() * parentItem.count_;
+                if (bestItem == null || parentCount > bestParentCount) {
+                  bestItem = parentItem;
+                  bestParentCount = parentCount;
+                }
               }
             }
           }

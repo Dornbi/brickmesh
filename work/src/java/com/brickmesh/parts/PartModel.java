@@ -171,6 +171,15 @@ public class PartModel {
       }
     }
 
+    public int numPartsInHierarchy() {
+      if (items_ == null) return 1;
+      int count = 0;
+      for (Item item : items_) {
+        count += item.part_.numPartsInHierarchy() * item.count_;
+      }
+      return count;
+    }
+
     public String toString() {
       StringBuffer sb = new StringBuffer();
       sb.append("ids=");
