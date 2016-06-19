@@ -51,25 +51,6 @@ public class RequiredItems {
       count_ = count;
     }
 
-    // The sub-part.
-    public PartModel.Part part_;
-
-    // If non-null then the sub-part always comes in this color.
-    // Otherwise it inherits the color of the composed part.
-    public PartModel.Color color_;
-
-    // How many sub-parts are needed for the composed part. Usually 1.
-    public int count_;
-
-    // Original ids from the request with the number of elements requested.
-    // This is only used to keep track of the original items if an item is
-    // not mappable.
-    public HashMap<ItemId, Integer> originalIds_;
-
-    public ItemId itemId() {
-      return new ItemId(part_.primaryId(), color_.primaryId());
-    }
-
     public String toString() {
       StringBuffer sb = new StringBuffer();
       sb.append(part_.primaryId());
@@ -91,6 +72,37 @@ public class RequiredItems {
       }
       return sb.toString();
     }
+    
+    public Map<ItemId, Integer> originalIds() {
+      if (originalIds_ == null) {
+        originalIds_ = new TreeMap<ItemId, Integer>();
+      }
+      return originalIds_;
+    }
+
+    public Map<ItemId, Integer> originalIdsOrNull() {
+      return originalIds_;
+    }
+
+    // The sub-part.
+    public PartModel.Part part_;
+
+    // If non-null then the sub-part always comes in this color.
+    // Otherwise it inherits the color of the composed part.
+    public PartModel.Color color_;
+
+    // How many sub-parts are needed for the composed part. Usually 1.
+    public int count_;
+
+    public ItemId itemId() {
+      return new ItemId(part_.primaryId(), color_.primaryId());
+    }
+
+    // Original ids from the request with the number of elements requested.
+    // This is only used to keep track of the original items if an item is
+    // not mappable.
+    private TreeMap<ItemId, Integer> originalIds_;
+
   }
 
   public RequiredItems(PartModel partModel, int sizeHint) {
@@ -189,11 +201,11 @@ public class RequiredItems {
       Item item = items.values().iterator().next();
       Item bestItem = bestItemForChild(perPartMap, item.part_, item.color_, namespace);
       if (bestItem == null) {
-        if (item.originalIds_ == null) {
+        if (item.originalIdsOrNull() == null) {
           throw new AssertionError("No original ids: " + item);
         }
         if (unknownItems != null) {
-          for (Map.Entry<ItemId, Integer> entry : item.originalIds_.entrySet()) {
+          for (Map.Entry<ItemId, Integer> entry : item.originalIds().entrySet()) {
             unknownItems.addUnmappableItem(entry.getKey(), entry.getValue());
           }
         }
@@ -239,7 +251,7 @@ public class RequiredItems {
     numDifferentItems_ = 0;
     numTotalItems_ = 0;
   }
-
+  
   private static void removeItems(
       HashMap<String, HashMap<String, Item>> perPartMap, Item item) {
     int remainingCount = item.count_;
@@ -285,17 +297,14 @@ public class RequiredItems {
       ++numDifferentItems_;
     } else {
       existingItem.count_ += item.count_;
-      if (item.originalIds_ != null) {
-        if (existingItem.originalIds_ == null) {
-          existingItem.originalIds_ = new HashMap<ItemId, Integer>(item.originalIds_.size());
-        }
-        for (Map.Entry<ItemId, Integer> entry : item.originalIds_.entrySet()) {
+      if (item.originalIdsOrNull() != null) {
+        for (Map.Entry<ItemId, Integer> entry : item.originalIds().entrySet()) {
           ItemId originalItemId = entry.getKey();
-          Integer existingCount = existingItem.originalIds_.get(originalItemId);
+          Integer existingCount = existingItem.originalIds().get(originalItemId);
           if (existingCount == null) {
-            existingItem.originalIds_.put(originalItemId, entry.getValue());
+            existingItem.originalIds().put(originalItemId, entry.getValue());
           } else {
-            existingItem.originalIds_.put(originalItemId, Math.max(existingCount, entry.getValue()));
+            existingItem.originalIds().put(originalItemId, Math.max(existingCount, entry.getValue()));
           }
         }
       }
@@ -307,8 +316,7 @@ public class RequiredItems {
       PartModel.Part part, PartModel.Color color, int count, ItemId originalId,
       int originalCount) {
     Item item = new Item(part, color, count);
-    item.originalIds_ = new HashMap<ItemId, Integer>(1);
-    item.originalIds_.put(originalId, originalCount);
+    item.originalIds().put(originalId, originalCount);
     addExactItem(item);
   }
 
