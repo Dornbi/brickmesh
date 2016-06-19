@@ -61,27 +61,32 @@ public final class PartLoader {
       options.maxTotalQty_ = Integer.MAX_VALUE;
       return options;
     }
-    
+
     public int maxNumQty_;
     public int maxTotalQty_;
   }
-  
+
   public static final class Result {
-    public boolean isEmpty() {
-      if (items_ == null) return false;
-      return items_.isEmpty();
+    public Result(PartModel partModel) {
+      items_ = new RequiredItems(partModel, 128);
+      unknownItems_ = new UnknownItems();
     }
-    
+
+    public boolean isEmpty() {
+      return items_.isEmpty() && unknownItems_.isEmpty();
+    }
+
     public RequiredItems items_;
+    public UnknownItems unknownItems_;
     public byte[] imageBytes_;
   }
 
-  // Thrown when the input is a valid LDD file, but there is 
+  // Thrown when the input is a valid LDD file, but there is
   // something else wrong (for example some limit has been exceeded).
   public class LoaderException extends SAXException {
     public LoaderException(String s) { super(s); }
   }
-  
+
   public PartLoader() {
     partModel_ = PartModel.getModel();
   }
@@ -89,57 +94,52 @@ public final class PartLoader {
   public PartLoader(PartModel partModel) {
     partModel_ = partModel;
   }
-  
+
   public LxfLoader createLxfLoader(Options options) {
     return new LxfLoader(partModel_, options);
   }
-  
+
   public WantedLoader createWantedLoader(Options options) {
     return new WantedLoader(partModel_, options);
   }
-  
+
   public abstract class LoaderBase {
     public LoaderBase(PartModel partModel, Options options) {
       options_ = options;
-      items_ = new RequiredItems(partModel, 0);
+      result_ = new Result(partModel);
     }
-    
+
     public abstract void parse(InputStream input) throws IOException, LoaderException;
-    
+
     public final Result getResult() {
-      Result result = new Result();
-      result.items_ = items_;
-      result.imageBytes_ = imageBytes_;
-      return result;
+      return result_;
     }
 
     protected abstract String idNamespace();
-    
+
     protected final void addItem(String partId, List<String> colorIds, int count)
         throws LoaderException {
-      if (items_.numDifferentItems() > options_.maxNumQty_) {
+      if (result_.items_.numDifferentItems() > options_.maxNumQty_) {
         throw new LoaderException(String.format(
             "Too many different parts in model (limit=%d)", options_.maxNumQty_));
       }
-      if (items_.numTotalItems() > options_.maxTotalQty_) {
+      if (result_.items_.numTotalItems() > options_.maxTotalQty_) {
         throw new LoaderException(String.format(
             "Too many total parts in model (limit=%d)", options_.maxTotalQty_));
       }
-      items_.addDecomposed(idNamespace(), partId, colorIds, count);
+      result_.items_.addItem(idNamespace(), partId, colorIds, count, result_.unknownItems_);
     }
-    
-    protected byte[] imageBytes_;    
 
     private Options options_;
-    private RequiredItems items_;
+    protected Result result_;
   }
-  
+
   // Loads RequiredParts from Lego Digital Designer files.
   public class LxfLoader extends LoaderBase {
     public LxfLoader(PartModel partModel, Options options) {
       super(partModel, options);
     }
-    
+
     public void parse(InputStream input) throws IOException, LoaderException {
       ZipInputStream zis = new ZipInputStream(input);
       try {
@@ -149,10 +149,10 @@ public final class PartLoader {
             throw new IOException("Did not find LXFML entry in input.");
           }
           if (zipEntry.getName().equals("IMAGE100.PNG") &&
-              imageBytes_ == null) {
+              result_.imageBytes_ == null) {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             Util.copyStream(zis, bos);
-            imageBytes_ = bos.toByteArray();
+            result_.imageBytes_ = bos.toByteArray();
           }
           if (zipEntry.getName().equals("IMAGE100.LXFML")) {
             parseXml(zis);
@@ -161,14 +161,14 @@ public final class PartLoader {
         }
       }
       finally {
-        zis.close();  
+        zis.close();
       }
     }
 
     protected String idNamespace() {
       return "l";
     }
-    
+
     private void parseXml(InputStream input) throws IOException, LoaderException {
       try {
         SAXParser parser = parserFactory_.newSAXParser();
@@ -231,7 +231,7 @@ public final class PartLoader {
               color_ = null;
             }
     			}
-          
+
           private String part_;
           private List<String> color_;
           private int subPartsWithColor_;
@@ -258,7 +258,7 @@ public final class PartLoader {
     public WantedLoader(PartModel partModel, Options options) {
       super(partModel, options);
     }
-    
+
     public void parse(InputStream input) throws LoaderException, IOException {
       try {
         SAXParser parser = parserFactory_.newSAXParser();
@@ -272,7 +272,7 @@ public final class PartLoader {
             }
             mode_ = qName;
     			}
-  
+
           public void characters(char[] ch, int start, int length) {
             if (mode_.equals("COLOR")) {
               color_ = color_ + new String(ch, start, length);
@@ -284,7 +284,7 @@ public final class PartLoader {
               quantity_ = quantity_ + new String(ch, start, length);
             }
           }
-  
+
           public void endElement(String uri, String localName, String qName)
               throws LoaderException {
             if (qName.equals("ITEM")) {
@@ -296,7 +296,7 @@ public final class PartLoader {
               addItem(partId, colors, quantity);
             }
           }
-  
+
           private String mode_ = "";
           private String color_ = "";
           private String partId_ = "";
@@ -318,7 +318,7 @@ public final class PartLoader {
       return "b";
     }
   }
-  
+
   private PartModel partModel_;
   private SAXParserFactory parserFactory_ = SAXParserFactory.newInstance();
 }

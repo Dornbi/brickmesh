@@ -34,7 +34,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import com.brickmesh.parts.PartLoader;
-import com.brickmesh.parts.RequiredItems;
+import com.brickmesh.parts.UnknownItems;
 
 // Helps adding missing parts to the part model. The input is one or more
 // LXF files, the output are fragments of files that can be added to the
@@ -61,8 +61,8 @@ class MissingPartTool {
     }
 
     PartLoader.Result result = loader.getResult();
-    RequiredItems items = result.items_;
-    if (items.unknownPartIdsOrNull() != null) {
+    UnknownItems unknownItems = result.unknownItems_;
+    if (unknownItems.unknownPartIdsOrNull() != null) {
       LDrawWeightEstimator estimator = new LDrawWeightEstimator(args[0]);
       PrintStream partTemplateStream = new PrintStream(
           new FileOutputStream("part-templates.new"));
@@ -71,7 +71,7 @@ class MissingPartTool {
       PrintStream noWeightStream = new PrintStream(
           new FileOutputStream("weights-no-ldraw.new"));
       try {
-        for (Map.Entry<String, Integer> entry : items.unknownPartIdsOrNull().entrySet()) {
+        for (Map.Entry<String, Integer> entry : unknownItems.unknownPartIdsOrNull().entrySet()) {
           String partId = entry.getKey();
           partTemplateStream.println("part {");
           partTemplateStream.println("  id: \"" + partId + "\"");

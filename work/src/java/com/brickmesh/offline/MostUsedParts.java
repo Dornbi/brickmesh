@@ -87,15 +87,13 @@ public final class MostUsedParts {
 
     PartLoader.Result result = loader.getResult();
     RequiredItems requiredItems = result.items_;
-    for (HashMap<String, RequiredItems.Item> items : requiredItems.debugItems().values()) {
-      for (RequiredItems.Item item : items.values()) {
-        ItemId itemId = new ItemId(item.part_.primaryId(), item.color_.primaryId());
-        Integer count = counts.get(itemId);
-        if (count == null) {
-          counts.put(itemId, item.count_);
-        } else {
-          counts.put(itemId, count + item.count_);
-        }
+    for (RequiredItems.Item item : requiredItems.items().values()) {
+      ItemId itemId = new ItemId(item.part_.primaryId(), item.color_.primaryId());
+      Integer count = counts.get(itemId);
+      if (count == null) {
+        counts.put(itemId, item.count_);
+      } else {
+        counts.put(itemId, count + item.count_);
       }
     }
     

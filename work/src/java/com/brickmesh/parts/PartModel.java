@@ -64,6 +64,13 @@ public class PartModel {
       }
       return null;
     }
+
+    public String toString() {
+      StringBuffer sb = new StringBuffer();
+      sb.append("ids=");
+      sb.append(Util.joinArray(",", ids_));
+      return sb.toString();
+    }
   }
 
   // A part that has a specific color and quantity.

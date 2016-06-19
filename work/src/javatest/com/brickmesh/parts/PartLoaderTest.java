@@ -51,14 +51,15 @@ class PartLoaderTest extends TestCase {
     expectTrue(result != null);
     expectTrue(result.isEmpty());
     RequiredItems items = result.items_;
+    UnknownItems unknownItems = result.unknownItems_;
     expectTrue(items != null);
     expectEquals(0, items.numTotalItems());
     expectEquals(0, items.numDifferentItems());
-    expectEquals(null, items.unknownPartIdsOrNull());
-    expectEquals(null, items.unknownPartIdsOrNull());
-    expectEquals(null, items.unknownColorIdsOrNull());
+    expectEquals(null, unknownItems.unknownPartIdsOrNull());
+    expectEquals(null, unknownItems.unknownPartIdsOrNull());
+    expectEquals(null, unknownItems.unknownColorIdsOrNull());
 
-    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b");
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", null);
     TreeMap<ItemId, Integer> expected = new TreeMap<ItemId, Integer>();
     expectEquals(actual, expected);
   }
@@ -71,11 +72,12 @@ class PartLoaderTest extends TestCase {
     PartLoader.Result result = loader.getResult();
     expectTrue(!result.isEmpty());
     RequiredItems items = result.items_;
-    expectEquals(null, items.unknownPartIdsOrNull());
-    expectEquals(null, items.unknownColorIdsOrNull());
+    UnknownItems unknownItems = result.unknownItems_;
+    expectEquals(null, unknownItems.unknownPartIdsOrNull());
+    expectEquals(null, unknownItems.unknownColorIdsOrNull());
     expectTrue(result.imageBytes_ != null);
 
-    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b");
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", null);
     TreeMap<ItemId, Integer> expected = new TreeMap<ItemId, Integer>();
     expected.put(new ItemId("b:3005", "b:5"), 3);
     expected.put(new ItemId("b:6019", "b:103"), 1);
@@ -90,11 +92,12 @@ class PartLoaderTest extends TestCase {
     PartLoader.Result result = loader.getResult();
     expectTrue(!result.isEmpty());
     RequiredItems items = result.items_;
-    expectEquals(null, items.unknownPartIdsOrNull());
-    expectEquals(null, items.unknownColorIdsOrNull());
+    UnknownItems unknownItems = result.unknownItems_;
+    expectEquals(null, unknownItems.unknownPartIdsOrNull());
+    expectEquals(null, unknownItems.unknownColorIdsOrNull());
     expectEquals(null, result.imageBytes_);
         
-    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b");
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", null);
     TreeMap<ItemId, Integer> expected = new TreeMap<ItemId, Integer>();
     expected.put(new ItemId("b:3004", "b:6"), 1);
     expected.put(new ItemId("b:3023", "b:5"), 4);
