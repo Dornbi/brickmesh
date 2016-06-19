@@ -191,37 +191,8 @@ public class RequiredItems {
   // in that namespace. A side effect is that the items that are not
   // mappable are moved to unmappableItems().
   public TreeMap<ItemId, Integer> exportToNamespace(String namespace, UnknownItems unknownItems) {
-    HashMap<String, HashMap<String, Item>> perPartMap = buildPerPartMap();
-    TreeMap<ItemId, Integer> result = new TreeMap<ItemId, Integer>();
-    if (unknownItems != null) {
-      unknownItems.clearUnmappableItems();
-    }
-    while (perPartMap.size() > 0) {
-      HashMap<String, Item> items = perPartMap.values().iterator().next();
-      Item item = items.values().iterator().next();
-      Item bestItem = bestItemForChild(perPartMap, item.part_, item.color_, namespace);
-      if (bestItem == null) {
-        if (item.originalIdsOrNull() == null) {
-          throw new AssertionError("No original ids: " + item);
-        }
-        if (unknownItems != null) {
-          for (Map.Entry<ItemId, Integer> entry : item.originalIds().entrySet()) {
-            unknownItems.addUnmappableItem(entry.getKey(), entry.getValue());
-          }
-        }
-        removeItems(perPartMap, item);
-        continue;
-      }
-      ItemId bestItemId = bestItem.itemId();
-      Integer count = result.get(bestItemId);
-      if (count == null) {
-        result.put(bestItemId, bestItem.count_);
-      } else {
-        result.put(bestItemId, count + bestItem.count_);
-      }
-      removeItems(perPartMap, bestItem);
-    }
-    return result;
+    PartComposer composer = new PartComposer(items_);
+    return composer.exportToNamespace(namespace, unknownItems);
   }
 
   // Access to the items.
@@ -251,45 +222,184 @@ public class RequiredItems {
     numDifferentItems_ = 0;
     numTotalItems_ = 0;
   }
-  
-  private static void removeItems(
-      HashMap<String, HashMap<String, Item>> perPartMap, Item item) {
-    int remainingCount = item.count_;
-    if (remainingCount == 0) {
-      Log.info("Something is wrong. Count is already zero: " + item);
-      return;
-    }
-    HashMap<String, Item> items = perPartMap.get(item.part_.primaryId());
-    Item existingItem = null;
-    if (items != null) {
-      existingItem = items.get(item.color_.primaryId());
-    }
-    if (existingItem != null) {
-      int count = Math.min(item.count_, existingItem.count_);
-      existingItem.count_ -= count;
-      if (existingItem.count_ == 0) {
-        items.remove(item.color_.primaryId());
-        if (items.size() == 0) {
-          perPartMap.remove(item.part_.primaryId());
+
+  // This class maps items to a namespace and finds the best composition.
+  private static class PartComposer {
+    public PartComposer(Map<ItemId, Item> allItems) {
+      perPartMap_ = new HashMap<String, HashMap<String, Item>>(allItems.size());
+      for (Item item : allItems.values()) {
+        Item newItem = new Item(item.part_, item.color_, item.count_);
+        newItem.originalIds_ = item.originalIds_;
+        String partId = newItem.part_.primaryId();
+        HashMap<String, Item> items = perPartMap_.get(partId);
+        if (items == null) {
+          items = new HashMap<String, Item>(16);
+          perPartMap_.put(partId, items);
+        }
+        String colorId = newItem.color_.primaryId();
+        if (items.put(colorId, newItem) != null) {
+          throw new AssertionError(
+              String.format("Item present more than once: %s-%s", partId, colorId));
         }
       }
-      remainingCount -= count;
+    }
+    
+    public TreeMap<ItemId, Integer> exportToNamespace(
+        String namespace, UnknownItems unknownItems) {
+      TreeMap<ItemId, Integer> result = new TreeMap<ItemId, Integer>();
+      if (unknownItems != null) {
+        unknownItems.clearUnmappableItems();
+      }
+      while (perPartMap_.size() > 0) {
+        HashMap<String, Item> items = perPartMap_.values().iterator().next();
+        Item item = items.values().iterator().next();
+        Item bestItem = bestItemForChild(item.part_, item.color_, namespace);
+        if (bestItem == null) {
+          if (item.originalIdsOrNull() == null) {
+            throw new AssertionError("No original ids: " + item);
+          }
+          if (unknownItems != null) {
+            for (Map.Entry<ItemId, Integer> entry : item.originalIds().entrySet()) {
+              unknownItems.addUnmappableItem(entry.getKey(), entry.getValue());
+            }
+          }
+          removeItems(item);
+          continue;
+        }
+        ItemId bestItemId = bestItem.itemId();
+        Integer count = result.get(bestItemId);
+        if (count == null) {
+          result.put(bestItemId, bestItem.count_);
+        } else {
+          result.put(bestItemId, count + bestItem.count_);
+        }
+        removeItems(bestItem);
+      }
+      return result;
+    }
+
+    private Item bestItemForChild(
+        PartModel.Part part, PartModel.Color color, String namespace) {
+      Item bestItem = null;
+      if (part.parents_ != null) {
+        for (PartModel.Part parent : part.parents_) {
+          PartModel.Color childColor = parent.childPartColor(part);
+          if (childColor == null) {
+            // No specific color set for the child ==> the color of the parent is the same.
+            Item parentItem = bestItemForChild(parent, color, namespace);
+            if (parentItem != null && (bestItem == null || parentItem.count_ > bestItem.count_)) {
+              bestItem = parentItem;
+            }
+          } else {
+            if (childColor != color) continue;
+
+            // The color of the child is set explicitly ==> the parent can be any color.
+            // To cover this; we look for other child items in the parent that inherit the
+            // parent's color and see if they exist in the itemMap.
+            PartModel.Part otherChild = parent.pickChildWithoutColor();
+            HashMap<String, Item> otherItems = perPartMap_.get(otherChild.primaryId());
+            if (otherItems == null) continue;
+            for (Item otherItem : otherItems.values()) {
+              PartModel.Color otherColor = otherItem.color_;
+              Item parentItem = bestItemForChild(parent, otherColor, namespace);
+              if (parentItem != null && (bestItem == null || parentItem.count_ > bestItem.count_)) {
+                bestItem = parentItem;
+              }
+            }
+          }
+        }
+      }
+      if (bestItem != null) {
+        return bestItem;
+      }
+
+      if (part.idInNamespace(namespace) != null) {
+        int count = maxCountForParent(part, color);
+        if (count > 0) {
+          Item item = new Item(part, color, count);
+          return item;
+        }
+      }
+      return null;
+    }
+
+    // For a particular item, computes the maximum number of items that
+    // can be used to satisfy the needs considering the full child hierarchy
+    // of the item. The item is described by its part and color; the needs
+    // by itemNeeds.
+    private int maxCountForParent(PartModel.Part part, PartModel.Color color) {
+      int countFromSelf = 0;
+      HashMap<String, Item> items = perPartMap_.get(part.primaryId());
+      if (items != null) {
+        Item item = items.get(color.primaryId());
+        if (item != null) {
+          countFromSelf = item.count_;
+        }
+      }
+
+      if (part.items_ == null) {
+        return countFromSelf;
+      }
+
+      int countFromChildren = 0;
+      if (part.items_ != null) {
+        countFromChildren = Integer.MAX_VALUE;
+        for (PartModel.Item childItem : part.items_) {
+          PartModel.Color childItemColor =
+              childItem.color_ == null ? color : childItem.color_;
+          int countFromChild =
+              maxCountForParent(childItem.part_, childItemColor) /
+              childItem.count_;
+          countFromChildren = Math.min(countFromChildren, countFromChild);
+        }
+      }
+      return countFromSelf + countFromChildren;
+    }
+
+    private void removeItems(Item item) {
+      int remainingCount = item.count_;
       if (remainingCount == 0) {
+        Log.info("Something is wrong. Count is already zero: " + item);
         return;
       }
+      HashMap<String, Item> items = perPartMap_.get(item.part_.primaryId());
+      Item existingItem = null;
+      if (items != null) {
+        existingItem = items.get(item.color_.primaryId());
+      }
+      if (existingItem != null) {
+        int count = Math.min(item.count_, existingItem.count_);
+        existingItem.count_ -= count;
+        if (existingItem.count_ == 0) {
+          items.remove(item.color_.primaryId());
+          if (items.size() == 0) {
+            perPartMap_.remove(item.part_.primaryId());
+          }
+        }
+        remainingCount -= count;
+        if (remainingCount == 0) {
+          return;
+        }
+      }
+      if (item.part_.items_ == null) {
+        Log.info("This is wrong. No children found: " + item);
+        return;
+      }
+      for (PartModel.Item subItem : item.part_.items_) {
+        PartModel.Color subColor = subItem.color_ == null ? item.color_ : subItem.color_;
+        Item removeItem = new Item(subItem.part_, subColor, remainingCount * subItem.count_);
+        removeItems(removeItem);
+      }
     }
-    if (item.part_.items_ == null) {
-      Log.info("This is wrong. No children found: " + item);
-      return;
-    }
-    for (PartModel.Item subItem : item.part_.items_) {
-      PartModel.Color subColor = subItem.color_ == null ? item.color_ : subItem.color_;
-      Item removeItem = new Item(subItem.part_, subColor, remainingCount * subItem.count_);
-      removeItems(perPartMap, removeItem);
-    }
+    
+    private HashMap<String, HashMap<String, Item>> perPartMap_;
   }
-
-  private void addExactItem(Item item) {
+  
+  private void addExactItem(
+      PartModel.Part part, PartModel.Color color, int count, ItemId originalId,
+      int originalCount) {
+    Item item = new Item(part, color, count);
+    item.originalIds().put(originalId, originalCount);
     ItemId itemId = item.itemId();
     Item existingItem = items_.get(itemId);
     if (existingItem == null) {
@@ -310,14 +420,6 @@ public class RequiredItems {
       }
     }
     numTotalItems_ += item.count_;
-  }
-
-  private void addExactItem(
-      PartModel.Part part, PartModel.Color color, int count, ItemId originalId,
-      int originalCount) {
-    Item item = new Item(part, color, count);
-    item.originalIds().put(originalId, originalCount);
-    addExactItem(item);
   }
 
   private void addDecomposedItem(
@@ -348,108 +450,6 @@ public class RequiredItems {
         }
       }
     }
-  }
-
-  private static Item bestItemForChild(
-      HashMap<String, HashMap<String, Item>> perPartMap,
-      PartModel.Part part, PartModel.Color color, String namespace) {
-    Item bestItem = null;
-    if (part.parents_ != null) {
-      for (PartModel.Part parent : part.parents_) {
-        PartModel.Color childColor = parent.childPartColor(part);
-        if (childColor == null) {
-          // No specific color set for the child ==> the color of the parent is the same.
-          Item parentItem = bestItemForChild(perPartMap, parent, color, namespace);
-          if (parentItem != null && (bestItem == null || parentItem.count_ > bestItem.count_)) {
-            bestItem = parentItem;
-          }
-        } else {
-          if (childColor != color) continue;
-
-          // The color of the child is set explicitly ==> the parent can be any color.
-          // To cover this; we look for other child items in the parent that inherit the
-          // parent's color and see if they exist in the itemMap.
-          PartModel.Part otherChild = parent.pickChildWithoutColor();
-          HashMap<String, Item> otherItems = perPartMap.get(otherChild.primaryId());
-          if (otherItems == null) continue;
-          for (Item otherItem : otherItems.values()) {
-            PartModel.Color otherColor = otherItem.color_;
-            Item parentItem = bestItemForChild(perPartMap, parent, otherColor, namespace);
-            if (parentItem != null && (bestItem == null || parentItem.count_ > bestItem.count_)) {
-              bestItem = parentItem;
-            }
-          }
-        }
-      }
-    }
-    if (bestItem != null) {
-      return bestItem;
-    }
-
-    if (part.idInNamespace(namespace) != null) {
-      int count = maxCountForParent(perPartMap, part, color);
-      if (count > 0) {
-        Item item = new Item(part, color, count);
-        return item;
-      }
-    }
-    return null;
-  }
-
-  // For a particular item, computes the maximum number of items that
-  // can be used to satisfy the needs considering the full child hierarchy
-  // of the item. The item is described by its part and color; the needs
-  // by itemNeeds.
-  private static int maxCountForParent(
-      HashMap<String, HashMap<String, Item>> perPartMap,
-      PartModel.Part part, PartModel.Color color) {
-    int countFromSelf = 0;
-    HashMap<String, Item> items = perPartMap.get(part.primaryId());
-    if (items != null) {
-      Item item = items.get(color.primaryId());
-      if (item != null) {
-        countFromSelf = item.count_;
-      }
-    }
-
-    if (part.items_ == null) {
-      return countFromSelf;
-    }
-
-    int countFromChildren = 0;
-    if (part.items_ != null) {
-      countFromChildren = Integer.MAX_VALUE;
-      for (PartModel.Item childItem : part.items_) {
-        PartModel.Color childItemColor =
-            childItem.color_ == null ? color : childItem.color_;
-        int countFromChild =
-            maxCountForParent(perPartMap, childItem.part_, childItemColor) /
-            childItem.count_;
-        countFromChildren = Math.min(countFromChildren, countFromChild);
-      }
-    }
-    return countFromSelf + countFromChildren;
-  }
-
-  private HashMap<String, HashMap<String, Item>> buildPerPartMap() {
-    HashMap<String, HashMap<String, Item>> result =
-        new HashMap<String, HashMap<String, Item>>(items_.size());
-    for (Item item : items_.values()) {
-      Item newItem = new Item(item.part_, item.color_, item.count_);
-      newItem.originalIds_ = item.originalIds_;
-      String partId = newItem.part_.primaryId();
-      HashMap<String, Item> items = result.get(partId);
-      if (items == null) {
-        items = new HashMap<String, Item>(16);
-        result.put(partId, items);
-      }
-      String colorId = newItem.color_.primaryId();
-      if (items.put(colorId, newItem) != null) {
-        throw new AssertionError(
-            String.format("Item present more than once: %s-%s", partId, colorId));
-      }
-    }
-    return result;
   }
 
   // The items that have been mapped successfully.
