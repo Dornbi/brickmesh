@@ -168,8 +168,8 @@ public class RequiredItems {
 
   // Number of different items. This is approximate as the numbers may
   // change with items being composed or decomposed.
-  public int numDifferentItems() {
-    return numDifferentItems_;
+  public int numUniqueItems() {
+    return numUniqueItems_;
   }
 
   // Number of total items. This is approximate as the numbers may
@@ -212,14 +212,14 @@ public class RequiredItems {
       other.items_.put(entry.getKey(), otherItem);
     }
 
-    other.numDifferentItems_ = numDifferentItems_;
+    other.numUniqueItems_ = numUniqueItems_;
     other.numTotalItems_ = numTotalItems_;
     return other;
   }
 
   private void reset(int sizeHint) {
     items_ = new HashMap<ItemId, Item>(sizeHint);
-    numDifferentItems_ = 0;
+    numUniqueItems_ = 0;
     numTotalItems_ = 0;
   }
 
@@ -413,7 +413,7 @@ public class RequiredItems {
     Item existingItem = items_.get(itemId);
     if (existingItem == null) {
       items_.put(itemId, item);
-      ++numDifferentItems_;
+      ++numUniqueItems_;
     } else {
       existingItem.count_ += item.count_;
       if (item.originalIdsOrNull() != null) {
@@ -464,7 +464,7 @@ public class RequiredItems {
   // The items that have been mapped successfully.
   private HashMap<ItemId, Item> items_;
 
-  private int numDifferentItems_;
+  private int numUniqueItems_;
   private int numTotalItems_;
 
   private PartModel partModel_;

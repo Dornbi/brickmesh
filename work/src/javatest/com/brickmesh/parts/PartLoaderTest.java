@@ -54,7 +54,7 @@ class PartLoaderTest extends TestCase {
     UnknownItems unknownItems = result.unknownItems_;
     expectTrue(items != null);
     expectEquals(0, items.numTotalItems());
-    expectEquals(0, items.numDifferentItems());
+    expectEquals(0, items.numUniqueItems());
     expectEquals(null, unknownItems.unknownPartIdsOrNull());
     expectEquals(null, unknownItems.unknownPartIdsOrNull());
     expectEquals(null, unknownItems.unknownColorIdsOrNull());

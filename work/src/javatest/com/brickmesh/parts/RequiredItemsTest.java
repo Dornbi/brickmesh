@@ -56,7 +56,7 @@ class RequiredItemsTest extends TestCase {
 
   private void testEmpty() {
     RequiredItems actual = new RequiredItems(partModel_, 10);
-    expectEquals(0, actual.numDifferentItems());
+    expectEquals(0, actual.numUniqueItems());
     expectEquals(0, actual.numTotalItems());
     expectEquals(0.0, actual.weightEstimateGrams());
     expectActual(actual);
@@ -75,7 +75,7 @@ class RequiredItemsTest extends TestCase {
     expectedUnknownItems_.addUnknownItem(new ItemId("l:3005", "l:nocolor"), true, false, 5);
     expectedUnknownItems_.addUnknownItem(new ItemId("l:nopart", "l:1"), false, true, 2);
     expectActual(actual);
-    expectEquals(1, actual.numDifferentItems());
+    expectEquals(1, actual.numUniqueItems());
     expectEquals(3, actual.numTotalItems());
     expectEquals(1.29, actual.weightEstimateGrams());
 
@@ -91,7 +91,7 @@ class RequiredItemsTest extends TestCase {
     addExpectedItem("b:2429", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
     addExpectedItem("b:2430", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
     expectActual(actual);
-    expectEquals(2, actual.numDifferentItems());
+    expectEquals(2, actual.numUniqueItems());
     expectEquals(4, actual.numTotalItems());
     expectEquals(1.64, actual.weightEstimateGrams());
 
@@ -120,7 +120,7 @@ class RequiredItemsTest extends TestCase {
     addExpectedItem("b:983", "b:3", 2, new ItemId("l:76382", "l:5"), 1);
     addExpectedItem("b:983", "b:3", 4, new ItemId("l:76382", "l:21"), 2);
     expectActual(actual);
-    expectEquals(7, actual.numDifferentItems());
+    expectEquals(7, actual.numUniqueItems());
     expectEquals(15, actual.numTotalItems());
     expectEquals(4.35, actual.weightEstimateGrams());
 
@@ -140,7 +140,7 @@ class RequiredItemsTest extends TestCase {
     addExpectedItem("b:32183", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
     addExpectedItem("b:108", "b:22", 1, new ItemId("l:76320", "l:40"), 1);
     expectActual(actual);
-    expectEquals(5, actual.numDifferentItems());
+    expectEquals(5, actual.numUniqueItems());
     expectEquals(5, actual.numTotalItems());
     expectEquals(4.29, actual.weightEstimateGrams());
 
@@ -157,7 +157,7 @@ class RequiredItemsTest extends TestCase {
     addExpectedItem("v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
     addExpectedItem("v:60797-2", "b:15", 1, new ItemId("l:60797", "l:26"), 1);
     expectActual(actual);
-    expectEquals(2, actual.numDifferentItems());
+    expectEquals(2, actual.numUniqueItems());
     expectEquals(2, actual.numTotalItems());
     expectEquals(3.2, actual.weightEstimateGrams());
 
@@ -174,7 +174,7 @@ class RequiredItemsTest extends TestCase {
     addExpectedItem("v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
     addExpectedItem("v:60797-2", "b:14", 1, new ItemId("l:60797", "l:26"), 1);
     expectActual(actual);
-    expectEquals(2, actual.numDifferentItems());
+    expectEquals(2, actual.numUniqueItems());
     expectEquals(2, actual.numTotalItems());
     expectEquals(3.2, actual.weightEstimateGrams());
 

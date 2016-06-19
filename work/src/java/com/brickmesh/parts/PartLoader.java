@@ -50,19 +50,19 @@ public final class PartLoader {
   public static final class Options {
     public static Options createLimited() {
       Options options = new Options();
-      options.maxNumQty_ = 1000;
+      options.maxUniqueQty_ = 1000;
       options.maxTotalQty_ = 500000;
       return options;
     }
 
     public static Options createUnlimited() {
       Options options = new Options();
-      options.maxNumQty_ = Integer.MAX_VALUE;
+      options.maxUniqueQty_ = Integer.MAX_VALUE;
       options.maxTotalQty_ = Integer.MAX_VALUE;
       return options;
     }
 
-    public int maxNumQty_;
+    public int maxUniqueQty_;
     public int maxTotalQty_;
   }
 
@@ -119,9 +119,9 @@ public final class PartLoader {
 
     protected final void addItem(String partId, List<String> colorIds, int count)
         throws LoaderException {
-      if (result_.items_.numDifferentItems() > options_.maxNumQty_) {
+      if (result_.items_.numUniqueItems() > options_.maxUniqueQty_) {
         throw new LoaderException(String.format(
-            "Too many different parts in model (limit=%d)", options_.maxNumQty_));
+            "Too many unique parts in model (limit=%d)", options_.maxUniqueQty_));
       }
       if (result_.items_.numTotalItems() > options_.maxTotalQty_) {
         throw new LoaderException(String.format(
