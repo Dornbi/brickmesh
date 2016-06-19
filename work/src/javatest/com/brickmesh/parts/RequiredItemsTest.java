@@ -107,17 +107,26 @@ class RequiredItemsTest extends TestCase {
         "l", "76382",
         Arrays.asList("5", "5", "5", "24", "24"),
         1, unknownItems_));
+    expectTrue(actual.addItem(
+        "l", "76382",
+        Arrays.asList("21", "21", "21", "24", "24"),
+        2, unknownItems_));
     addExpectedItem("b:973", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
+    addExpectedItem("b:973", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
     addExpectedItem("b:981", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
+    addExpectedItem("b:981", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
     addExpectedItem("b:982", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
+    addExpectedItem("b:982", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
     addExpectedItem("b:983", "b:3", 2, new ItemId("l:76382", "l:5"), 1);
+    addExpectedItem("b:983", "b:3", 4, new ItemId("l:76382", "l:21"), 2);
     expectActual(actual);
-    expectEquals(4, actual.numDifferentItems());
-    expectEquals(5, actual.numTotalItems());
-    expectEquals(1.45, actual.weightEstimateGrams());
+    expectEquals(7, actual.numDifferentItems());
+    expectEquals(15, actual.numTotalItems());
+    expectEquals(4.35, actual.weightEstimateGrams());
 
     TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
     expectedExported_.put(new ItemId("b:973c67", "b:2"), 1);
+    expectedExported_.put(new ItemId("b:973c02", "b:5"), 2);
     expectEquals(expectedExported_, exported);
     expectActual(actual);
   }
@@ -189,14 +198,18 @@ class RequiredItemsTest extends TestCase {
       ItemId originalId, int originalCount) {
     PartModel.Color color = partModel_.findColorOrNull(colorId);
     PartModel.Part part = partModel_.findPartOrNull(partId);
-    RequiredItems.Item item = new RequiredItems.Item(part, color, count);
-    if (originalId != null) {
-      if (item.originalIds_ == null) {
-        item.originalIds_ = new HashMap<ItemId, Integer>();
+    ItemId itemId = new ItemId(part.primaryId(), color.primaryId());
+    RequiredItems.Item existing = expectedItems_.get(itemId);
+    if (existing == null) {
+      RequiredItems.Item item = new RequiredItems.Item(part, color, count);
+      if (originalId != null) {
+        item.originalIds().put(originalId, originalCount);
       }
-      item.originalIds_.put(originalId, originalCount);
+      expectedItems_.put(item.itemId(), item);
+    } else {
+      existing.count_ += count;
+      existing.originalIds().put(originalId, originalCount);
     }
-    expectedItems_.put(item.itemId(), item);
   }
 
   private static <K> void addExpectedUnknown(Map<K, Integer> map, K key, int count) {
