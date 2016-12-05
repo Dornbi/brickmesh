@@ -29,6 +29,9 @@ package com.brickmesh.util;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 // Poor man's unit test framework.
 public class TestCase {
@@ -90,7 +93,16 @@ public class TestCase {
     if (o instanceof Collection) {
       return Arrays.deepToString(((Collection)o).toArray());
     }
+    if (o instanceof HashMap) {
+      return sortedToString((HashMap<?, ?>)o);
+    }
     return o.toString();
+  }
+  
+  private static <K, V> String sortedToString(Map<K, V> map) {
+    TreeMap<K, V> t = new TreeMap<K, V>();
+    t.putAll(map);
+    return t.toString();
   }
 
   private static final double EPSILON = 1e-5;
