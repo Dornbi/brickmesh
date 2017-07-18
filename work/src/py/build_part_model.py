@@ -1,4 +1,4 @@
-#!/opt/local/bin/python2.7
+#!/usr/bin/python
 
 # Copyright (c) 2016, Peter Dornbach
 # All rights reserved.
