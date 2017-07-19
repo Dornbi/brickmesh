@@ -206,12 +206,14 @@ l:21849,4           # guess
 b:22385,0.7         # guess from 3068b
 b:22387,5           # guess
 b:22388,0.144       # from 3070b
+b:22390,4           # guess
 b:22391,1.5         # guess
 b:22410,5           # guess
 b:22483,5           # guess
 b:22487,1           # guess
 b:22885,1.5         # guess
 b:22886,2           # guess
+b:22888,3           # guess
 b:22889,2           # guess
 b:22890,0.549       # from 60478
 b:23405,5           # guess
@@ -219,12 +221,14 @@ b:23421,5           # guess
 b:23422,1           # guess
 b:23714,0.312       # from 30238
 b:23922,1           # guess
+b:23949,3           # guess
 b:23969,0.8         # guess
 b:23996,6           # guess
 b:23997,100         # guess
 b:23998,100         # guess
 b:24014,1.5         # guess
 b:24055,5           # guess
+b:24121,8           # guess
 b:24122,0.5         # guess
 b:24151,3           # guess
 b:24201,0.31        # from 11477
@@ -235,6 +239,7 @@ b:24309,1.1         # guess from 50950
 b:24316,0.5         # guess
 b:24326,3           # guess
 l:24593,2           # guess
+b:25269,0.5         # guess
 b:30085,1.913       # from 2548
 b:30218,0.630       # from 33122
 b:30632,5           # guess
