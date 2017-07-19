@@ -31,7 +31,7 @@ Scrapes available colors and number of lots for each color from BrickLink.
 To run, you need to install a few things:
 pip install BeautifulSoup
 pip install joblib
-+ the Google Protobuf library.
+pip install protobuf
 
 In addition, you need this:
 export PYTHONPATH=gen/py/src/proto
