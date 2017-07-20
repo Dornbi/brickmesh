@@ -13,7 +13,7 @@ protoc src/proto/*.proto \
 export PYTHONPATH=gen/py/src/proto
 src/py/build_part_model.py
 
-PROTO_CLASSPATH=jar/protobuf-java-3.3.0.jar
+PROTO_CLASSPATH=../bin/protobuf-java-3.3.0.jar
 
 # Core.
 javac -d class/core \
