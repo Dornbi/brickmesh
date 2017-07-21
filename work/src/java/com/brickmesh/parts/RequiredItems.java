@@ -75,7 +75,7 @@ public class RequiredItems {
       }
       return sb.toString();
     }
-    
+
     public Map<ItemId, Integer> originalIds() {
       if (originalIds_ == null) {
         originalIds_ = new TreeMap<ItemId, Integer>();
@@ -142,7 +142,7 @@ public class RequiredItems {
     // The list of all colors for the part. This is used for composite
     // parts that hava multiple colors.
     PartModel.Color[] colors = new PartModel.Color[colorIds.size()];
-    
+
     // Initialize the primary and the full list of colors.
     String nsColorId = null;
     for (int i = 0; i < colorIds.size(); ++i) {
@@ -158,7 +158,7 @@ public class RequiredItems {
       }
       colors[i] = c;
     }
-    
+
     // Add the item to the list of items.
     ItemId itemId = new ItemId(nsPartId, nsColorId);
     if (part == null || color == null) {
@@ -179,7 +179,7 @@ public class RequiredItems {
   // Number of different items. This is approximate as the numbers may
   // change with items being composed or decomposed.
   public int numUniqueItems() {
-    return numUniqueItems_;
+    return items_.size();
   }
 
   // Number of total items. This is approximate as the numbers may
@@ -199,18 +199,96 @@ public class RequiredItems {
 
   // Exports an ordered list of items in the namespace. This composes
   // the items again at the level appropriate in the destination namespace.
-  // Parts that cannot be mapped to the namespace are added to unknownItems. 
+  // Parts that cannot be mapped to the namespace are added to unknownItems.
   public TreeMap<ItemId, Integer> exportToNamespace(String namespace,
       UnknownItems unknownItems) {
     PartComposer composer = new PartComposer(items_);
     return composer.exportToNamespace(namespace, unknownItems);
   }
 
+  // Returns the full list of all possible items that can possibly fulfill
+  // any subset of this list. Note that the returned set may contain items
+  // with ANY_COLOR.
+  public HashSet<ItemId> interestingItems(String namespace) {
+    HashMap<PartModel.Part, HashSet<PartModel.Color>> interestingItems =
+        new HashMap<PartModel.Part, HashSet<PartModel.Color>>(items_.size());
+    for (Item item : items_.values()) {
+      addAllInterestingItems(namespace, item.part_, item.color_, item.count_,
+          interestingItems);
+    }
+    HashSet<ItemId> result = new HashSet<ItemId>(items_.size());
+    for (Map.Entry<PartModel.Part, HashSet<PartModel.Color>> entry : interestingItems.entrySet()) {
+      PartModel.Part part = entry.getKey();
+      for (PartModel.Color color : entry.getValue()) {
+        String partId = part.idInNamespace(namespace);
+        String colorId = color.idInNamespace(namespace);
+        if (partId == null || colorId == null) {
+          continue;
+        }
+        result.add(new ItemId(partId, colorId));
+      }
+    }
+    return result;
+  }
+
+  // Adds all variations of an item to the set of interesting items,
+  // including similar and parent items.
+  // TODO: Support items with confirmation.
+  private void addAllInterestingItems(String namespace, PartModel.Part part,
+      PartModel.Color color, int count,
+      HashMap<PartModel.Part, HashSet<PartModel.Color>> interestingItems) {
+    HashSet<PartModel.Color> itemsForPart = interestingItems.get(part);
+
+    // Bail out if we have already seen this.
+    if (itemsForPart != null &&
+        (itemsForPart.contains(color) ||
+         itemsForPart.contains(PartModel.ANY_COLOR))) {
+      return;
+    }
+
+    // Add the item.
+    if (itemsForPart == null) {
+      itemsForPart = new HashSet<PartModel.Color>(8);
+      interestingItems.put(part, itemsForPart);
+    }
+    if (!itemsForPart.contains(PartModel.ANY_COLOR)) {
+      if (color == PartModel.ANY_COLOR) {
+        itemsForPart.clear();
+      }
+      itemsForPart.add(color);
+    }
+
+    // Check similar items.
+    if (part.similar_ != null) {
+      for (PartModel.Part similarPart : part.similar_) {
+        addAllInterestingItems(namespace, similarPart, color, count,
+            interestingItems);
+      }
+    }
+
+    // Check parent items.
+    if (part.parents_ != null) {
+      for (PartModel.Part parentPart : part.parents_) {
+        PartModel.Color childColor = parentPart.childPartColor(part);
+        if (childColor == null) {
+          addAllInterestingItems(namespace, parentPart, color, count,
+              interestingItems);
+        }
+        if (childColor == color) {
+          // The parent can be any color, since the current part is listed
+          // in a fixed color.
+          addAllInterestingItems(namespace, parentPart, PartModel.ANY_COLOR, count,
+              interestingItems);
+        }
+      }
+    }
+  }
+
   // Access to the items.
   public HashMap<ItemId, Item> items() {
     return items_;
   }
-  
+
   // Copies everything but originalIds, which would be expensive but not
   // really needed.
   public RequiredItems deepClone() {
@@ -223,14 +301,12 @@ public class RequiredItems {
       other.items_.put(entry.getKey(), otherItem);
     }
 
-    other.numUniqueItems_ = numUniqueItems_;
     other.numTotalItems_ = numTotalItems_;
     return other;
   }
 
   private void reset(int sizeHint) {
     items_ = new HashMap<ItemId, Item>(sizeHint);
-    numUniqueItems_ = 0;
     numTotalItems_ = 0;
   }
 
@@ -255,7 +331,7 @@ public class RequiredItems {
         }
       }
     }
-    
+
     // Exports to the requested part namespace. 'namespace' is a namespace
     // used in the PartModel, for example 'l' for Lego or 'b' for Bricklink.
     // The parts that cannot be mapped are added to UnknownItems.
@@ -282,7 +358,7 @@ public class RequiredItems {
           removeItems(item);
           continue;
         }
-        
+
         // There is a best item, add it to the result.
         ItemId bestItemId = bestItem.itemId();
         Integer count = result.get(bestItemId);
@@ -423,11 +499,11 @@ public class RequiredItems {
         removeItems(removeItem);
       }
     }
-    
+
     // The map of all parts, keyed by part id and each sub-map by color id.
     private HashMap<String, HashMap<String, Item>> perPartMap_;
   }
-  
+
   // Decompose the part into its normalized form and add it to the items.
   private void addDecomposedItem(
       PartModel.Part part, PartModel.Color color, PartModel.Color[] colors,
@@ -469,7 +545,6 @@ public class RequiredItems {
     Item existingItem = items_.get(itemId);
     if (existingItem == null) {
       items_.put(itemId, item);
-      ++numUniqueItems_;
     } else {
       existingItem.count_ += item.count_;
       if (item.originalIdsOrNull() != null) {
@@ -490,9 +565,11 @@ public class RequiredItems {
   // The items that have been mapped successfully.
   private HashMap<ItemId, Item> items_;
 
-  // The number of unique items.
-  private int numUniqueItems_;
+  // The total count of items in the map. Since we decompose items into
+  // sub-items and re-group by sub-item id, this may be different than
+  // the number of addItem() calls.
   private int numTotalItems_;
 
+  // The PartModel.
   private PartModel partModel_;
 }
