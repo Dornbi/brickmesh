@@ -50,6 +50,9 @@ public class PartModel {
 
   // A single color.
   public static class Color {
+    // Instances can be only created by PartModel.
+    private Color() {}
+
     // The IDs of the color in all color namespaces.
     public String[] ids_;
 
@@ -85,6 +88,9 @@ public class PartModel {
   // In the model for parts composed from sub-parts, this holds info
   // about the sub-parts. color_ may be null or explicitly set.
   public static class Item {
+    // Instances can be only created by PartModel.
+    private Item() {}
+
     // The sub-part.
     public Part part_;
 
@@ -110,6 +116,9 @@ public class PartModel {
 
   // A single part in the model.
   public static class Part {
+    // Instances can be only created by PartModel.
+    private Part() {}
+
     // All the ids of this part. Each one is unique.
     public String[] ids_;
 
