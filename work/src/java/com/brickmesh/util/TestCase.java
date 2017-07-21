@@ -30,8 +30,11 @@ package com.brickmesh.util;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 // Poor man's unit test framework.
 public class TestCase {
@@ -90,18 +93,27 @@ public class TestCase {
     if (o instanceof String[]) {
       return Arrays.toString((String[])o);
     }
-    if (o instanceof Collection) {
-      return Arrays.deepToString(((Collection)o).toArray());
+    if (o instanceof HashSet) {
+      return sortedToString((HashSet<?>)o);
     }
     if (o instanceof HashMap) {
       return sortedToString((HashMap<?, ?>)o);
     }
+    if (o instanceof Collection) {
+      return Arrays.deepToString(((Collection)o).toArray());
+    }
     return o.toString();
   }
-  
+
   private static <K, V> String sortedToString(Map<K, V> map) {
     TreeMap<K, V> t = new TreeMap<K, V>();
     t.putAll(map);
+    return t.toString();
+  }
+
+  private static <V> String sortedToString(Set<V> set) {
+    TreeSet<V> t = new TreeSet<V>();
+    t.addAll(set);
     return t.toString();
   }
 
