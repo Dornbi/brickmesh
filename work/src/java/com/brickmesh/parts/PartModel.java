@@ -75,7 +75,7 @@ public class PartModel {
 
   // A part that has a specific color and quantity.
   // In the model for parts composed from sub-parts, this holds info
-  // about the sub-parts. In this case color_ may be null or explicitly set.
+  // about the sub-parts. color_ may be null or explicitly set.
   public static class Item {
     // The sub-part.
     public Part part_;
@@ -100,11 +100,17 @@ public class PartModel {
     }
   }
 
+  // A single part in the model.
   public static class Part {
     // All the ids of this part. Each one is unique.
     public String[] ids_;
 
+    // Parts that are similar. They are different molds but can
+    // replace each other without asking the user. null if there are
+    // no similar parts.
     public HashSet<Part> similar_;
+    
+    // Like similar_, but needs user confirmation.
     public HashSet<Part> confirm_;
 
     // If this is a composite part made from other parts, this is the
@@ -112,9 +118,11 @@ public class PartModel {
     public Item[] items_;
 
     // If this part that is used to compose other parts, they are listed here.
+    // Otherwise null.
     public HashSet<Part> parents_;
 
-    // The weight in grams. Must be nonzero after loading.
+    // The weight in grams. The PartLoader ensures that this is non zero.
+    // For composed items, this is usually the sum of their sub-parts.
     public double weightGrams_;
 
     public String primaryId() {
@@ -131,7 +139,8 @@ public class PartModel {
       return null;
     }
 
-    // Returns null if childPart is not found or if it has no color.
+    // Returns the color of a sub-part. null if childPart is not
+    // found or if it has no color.
     public Color childPartColor(Part childPart) {
       if (items_ != null) {
         for (Item item : items_) {
@@ -144,7 +153,7 @@ public class PartModel {
     }
 
     // One of the parts that inherits the color of the parent.
-    // The loader guarantees that this is always non-null unless
+    // The PartLoader guarantees that this is always non-null unless
     // there are no children.
     public Part pickChildWithoutColor() {
       if (items_ != null) {
@@ -157,6 +166,7 @@ public class PartModel {
       return null;
     }
 
+    // Returns the number of children without color.
     public int numChildrenWithoutColor() {
       if (items_ != null) {
         int count = 0;
@@ -171,6 +181,8 @@ public class PartModel {
       }
     }
 
+    // The total number of parts in the hierarchy. 1 if there
+    // are no children.
     public int numPartsInHierarchy() {
       if (items_ == null) return 1;
       int count = 0;

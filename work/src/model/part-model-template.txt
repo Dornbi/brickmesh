@@ -40,7 +40,8 @@
 # b:  - id only valid on BrickLink.
 # l:  - id only valid in LDD.
 # o:  - id that is attempted in non-BL and non-LDD context (for example LDraw.)
-# v:  - virtual id, not valid anywhere.
+# v:  - virtual id, not valid anywhere. This is used in parts that cannot
+#       be broken down to multiple sub-parts, but have more than one color.
 #
 # Convenience expanded namespaces:
 # g:  - expands to b: l: o:
