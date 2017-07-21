@@ -65,9 +65,9 @@ class RequiredItemsTest extends TestCase {
 
     TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
     expectEquals(expectedExported_, exported);
-    HashSet<ItemId> interesting = actual.interestingItems("b");
     expectActual(actual);
 
+    HashSet<ItemId> interesting = actual.interestingItems("b");
     expectEquals(expectedInteresting_, interesting);
   }
 
