@@ -43,6 +43,10 @@ import com.brickmesh.util.Log;
 import com.brickmesh.util.Util;
 
 public class PartModel {
+  // Magic value to represent parts that can be any color.
+  // This is only used rarely, for example in RequiredItems.interestingItems.
+  public static Color ANY_COLOR;
+
   // A single color.
   public static class Color {
     // The IDs of the color in all color namespaces.
@@ -109,7 +113,7 @@ public class PartModel {
     // replace each other without asking the user. null if there are
     // no similar parts.
     public HashSet<Part> similar_;
-    
+
     // Like similar_, but needs user confirmation.
     public HashSet<Part> confirm_;
 
@@ -273,8 +277,10 @@ public class PartModel {
       TextFormat.merge(br, builder);
       PartModelProto.ColorModel modelProto = builder.build();
 
-      ArrayList<Color> colorArray = new ArrayList<Color>(modelProto.getColorCount());
       colorMap_ = new HashMap<String, Color>(modelProto.getColorCount());
+      for (String id : ANY_COLOR.ids_) {
+        colorMap_.put(id, ANY_COLOR);
+      }
       ErrorCollector errorCollector = new ErrorCollector();
 
       for (PartModelProto.Color colorProto : modelProto.getColorList()) {
@@ -285,7 +291,6 @@ public class PartModel {
           continue;
         }
         color.name_ = colorProto.getName();
-        colorArray.add(color);
         for (String id : color.ids_) {
           if (!isValidColorId(id)) {
             errorCollector.error("Invalid color id: " + id);
@@ -592,5 +597,9 @@ public class PartModel {
     PART_ID_EXPANSION.put("l", Util.stringArray("l"));
     PART_ID_EXPANSION.put("o", Util.stringArray("o"));
     PART_ID_EXPANSION.put("v", Util.stringArray("v"));
+
+    ANY_COLOR = new Color();
+    ANY_COLOR.ids_ = new String[]{"*"};
+    ANY_COLOR.name_ = "Any";
   }
 }
