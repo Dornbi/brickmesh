@@ -46,6 +46,7 @@ public class PartModel {
   // Magic value to represent parts that can be any color.
   // This is only used rarely, for example in RequiredItems.interestingItems.
   public static Color ANY_COLOR;
+  public static String ANY_COLOR_ID = "*";
 
   // A single color.
   public static class Color {
@@ -60,6 +61,9 @@ public class PartModel {
     }
 
     public String idInNamespace(String namespace) {
+      if (this == ANY_COLOR) {
+        return ids_[0];
+      }
       for (String id : ids_) {
         if (id.startsWith(namespace) &&
             id.charAt(namespace.length()) == ':') {
@@ -599,7 +603,7 @@ public class PartModel {
     PART_ID_EXPANSION.put("v", Util.stringArray("v"));
 
     ANY_COLOR = new Color();
-    ANY_COLOR.ids_ = new String[]{"*"};
+    ANY_COLOR.ids_ = new String[]{ANY_COLOR_ID};
     ANY_COLOR.name_ = "Any";
   }
 }
