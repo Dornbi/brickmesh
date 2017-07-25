@@ -262,15 +262,6 @@ class RequiredItemsTest extends TestCase {
     }
   }
 
-  private static <K> void addExpectedUnknown(Map<K, Integer> map, K key, int count) {
-    Integer c = map.get(key);
-    if (c == null) {
-      map.put(key, count);
-    } else {
-      map.put(key, c + count);
-    }
-  }
-
   private PartModel partModel_;
   private HashMap<ItemId, RequiredItems.Item> expectedItems_;
   private UnknownItems expectedUnknownItems_;
