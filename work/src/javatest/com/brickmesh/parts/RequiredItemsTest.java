@@ -76,7 +76,7 @@ class RequiredItemsTest extends TestCase {
     expectTrue(actual.addItem("l", "3005", "1", 3, unknownItems_));
     expectFalse(actual.addItem("l", "3005", "nocolor", 5, unknownItems_));
     expectFalse(actual.addItem("l", "nopart", "1", 2, unknownItems_));
-    addExpectedItem("l:3005", "l:1", 3, new ItemId("l:3005", "l:1"), 3);
+    addItem(expectedItems_, "l:3005", "l:1", 3, new ItemId("l:3005", "l:1"), 3);
     expectedUnknownItems_.addUnknownItem(new ItemId("l:3005", "l:nocolor"), true, false, 5);
     expectedUnknownItems_.addUnknownItem(new ItemId("l:nopart", "l:1"), false, true, 2);
     expectActual(actual);
@@ -97,8 +97,8 @@ class RequiredItemsTest extends TestCase {
   private void testSimpleDecompose() {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addItem("l", "73983", "1", 2, unknownItems_));
-    addExpectedItem("b:2429", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
-    addExpectedItem("b:2430", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
+    addItem(expectedItems_, "b:2429", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
+    addItem(expectedItems_, "b:2430", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
     expectActual(actual);
     expectEquals(2, actual.numUniqueItems());
     expectEquals(4, actual.numTotalItems());
@@ -126,14 +126,14 @@ class RequiredItemsTest extends TestCase {
         "l", "76382",
         Arrays.asList("21", "21", "21", "24", "24"),
         2, unknownItems_));
-    addExpectedItem("b:973", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
-    addExpectedItem("b:973", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
-    addExpectedItem("b:981", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
-    addExpectedItem("b:981", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
-    addExpectedItem("b:982", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
-    addExpectedItem("b:982", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
-    addExpectedItem("b:983", "b:3", 2, new ItemId("l:76382", "l:5"), 1);
-    addExpectedItem("b:983", "b:3", 4, new ItemId("l:76382", "l:21"), 2);
+    addItem(expectedItems_, "b:973", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
+    addItem(expectedItems_, "b:973", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
+    addItem(expectedItems_, "b:981", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
+    addItem(expectedItems_, "b:981", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
+    addItem(expectedItems_, "b:982", "b:2", 1, new ItemId("l:76382", "l:5"), 1);
+    addItem(expectedItems_, "b:982", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
+    addItem(expectedItems_, "b:983", "b:3", 2, new ItemId("l:76382", "l:5"), 1);
+    addItem(expectedItems_, "b:983", "b:3", 4, new ItemId("l:76382", "l:21"), 2);
     expectActual(actual);
     expectEquals(7, actual.numUniqueItems());
     expectEquals(15, actual.numTotalItems());
@@ -161,11 +161,11 @@ class RequiredItemsTest extends TestCase {
   private void testHierarchyDecompose() {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addItem("l", "76320", "40", 1, unknownItems_));
-    addExpectedItem("b:32181", "b:12", 1, new ItemId("l:76320", "l:40"), 1);
-    addExpectedItem("b:32182", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
-    addExpectedItem("b:32040", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
-    addExpectedItem("b:32183", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
-    addExpectedItem("b:108", "b:22", 1, new ItemId("l:76320", "l:40"), 1);
+    addItem(expectedItems_, "b:32181", "b:12", 1, new ItemId("l:76320", "l:40"), 1);
+    addItem(expectedItems_, "b:32182", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
+    addItem(expectedItems_, "b:32040", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
+    addItem(expectedItems_, "b:32183", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
+    addItem(expectedItems_, "b:108", "b:22", 1, new ItemId("l:76320", "l:40"), 1);
     expectActual(actual);
     expectEquals(5, actual.numUniqueItems());
     expectEquals(5, actual.numTotalItems());
@@ -192,8 +192,8 @@ class RequiredItemsTest extends TestCase {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addItem(
         "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
-    addExpectedItem("v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
-    addExpectedItem("v:60797-2", "b:15", 1, new ItemId("l:60797", "l:26"), 1);
+    addItem(expectedItems_, "v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
+    addItem(expectedItems_, "v:60797-2", "b:15", 1, new ItemId("l:60797", "l:26"), 1);
     expectActual(actual);
     expectEquals(2, actual.numUniqueItems());
     expectEquals(2, actual.numTotalItems());
@@ -215,8 +215,8 @@ class RequiredItemsTest extends TestCase {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addItem(
         "l", "60797", Arrays.asList("26", "43"), 1, unknownItems_));
-    addExpectedItem("v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
-    addExpectedItem("v:60797-2", "b:14", 1, new ItemId("l:60797", "l:26"), 1);
+    addItem(expectedItems_, "v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
+    addItem(expectedItems_, "v:60797-2", "b:14", 1, new ItemId("l:60797", "l:26"), 1);
     expectActual(actual);
     expectEquals(2, actual.numUniqueItems());
     expectEquals(2, actual.numTotalItems());
@@ -244,18 +244,19 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void addExpectedItem(String partId, String colorId, int count,
+  private void addItem(HashMap<ItemId, RequiredItems.Item> map,
+      String partId, String colorId, int count,
       ItemId originalId, int originalCount) {
     PartModel.Color color = partModel_.findColorOrNull(colorId);
     PartModel.Part part = partModel_.findPartOrNull(partId);
     ItemId itemId = new ItemId(part.primaryId(), color.primaryId());
-    RequiredItems.Item existing = expectedItems_.get(itemId);
+    RequiredItems.Item existing = map.get(itemId);
     if (existing == null) {
       RequiredItems.Item item = new RequiredItems.Item(part, color, count);
       if (originalId != null) {
         item.originalIds().put(originalId, originalCount);
       }
-      expectedItems_.put(item.itemId(), item);
+      map.put(item.itemId(), item);
     } else {
       existing.count_ += count;
       existing.originalIds().put(originalId, originalCount);
