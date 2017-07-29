@@ -38,13 +38,27 @@ import com.brickmesh.util.TestCase;
 
 class RequiredItemsTest extends TestCase {
   public static void main(String[] args) {
-    new RequiredItemsTest().testEmpty();
-    new RequiredItemsTest().testSimpleWithUnknowns();
-    new RequiredItemsTest().testSimpleDecompose();
-    new RequiredItemsTest().testMinifigDecompose();
-    new RequiredItemsTest().testHierarchyDecompose();
-    new RequiredItemsTest().testVirtualParts();
-    new RequiredItemsTest().testNonExistentVirtualParts();
+    new RequiredItemsTest().testAddEmpty();
+    new RequiredItemsTest().testExportEmpty();
+    new RequiredItemsTest().testInterestingEmpty();
+    new RequiredItemsTest().testAddSimple();
+    new RequiredItemsTest().testExportSimple();
+    new RequiredItemsTest().testInterestingSimple();
+    new RequiredItemsTest().testAddSimpleDecompose();
+    new RequiredItemsTest().testExportSimpleDecompose();
+    new RequiredItemsTest().testInterestingSimpleDecompose();
+    new RequiredItemsTest().testAddMinifigDecompose();
+    new RequiredItemsTest().testExportMinifigDecompose();
+    new RequiredItemsTest().testInterestingMinifigDecompose();
+    new RequiredItemsTest().testAddHierarchyDecompose();
+    new RequiredItemsTest().testExportHierarchyDecompose();
+    new RequiredItemsTest().testInterestingHierarchyDecompose();
+    new RequiredItemsTest().testAddVirtualParts();
+    new RequiredItemsTest().testExportVirtualParts();
+    new RequiredItemsTest().testInterestingVirtualParts();
+    new RequiredItemsTest().testAddNonExistentVirtualParts();
+    new RequiredItemsTest().testExportNonExistentVirtualParts();
+    new RequiredItemsTest().testInterestingNonExistentVirtualParts();
   }
 
   public RequiredItemsTest() {
@@ -56,73 +70,105 @@ class RequiredItemsTest extends TestCase {
     expectedInteresting_ = new HashSet<ItemId>();
   }
 
-  private void testEmpty() {
-    RequiredItems actual = new RequiredItems(partModel_, 10);
-    expectEquals(0, actual.numUniqueItems());
-    expectEquals(0, actual.numTotalItems());
-    expectEquals(0.0, actual.weightEstimateGrams());
-    expectActual(actual);
-
-    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
-    expectEquals(expectedExported_, exported);
-    expectActual(actual);
-
-    HashSet<ItemId> interesting = actual.interestingItems("b");
-    expectEquals(expectedInteresting_, interesting);
+  private void testAddEmpty() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectEquals(0, items.numUniqueItems());
+    expectEquals(0, items.numTotalItems());
+    expectEquals(0.0, items.weightEstimateGrams());
+    expectItems(items);
   }
 
-  private void testSimpleWithUnknowns() {
-    RequiredItems actual = new RequiredItems(partModel_, 10);
-    expectTrue(actual.addItem("l", "3005", "1", 3, unknownItems_));
-    expectFalse(actual.addItem("l", "3005", "nocolor", 5, unknownItems_));
-    expectFalse(actual.addItem("l", "nopart", "1", 2, unknownItems_));
+  private void testExportEmpty() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    TreeMap<ItemId, Integer> exported = items.exportToNamespace("b", unknownItems_);
+    expectEquals(expectedExported_, exported);
+    expectEquals(
+        expectedUnknownItems_.unmappableItemsOrNull(),
+        unknownItems_.unmappableItemsOrNull());
+  }
+
+  private void testInterestingEmpty() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    HashSet<ItemId> actual = items.interestingItems("b");
+    expectEquals(expectedInteresting_, actual);
+  }
+
+  private void testAddSimple() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
+    expectFalse(items.addItem("l", "3005", "nocolor", 5, unknownItems_));
+    expectFalse(items.addItem("l", "nopart", "1", 2, unknownItems_));
     addItem(expectedItems_, "l:3005", "l:1", 3, new ItemId("l:3005", "l:1"), 3);
     expectedUnknownItems_.addUnknownItem(new ItemId("l:3005", "l:nocolor"), true, false, 5);
     expectedUnknownItems_.addUnknownItem(new ItemId("l:nopart", "l:1"), false, true, 2);
-    expectActual(actual);
-    expectEquals(1, actual.numUniqueItems());
-    expectEquals(3, actual.numTotalItems());
-    expectEquals(1.29, actual.weightEstimateGrams());
-
-    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
-    expectedExported_.put(new ItemId("b:3005", "b:1"), 3);
-    expectEquals(expectedExported_, exported);
-    expectActual(actual);
-
-    HashSet<ItemId> interesting = actual.interestingItems("b");
-    expectedInteresting_.add(new ItemId("b:3005", "b:1"));
-    expectEquals(expectedInteresting_, interesting);
+    expectItems(items);
+    expectEquals(1, items.numUniqueItems());
+    expectEquals(3, items.numTotalItems());
+    expectEquals(1.29, items.weightEstimateGrams());
   }
 
-  private void testSimpleDecompose() {
-    RequiredItems actual = new RequiredItems(partModel_, 10);
-    expectTrue(actual.addItem("l", "73983", "1", 2, unknownItems_));
+  private void testExportSimple() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", unknownItems_);
+    expectedExported_.put(new ItemId("b:3005", "b:1"), 3);
+    expectEquals(expectedExported_, actual);
+    expectEquals(
+        expectedUnknownItems_.unmappableItemsOrNull(),
+        unknownItems_.unmappableItemsOrNull());
+  }
+
+  private void testInterestingSimple() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
+
+    HashSet<ItemId> actual = items.interestingItems("b");
+    expectedInteresting_.add(new ItemId("b:3005", "b:1"));
+    expectEquals(expectedInteresting_, actual);
+  }
+
+  private void testAddSimpleDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
     addItem(expectedItems_, "b:2429", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
     addItem(expectedItems_, "b:2430", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
-    expectActual(actual);
-    expectEquals(2, actual.numUniqueItems());
-    expectEquals(4, actual.numTotalItems());
-    expectEquals(1.64, actual.weightEstimateGrams());
+    expectItems(items);
+    expectEquals(2, items.numUniqueItems());
+    expectEquals(4, items.numTotalItems());
+    expectEquals(1.64, items.weightEstimateGrams());
+  }
 
-    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
+  private void testExportSimpleDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", unknownItems_);
     expectedExported_.put(new ItemId("b:2429c01", "b:1"), 2);
-    expectEquals(expectedExported_, exported);
-    expectActual(actual);
+    expectEquals(expectedExported_, actual);
+    expectEquals(
+        expectedUnknownItems_.unmappableItemsOrNull(),
+        unknownItems_.unmappableItemsOrNull());
+  }
 
-    HashSet<ItemId> interesting = actual.interestingItems("b");
+  private void testInterestingSimpleDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
+
+    HashSet<ItemId> actual = items.interestingItems("b");
     expectedInteresting_.add(new ItemId("b:2429c01", "b:1"));
     expectedInteresting_.add(new ItemId("b:2429", "b:1"));
     expectedInteresting_.add(new ItemId("b:2430", "b:1"));
-    expectEquals(expectedInteresting_, interesting);
+    expectEquals(expectedInteresting_, actual);
   }
 
-  private void testMinifigDecompose() {
-    RequiredItems actual = new RequiredItems(partModel_, 10);
-    expectTrue(actual.addItem(
+  private void testAddMinifigDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
         "l", "76382",
         Arrays.asList("5", "5", "5", "24", "24"),
         1, unknownItems_));
-    expectTrue(actual.addItem(
+    expectTrue(items.addItem(
         "l", "76382",
         Arrays.asList("21", "21", "21", "24", "24"),
         2, unknownItems_));
@@ -134,49 +180,87 @@ class RequiredItemsTest extends TestCase {
     addItem(expectedItems_, "b:982", "b:5", 2, new ItemId("l:76382", "l:21"), 2);
     addItem(expectedItems_, "b:983", "b:3", 2, new ItemId("l:76382", "l:5"), 1);
     addItem(expectedItems_, "b:983", "b:3", 4, new ItemId("l:76382", "l:21"), 2);
-    expectActual(actual);
-    expectEquals(7, actual.numUniqueItems());
-    expectEquals(15, actual.numTotalItems());
-    expectEquals(4.35, actual.weightEstimateGrams());
-
-    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
-    expectedExported_.put(new ItemId("b:973c67", "b:2"), 1);
-    expectedExported_.put(new ItemId("b:973c02", "b:5"), 2);
-    expectEquals(expectedExported_, exported);
-    expectActual(actual);
-
-    HashSet<ItemId> interesting = actual.interestingItems("b");
-    expectTrue(interesting.contains(new ItemId("b:973", "b:2")));
-    expectTrue(interesting.contains(new ItemId("b:973", "b:5")));
-    expectTrue(interesting.contains(new ItemId("b:973c01", "*")));
-    expectTrue(interesting.contains(new ItemId("b:973c02", "*")));
-    expectTrue(interesting.contains(new ItemId("b:981", "b:2")));
-    expectTrue(interesting.contains(new ItemId("b:981", "b:5")));
-    expectTrue(interesting.contains(new ItemId("b:982", "b:2")));
-    expectTrue(interesting.contains(new ItemId("b:982", "b:5")));
-    expectTrue(interesting.contains(new ItemId("b:983", "b:3")));
-    expectTrue(interesting.contains(new ItemId("b:983", "b:3")));
+    expectItems(items);
+    expectEquals(7, items.numUniqueItems());
+    expectEquals(15, items.numTotalItems());
+    expectEquals(4.35, items.weightEstimateGrams());
   }
 
-  private void testHierarchyDecompose() {
-    RequiredItems actual = new RequiredItems(partModel_, 10);
-    expectTrue(actual.addItem("l", "76320", "40", 1, unknownItems_));
+  private void testExportMinifigDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "76382",
+        Arrays.asList("5", "5", "5", "24", "24"),
+        1, unknownItems_));
+    expectTrue(items.addItem(
+        "l", "76382",
+        Arrays.asList("21", "21", "21", "24", "24"),
+        2, unknownItems_));
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", unknownItems_);
+    expectedExported_.put(new ItemId("b:973c67", "b:2"), 1);
+    expectedExported_.put(new ItemId("b:973c02", "b:5"), 2);
+    expectEquals(expectedExported_, actual);
+    expectEquals(
+        expectedUnknownItems_.unmappableItemsOrNull(),
+        unknownItems_.unmappableItemsOrNull());
+  }
+
+  private void testInterestingMinifigDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "76382",
+        Arrays.asList("5", "5", "5", "24", "24"),
+        1, unknownItems_));
+    expectTrue(items.addItem(
+        "l", "76382",
+        Arrays.asList("21", "21", "21", "24", "24"),
+        2, unknownItems_));
+
+    HashSet<ItemId> actual = items.interestingItems("b");
+    expectTrue(actual.contains(new ItemId("b:973", "b:2")));
+    expectTrue(actual.contains(new ItemId("b:973", "b:5")));
+    expectTrue(actual.contains(new ItemId("b:973c01", "*")));
+    expectTrue(actual.contains(new ItemId("b:973c02", "*")));
+    expectTrue(actual.contains(new ItemId("b:981", "b:2")));
+    expectTrue(actual.contains(new ItemId("b:981", "b:5")));
+    expectTrue(actual.contains(new ItemId("b:982", "b:2")));
+    expectTrue(actual.contains(new ItemId("b:982", "b:5")));
+    expectTrue(actual.contains(new ItemId("b:983", "b:3")));
+    expectTrue(actual.contains(new ItemId("b:983", "b:3")));
+  }
+
+  private void testAddHierarchyDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
     addItem(expectedItems_, "b:32181", "b:12", 1, new ItemId("l:76320", "l:40"), 1);
     addItem(expectedItems_, "b:32182", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
     addItem(expectedItems_, "b:32040", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
     addItem(expectedItems_, "b:32183", "b:11", 1, new ItemId("l:76320", "l:40"), 1);
     addItem(expectedItems_, "b:108", "b:22", 1, new ItemId("l:76320", "l:40"), 1);
-    expectActual(actual);
-    expectEquals(5, actual.numUniqueItems());
-    expectEquals(5, actual.numTotalItems());
-    expectEquals(4.29, actual.weightEstimateGrams());
+    expectItems(items);
+    expectEquals(5, items.numUniqueItems());
+    expectEquals(5, items.numTotalItems());
+    expectEquals(4.29, items.weightEstimateGrams());
+  }
 
-    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
+  private void testExportHierarchyDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", unknownItems_);
     expectedExported_.put(new ItemId("b:32181c02", "b:12"), 1);
-    expectEquals(expectedExported_, exported);
-    expectActual(actual);
+    expectEquals(expectedExported_, actual);
+    expectEquals(
+        expectedUnknownItems_.unmappableItemsOrNull(),
+        unknownItems_.unmappableItemsOrNull());
+  }
 
-    HashSet<ItemId> interesting = actual.interestingItems("b");
+  private void testInterestingHierarchyDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
+
+    HashSet<ItemId> actual = items.interestingItems("b");
     expectedInteresting_.add(new ItemId("b:32181", "b:12"));
     expectedInteresting_.add(new ItemId("b:32181c02", "*"));
     expectedInteresting_.add(new ItemId("b:32181c03", "*"));
@@ -185,57 +269,85 @@ class RequiredItemsTest extends TestCase {
     expectedInteresting_.add(new ItemId("b:32183", "b:11"));
     expectedInteresting_.add(new ItemId("b:32183c01", "b:11"));
     expectedInteresting_.add(new ItemId("b:108", "b:22"));
-    expectEquals(expectedInteresting_, interesting);
+    expectEquals(expectedInteresting_, actual);
   }
 
-  private void testVirtualParts() {
+  private void testAddVirtualParts() {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addItem(
         "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
     addItem(expectedItems_, "v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
     addItem(expectedItems_, "v:60797-2", "b:15", 1, new ItemId("l:60797", "l:26"), 1);
-    expectActual(actual);
+    expectItems(actual);
     expectEquals(2, actual.numUniqueItems());
     expectEquals(2, actual.numTotalItems());
     expectEquals(3.2, actual.weightEstimateGrams());
+  }
 
-    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
+  private void testExportVirtualParts() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", unknownItems_);
     expectedExported_.put(new ItemId("b:60797c01", "b:11"), 1);
-    expectEquals(expectedExported_, exported);
-    expectActual(actual);
+    expectEquals(expectedExported_, actual);
+    expectEquals(
+        expectedUnknownItems_.unmappableItemsOrNull(),
+        unknownItems_.unmappableItemsOrNull());
+  }
 
-    HashSet<ItemId> interesting = actual.interestingItems("b");
+  private void testInterestingVirtualParts() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
+
+    HashSet<ItemId> actual = items.interestingItems("b");
     expectedInteresting_.add(new ItemId("b:60797c01", "*"));
     expectedInteresting_.add(new ItemId("b:60797c02", "b:11"));
     expectedInteresting_.add(new ItemId("b:60797c03", "b:11"));
-    expectEquals(expectedInteresting_, interesting);
+    expectEquals(expectedInteresting_, actual);
   }
 
-  private void testNonExistentVirtualParts() {
-    RequiredItems actual = new RequiredItems(partModel_, 10);
-    expectTrue(actual.addItem(
+  private void testAddNonExistentVirtualParts() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
         "l", "60797", Arrays.asList("26", "43"), 1, unknownItems_));
     addItem(expectedItems_, "v:60797-1", "b:11", 1, new ItemId("l:60797", "l:26"), 1);
     addItem(expectedItems_, "v:60797-2", "b:14", 1, new ItemId("l:60797", "l:26"), 1);
-    expectActual(actual);
-    expectEquals(2, actual.numUniqueItems());
-    expectEquals(2, actual.numTotalItems());
-    expectEquals(3.2, actual.weightEstimateGrams());
+    expectItems(items);
+    expectEquals(2, items.numUniqueItems());
+    expectEquals(2, items.numTotalItems());
+    expectEquals(3.2, items.weightEstimateGrams());
+  }
 
-    TreeMap<ItemId, Integer> exported = actual.exportToNamespace("b", unknownItems_);
-    expectEquals(expectedExported_, exported);
+  private void testExportNonExistentVirtualParts() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "60797", Arrays.asList("26", "43"), 1, unknownItems_));
+
+    TreeMap<ItemId, Integer> actual = items.exportToNamespace("b", unknownItems_);
+    expectEquals(expectedExported_, actual);
     expectedUnknownItems_.addUnmappableItem(new ItemId("l:60797", "l:26"), 1);
-    expectActual(actual);
+    expectEquals(
+        expectedUnknownItems_.unmappableItemsOrNull(),
+        unknownItems_.unmappableItemsOrNull());
+  }
 
-    HashSet<ItemId> interesting = actual.interestingItems("b");
+  private void testInterestingNonExistentVirtualParts() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "60797", Arrays.asList("26", "43"), 1, unknownItems_));
+
+    HashSet<ItemId> actual = items.interestingItems("b");
     expectedInteresting_.add(new ItemId("b:60797c01", "b:11"));
     expectedInteresting_.add(new ItemId("b:60797c02", "b:11"));
     expectedInteresting_.add(new ItemId("b:60797c03", "b:11"));
-    expectEquals(expectedInteresting_, interesting);
+    expectEquals(expectedInteresting_, actual);
   }
 
-  private void expectActual(RequiredItems actual) {
-    expectEquals(expectedItems_, actual.items());
+  private void expectItems(RequiredItems items) {
+    expectEquals(expectedItems_, items.items());
     expectEquals(
         expectedUnknownItems_.unknownColorIdsOrNull(),
         unknownItems_.unknownColorIdsOrNull());
