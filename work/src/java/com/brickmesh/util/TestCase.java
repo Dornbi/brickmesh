@@ -27,6 +27,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package com.brickmesh.util;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -36,8 +37,38 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import com.brickmesh.util.Log;
+
 // Poor man's unit test framework.
 public class TestCase {
+  // Runs all methods on 'this' that start with 'test'.
+  // Requires that the following are all public:
+  // - the class itself.
+  // - the zero-argument contructor.
+  // - the test method.
+  protected static void runAllTests(Class testCaseClass) {
+    boolean hadErrors = false;
+    for (Method method : testCaseClass.getDeclaredMethods()) {
+      if (!method.getName().startsWith("test") ||
+           method.getParameterTypes().length != 0) {
+        Log.info("Skipping: " + method.getName());
+        continue;
+      }
+      Log.info("Invoking: " + method.getName());
+      try {
+        TestCase instance = (TestCase)testCaseClass.newInstance();
+        method.invoke(instance);
+      }
+      catch (Exception e) {
+        e.printStackTrace();
+        hadErrors = true;
+      }
+    }
+    if (hadErrors) {
+      throw new IllegalStateException("Test case had errors: " + testCaseClass.getName());
+    }
+  }
+  
   protected static void expectTrue(boolean b) {
     if (!b) throw new AssertionError("Test failed.");
   }

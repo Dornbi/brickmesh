@@ -36,14 +36,17 @@ import java.util.TreeMap;
 
 import com.brickmesh.util.TestCase;
 
-class RequiredItemsTest extends TestCase {
+public class RequiredItemsTest extends TestCase {
   public static void main(String[] args) {
+    runAllTests(RequiredItemsTest.class);
+    /*
     new RequiredItemsTest().testAddEmpty();
     new RequiredItemsTest().testExportEmpty();
     new RequiredItemsTest().testInterestingEmpty();
     new RequiredItemsTest().testAddSimple();
     new RequiredItemsTest().testExportSimple();
     new RequiredItemsTest().testInterestingSimple();
+    new RequiredItemsTest().testMinusSimple();
     new RequiredItemsTest().testAddSimpleDecompose();
     new RequiredItemsTest().testExportSimpleDecompose();
     new RequiredItemsTest().testInterestingSimpleDecompose();
@@ -59,6 +62,7 @@ class RequiredItemsTest extends TestCase {
     new RequiredItemsTest().testAddNonExistentVirtualParts();
     new RequiredItemsTest().testExportNonExistentVirtualParts();
     new RequiredItemsTest().testInterestingNonExistentVirtualParts();
+      */
   }
 
   public RequiredItemsTest() {
@@ -70,7 +74,7 @@ class RequiredItemsTest extends TestCase {
     expectedInteresting_ = new HashSet<ItemId>();
   }
 
-  private void testAddEmpty() {
+  public void testAddEmpty() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectEquals(0, items.numUniqueItems());
     expectEquals(0, items.numTotalItems());
@@ -78,7 +82,7 @@ class RequiredItemsTest extends TestCase {
     expectItems(items);
   }
 
-  private void testExportEmpty() {
+  public void testExportEmpty() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     TreeMap<ItemId, Integer> exported = items.exportToNamespace("b", unknownItems_);
     expectEquals(expectedExported_, exported);
@@ -87,13 +91,13 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void testInterestingEmpty() {
+  public void testInterestingEmpty() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     HashSet<ItemId> actual = items.interestingItems("b");
     expectEquals(expectedInteresting_, actual);
   }
 
-  private void testAddSimple() {
+  public void testAddSimple() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
     expectFalse(items.addItem("l", "3005", "nocolor", 5, unknownItems_));
@@ -107,7 +111,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(1.29, items.weightEstimateGrams());
   }
 
-  private void testExportSimple() {
+  public void testExportSimple() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
 
@@ -119,7 +123,7 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void testInterestingSimple() {
+  public void testInterestingSimple() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
 
@@ -128,7 +132,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(expectedInteresting_, actual);
   }
 
-  private void testAddSimpleDecompose() {
+  public void testAddSimpleDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
     addItem(expectedItems_, "b:2429", "b:1", 2, new ItemId("l:73983", "l:1"), 2);
@@ -139,7 +143,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(1.64, items.weightEstimateGrams());
   }
 
-  private void testExportSimpleDecompose() {
+  public void testExportSimpleDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
 
@@ -151,7 +155,7 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void testInterestingSimpleDecompose() {
+  public void testInterestingSimpleDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
 
@@ -162,7 +166,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(expectedInteresting_, actual);
   }
 
-  private void testAddMinifigDecompose() {
+  public void testAddMinifigDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "76382",
@@ -186,7 +190,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(4.35, items.weightEstimateGrams());
   }
 
-  private void testExportMinifigDecompose() {
+  public void testExportMinifigDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "76382",
@@ -206,7 +210,7 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void testInterestingMinifigDecompose() {
+  public void testInterestingMinifigDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "76382",
@@ -230,7 +234,7 @@ class RequiredItemsTest extends TestCase {
     expectTrue(actual.contains(new ItemId("b:983", "b:3")));
   }
 
-  private void testAddHierarchyDecompose() {
+  public void testAddHierarchyDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
     addItem(expectedItems_, "b:32181", "b:12", 1, new ItemId("l:76320", "l:40"), 1);
@@ -244,7 +248,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(4.29, items.weightEstimateGrams());
   }
 
-  private void testExportHierarchyDecompose() {
+  public void testExportHierarchyDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
 
@@ -256,7 +260,7 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void testInterestingHierarchyDecompose() {
+  public void testInterestingHierarchyDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
 
@@ -272,7 +276,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(expectedInteresting_, actual);
   }
 
-  private void testAddVirtualParts() {
+  public void testAddVirtualParts() {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addItem(
         "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
@@ -284,7 +288,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(3.2, actual.weightEstimateGrams());
   }
 
-  private void testExportVirtualParts() {
+  public void testExportVirtualParts() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
@@ -297,7 +301,7 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void testInterestingVirtualParts() {
+  public void testInterestingVirtualParts() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
@@ -309,7 +313,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(expectedInteresting_, actual);
   }
 
-  private void testAddNonExistentVirtualParts() {
+  public void testAddNonExistentVirtualParts() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "60797", Arrays.asList("26", "43"), 1, unknownItems_));
@@ -321,7 +325,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(3.2, items.weightEstimateGrams());
   }
 
-  private void testExportNonExistentVirtualParts() {
+  public void testExportNonExistentVirtualParts() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "60797", Arrays.asList("26", "43"), 1, unknownItems_));
@@ -334,7 +338,7 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void testInterestingNonExistentVirtualParts() {
+  public void testInterestingNonExistentVirtualParts() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem(
         "l", "60797", Arrays.asList("26", "43"), 1, unknownItems_));
@@ -346,7 +350,7 @@ class RequiredItemsTest extends TestCase {
     expectEquals(expectedInteresting_, actual);
   }
 
-  private void expectItems(RequiredItems items) {
+  public void expectItems(RequiredItems items) {
     expectEquals(expectedItems_, items.items());
     expectEquals(
         expectedUnknownItems_.unknownColorIdsOrNull(),
@@ -356,7 +360,7 @@ class RequiredItemsTest extends TestCase {
         unknownItems_.unmappableItemsOrNull());
   }
 
-  private void addItem(HashMap<ItemId, RequiredItems.Item> map,
+  public void addItem(HashMap<ItemId, RequiredItems.Item> map,
       String partId, String colorId, int count,
       ItemId originalId, int originalCount) {
     PartModel.Color color = partModel_.findColorOrNull(colorId);
