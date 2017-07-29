@@ -27,6 +27,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package com.brickmesh.util;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collection;
@@ -59,7 +60,13 @@ public class TestCase {
         TestCase instance = (TestCase)testCaseClass.newInstance();
         method.invoke(instance);
       }
+      catch (InvocationTargetException e) {
+        System.err.println("Error in " + method.getName() + ":");
+        e.getCause().printStackTrace();
+        hadErrors = true;
+      }
       catch (Exception e) {
+        System.err.println("Error in " + method.getName() + ":");
         e.printStackTrace();
         hadErrors = true;
       }
