@@ -71,6 +71,23 @@ public class RequiredItemsTest extends TestCase {
     expectEquals(actual, createItemSet());
   }
 
+  public void testMinusEmpty() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+
+    RequiredItems minusEmpty = items.minusMatches(createItemMap());
+    expectEquals(minusEmpty.exportToNamespace("b", null), createItemMap());
+    expectEquals(0, minusEmpty.numUniqueItems());
+    expectEquals(0, minusEmpty.numTotalItems());
+    expectEquals(0.0, minusEmpty.weightEstimateGrams());
+
+    RequiredItems minusNonExisting = items.minusMatches(
+        createItemMap(new ItemId("l:3005", "l:1"), 1));
+    expectEquals(minusNonExisting.exportToNamespace("b", null), createItemMap());
+    expectEquals(0, minusNonExisting.numUniqueItems());
+    expectEquals(0, minusNonExisting.numTotalItems());
+    expectEquals(0.0, minusNonExisting.weightEstimateGrams());
+  }
+
   public void testAddSimple() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
@@ -104,6 +121,40 @@ public class RequiredItemsTest extends TestCase {
     expectEquals(actual, createItemSet(new ItemId("b:3005", "b:1")));
   }
 
+  public void testMinusSimple() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "3005", "1", 3, unknownItems_));
+
+    RequiredItems minusEmpty = items.minusMatches(createItemMap());
+    expectEquals(minusEmpty.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:3005", "b:1"), 3));
+    expectEquals(1, minusEmpty.numUniqueItems());
+    expectEquals(3, minusEmpty.numTotalItems());
+    expectEquals(1.29, minusEmpty.weightEstimateGrams());
+
+    RequiredItems minusSome = items.minusMatches(createItemMap(
+        new ItemId("b:3005", "b:1"), 1));
+    expectEquals(minusSome.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:3005", "b:1"), 2));
+    expectEquals(1, minusSome.numUniqueItems());
+    expectEquals(2, minusSome.numTotalItems());
+    expectEquals(0.86, minusSome.weightEstimateGrams());
+
+    RequiredItems minusAll = items.minusMatches(createItemMap(
+        new ItemId("b:3005", "b:1"), 3));
+    expectEquals(minusAll.exportToNamespace("b", null), createItemMap());
+    expectEquals(0, minusAll.numUniqueItems());
+    expectEquals(0, minusAll.numTotalItems());
+    expectEquals(0.0, minusAll.weightEstimateGrams());
+
+    RequiredItems minusMore = items.minusMatches(createItemMap(
+        new ItemId("b:3005", "b:1"), 4));
+    expectEquals(minusMore.exportToNamespace("b", null), createItemMap());
+    expectEquals(0, minusMore.numUniqueItems());
+    expectEquals(0, minusMore.numTotalItems());
+    expectEquals(0.0, minusMore.weightEstimateGrams());
+  }
+
   public void testAddDecompose() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
@@ -135,6 +186,28 @@ public class RequiredItemsTest extends TestCase {
         new ItemId("b:2429c01", "b:1"),
         new ItemId("b:2429", "b:1"),
         new ItemId("b:2430", "b:1")));
+  }
+
+  public void testMinusDecompose() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "73983", "1", 2, unknownItems_));
+
+    RequiredItems minusSubpart = items.minusMatches(createItemMap(
+        new ItemId("b:2429", "b:1"), 1));
+    expectEquals(minusSubpart.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:2429c01", "b:1"), 1,
+        new ItemId("b:2430", "b:1"), 1));
+    expectEquals(2, minusSubpart.numUniqueItems());
+    expectEquals(3, minusSubpart.numTotalItems());
+    expectEquals(1.23, minusSubpart.weightEstimateGrams());
+
+    RequiredItems minusFullpart = items.minusMatches(createItemMap(
+        new ItemId("b:2429c01", "b:1"), 1));
+    expectEquals(minusFullpart.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:2429c01", "b:1"), 1));
+    expectEquals(2, minusFullpart.numUniqueItems());
+    expectEquals(2, minusFullpart.numTotalItems());
+    expectEquals(0.82, minusFullpart.weightEstimateGrams());
   }
 
   public void testAddMinifig() {
@@ -205,6 +278,61 @@ public class RequiredItemsTest extends TestCase {
     expectTrue(actual.contains(new ItemId("b:983", "b:3")));
   }
 
+  public void testMinusMinifig() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "76382",
+        Arrays.asList("5", "5", "5", "24", "24"),
+        1, unknownItems_));
+    expectTrue(items.addItem(
+        "l", "76382",
+        Arrays.asList("21", "21", "21", "24", "24"),
+        2, unknownItems_));
+
+    RequiredItems minusArm = items.minusMatches(createItemMap(
+        new ItemId("b:981", "b:2"), 1));
+    expectEquals(minusArm.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:973", "b:2"), 1,
+        new ItemId("b:982", "b:2"), 1,
+        new ItemId("b:983", "b:3"), 2,
+        new ItemId("b:973c02", "b:5"), 2));
+    expectEquals(6, minusArm.numUniqueItems());
+    expectEquals(14, minusArm.numTotalItems());
+
+    RequiredItems minusArms = items.minusMatches(createItemMap(
+        new ItemId("b:981", "b:5"), 2));
+    expectEquals(minusArms.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:973", "b:5"), 2,
+        new ItemId("b:982", "b:5"), 2,
+        new ItemId("b:983", "b:3"), 4,
+        new ItemId("b:973c67", "b:2"), 1));
+    expectEquals(6, minusArms.numUniqueItems());
+    expectEquals(13, minusArms.numTotalItems());
+
+    RequiredItems minusOther = items.minusMatches(createItemMap(
+        new ItemId("b:973c01", "b:2"), 1));
+    // This is an artifact of the exporter algorithm - it picks b:973c67
+    // which does not actually exist in b:5.
+    expectEquals(minusOther.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:981", "b:5"), 1,
+        new ItemId("b:982", "b:5"), 1,
+        new ItemId("b:973c02", "b:5"), 1,
+        new ItemId("b:973c67", "b:5"), 1));
+    expectEquals(6, minusOther.numUniqueItems());
+    expectEquals(12, minusOther.numTotalItems());
+
+    RequiredItems minusManyOther = items.minusMatches(createItemMap(
+        new ItemId("b:973c01", "b:2"), 10));
+    expectEquals(minusManyOther.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:973", "b:5"), 2,
+        new ItemId("b:981", "b:2"), 1,
+        new ItemId("b:981", "b:5"), 2,
+        new ItemId("b:982", "b:2"), 1,
+        new ItemId("b:982", "b:5"), 2));
+    expectEquals(5, minusManyOther.numUniqueItems());
+    expectEquals(8, minusManyOther.numTotalItems());
+  }
+
   public void testAddHierarchy() {
     RequiredItems items = new RequiredItems(partModel_, 10);
     expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
@@ -246,6 +374,18 @@ public class RequiredItemsTest extends TestCase {
         new ItemId("b:108", "b:22")));
   }
 
+  public void testMinusHierarchy() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("l", "76320", "40", 1, unknownItems_));
+
+    RequiredItems minusOther = items.minusMatches(createItemMap(
+        new ItemId("b:32181c03", "b:12"), 1));
+    expectEquals(minusOther.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:108", "b:22"), 1));
+    expectEquals(1, minusOther.numUniqueItems());
+    expectEquals(1, minusOther.numTotalItems());
+  }
+
   public void testAddVirtualParts() {
     RequiredItems actual = new RequiredItems(partModel_, 10);
     expectTrue(actual.addItem(
@@ -280,6 +420,25 @@ public class RequiredItemsTest extends TestCase {
         new ItemId("b:60797c01", "*"),
         new ItemId("b:60797c02", "b:11"),
         new ItemId("b:60797c03", "b:11")));
+  }
+
+  public void testMinusVirtualParts() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem(
+        "l", "60797", Arrays.asList("26", "42"), 1, unknownItems_));
+
+    RequiredItems minusVirtual = items.minusMatches(createItemMap(
+        new ItemId("b:60797c03", "b:11"), 1));
+    
+    // The remainder contains only virtual parts that cannot be exported.
+    addItem(expectedItems_, "v:60797-2", "b:15", 1, null, 0);
+    expectItems(minusVirtual);
+    expectEquals(1, minusVirtual.numUniqueItems());
+    expectEquals(1, minusVirtual.numTotalItems());
+    
+    HashSet<ItemId> interesting = minusVirtual.interestingItems("b");
+    expectEquals(interesting, createItemSet(
+        new ItemId("b:60797c01", "*")));
   }
 
   public void testAddNonExistentVirtualParts() {

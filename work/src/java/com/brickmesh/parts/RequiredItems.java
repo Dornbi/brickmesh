@@ -206,6 +206,61 @@ public class RequiredItems {
     return composer.exportToNamespace(namespace, unknownItems);
   }
 
+  // Returns a clone of self with all applicable matches removed.
+  public RequiredItems minusMatches(Map<ItemId, Integer> matchingItemCounts) {
+    RequiredItems clone = this.deepClone();
+    clone.removeMatches(matchingItemCounts);
+    return clone;
+  }
+
+  // Removes all applicable matches from items_.
+  private void removeMatches(Map<ItemId, Integer> matchingItemCounts) {
+    for (Map.Entry<ItemId, Integer> entry : matchingItemCounts.entrySet()) {
+      removeMatch(entry.getKey(), entry.getValue());
+    }
+  }
+
+  // Removes a single match from the items.
+  private void removeMatch(ItemId itemId, int count) {
+    PartModel.Part part = partModel_.findPartOrNull(itemId.partId());
+    if (part == null) {
+      // Part not found, skip silently.
+      return;
+    }
+    if (part.items_ == null) {
+      // No children - remove it directly.
+      Item item = items_.get(itemId);
+      if (item == null) {
+        return;
+      }
+      if (count >= item.count_) {
+        items_.remove(itemId);
+        numTotalItems_ -= item.count_;
+      } else {
+        item.count_ -= count;
+        numTotalItems_ -= count;
+      }
+      return;
+    } else {
+      // Has children - remove the children instead. Since this object
+      // contains all items as decomposed, we only remove the children
+      // and not the parent.
+      for (PartModel.Item child : part.items_) {
+        PartModel.Color childColor = child.color_;
+        if (childColor == null) {
+          // There is no child color from the hierarchy, try the parent color.
+          childColor = partModel_.findColorOrNull(itemId.colorId());
+        }
+        if (childColor == null) {
+          // Parent color not found, skip silently.
+          continue;
+        }
+        ItemId childId = new ItemId(child.part_.primaryId(), childColor.primaryId());
+        removeMatch(childId, count * child.count_);
+      }
+    }
+  }
+
   // Returns the full list of all possible items that can possibly fulfill
   // any subset of this list. Note that the returned set may contain items
   // with ANY_COLOR.
@@ -562,7 +617,8 @@ public class RequiredItems {
     numTotalItems_ += item.count_;
   }
 
-  // The items that have been mapped successfully.
+  // The items that have been mapped successfully. These items are fully decomposed
+  // and the itemId is always the
   private HashMap<ItemId, Item> items_;
 
   // The total count of items in the map. Since we decompose items into
