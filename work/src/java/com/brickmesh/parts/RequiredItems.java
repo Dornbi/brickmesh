@@ -215,36 +215,47 @@ public class RequiredItems {
 
   // Removes all applicable matches from items_.
   private void removeMatches(Map<ItemId, Integer> matchingItemCounts) {
+    HashSet<ItemId> alreadyConsidered = new HashSet<ItemId>();
     for (Map.Entry<ItemId, Integer> entry : matchingItemCounts.entrySet()) {
-      removeMatch(entry.getKey(), entry.getValue());
+      removeMatch(entry.getKey(), entry.getValue(), alreadyConsidered);
+      alreadyConsidered.clear();
     }
   }
 
   // Removes a single match from the items.
-  private void removeMatch(ItemId itemId, int count) {
+  // Returns the number of items that were matched.
+  private int removeMatch(ItemId itemId, int count, HashSet<ItemId> alreadyConsidered) {
+    if (alreadyConsidered.contains(itemId)) {
+      // We have already considered this, do not do it again.
+      return 0;
+    }
     PartModel.Part part = partModel_.findPartOrNull(itemId.partId());
     if (part == null) {
       // Part not found, skip silently.
-      return;
+      return 0;
     }
+
+    int matchedCount = 0;
+    alreadyConsidered.add(itemId);
     if (part.items_ == null) {
       // No children - remove it directly.
       Item item = items_.get(itemId);
-      if (item == null) {
-        return;
+      if (item != null) {
+        if (count >= item.count_) {
+          matchedCount += item.count_;
+          numTotalItems_ -= item.count_;
+          items_.remove(itemId);
+        } else {
+          matchedCount += count;
+          numTotalItems_ -= count;
+          item.count_ -= count;
+        }
       }
-      if (count >= item.count_) {
-        items_.remove(itemId);
-        numTotalItems_ -= item.count_;
-      } else {
-        item.count_ -= count;
-        numTotalItems_ -= count;
-      }
-      return;
     } else {
       // Has children - remove the children instead. Since this object
       // contains all items as decomposed, we only remove the children
       // and not the parent.
+      int allChildMatchCount = 0;
       for (PartModel.Item child : part.items_) {
         PartModel.Color childColor = child.color_;
         if (childColor == null) {
@@ -256,9 +267,27 @@ public class RequiredItems {
           continue;
         }
         ItemId childId = new ItemId(child.part_.primaryId(), childColor.primaryId());
-        removeMatch(childId, count * child.count_);
+        int childMatchCount = removeMatch(childId, count * child.count_, alreadyConsidered);
+        allChildMatchCount = Math.max(allChildMatchCount,
+            (childMatchCount + child.count_ - 1) / child.count_);
+      }
+      matchedCount += allChildMatchCount;
+    }
+
+    // Removing similar items.
+    if (part.similar_ != null) {
+      for (PartModel.Part similar : part.similar_) {
+        if (matchedCount >= count) {
+          // No more parts available, bail out.
+          break;
+        }
+        ItemId similarId = new ItemId(similar.primaryId(), itemId.colorId());
+        matchedCount += removeMatch(similarId, count - matchedCount, alreadyConsidered);
       }
     }
+
+    // TODO: support similar items with confirmation.
+    return matchedCount;
   }
 
   // Returns the full list of all possible items that can possibly fulfill

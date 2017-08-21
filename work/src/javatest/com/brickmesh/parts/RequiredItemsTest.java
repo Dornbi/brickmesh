@@ -429,13 +429,13 @@ public class RequiredItemsTest extends TestCase {
 
     RequiredItems minusVirtual = items.minusMatches(createItemMap(
         new ItemId("b:60797c03", "b:11"), 1));
-    
+
     // The remainder contains only virtual parts that cannot be exported.
     addItem(expectedItems_, "v:60797-2", "b:15", 1, null, 0);
     expectItems(minusVirtual);
     expectEquals(1, minusVirtual.numUniqueItems());
     expectEquals(1, minusVirtual.numTotalItems());
-    
+
     HashSet<ItemId> interesting = minusVirtual.interestingItems("b");
     expectEquals(interesting, createItemSet(
         new ItemId("b:60797c01", "*")));
@@ -476,6 +476,28 @@ public class RequiredItemsTest extends TestCase {
         new ItemId("b:60797c01", "b:11"),
         new ItemId("b:60797c02", "b:11"),
         new ItemId("b:60797c03", "b:11")));
+  }
+
+  public void testMinusSimilarItems() {
+    RequiredItems items = new RequiredItems(partModel_, 10);
+    expectTrue(items.addItem("b", "3794", "1", 3, unknownItems_));
+    expectTrue(items.addItem("b", "3794", "2", 1, unknownItems_));
+
+    RequiredItems minus1 = items.minusMatches(createItemMap(
+        new ItemId("b:3794", "b:1"), 1));
+    expectEquals(minus1.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:3794", "b:1"), 2,
+        new ItemId("b:3794", "b:2"), 1));
+    expectEquals(2, minus1.numUniqueItems());
+    expectEquals(3, minus1.numTotalItems());
+
+    RequiredItems minus2 = items.minusMatches(createItemMap(
+        new ItemId("b:3794b", "b:1"), 1));
+    expectEquals(minus2.exportToNamespace("b", null), createItemMap(
+        new ItemId("b:3794", "b:1"), 2,
+        new ItemId("b:3794", "b:2"), 1));
+    expectEquals(2, minus2.numUniqueItems());
+    expectEquals(3, minus2.numTotalItems());
   }
 
   public void expectItems(RequiredItems items) {
