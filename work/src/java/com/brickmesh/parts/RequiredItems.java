@@ -255,6 +255,10 @@ public class RequiredItems {
       // Has children - remove the children instead. Since this object
       // contains all items as decomposed, we only remove the children
       // and not the parent.
+      //
+      // This algorithm has limitations: if there are similar parent
+      // items that share the same exact children it may prevent the
+      // matching of this child via both parents.
       int allChildMatchCount = 0;
       for (PartModel.Item child : part.items_) {
         PartModel.Color childColor = child.color_;
