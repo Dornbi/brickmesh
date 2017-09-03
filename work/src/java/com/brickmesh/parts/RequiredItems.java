@@ -297,6 +297,7 @@ public class RequiredItems {
   // Returns the full list of all possible items that can possibly fulfill
   // any subset of this list. Note that the returned set may contain items
   // with ANY_COLOR.
+  // The returned itemIds are in the requested namespace.
   public HashSet<ItemId> interestingItems(String namespace) {
     HashMap<PartModel.Part, HashSet<PartModel.Color>> interestingItems =
         new HashMap<PartModel.Part, HashSet<PartModel.Color>>(items_.size());
