@@ -94,4 +94,31 @@ public class PartExporter {
     }
     ps.println("</INVENTORY>");
   }
+
+  public static void exportToCsvList(
+      TreeMap<ItemId, Integer> items, OutputStream output) {
+    PrintStream ps = output instanceof PrintStream ?
+      (PrintStream)output : new PrintStream(output);
+    ps.println("ItemId,PartId,ColorId,Qty");
+    for (Map.Entry<ItemId, Integer> entry : items.entrySet()) {
+      String[] partIdPieces = ItemId.idPiecesOrNull(entry.getKey().partId());
+      if (partIdPieces == null || !partIdPieces[0].equals("b")) {
+        throw new AssertionError("Invalid part id to export: " + entry.getKey());
+      }
+      String[] colorIdPieces = ItemId.idPiecesOrNull(entry.getKey().colorId());
+      if (colorIdPieces == null || !colorIdPieces[0].equals("b")) {
+        throw new AssertionError("Invalid color id to export: " + entry.getKey());
+      }
+      ps.print(partIdPieces[1]);
+      ps.print("-");
+      ps.print(colorIdPieces[1]);
+      ps.print(",");
+      ps.print(partIdPieces[1]);
+      ps.print(",");
+      ps.print(colorIdPieces[1]);
+      ps.print(",");
+      ps.print(entry.getValue());
+      ps.println();
+    }
+  }
 }

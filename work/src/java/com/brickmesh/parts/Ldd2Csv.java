@@ -32,7 +32,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class LddTool {
+public class Ldd2Csv {
   public static void main(String[] args)
       throws PartLoader.LoaderException, IOException {
     if (args.length == 0) {
@@ -56,7 +56,7 @@ public class LddTool {
     RequiredItems items = loader.getResult().items_;
     UnknownItems unknownItems = loader.getResult().unknownItems_;
     TreeMap<ItemId, Integer> blItems = items.exportToNamespace("b", unknownItems);
-    PartExporter.exportToWantedList(blItems, System.out, null);
+    PartExporter.exportToCsvList(blItems, System.out);
     System.err.format("Estimated weight: %.3f gram(s)\n", items.weightEstimateGrams());
 
     if (unknownItems.unknownItemsOrNull() != null) {
